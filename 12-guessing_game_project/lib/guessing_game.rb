@@ -1,6 +1,6 @@
 class GuessingGame
   def initialize(min, max)
-    @secret = rand(min..max)
+    @secret_num = rand(min..max)
     @num_attempts = 0
     @game_over = false
   end
@@ -15,10 +15,10 @@ class GuessingGame
 
   def check_num(num)
     @num_attempts += 1
-    if @secret == num
+    if @secret_num == num
       @game_over = true
       p "you win!"
-    elsif @secret < num
+    elsif @secret_num < num
       p "number is too big"
     else
       p "number is too small"
