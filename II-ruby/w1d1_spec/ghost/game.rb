@@ -1,109 +1,131 @@
 require_relative "player"
+require "set"
 require "byebug"
 
 class Game
-  # attr_reader :losses
+  # attr_reader
 
-  # debug
-  attr_accessor :current_player, :previous_player, :fragment
+  # debug purposes
+  attr_accessor :current_player, :previous_player, :fragment, :losses
 
-  @@players = []
+  @players = []
 
-  # ale inaczej accessor nie działał
+  # ale inaczej accessor nie działał :/
   def players
-    @@players
+    @players
   end
 
-  def losses
-    @losses
+  def self.testable
+    players = []
+    players << Player.new("Gelo")
+    players << Player.new("Kylo")
+
+    self.new(players)
   end
 
-  def self.add_player(player)
-    @@players << player
-  end
-
-  def self.set_players
-    puts "Give number of players 2-4"
-    players_num = gets.chomp.to_i
-    players_num.times do |player_num|
-      puts "Please, give player #{player_num} name"
-      name = gets.chomp
-      new_player = Player.new(name)
-      Game.add_player(new_player)
-    end
-  end
-
-  def initialize
+  def initialize(players = [])
     @fragment = ""
-    @current_player = @@players[0]
-    @previous_player = @@players[-1]
-    @dictionary = Hash.new()
+    @dictionary = Set.new
+    if players.empty?
+      @players = set_players
+    else
+      @players = players
+    end
 
-    # counter // ew inicjalizować zerem zamiast przypisania w 40
-    @losses = {}
     # czy klucz będzie referencją do atrybutu current/prev player?
     # @current_player => 0,
     # @previous_player => 0,
     # }
-    @@players.each do |player|
-      @losses[player] = 0
+    # debugger
+
+    # While this creates a new default object each time
+    # h = Hash.new { |hash, key| hash[key] = "Go Fish: #{key}" }
+    # h["c"]           #=> "Go Fish: c"
+
+    @losses = Hash.new { |hash, key| hash[key] = 0 }
+    @players.each do |player|
+      @losses[player]
+    end
+    # nadmierna komplikacja dla ustawienia inicjalizacji domyślnej
+    # wartości klucza Hasha
+    # przecie można by było zrobić tak:
+    # @losses[player] = 0
+    @current_player = @players[0]
+    @previous_player = @players[-1]
+  end
+
+  def run
+    until game_over?
+      play_round
     end
   end
 
-  def dictionary
-    if @dictionary.length == 0
-      @dictionary = setDictionary
-    else
-      @dictionary
-    end
-  end
-
-  def setDictionary
-    dict = Hash.new
-    if File.exist?("dictionary.txt")
-      # debugger
-      File.foreach("dictionary.txt") do |line|
-        dict[line.chomp] = true
-      end
-    end
-
-    dict
-  end
+  # http://ruby-for-beginners.rubymonstas.org/advanced/private_methods.html
+  # debug purposes
+  # private
 
   def play_round
-    puts "Current fragment: #{@fragment}" unless @fragment.empty?
-    take_turn(@current_player)
+    display_standings
 
-    next_player!
+    until word_completed?
+      take_turn
+      next_player!
+    end
+
+    check_and_eleminate_loser
+
+    puts "__________________________"
+    puts
+  end
+
+  def game_over?
+    return true if @players.length == 1
+  end
+
+  # HELPERS
+
+  def set_players
+    puts "Give number of players 2-4"
+    players_num = gets.chomp.to_i
+    players = []
+    players_num.times do |player_num|
+      puts "Please, give player #{player_num + 1} name"
+      name = gets.chomp
+      players << Player.new(name)
+    end
+
+    players
   end
 
   def next_player!
-    current_player_index = @@players.find_index(@current_player)
-    next_player_index = (current_player_index + 1) % @@players.length
+    current_player_index = @players.find_index(@current_player)
+    next_player_index = (current_player_index + 1) % @players.length
 
     @previous_player = @current_player
-    @current_player = @@players[next_player_index]
+    @current_player = @players[next_player_index]
   end
 
   #take_turn(player):
   # gets a string from the player until a valid play is made;
   #  then updates the fragment and checks against the dictionary. You may also want to alert the player if they attempt to make an invalid move (or, if you're feeling mean, you might cause them to lose outright).
-  def take_turn(player)
+  def take_turn
     valid_input = false
+    puts ""
+    puts "Current text is: #{@fragment}"
+
     until valid_input
-      player_char = player.guess
+      player_char = @current_player.guess
       valid_input = valid_play?(player_char)
       unless valid_input
-        player.alert_invalid_guess
+        @current_player.alert_invalid_guess
       end
     end
-    # debugger
+
     @fragment += player_char
   end
 
-  def word_completed?(word)
-    # debugger
-    @dictionary[word]
+  def word_completed?
+    @dictionary.include?(@fragment)
   end
 
   #valid_play?(string): Checks that string is a letter of the alphabet and that there are words we can spell after adding it to the fragment
@@ -113,7 +135,16 @@ class Game
     end
 
     newFragment = @fragment + string
-    wordIncludeFragment = dictionary.keys.any? { |key| key.include?(newFragment) }
+
+    # if @dictionary.empty?
+    #   dictionary
+    # end
+
+    wordIncludeFragment = dictionary.any? do |word|
+      # debugger
+      # puts '#{word}'
+      word.start_with?(newFragment)
+    end
 
     if wordIncludeFragment
       return true
@@ -124,52 +155,62 @@ class Game
 
   def record(player)
     # debugger
-    "GHOST"[0...losses[player]]
-  end
-
-  def run
-    # debugger
-    display_standings if @fragment == ""
-
-    play_round
-
-    if word_completed?(@fragment)
-      losses[@previous_player] += 1
-      puts "#{@previous_player.name} has lost round."
-      puts
-      @fragment = ""
-      # test
-      # usun gracza
-      check_and_eleminate_loser
-
-      # false gdy tylko jeden
-      return false if @@players.length == 1
-    end
-
-    true
+    "GHOST"[0...@losses[player]]
   end
 
   def check_and_eleminate_loser
-    if losses[@previous_player] == 2
+    @losses[@previous_player] += 1
+    puts "!!!"
+    puts "#{@previous_player.name} has lost round."
+    puts
+
+    if @losses[@previous_player] == 2
       eleminate_loser!(@previous_player)
     end
+
+    @fragment = ""
   end
 
   def eleminate_loser!(loser)
-    debugger
-    remaining_players = @@players.select { |player| player != loser }
-    @@players = remaining_players
+    # debugger
+    remaining_players = @players.select { |player| player != loser }
+    @players = remaining_players
   end
 
-  def display_standings
-    @@players.each do |player|
+  def players_records
+    @players.each do |player|
       player_record = record(player)
-      puts "#{player.name} : #{player.empty? ? "0" : player_record}"
+      # empty
+      puts "#{player.name} : #{player_record.empty? ? "0" : player_record}"
+    end
+  end
+
+  def dictionary
+    if @dictionary.empty?
+      set_dictionary
+    else
+      @dictionary
+    end
+    # debug-purposes
+    @dictionary
+  end
+
+  def set_dictionary
+    # if File.exist?("dictionary.txt")
+    File.foreach("dictionary.txt") do |line|
+      # debugger
+      @dictionary.add(line.chomp)
+    end
+    # end
+  end
+
+  # UI methods
+  def display_standings
+    puts "Current fragment: #{@fragment}" unless @fragment.empty?
+
+    if @fragment.empty?
+      players_records
     end
     puts
-    # current_player_record = record(@current_player)
-    # previous_player_record = record(@previous_player)
-
-    # puts "#{@previous_player.name} : #{previous_player_record.empty? ? "0" : previous_player_record}"
   end
 end

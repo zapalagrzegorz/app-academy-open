@@ -17,7 +17,7 @@ game_check_eleminate = Game.new
 # debugger
 game_check_eleminate.previous_player = game_check_eleminate.players[0]
 prev_player = game_check_eleminate.previous_player
-game_check_eleminate.losses[prev_player] = 2
+game_check_eleminate.losses[prev_player] = 1
 
 game_check_eleminate.check_and_eleminate_loser
 
