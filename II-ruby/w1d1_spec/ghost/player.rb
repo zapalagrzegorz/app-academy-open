@@ -12,6 +12,6 @@ class Player
   end
 
   def alert_invalid_guess
-    puts "#{name}, please, give only one char, like 'a' or 'b'"
+    puts "#{name}, invalid input data: one char, like 'a' or 'b' oraz your fragment doesn't make sense"
   end
 end

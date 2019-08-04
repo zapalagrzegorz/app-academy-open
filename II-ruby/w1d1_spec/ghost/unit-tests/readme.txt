@@ -1,0 +1,1 @@
+To są 'naiwne' testy jednostkowe.
