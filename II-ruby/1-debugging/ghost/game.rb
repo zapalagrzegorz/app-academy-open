@@ -3,6 +3,7 @@ require "set"
 require "byebug"
 
 class Game
+  # alphabet as CONSTANT
   # attr_reader
 
   # debug purposes
