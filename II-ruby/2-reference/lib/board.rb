@@ -1,9 +1,6 @@
-require "set"
-
 class Board
-  ALPHABET = [("a".."z")]
-
-  attr_reader :grid
+  # ALPHABET = a..z.to_a
+  ALPHABET = Set.new("a".."z")
 
   def initialize(cards)
     @cards = cards
@@ -12,17 +9,15 @@ class Board
   end
 
   def self.testable
-    return self.new(["card1", "card2"])
+    return grid(card1, card2)
   end
 
   # should fill the board with a set of shuffled Card pairs
   def populate
     card_values = ALPHABET.sample(8)
-    card_values += card_values
-    # p card_values
     @grid.each_with_index do |row, row_idx|
-      row.each_with_index do |column, column_idx|
-        @grid[row_idx][column_idx] = card_values[row_idx * 4 + column_idx]
+      row.each do |column, column_idx|
+        @grid[row][column] = card_values[row_idx * 7 + column_idx]
       end
     end
   end
