@@ -4,6 +4,7 @@ require_relative "card"
 class Board
   ALPHABET = ("a".."z").to_a
   BOARD_SIZE = 4
+
   attr_reader :grid
 
   def initialize(cards)
@@ -45,19 +46,34 @@ class Board
 
   #    should return true if all cards have been revealed.
   def won?
-    @guessed == (BOARD_SIZE ** 2) / 2
+
+    # all inside all?!
+    @grid.all? { |row| row.all?(&:is_face_up) }
+
+    # moim zdaniem lepsze by było trzymanie informacji w stanie
+    # @guessed == (BOARD_SIZE ** 2) / 2
     # albo trzymać liczbę odgadnionych pól
     # albo za każdym razem liczyć całość
   end
 
   #   should reveal a Card at guessed_pos
-  #  (unless it's already face-up, in which case the method should do nothing). It should also return the value of the card it revealed (you'll see why later).
-  def reveal
+  #  (unless it's already face-up, in which case the method should do nothing).
+  # It should also return the value of the card it revealed (you'll see why later).
+  def reveal(pos)
+    picked_card = self[pos]
+    unless picked_card.is_face_up
+      picked_card.reveal
+      return picked_card.to_s
+    end
   end
 
   def [](pos)
+    row, column = pos.split(",")
+    # debugger
+    @grid[row.to_i][column.to_i]
   end
 
+  # no use
   def []=(pos, value)
   end
 

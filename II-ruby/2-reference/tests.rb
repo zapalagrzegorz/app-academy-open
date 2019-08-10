@@ -1,6 +1,7 @@
 require_relative "board"
 require_relative "memory_puzzle"
 require "byebug"
+require "colorize"
 
 # require_relative ""
 ALPHABET = [("a".."z")]
@@ -30,6 +31,7 @@ end
 test_board.populate
 # debugger
 
+#
 puts "it populates test_board"
 
 card = test_board.grid[0][0]
@@ -51,6 +53,17 @@ test_board.grid.each_with_index do |row, row_idx|
   end
 end
 
+# # BOARD
+puts "helper board[pos] checks board grid[row][column]?"
+
+# debugger
+if test_board["0,0"].instance_of? Card
+  puts "OK"
+else
+  puts "board[pos] fails to find instance of Card at @board[0,0]"
+  return
+end
+
 if pair == 2
   puts "it populates board with a pair of char"
 else
@@ -61,6 +74,21 @@ end
 
 test_board.render
 # puts board
+
+puts "it won? returns true when every card is revealed"
+
+test_board.grid.each_with_index do |row, row_idx|
+  row.each_with_index do |_column, column_idx|
+    test_board.grid[row_idx][column_idx].reveal
+  end
+end
+
+if test_board.won?
+  puts "OK"
+else
+  puts "test_board.won? fails"
+  return
+end
 
 puts "it MEMORY PUZZLE"
 #
@@ -108,7 +136,16 @@ end
 if memory_puzzle.guessed.length == 1
   "OK"
 else
-  "FAILURE"
+  "FAILURE - picked tile is not in guessed tiles list"
+end
+
+memory_puzzle.board.reveal(memory_puzzle.guessed[0])
+
+# debugger
+if memory_puzzle.board[memory_puzzle.guessed[0]].is_face_up
+  puts "OK"
+else
+  puts "FAILURE - Guess tile is not revealed"
 end
 
 memory_puzzle.guessed[1] = "0,1"
@@ -119,4 +156,30 @@ else
   puts "Player_picked_two? failed. Should return true, when there're
    two correct guess"
 end
+
+puts "Checks a match"
+# debugger
+
+card = test_board.grid[0][0]
+memory_puzzle.guessed[0] = "0,0"
+# find a pair
+
+pairing_indices = ""
+test_board.grid.each_with_index do |row, row_idx|
+  row.each_with_index do |_column, column_idx|
+    if test_board["#{row_idx}, #{column_idx}"] == card
+      pairing_indices = "#{row_idx},#{column_idx}"
+    end
+  end
+end
+
+memory_puzzle.guessed[1] = pairing_indices
+
+if memory_puzzle.check_match?
+  puts "OK"
+else
+  puts "check_match? fails to find a match".red
+  return
+end
+
 # memory_puzzle

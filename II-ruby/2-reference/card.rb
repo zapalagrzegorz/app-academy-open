@@ -1,6 +1,8 @@
 require "byebug"
 
 class Card
+  attr :is_face_up
+
   def initialize(value)
     @value = value
     @is_face_up = false

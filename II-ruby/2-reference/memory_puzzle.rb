@@ -6,7 +6,7 @@ require "byebug"
 class Memory_Puzzle
 
   # tests only
-  attr_accessor :guessed
+  attr_accessor :guessed, :board
 
   # attr_reader :guessed
 
@@ -21,8 +21,14 @@ class Memory_Puzzle
     end
   end
 
-  def check_match
-    # @guessed[0] == guessed[1]
+  def check_match?
+    # tu muszę porównać wartości
+    # debugger
+    if @board[@guessed[0]] == @board[@guessed[1]]
+      puts "Made a match!"
+      true
+    else
+    end
   end
 
   # debug purposes
@@ -37,14 +43,17 @@ class Memory_Puzzle
       take_turn
     end
 
-    check_match
+    if check_match?
+      record_match
+    else
+      hide_tiles_and_prompt_user
+    end
     # check
     sleep(n)
   end
 
   # HELPERS
   def take_turn
-    valid_input = false
     puts ""
 
     valid_input = false
@@ -60,6 +69,8 @@ class Memory_Puzzle
     end
 
     guessed.push(valid_input)
+    # debugger
+    @board.reveal(valid_input)
   end
 
   def valid_play?(player_input)
@@ -81,5 +92,17 @@ class Memory_Puzzle
 
   def player_picked_two?
     @guessed.length == 2
+  end
+
+  def record_match
+    # found tiles set to revealed
+    @board[@guessed[0]].reveal
+    @board[@guessed[1]].reveal
+  end
+
+  def hide_tiles_and_prompt_user
+    puts "Keep gueesing"
+    @board[@guessed[0]].hide
+    @board[@guessed[1]].hide
   end
 end
