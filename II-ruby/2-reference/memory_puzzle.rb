@@ -3,7 +3,13 @@ require_relative "card"
 # require "set"
 require "byebug"
 
-class MemoryPuzzle
+class Memory_Puzzle
+
+  # tests only
+  attr_accessor :guessed
+
+  # attr_reader :guessed
+
   def initialize(board)
     @board = board
     @guessed = []
@@ -40,16 +46,40 @@ class MemoryPuzzle
   def take_turn
     valid_input = false
     puts ""
-    puts "Current text is: #{@fragment}"
 
+    valid_input = false
     until valid_input
-      player_char = @current_player.guess
-      valid_input = valid_play?(player_char)
+      puts "Make a pick of a tile: "
+      valid_input = valid_play?(gets.chomp)
+      # expected formatrow, column
+      # player_char = @current_player.guess
+      # valid_input = valid_play?(player_char)
       unless valid_input
-        @current_player.alert_invalid_guess
+        alert_invalid_guess
       end
     end
 
-    @fragment += player_char
+    guessed.push(valid_input)
+  end
+
+  def valid_play?(player_input)
+    unless /^[0-3],[0-3]$/ =~ player_input
+      return false
+    end
+
+    # debugger
+    if player_input == @guessed[0]
+      return false
+    end
+
+    true
+  end
+
+  def alert_invalid_guess
+    puts "Accepted format is [0-3],[0-3]"
+  end
+
+  def player_picked_two?
+    @guessed.length == 2
   end
 end

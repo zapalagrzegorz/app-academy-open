@@ -1,13 +1,15 @@
 require "set"
+require_relative "card"
 
 class Board
-  ALPHABET = [("a".."z")]
-
+  ALPHABET = ("a".."z").to_a
+  BOARD_SIZE = 4
   attr_reader :grid
 
   def initialize(cards)
     @cards = cards
-    @grid = Array.new(4) { Array.new(4) }
+    @grid = Array.new(BOARD_SIZE) { Array.new(BOARD_SIZE) }
+    @guessed = 0
     # board.populate
   end
 
@@ -17,22 +19,35 @@ class Board
 
   # should fill the board with a set of shuffled Card pairs
   def populate
-    card_values = ALPHABET.sample(8)
-    card_values += card_values
-    # p card_values
+    random_card_values = generate_random_values
+
     @grid.each_with_index do |row, row_idx|
-      row.each_with_index do |column, column_idx|
-        @grid[row_idx][column_idx] = card_values[row_idx * 4 + column_idx]
+      row.each_with_index do |_column, column_idx|
+        @grid[row_idx][column_idx] = Card.new(random_card_values.shift)
       end
     end
   end
 
   #   should print out a representation of the Board's current state
   def render
+    # first line
+    puts "  0 1 2 3"
+    # print_line
+    line = ""
+    @grid.each_with_index do |row, row_index|
+      line = row_index.to_s
+      row.each_with_index do |column, col_index|
+        line += " #{column}"
+      end
+      puts line
+    end
   end
 
   #    should return true if all cards have been revealed.
   def won?
+    @guessed == (BOARD_SIZE ** 2) / 2
+    # albo trzymać liczbę odgadnionych pól
+    # albo za każdym razem liczyć całość
   end
 
   #   should reveal a Card at guessed_pos
@@ -44,5 +59,12 @@ class Board
   end
 
   def []=(pos, value)
+  end
+
+  # utilities
+  def generate_random_values
+    random_card_values = ALPHABET.sample(8)
+    random_card_values += random_card_values
+    random_card_values.shuffle
   end
 end
