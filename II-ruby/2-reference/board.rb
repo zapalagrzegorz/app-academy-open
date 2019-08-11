@@ -7,24 +7,23 @@ class Board
 
   attr_reader :grid
 
-  def initialize(cards)
-    @cards = cards
+  def initialize()
     @grid = Array.new(BOARD_SIZE) { Array.new(BOARD_SIZE) }
-    @guessed = 0
-    # board.populate
+    populate
+    # @guessed = 0
   end
 
   def self.testable
-    return self.new(["card1", "card2"])
+    return self.new()
   end
 
   # should fill the board with a set of shuffled Card pairs
   def populate
-    random_card_values = generate_random_values
+    random_cards = generate_random_cards
 
     @grid.each_with_index do |row, row_idx|
       row.each_with_index do |_column, column_idx|
-        @grid[row_idx][column_idx] = Card.new(random_card_values.shift)
+        @grid[row_idx][column_idx] = random_cards.shift
       end
     end
   end
@@ -37,8 +36,8 @@ class Board
     line = ""
     @grid.each_with_index do |row, row_index|
       line = row_index.to_s
-      row.each_with_index do |column, col_index|
-        line += " #{column}"
+      row.each_with_index do |tile|
+        line += " #{tile}"
       end
       puts line
     end
@@ -60,6 +59,7 @@ class Board
   #  (unless it's already face-up, in which case the method should do nothing).
   # It should also return the value of the card it revealed (you'll see why later).
   def reveal(pos)
+    # debugger
     picked_card = self[pos]
     unless picked_card.is_face_up
       picked_card.reveal
@@ -78,9 +78,10 @@ class Board
   end
 
   # utilities
-  def generate_random_values
+  def generate_random_cards
     random_card_values = ALPHABET.sample(8)
     random_card_values += random_card_values
     random_card_values.shuffle
+    random_card_values.map { |rand_value| Card.new(rand_value) }
   end
 end

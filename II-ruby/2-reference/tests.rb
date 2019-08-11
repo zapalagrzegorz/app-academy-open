@@ -67,7 +67,8 @@ end
 if pair == 2
   puts "it populates board with a pair of char"
 else
-  puts "it fails to populate board with a pair of char"
+  puts "it fails to populate board with a pair of char".red
+  return
 end
 
 # game.losses[game.current_player] = 2
@@ -86,20 +87,29 @@ end
 if test_board.won?
   puts "OK"
 else
-  puts "test_board.won? fails"
+  puts "test_board.won? fails".red
   return
+end
+
+# clear #reveal
+test_board.grid.each_with_index do |row, row_idx|
+  row.each_with_index do |_column, column_idx|
+    test_board.grid[row_idx][column_idx].hide
+  end
 end
 
 puts "it MEMORY PUZZLE"
 #
 puts "it creates memory puzzle"
 
+# debugger
 memory_puzzle = Memory_Puzzle.new(test_board)
 
 if memory_puzzle
   puts "OK"
 else
-  puts "FAILURE"
+  puts "FAILURE".red
+  return
 end
 
 puts "memory_puzzle takes a player pick"
@@ -109,43 +119,58 @@ puts "memory_puzzle takes a player pick"
 if memory_puzzle.valid_play?("0,0")
   puts "OK"
 else
-  puts "memory_puzzle fails to validate player input"
+  puts "memory_puzzle fails to validate correct player input".red
+  return
 end
 
 unless memory_puzzle.valid_play?("5,0")
   puts "OK"
 else
-  puts "memory_puzzle fails to validate player input"
+  puts "memory_puzzle fails to validate player input - outside range".red
+  return
 end
 
 unless memory_puzzle.valid_play?("a")
   puts "OK"
 else
-  puts "memory_puzzle fails to validate player input"
+  puts "memory_puzzle fails to validate player input - incorrect format".red
+  return
 end
 
 memory_puzzle.guessed[0] = "0,0"
+
 unless memory_puzzle.valid_play?("0,0")
   puts "OK"
 else
   puts "memory_puzzle fails to validate player input - 
-  the same input should be invalid"
+  the same input should be invalid".red
 end
 # memory_puzzle.take_turn
 
 if memory_puzzle.guessed.length == 1
   "OK"
 else
-  "FAILURE - picked tile is not in guessed tiles list"
+  "FAILURE - picked tile is not in guessed tiles list".red
+  return
 end
 
-memory_puzzle.board.reveal(memory_puzzle.guessed[0])
+memory_puzzle.board.reveal("0,3")
+
+unless memory_puzzle.valid_play?("0,3")
+  puts "OK"
+else
+  puts "memory_puzzle fails to validate player input - 
+  revealed card should be invalid".red
+  return
+end
 
 # debugger
+memory_puzzle.board.reveal(memory_puzzle.guessed[0])
 if memory_puzzle.board[memory_puzzle.guessed[0]].is_face_up
   puts "OK"
 else
-  puts "FAILURE - Guess tile is not revealed"
+  puts "FAILURE - Guessed tile is not revealed".red
+  return
 end
 
 memory_puzzle.guessed[1] = "0,1"
@@ -154,7 +179,8 @@ if memory_puzzle.player_picked_two?
   puts "OK"
 else
   puts "Player_picked_two? failed. Should return true, when there're
-   two correct guess"
+   two correct guess".red
+  return
 end
 
 puts "Checks a match"
@@ -183,3 +209,9 @@ else
 end
 
 # memory_puzzle
+# testy ręczne całości, aby ustalić, które elementy dalej
+# ostatnio była kończona metoda won?
+
+# colorize matches
+# should be able to choose revelead card
+# completed

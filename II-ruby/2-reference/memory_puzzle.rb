@@ -22,12 +22,9 @@ class Memory_Puzzle
   end
 
   def check_match?
-    # tu muszę porównać wartości
-    # debugger
     if @board[@guessed[0]] == @board[@guessed[1]]
       puts "Made a match!"
       true
-    else
     end
   end
 
@@ -46,40 +43,44 @@ class Memory_Puzzle
     if check_match?
       record_match
     else
-      hide_tiles_and_prompt_user
+      clear_tiles
     end
     # check
-    sleep(n)
+    sleep(2)
   end
 
   # HELPERS
   def take_turn
     puts ""
 
-    valid_input = false
+    valid_input = nil
     until valid_input
-      puts "Make a pick of a tile: "
-      valid_input = valid_play?(gets.chomp)
-      # expected formatrow, column
-      # player_char = @current_player.guess
-      # valid_input = valid_play?(player_char)
-      unless valid_input
-        alert_invalid_guess
+      valid_input = take_player_input
+      puts
+
+      unless valid_play?(valid_input)
+        valid_input = nil
       end
     end
 
-    guessed.push(valid_input)
     # debugger
-    @board.reveal(valid_input)
+    update_and_render_board(valid_input)
   end
 
   def valid_play?(player_input)
     unless /^[0-3],[0-3]$/ =~ player_input
+      puts "Accepted format is [0-3],[0-3]"
       return false
     end
 
     # debugger
     if player_input == @guessed[0]
+      puts "You've just picked this tile. Please choose another. Format: [0-3],[0-3]"
+      return false
+    end
+
+    if board[player_input].is_face_up
+      puts "Card is already revealed"
       return false
     end
 
@@ -98,11 +99,28 @@ class Memory_Puzzle
     # found tiles set to revealed
     @board[@guessed[0]].reveal
     @board[@guessed[1]].reveal
+    clear_guessed
   end
 
-  def hide_tiles_and_prompt_user
+  def clear_tiles
     puts "Keep gueesing"
     @board[@guessed[0]].hide
     @board[@guessed[1]].hide
+    clear_guessed
+  end
+
+  def clear_guessed
+    @guessed = []
+  end
+
+  def take_player_input
+    puts "Make a pick of a tile: "
+    gets.chomp
+  end
+
+  def update_and_render_board(player_guess)
+    @guessed.push(player_guess)
+    @board.reveal(player_guess)
+    @board.render
   end
 end
