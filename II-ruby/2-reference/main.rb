@@ -5,5 +5,5 @@ if __FILE__ == $PROGRAM_NAME
 
   game.run
 
-  puts "Game completed!"
+  game.completed
 end

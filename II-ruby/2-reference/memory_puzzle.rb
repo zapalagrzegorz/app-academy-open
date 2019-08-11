@@ -1,18 +1,21 @@
 require_relative "board"
 require_relative "card"
+require_relative "human-player"
 # require "set"
 require "byebug"
 
 class Memory_Puzzle
 
   # tests only
-  attr_accessor :guessed, :board
+  attr_accessor :guessed, :board, :human_player
+  # human_player
 
   # attr_reader :guessed
 
   def initialize(board)
     @board = board
     @guessed = []
+    @human_player = HumanPlayer.new
   end
 
   def run
@@ -52,39 +55,20 @@ class Memory_Puzzle
   # HELPERS
   def take_turn
     puts ""
-
     valid_input = nil
     until valid_input
-      valid_input = take_player_input
-      puts
-
+      valid_input = human_player.make_guess
       unless valid_play?(valid_input)
         valid_input = nil
       end
     end
-
+    # if human - human.make_guess
+    # valid_input
+    # else
+    # valid_input = AI.make_guess
+    # end
     # debugger
     update_and_render_board(valid_input)
-  end
-
-  def valid_play?(player_input)
-    unless /^[0-3],[0-3]$/ =~ player_input
-      puts "Accepted format is [0-3],[0-3]"
-      return false
-    end
-
-    # debugger
-    if player_input == @guessed[0]
-      puts "You've just picked this tile. Please choose another. Format: [0-3],[0-3]"
-      return false
-    end
-
-    if board[player_input].is_face_up
-      puts "Card is already revealed"
-      return false
-    end
-
-    true
   end
 
   def alert_invalid_guess
@@ -113,14 +97,28 @@ class Memory_Puzzle
     @guessed = []
   end
 
-  def take_player_input
-    puts "Make a pick of a tile: "
-    gets.chomp
-  end
-
   def update_and_render_board(player_guess)
     @guessed.push(player_guess)
     @board.reveal(player_guess)
     @board.render
+  end
+
+  def valid_play?(player_input)
+    unless /^[0-3],[0-3]$/ =~ player_input
+      puts "Accepted format is [0-3],[0-3]"
+      return false
+    end
+
+    if @board[player_input].is_face_up
+      puts "Card is already revealed"
+      return false
+    end
+
+    true
+  end
+
+  def completed
+    puts
+    puts "Game completed!"
   end
 end

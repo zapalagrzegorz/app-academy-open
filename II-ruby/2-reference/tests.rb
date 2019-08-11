@@ -1,5 +1,6 @@
 require_relative "board"
 require_relative "memory_puzzle"
+require_relative "human-player"
 require "byebug"
 require "colorize"
 
@@ -98,9 +99,9 @@ test_board.grid.each_with_index do |row, row_idx|
   end
 end
 
-puts "it MEMORY PUZZLE"
+puts "###describe MEMORY PUZZLE"
 #
-puts "it creates memory puzzle"
+puts "##it creates memory puzzle"
 
 # debugger
 memory_puzzle = Memory_Puzzle.new(test_board)
@@ -112,38 +113,56 @@ else
   return
 end
 
-puts "memory_puzzle takes a player pick"
+puts "## memory puzzle includes @humanPlayer  "
 
-#validate input
+human_player = HumanPlayer.new
+
+if human_player
+  puts "OK"
+else
+  puts "Human Player doesn't exist".red
+  return
+end
+
+if memory_puzzle.human_player
+  "OK"
+else
+  puts "human player is not a member of memory_puzzle".red
+  return
+end
+
+puts "##memory_puzzle takes a player pick"
 
 if memory_puzzle.valid_play?("0,0")
   puts "OK"
 else
-  puts "memory_puzzle fails to validate correct player input".red
+  puts "human_player fails to validate correct player input".red
   return
 end
 
 unless memory_puzzle.valid_play?("5,0")
   puts "OK"
 else
-  puts "memory_puzzle fails to validate player input - outside range".red
+  puts "human_player fails to validate player input - outside range".red
   return
 end
 
 unless memory_puzzle.valid_play?("a")
   puts "OK"
 else
-  puts "memory_puzzle fails to validate player input - incorrect format".red
+  puts "human_player fails to validate player input - incorrect format".red
   return
 end
 
 memory_puzzle.guessed[0] = "0,0"
+memory_puzzle.board.reveal(memory_puzzle.guessed[0])
 
 unless memory_puzzle.valid_play?("0,0")
   puts "OK"
 else
   puts "memory_puzzle fails to validate player input - 
   the same input should be invalid".red
+  return
 end
 # memory_puzzle.take_turn
 
