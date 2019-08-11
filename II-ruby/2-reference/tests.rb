@@ -99,6 +99,17 @@ test_board.grid.each_with_index do |row, row_idx|
   end
 end
 
+puts "## board get_unknown_tiles"
+
+uknown_tiles = test_board.get_unknown_tiles
+# debugger
+if uknown_tiles.length == 16
+  puts "OK"
+else
+  puts "#get_unknown_tiles fails to return array of uknown tiles(cards)".red
+  return
+end
+
 puts "###describe MEMORY PUZZLE"
 #
 puts "##it creates memory puzzle"
@@ -113,7 +124,7 @@ else
   return
 end
 
-puts "## memory puzzle includes @humanPlayer  "
+puts "## memory puzzle includes @humanPlayer"
 
 human_player = HumanPlayer.new
 
@@ -131,9 +142,102 @@ else
   return
 end
 
+puts "## memory puzzle includes @AIplayer"
+
+if memory_puzzle.ai_player
+  puts "OK"
+else
+  puts "ai_player is not a member of memory_puzzle".red
+  return
+end
+
+puts "##memory_puzzle takes a AI player pick"
+
+puts "#AI player makes guess"
+ai_first_guess = memory_puzzle.ai_player.make_guess(uknown_tiles)
+if ai_first_guess == "0,0"
+  puts "OK"
+else
+  puts "Fails to make a correct guess".red
+end
+
+puts "#ai makes valid guess"
+if memory_puzzle.valid_play?(ai_first_guess)
+  puts "OK"
+else
+  puts "failes".red
+  return
+end
+
+puts "#update_and_render_board for AI move"
+
+memory_puzzle.update_and_render_board(ai_first_guess)
+
+if memory_puzzle.guessed.length == 1
+  puts "OK"
+else
+  puts "Game should have recorded AI guess".red
+  return
+end
+
+puts "#AI player should record its known_cards"
+
+if memory_puzzle.ai_player.known_cards.length == 1
+  puts "OK"
+else
+  puts "nothing is recorded in known cards".red
+  return
+end
+
+AIplayer_known_card_key, AIplayer_known_card_val = memory_puzzle.ai_player.known_cards.first
+
+if AIplayer_known_card_key == "0,0"
+  puts "OK"
+else
+  puts "wrong card recorded in known cards".red
+  return
+end
+
+if AIplayer_known_card_val.length == 1
+  puts "OK"
+else
+  puts "AIplayer_known_card_value should be char of 1 length".red
+  return
+end
+
+puts "# game should record ai guess on board"
+if memory_puzzle.board.get_unknown_tiles.length == 15
+  puts "OK"
+else
+  puts "FAILURE".red
+  return
+end
+
+puts "# second AI guess"
+
+# debugger
+uknown_tiles_after_first_guess = test_board.get_unknown_tiles
+ai_second_guess = memory_puzzle.ai_player.make_guess(uknown_tiles_after_first_guess)
+if ai_second_guess == "0,1"
+  puts "OK"
+else
+  puts "Fails to make a correct guess".red
+  return
+end
+
+puts "#ai makes valid guess"
+if memory_puzzle.valid_play?(ai_second_guess)
+  puts "OK"
+else
+  puts "failes to validate ai guess".red
+  return
+end
+
 puts "##memory_puzzle takes a player pick"
 
-if memory_puzzle.valid_play?("0,0")
+# can't be anymore (0,0), as it's taken above, as well as 0,1
+# no after each, before_each methods
+if memory_puzzle.valid_play?("0,2")
   puts "OK"
 else
   puts "human_player fails to validate correct player input".red

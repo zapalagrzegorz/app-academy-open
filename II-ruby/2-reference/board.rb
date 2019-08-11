@@ -84,4 +84,20 @@ class Board
     random_card_values.shuffle
     random_card_values.map { |rand_value| Card.new(rand_value) }
   end
+
+  def get_unknown_tiles
+    # pos => value
+    unknown_tiles = {}
+    @grid.each_with_index do |row, row_idx|
+      row.each_with_index do |tile, column_idx|
+        unless tile.is_face_up
+          pos_key = "#{row_idx},#{column_idx}"
+          # debugger
+          unknown_tiles[pos_key] = tile.value
+        end
+      end
+    end
+
+    unknown_tiles
+  end
 end

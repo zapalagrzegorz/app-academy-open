@@ -1,13 +1,14 @@
 require_relative "board"
 require_relative "card"
 require_relative "human-player"
+require_relative "AI-player"
 # require "set"
 require "byebug"
 
 class Memory_Puzzle
 
   # tests only
-  attr_accessor :guessed, :board, :human_player
+  attr_accessor :guessed, :board, :human_player, :ai_player
   # human_player
 
   # attr_reader :guessed
@@ -16,6 +17,8 @@ class Memory_Puzzle
     @board = board
     @guessed = []
     @human_player = HumanPlayer.new
+    @ai_player = AIplayer.new
+    # @current_player =
   end
 
   def run
@@ -54,10 +57,15 @@ class Memory_Puzzle
 
   # HELPERS
   def take_turn
+    # change player
+
     puts ""
     valid_input = nil
     until valid_input
-      valid_input = human_player.make_guess
+      # @board.filter( ) possible_guesses
+
+      possible_guesses = @board.get_unknown_tiles
+      valid_input = human_player.make_guess(possible_guesses)
       unless valid_play?(valid_input)
         valid_input = nil
       end
