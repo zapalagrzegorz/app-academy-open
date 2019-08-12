@@ -5,7 +5,7 @@ class HumanPlayer
     # pos1 => pos2
   end
 
-  def make_guess
+  def make_guess(_arg1, _arg2)
     puts "Make a pick of a tile: "
     gets.chomp
   end

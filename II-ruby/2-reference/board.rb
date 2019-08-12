@@ -5,7 +5,10 @@ class Board
   ALPHABET = ("a".."z").to_a
   BOARD_SIZE = 4
 
-  attr_reader :grid
+  # testing purposes
+  attr_accessor :grid
+
+  # attr_reader :grid
 
   def initialize()
     @grid = Array.new(BOARD_SIZE) { Array.new(BOARD_SIZE) }

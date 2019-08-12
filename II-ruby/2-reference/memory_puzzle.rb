@@ -18,7 +18,7 @@ class Memory_Puzzle
     @guessed = []
     @human_player = HumanPlayer.new
     @ai_player = AIplayer.new
-    # @current_player =
+    @current_player = @human_player
   end
 
   def run
@@ -51,32 +51,26 @@ class Memory_Puzzle
     else
       clear_tiles
     end
+
+    change_player
     # check
     sleep(2)
   end
 
   # HELPERS
   def take_turn
-    # change player
-
     puts ""
     valid_input = nil
     until valid_input
-      # @board.filter( ) possible_guesses
-
       possible_guesses = @board.get_unknown_tiles
-      valid_input = human_player.make_guess(possible_guesses)
+      valid_input = @current_player.make_guess(possible_guesses, @guessed[0])
       unless valid_play?(valid_input)
         valid_input = nil
       end
     end
-    # if human - human.make_guess
-    # valid_input
-    # else
-    # valid_input = AI.make_guess
-    # end
-    # debugger
+
     update_and_render_board(valid_input)
+    sleep(2)
   end
 
   def alert_invalid_guess
@@ -128,5 +122,15 @@ class Memory_Puzzle
   def completed
     puts
     puts "Game completed!"
+  end
+
+  def change_player
+    if @current_player == @human_player
+      @current_player = @ai_player
+    else
+      @current_player = @human_player
+    end
+
+    puts "Now its turn for #{@current_player}"
   end
 end

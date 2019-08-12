@@ -154,11 +154,13 @@ end
 puts "##memory_puzzle takes a AI player pick"
 
 puts "#AI player makes guess"
+# debugger
 ai_first_guess = memory_puzzle.ai_player.make_guess(uknown_tiles)
 if ai_first_guess == "0,0"
   puts "OK"
 else
   puts "Fails to make a correct guess".red
+  return
 end
 
 puts "#ai makes valid guess"
@@ -217,6 +219,7 @@ puts "# second AI guess"
 
 # debugger
 uknown_tiles_after_first_guess = test_board.get_unknown_tiles
+# debugger
 ai_second_guess = memory_puzzle.ai_player.make_guess(uknown_tiles_after_first_guess)
 if ai_second_guess == "0,1"
   puts "OK"
@@ -331,10 +334,103 @@ else
   return
 end
 
-# memory_puzzle
-# testy ręczne całości, aby ustalić, które elementy dalej
-# ostatnio była kończona metoda won?
+puts "## AI PLAYER find matches"
 
-# colorize matches
-# should be able to choose revelead card
-# completed
+memory_puzzle.ai_player.known_cards = {
+  "0,0" => "a",
+  "0,1" => "b",
+  "0,2" => "c",
+}
+
+unless memory_puzzle.ai_player.match?
+  puts "OK"
+else
+  puts "AI Player finds a match where it isn't".red
+  return
+end
+
+memory_puzzle.ai_player.known_cards = {
+  "0,0" => "a",
+  "0,1" => "b",
+  "0,2" => "a",
+}
+
+if memory_puzzle.ai_player.match?
+  puts "OK"
+else
+  puts "AI Player fails to finds a match".red
+  return
+end
+
+puts "## AI PLAYER makes a pick of unknown tile"
+
+# clear #reveal
+test_board.grid.each_with_index do |row, row_idx|
+  row.each_with_index do |_column, column_idx|
+    test_board.grid[row_idx][column_idx].hide
+  end
+end
+
+memory_puzzle.ai_player.known_cards = {
+  "0,0" => "c",
+  "0,1" => "b",
+}
+
+memory_puzzle.ai_player.matching_pair = []
+
+test_board.grid[0][0] = Card.new("c")
+test_board.grid[0][1] = Card.new("b")
+test_board.grid[0][2] = Card.new("d")
+test_board.grid[0][2].reveal
+test_board.grid[0][3] = Card.new("d")
+
+uknown_tiles = test_board.get_unknown_tiles
+
+AIGuessFirst = memory_puzzle.ai_player.make_guess(uknown_tiles)
+
+if AIGuessFirst == "0,3"
+  puts "OK"
+else
+  puts "AI Player fails to pick first unknown tile".red
+  return
+end
+
+puts "## AI PLAYER make random first guess, and pairs it with memory"
+
+# clear #reveal
+test_board.grid.each_with_index do |row, row_idx|
+  row.each_with_index do |_column, column_idx|
+    test_board.grid[row_idx][column_idx].hide
+  end
+end
+
+memory_puzzle.ai_player.known_cards = {
+  "0,0" => "c",
+  "0,1" => "b",
+  "0,2" => "d",
+}
+
+memory_puzzle.ai_player.matching_pair = []
+
+test_board.grid[0][0] = Card.new("c")
+test_board.grid[0][1] = Card.new("b")
+test_board.grid[0][2] = Card.new("d")
+test_board.grid[0][2].reveal
+test_board.grid[0][3] = Card.new("d")
+
+uknown_tiles = test_board.get_unknown_tiles
+
+# debugger
+AIGuessSecond = memory_puzzle.ai_player.make_guess(uknown_tiles, "0,2")
+
+if AIGuessSecond == "0,3"
+  puts "OK"
+else
+  puts "AI Player fails to pick first unknown tile".red
+  return
+end
+
+# AIplayer
+
+# zaczął brać ciągle kartę już odkrytą
+# Card is already revealed
