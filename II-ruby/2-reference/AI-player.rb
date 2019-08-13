@@ -10,22 +10,22 @@ class AIplayer
     @matched_cards = {}
     @matching_pair = []
     @picked_card = {}
+    # debugger
   end
 
   #   hould take in a position and the
-  # value of the card revealed at that location. It should then store it in a @known_cards hash.  def receive_revealed_card
+  # value of the card revealed at that location. It should then store it in a @known_cards hash.
+  # def receive_revealed_card
   def receive_revealed_card(position, value)
+    # debugger
     @known_cards[position] = value
   end
 
   def make_guess(guesses_list, previous_guess = nil)
     # debugger
-    if @known_cards.keys.length.positive?
+    if know_any_cards?
       unknown_keys = guesses_list.keys - @known_cards.keys
       unknown_tile_position = unknown_keys[0]
-      # unknown_tile_position = guesses_list.keys.find do |position|
-      #   !@known_cards.keys.include?(position)
-      # end
     else
       unknown_tile_position = guesses_list.keys[0]
     end
@@ -42,6 +42,7 @@ class AIplayer
         return @matching_pair.pop
       end
     else
+      # debugger
       receive_revealed_card(unknown_tile_position, value)
 
       return unknown_tile_position
@@ -59,8 +60,15 @@ class AIplayer
 
     matching_pair_hash = @known_cards.select { |k| @known_cards[k] == matching_value }
     # hash select return select
+    # @known_cards.remove pairs
+    @known_cards = @known_cards.select { |k, v| @known_cards.values.count(v) == 1 }
+
     @matching_pair = matching_pair_hash.keys
 
     @matching_pair.length.positive? ? true : false
+  end
+
+  def know_any_cards?
+    @known_cards.keys.length.positive?
   end
 end

@@ -112,6 +112,7 @@ class Memory_Puzzle
     end
 
     if @board[player_input].is_face_up
+      # debugger
       puts "Card is already revealed"
       return false
     end

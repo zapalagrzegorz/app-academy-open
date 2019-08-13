@@ -84,7 +84,7 @@ class Board
   def generate_random_cards
     random_card_values = ALPHABET.sample(8)
     random_card_values += random_card_values
-    random_card_values.shuffle
+    random_card_values.shuffle!
     random_card_values.map { |rand_value| Card.new(rand_value) }
   end
 
