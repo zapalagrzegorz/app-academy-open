@@ -21,37 +21,47 @@ class AIplayer
     @known_cards[position] = value
   end
 
-  def make_guess(guesses_list, previous_guess = nil)
+  def make_guess(guesses_list)
     # debugger
-    if know_any_cards?
-      unknown_keys = guesses_list.keys - @known_cards.keys
-      unknown_tile_position = unknown_keys[0]
-    else
-      unknown_tile_position = guesses_list.keys[0]
-    end
 
-    value = guesses_list[unknown_tile_position]
+    update_matching_cards(guesses_list)
 
-    # jeśli właśnie wziął kartę, którą już wcześniej wziął
-    # to wówczas weź nowszą pozycję - to chyba błąd
-    #
     if match?
-      if @matching_pair[0] != guesses_list[previous_guess]
-        return @matching_pair.shift
-      else
-        return @matching_pair.pop
-      end
-    else
-      # debugger
-      receive_revealed_card(unknown_tile_position, value)
-
-      return unknown_tile_position
+      return @matching_pair.shift
     end
+
+    picked_card_position = pick_any_unknown_position(guesses_list)
+    picked_card_value = guesses_list[picked_card_position]
+
+    receive_revealed_card(picked_card_position, picked_card_value)
+    set_matching_cards
+
+    picked_card_position
+    # end
+  end
+
+  def pick_any_unknown_position(possible_picks)
+    unknown_positions = possible_picks.keys - @known_cards.keys
+
+    unknown_positions.sample
   end
 
   def match?
-    return true if @matching_pair.length.positive?
+    true if @matching_pair.length.positive?
+  end
 
+  def know_any_cards?
+    @known_cards.keys.length.positive?
+  end
+
+  # zachzostały odkryteowaj na liście pasujących karzostały odkryte zostały odkrytezostały odkrytezostały odkrytezostały odkrytezostały odkrytet, te które są nieodkryte
+  def update_matching_cards(possible_cards)
+    @matching_pair = @matching_pair.select do |matching_position|
+      possible_cards.keys.include?(matching_position)
+    end
+  end
+
+  def set_matching_cards
     matching_value = @known_cards.values.detect do |card_value|
       # debugger
       @known_cards.values.count(card_value) > 1
@@ -61,14 +71,9 @@ class AIplayer
     matching_pair_hash = @known_cards.select { |k| @known_cards[k] == matching_value }
     # hash select return select
     # @known_cards.remove pairs
+    # usunięcie z listy (hash) znanych kart, kart sparowanych
     @known_cards = @known_cards.select { |k, v| @known_cards.values.count(v) == 1 }
 
     @matching_pair = matching_pair_hash.keys
-
-    @matching_pair.length.positive? ? true : false
-  end
-
-  def know_any_cards?
-    @known_cards.keys.length.positive?
   end
 end

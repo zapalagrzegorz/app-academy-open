@@ -156,8 +156,9 @@ puts "##memory_puzzle takes a AI player pick"
 puts "#AI player makes guess"
 # debugger
 ai_first_guess = memory_puzzle.ai_player.make_guess(uknown_tiles)
-if ai_first_guess == "0,0"
-  puts "OK"
+if ai_first_guess.respond_to?(:to_s)
+  # debugger
+  puts "OK" if memory_puzzle.valid_play?(ai_first_guess)
 else
   puts "Fails to make a correct guess".red
   return
@@ -191,9 +192,12 @@ else
   return
 end
 
+# debugger
 AIplayer_known_card_key, AIplayer_known_card_val = memory_puzzle.ai_player.known_cards.first
 
-if AIplayer_known_card_key == "0,0"
+if AIplayer_known_card_key.respond_to?(:to_s) &&
+   AIplayer_known_card_key.length == 3 &&
+   AIplayer_known_card_val.length == 1
   puts "OK"
 else
   puts "wrong card recorded in known cards".red
@@ -215,16 +219,16 @@ else
   return
 end
 
-puts "# second AI guess"
+puts "#second AI guess"
 
 # debugger
+
 uknown_tiles_after_first_guess = test_board.get_unknown_tiles
-# debugger
 ai_second_guess = memory_puzzle.ai_player.make_guess(uknown_tiles_after_first_guess)
-if ai_second_guess == "0,1"
+if ai_second_guess != ai_first_guess
   puts "OK"
 else
-  puts "Fails to make a correct guess".red
+  puts "Fails to make a correct second guess. Second guess is equal to first".red
   return
 end
 
@@ -290,7 +294,6 @@ else
   return
 end
 
-# debugger
 memory_puzzle.board.reveal(memory_puzzle.guessed[0])
 if memory_puzzle.board[memory_puzzle.guessed[0]].is_face_up
   puts "OK"
@@ -310,7 +313,6 @@ else
 end
 
 puts "Checks a match"
-# debugger
 
 card = test_board.grid[0][0]
 memory_puzzle.guessed[0] = "0,0"
@@ -341,6 +343,8 @@ memory_puzzle.ai_player.known_cards = {
   "0,1" => "b",
   "0,2" => "c",
 }
+# debugger
+memory_puzzle.ai_player.matching_pair = []
 
 unless memory_puzzle.ai_player.match?
   puts "OK"
@@ -354,7 +358,8 @@ memory_puzzle.ai_player.known_cards = {
   "0,1" => "b",
   "0,2" => "a",
 }
-
+memory_puzzle.ai_player.set_matching_cards
+# debugger
 if memory_puzzle.ai_player.match?
   puts "OK"
 else
@@ -375,6 +380,18 @@ memory_puzzle.ai_player.known_cards = {
   "0,0" => "c",
   "0,1" => "b",
 }
+knownPositions = ["0,0", "0,1"]
+debugger
+# all cards are hidden
+AIGuess = memory_puzzle.ai_player.make_guess(uknown_tiles)
+
+# debugger
+unless knownPositions.include?(AIGuess)
+  puts "OK"
+else
+  puts "AI Player fails to pick random tile".red
+  return
+end
 
 memory_puzzle.ai_player.matching_pair = []
 
@@ -387,13 +404,6 @@ test_board.grid[0][3] = Card.new("d")
 uknown_tiles = test_board.get_unknown_tiles
 
 AIGuessFirst = memory_puzzle.ai_player.make_guess(uknown_tiles)
-
-if AIGuessFirst == "0,3"
-  puts "OK"
-else
-  puts "AI Player fails to pick first unknown tile".red
-  return
-end
 
 puts "## AI PLAYER make random first guess, and pairs it with memory"
 
@@ -420,8 +430,9 @@ test_board.grid[0][3] = Card.new("d")
 
 uknown_tiles = test_board.get_unknown_tiles
 
-# debugger
-AIGuessSecond = memory_puzzle.ai_player.make_guess(uknown_tiles, "0,2")
+knon
+debugger
+AIGuessSecond = memory_puzzle.ai_player.make_guess(uknown_tiles)
 
 if AIGuessSecond == "0,3"
   puts "OK"

@@ -27,13 +27,6 @@ class Memory_Puzzle
     end
   end
 
-  def check_match?
-    if @board[@guessed[0]] == @board[@guessed[1]]
-      puts "Made a match!"
-      true
-    end
-  end
-
   # debug purposes
   # private
 
@@ -58,6 +51,13 @@ class Memory_Puzzle
   end
 
   # HELPERS
+  def check_match?
+    if @board[@guessed[0]] == @board[@guessed[1]]
+      puts "Made a match!"
+      true
+    end
+  end
+
   def take_turn
     puts ""
     valid_input = nil
