@@ -3,6 +3,7 @@ class AIplayer
   # testing purposes
   attr_accessor :known_cards, :matching_pair, :picked_card
 
+  attr_reader :score
   # attr_reader :known_cards
 
   def initialize
@@ -10,6 +11,7 @@ class AIplayer
     @matched_cards = {}
     @matching_pair = []
     @picked_card = {}
+    @score = 0
     # debugger
   end
 
@@ -54,7 +56,7 @@ class AIplayer
     @known_cards.keys.length.positive?
   end
 
-  # zachzostały odkryteowaj na liście pasujących karzostały odkryte zostały odkrytezostały odkrytezostały odkrytezostały odkrytezostały odkrytet, te które są nieodkryte
+  # zachowa na liście pasujących te, które są nieodkryte
   def update_matching_cards(possible_cards)
     @matching_pair = @matching_pair.select do |matching_position|
       possible_cards.keys.include?(matching_position)
@@ -75,5 +77,9 @@ class AIplayer
     @known_cards = @known_cards.select { |k, v| @known_cards.values.count(v) == 1 }
 
     @matching_pair = matching_pair_hash.keys
+  end
+
+  def record_score
+    @score += 1
   end
 end

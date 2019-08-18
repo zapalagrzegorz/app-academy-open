@@ -92,12 +92,15 @@ else
   return
 end
 
-# clear #reveal
-test_board.grid.each_with_index do |row, row_idx|
-  row.each_with_index do |_column, column_idx|
-    test_board.grid[row_idx][column_idx].hide
+def hide_all_cards(test_board)
+  test_board.grid.each_with_index do |row, row_idx|
+    row.each_with_index do |_column, column_idx|
+      test_board.grid[row_idx][column_idx].hide
+    end
   end
 end
+
+hide_all_cards(test_board)
 
 puts "## board get_unknown_tiles"
 
@@ -244,6 +247,10 @@ puts "##memory_puzzle takes a player pick"
 
 # can't be anymore (0,0), as it's taken above, as well as 0,1
 # no after each, before_each methods
+# debugger
+
+hide_all_cards(test_board)
+
 if memory_puzzle.valid_play?("0,2")
   puts "OK"
 else
@@ -369,6 +376,7 @@ end
 
 puts "## AI PLAYER makes a pick of unknown tile"
 
+memory_puzzle.ai_player.matching_pair = []
 # clear #reveal
 test_board.grid.each_with_index do |row, row_idx|
   row.each_with_index do |_column, column_idx|
@@ -381,8 +389,8 @@ memory_puzzle.ai_player.known_cards = {
   "0,1" => "b",
 }
 knownPositions = ["0,0", "0,1"]
-debugger
 # all cards are hidden
+
 AIGuess = memory_puzzle.ai_player.make_guess(uknown_tiles)
 
 # debugger
@@ -429,19 +437,87 @@ test_board.grid[0][2].reveal
 test_board.grid[0][3] = Card.new("d")
 
 uknown_tiles = test_board.get_unknown_tiles
-
-knon
-debugger
+known_cards = ["0,0", "0,1", "0,2"]
+# knon
+# debugger
 AIGuessSecond = memory_puzzle.ai_player.make_guess(uknown_tiles)
 
-if AIGuessSecond == "0,3"
+if !known_cards.include?(AIGuessSecond)
   puts "OK"
 else
-  puts "AI Player fails to pick first unknown tile".red
+  puts "AI Player fails to pick unknown tile".red
   return
 end
 
-# AIplayer
+# clear #reveal
+test_board.grid.each_with_index do |row, row_idx|
+  row.each_with_index do |_column, column_idx|
+    test_board.grid[row_idx][column_idx].hide
+  end
+end
+
+puts "## AIplayer update_matching_cards"
+
+memory_puzzle.ai_player.matching_pair = ["0,0", "0,1"]
+all_posibilities = []
+
+test_board.grid.each_with_index do |row, row_idx|
+  row.each_with_index do |_column, column_idx|
+    all_posibilities.push("#{row_idx},#{column_idx}")
+  end
+end
+
+all_possibilites = all_posibilities - memory_puzzle.ai_player.matching_pair
+
+if all_possibilites.length == 14
+  puts "OK"
+else
+  puts "failure with update_matching_cards".red
+  return
+end
 
 # zaczął brać ciągle kartę już odkrytą
 # Card is already revealed
+
+# hide_all_cards
+puts "### scoring"
+
+puts "## AIplayer has score attribute initialized"
+
+if memory_puzzle.ai_player.score == 0
+  puts "OK"
+else
+  puts "AIplayer fails to initialize score attribute".red
+  return
+end
+
+puts "## AIplayer records positive match"
+
+memory_puzzle.ai_player.record_score
+
+if memory_puzzle.ai_player.score == 1
+  puts "OK"
+else
+  puts "AIplayer fails to initialize score attribute".red
+  return
+end
+
+puts "## Human Player has score attribute initialized"
+
+if human_player.score == 0
+  puts "OK"
+else
+  puts "Human Player fails to initialize score attribute".red
+  return
+end
+
+puts "## Human Player records positive match"
+
+human_player.record_score
+
+if human_player.score == 1
+  puts "OK"
+else
+  puts "human_player fails to initialize score attribute".red
+  return
+end

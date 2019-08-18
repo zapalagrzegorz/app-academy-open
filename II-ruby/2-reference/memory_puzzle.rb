@@ -43,9 +43,9 @@ class Memory_Puzzle
       record_match
     else
       clear_tiles
+      change_player
     end
 
-    change_player
     # check
     sleep(2)
   end
@@ -63,7 +63,7 @@ class Memory_Puzzle
     valid_input = nil
     until valid_input
       possible_guesses = @board.get_unknown_tiles
-      valid_input = @current_player.make_guess(possible_guesses, @guessed[0])
+      valid_input = @current_player.make_guess(possible_guesses)
       unless valid_play?(valid_input)
         valid_input = nil
       end
@@ -85,6 +85,7 @@ class Memory_Puzzle
     # found tiles set to revealed
     @board[@guessed[0]].reveal
     @board[@guessed[1]].reveal
+    @current_player.record_score
     clear_guessed
   end
 
@@ -123,6 +124,7 @@ class Memory_Puzzle
   def completed
     puts
     puts "Game completed!"
+    puts "Wins #{@human_player.score > @ai_player.score ? "Human" : "AI"}"
   end
 
   def change_player
