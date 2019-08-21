@@ -1,4 +1,3 @@
-require "set"
 require_relative "card"
 
 class Board
@@ -25,7 +24,7 @@ class Board
     random_cards = generate_random_cards
 
     @grid.each_with_index do |row, row_idx|
-      row.each_with_index do |_column, column_idx|
+      row.each_index do |column_idx|
         @grid[row_idx][column_idx] = random_cards.shift
       end
     end
@@ -39,7 +38,7 @@ class Board
     line = ""
     @grid.each_with_index do |row, row_index|
       line = row_index.to_s
-      row.each_with_index do |tile|
+      row.each do |tile|
         line += " #{tile}"
       end
       puts line
@@ -81,8 +80,15 @@ class Board
   end
 
   # utilities
+  # w solucji to metoda statyczna Card
+  # i to ma sens! bo chodzi o card, a nie o board
+  # TODO przepisać na statyczną metodę CARD
+  # def self.generate_random_cards
+  # end
+  # wywołanie: Card.generate_random_cards
   def generate_random_cards
-    random_card_values = ALPHABET.sample(8)
+    unique_card_number = (BOARD_SIZE ** 2) / 2
+    random_card_values = ALPHABET.sample(unique_card_number)
     random_card_values += random_card_values
     random_card_values.shuffle!
     random_card_values.map { |rand_value| Card.new(rand_value) }
