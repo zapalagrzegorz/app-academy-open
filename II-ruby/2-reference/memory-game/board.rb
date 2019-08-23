@@ -21,7 +21,7 @@ class Board
 
   # should fill the board with a set of shuffled Card pairs
   def populate
-    random_cards = generate_random_cards
+    random_cards = Card.generate_random_cards(BOARD_SIZE, ALPHABET)
 
     @grid.each_with_index do |row, row_idx|
       row.each_index do |column_idx|
@@ -34,6 +34,7 @@ class Board
   def render
     # first line
     puts "  0 1 2 3"
+    # puts "  #{(0...size).to_a.join(' ')}"
     # print_line
     line = ""
     @grid.each_with_index do |row, row_index|
@@ -41,6 +42,7 @@ class Board
       row.each do |tile|
         line += " #{tile}"
       end
+      # puts "#{i} #{row.join(' ')}"
       puts line
     end
   end
@@ -82,17 +84,6 @@ class Board
   # utilities
   # w solucji to metoda statyczna Card
   # i to ma sens! bo chodzi o card, a nie o board
-  # TODO przepisać na statyczną metodę CARD
-  # def self.generate_random_cards
-  # end
-  # wywołanie: Card.generate_random_cards
-  def generate_random_cards
-    unique_card_number = (BOARD_SIZE ** 2) / 2
-    random_card_values = ALPHABET.sample(unique_card_number)
-    random_card_values += random_card_values
-    random_card_values.shuffle!
-    random_card_values.map { |rand_value| Card.new(rand_value) }
-  end
 
   def get_unknown_tiles
     # pos => value
