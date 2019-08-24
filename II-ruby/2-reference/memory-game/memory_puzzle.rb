@@ -1,9 +1,7 @@
 require_relative "board"
-require_relative "card"
 require_relative "human-player"
 require_relative "AI-player"
-# require "set"
-require "byebug"
+# require "byebug"
 
 class Memory_Puzzle
 

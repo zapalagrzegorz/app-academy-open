@@ -11,7 +11,7 @@ class Card
     random_card_values = alphabet.sample(unique_card_number)
     random_card_values += random_card_values
     random_card_values.shuffle!
-    random_card_values.map { |rand_value| Card.new(rand_value) }
+    random_card_values.map { |rand_value| self.new(rand_value) }
   end
 
   def initialize(value)

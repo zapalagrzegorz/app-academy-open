@@ -2,7 +2,6 @@ class HumanPlayer
   attr_reader :score
 
   def initialize
-    @known_cards
     @matched_cards = {}
     @score = 0
     # pos1 => pos2
@@ -16,13 +15,14 @@ class HumanPlayer
   def receive_revealed_card
   end
 
-  def receive_match(posCard1, posCard2)
+  def receive_match(_posCard1, _posCard2)
   end
 
   def record_score
     @score += 1
   end
 
-  #   def get_input
-  #   end
+  def to_s
+    "human player."
+  end
 end

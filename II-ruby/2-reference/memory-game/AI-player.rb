@@ -82,4 +82,8 @@ class AIplayer
   def record_score
     @score += 1
   end
+
+  def to_s
+    "AI Player"
+  end
 end
