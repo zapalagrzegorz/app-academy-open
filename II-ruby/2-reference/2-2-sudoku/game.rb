@@ -1,16 +1,24 @@
 class Game
-  def initialize
-    @board
+  def initialize(board)
+    @board = board
   end
 
   def play
+    until board.solved?
+      @board.render
+      pos = prompt
+      set_tile(pos)
+    end
+
+    puts "Congratulations, you win!"
   end
 
-  def solved
+  def solved?
     @board.solved?
   end
 
   def render
+    @board.render
   end
 
   def prompt
@@ -30,4 +38,8 @@ class Game
   #   I wrote helper methods to get and validate input from the user;
   #   this should help keep our program from crashing. :)
 
+end
+
+if $PROGRAM_NAME == __FILE__
+  Game.new(Board.from_file).play
 end

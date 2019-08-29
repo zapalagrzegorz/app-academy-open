@@ -8,9 +8,9 @@ class Tile
 
   def to_s
     if @given
-      print "#{@value}".colorize(:blue)
+      return "#{@value}".colorize(:blue)
     else
-      print "#{@value}"
+      return "#{@value}"
     end
   end
 end
