@@ -62,12 +62,12 @@ class Game
 
   def parse(string)
     # https://stackoverflow.com/questions/49274/safe-integer-parsing-in-ruby
-    string.split(",").map { |i| i.to_i if i.match(/\A\d+\Z/) }
+    string.split(",").map { |i| i.to_i if i.match(/\A\d\Z/) }
   end
 
   def valid_pos?(pos)
     unless pos.is_a?(Array) && pos.count == 2 &&
-           pos.all? { |x| x.between?(0, @board.size - 1) }
+           pos.all? { |x| x.is_a?(Integer) && x.between?(0, @board.size - 1) }
       puts "Invalid position."
 
       return false

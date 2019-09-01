@@ -4,10 +4,6 @@ require "byebug"
 class Board
   attr_reader :grid
 
-  def initialize(grid)
-    @grid = grid
-  end
-
   # read a file
   # and parse it into a two-dimensional Array containing Tile instances.
   def self.from_file
@@ -19,6 +15,10 @@ class Board
     self.new(board)
 
     # self.new()el_numel_num
+  end
+
+  def initialize(grid)
+    @grid = grid
   end
 
   # A render method to display the current board state
@@ -39,14 +39,14 @@ class Board
   end
 
   #   A method to update the value of a Tile at the given position
-  def []=(pos, value)
-    row, col = pos
-    @grid[row][col].value = value
-  end
-
   def [](pos)
     row, col = pos
     @grid[row][col]
+  end
+
+  def []=(pos, value)
+    row, col = pos
+    @grid[row][col].value = value
   end
 
   #   A solved? method to let us know if the game is over
@@ -75,22 +75,17 @@ class Board
   #   I used several helper methods here. You will want to know if each row, column, and 3x3 square has been solved.
   # HELPERS
   def self.get_board_from_file(file)
-    board = []
+    tiles = []
 
     File.foreach(file) do |line|
-      row = []
-      line.chomp.split("").each do |el|
-        el_num = el.to_i
-        if el_num.zero?
-          row.push(Tile.new(el_num))
-        else
-          row.push(Tile.new(el_num, true))
-        end
-      end
-      board.push(row)
+      numbers = line.chomp.split("")
+
+      row = numbers.map { |el| Tile.new(el.to_i) }
+
+      tiles.push(row)
     end
 
-    board
+    tiles
   end
 
   def size
@@ -98,22 +93,16 @@ class Board
   end
 
   def solved_rows?
-    @grid.each do |row|
-      arr = []
-      row.each do |tile|
-        arr.push(tile.value)
-      end
-
-      unless arr.uniq.length == arr.length && arr.none?(&:zero?)
-        return false
-      end
-    end
-
-    true
+    @grid.all? { |row| solved_set?(row) }
   end
 
   def solved_columns?
-    @grid.transpose.all? { |row| row.uniq.length == row.length }
+    @grid.transpose.all? { |row| solved_set?(row) }
+  end
+
+  def solved_set?(tiles)
+    tiles_values = tiles.map(&:value)
+    tiles_values.uniq.length == tiles_values.length && tiles_values.none?(&:zero?)
   end
 
   def solved_squares?(startColumn, endColumn)
@@ -134,21 +123,15 @@ class Board
     sudoku_square.length == 9
   end
 
-  def solved_square?(sudoku_square)
-    return false unless sudoku_square.uniq.length == sudoku_square.length
-
-    true
-  end
-
   def solved_squares_in_range?(startColumn, endColumn)
     arr = []
     (0...9).each do |index_row|
       (startColumn..endColumn).each do |index_col|
-        arr.push(@grid[index_row][index_col].value)
+        arr.push(@grid[index_row][index_col])
       end
 
       if square_3x3?(arr)
-        return false unless solved_square?(arr)
+        return false unless solved_set?(arr)
 
         arr = []
       end

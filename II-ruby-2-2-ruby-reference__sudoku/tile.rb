@@ -4,9 +4,9 @@ class Tile
   attr_accessor :value
   attr_reader :given
 
-  def initialize(value, given = false)
+  def initialize(value)
     @value = value
-    @given = given
+    @given = value == 0 ? false : true
   end
 
   def to_s
