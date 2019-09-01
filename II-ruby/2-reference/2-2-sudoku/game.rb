@@ -1,5 +1,3 @@
-# PROMPT now
-
 require_relative "board"
 
 class Game
@@ -99,6 +97,3 @@ end
 if $PROGRAM_NAME == __FILE__
   Game.new(Board.from_file).play
 end
-
-game = Game.new(Board.from_file)
-game.board.solved?

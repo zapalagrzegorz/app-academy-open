@@ -8,6 +8,8 @@ class Board
     @grid = grid
   end
 
+  # read a file
+  # and parse it into a two-dimensional Array containing Tile instances.
   def self.from_file
 
     # https://stackoverflow.com/questions/1727217/file-open-open-and-io-foreach-in-ruby-what-is-the-difference
@@ -15,8 +17,6 @@ class Board
     board = get_board_from_file("./puzzles/sudoku1_almost.txt")
 
     self.new(board)
-    # read a file
-    # and parse it into a two-dimensional Array containing Tile instances.
 
     # self.new()el_numel_num
   end
@@ -54,8 +54,6 @@ class Board
     # You will want to know if each row, column, and
     # 3x3 square has been solved.
     # solved_rows? && solved_columns? && solved_squares?
-    # return
-    debugger
     unless solved_rows?
       puts "not solved rows"
       return false
@@ -66,11 +64,10 @@ class Board
       return false
     end
 
-    unless solved_squares?
+    unless solved_squares?(0, 2) && solved_squares?(3, 5) && solved_squares?(6, 8)
+      puts "not solved some square"
       return false
     end
-
-    puts "solved"
 
     true
   end
@@ -107,110 +104,56 @@ class Board
         arr.push(tile.value)
       end
 
-      return false unless arr.none?(&:zero?) && arr.uniq.length == arr.length
+      unless arr.uniq.length == arr.length && arr.none?(&:zero?)
+        return false
+      end
     end
+
+    true
   end
 
   def solved_columns?
     @grid.transpose.all? { |row| row.uniq.length == row.length }
   end
 
-  def solved_squares?
+  def solved_squares?(startColumn, endColumn)
+    columns_range = [[0, 2], [3, 5], [6, 8]]
+
+    columns_range.each do |range|
+      startColumn, endColumn = range
+
+      return false unless solved_squares_in_range?(startColumn, endColumn)
+    end
+
+    puts ""
+
+    true
+  end
+
+  def square_3x3?(sudoku_square)
+    sudoku_square.length == 9
+  end
+
+  def solved_square?(sudoku_square)
+    return false unless sudoku_square.uniq.length == sudoku_square.length
+
+    true
+  end
+
+  def solved_squares_in_range?(startColumn, endColumn)
     arr = []
-
     (0...9).each do |index_row|
-      (0..2).each do |index_col|
+      (startColumn..endColumn).each do |index_col|
         arr.push(@grid[index_row][index_col].value)
       end
-      if ((index_row + 1) % 3).zero?
-        return false unless arr.uniq.length == arr.length
+
+      if square_3x3?(arr)
+        return false unless solved_square?(arr)
 
         arr = []
       end
     end
 
-    puts ""
-
-    (0...9).each do |index_row|
-      (3..5).each do |index_col|
-        arr.push(@grid[index_row][index_col].value)
-      end
-      if (((index_row + 1) % 3).zero?)
-        return false unless arr.uniq.length == arr.length
-
-        arr = []
-      end
-    end
-
-    puts ""
-
-    (0...9).each do |index_row|
-      (6...9).each do |index_col|
-        arr.push(@grid[index_row][index_col].value)
-      end
-      if ((index_row + 1) % 3).zero?
-        return false unless arr.uniq.length == arr.length
-
-        arr = []
-      end
-    end
-
-    # @grid.each_with_index do |row, row_index|
-    #   # row - [0,1,2]
-    #   arr = []
-
-    #   row.each_with_index do |row_el, el_index|
-    #     if (((el_index + 1) % 3).zero?)
-    #     end
-    #     # row_el - 0, 1, 2
-    #     # stąd bym chciał tylko jedną tablicę
-    #     # columns.each do |column|
-    #     # [0,1,2]
-    #     # column.each do |column_el|
-    #     # 0,1,2
-    #     # debugger
-    #     arr.push(@grid[row_el][column_el].value)
-    #     # end
-    #   end
-    #   arr = []
-    #   # end
-    #   print arr
-    # end
-
-    # @grid[0][0]
-    # @grid[1][0]
-    # @grid[2][0]
-
-    # @grid[0][1]
-    # @grid[1][1]
-    # @grid[2][1]
-
-    # @grid[0][2]
-    # @grid[1][2]
-    # @grid[2][2]
-
-    # # 2
-    # @grid[0][3]
-    # @grid[0][4]
-    # @grid[0][5]
-
-    # @grid[1][3]
-    # @grid[1][4]
-    # @grid[1][5]
-
-    # @grid[2][3]
-    # @grid[2][4]
-    # @grid[2][5]
-    # 3..5
-    # 0..2
-
-    # 6..8
-    # 0..2
-
-    # 0..2
-    # 3..5
-
-    # 0..2
-    # 6..8
+    true
   end
 end
