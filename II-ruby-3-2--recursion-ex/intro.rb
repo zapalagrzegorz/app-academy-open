@@ -10,8 +10,16 @@ def range(startNum, endNum)
 end
 
 # Write both a recursive and iterative version of sum of an array.
-def sumIterative
+def sumIterative(arr)
+  sum = 0
+  (0...arr.length).each { |index| sum += arr[index] }
+  sum
 end
 
-def sumRecursive
+def sumRecursive(arr)
+  return 0 if arr.length.zero?
+
+  return arr.first if (arr.length == 1)
+
+  arr.first + sumRecursive(arr[1..arr.length])
 end
