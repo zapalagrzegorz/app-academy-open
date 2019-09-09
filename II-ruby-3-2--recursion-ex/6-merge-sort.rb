@@ -11,11 +11,11 @@ require "byebug"
 def merge_sort(arr)
   return arr if arr.length <= 1
 
-  left = arr[0...arr.length / 2]
-  right = arr[(arr.length / 2)...arr.length]
+  leftArr = arr[0...arr.length / 2]
+  rightArr = arr[(arr.length / 2)...arr.length]
 
-  left = merge_sort(left)
-  right = merge_sort(right)
+  left = merge_sort(leftArr)
+  right = merge_sort(rightArr)
 
   merge(left, right)
 end
@@ -48,4 +48,4 @@ def merge(leftArr, rightArr)
   sortedArr
 end
 
-p merge_sort([1, 0])
+p merge_sort([2, 6, 10, 12, 23, 0, 8, 5, 9, 3, 4])
