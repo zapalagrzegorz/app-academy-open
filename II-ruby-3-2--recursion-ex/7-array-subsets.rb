@@ -14,10 +14,13 @@ require "byebug"
 # Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 
 #     Those that do not contain 3 (all of these are subsets of [1, 2]).
-#     For every subset that does not contain 3, there is also a corresponding subset that is the same, except it also does contain 3.
+#     For every subset that does not contain 3, there is also
+# a corresponding subset that is the same, except it also does contain 3.
 
 # subsets([1, 2]) # => [[], [1], [2], [1, 2]]
 # subsetArr = []
+
+# subsets([1])
 
 def subsets(arr)
   return [[]] if arr.empty?
@@ -30,27 +33,9 @@ def subsets(arr)
 
   # concat Appends the elements of other_ary to self.
   # tyle co +
-  subs.concat(subs.map { |sub| sub + [arr.last] })
+  subArrays = subs.map { |sub| sub + [arr.last] }
+  subs.concat(subArrays)
 end
 
-# [].concat
-
-p subsets([1])
-# num
-# subsets(1, [2])
-# subsets(0, [2, 1])
-# [2]
-# subsetArr == [[2,1]]
-
-# subset <<
-# [2]
-# push(arr[0])
-# foreach, pusharr[0]
-
+# [1,2]
 #
-# [2]
-# [2]
-#
-# def mergeSubsets(left, right)
-#   [[left], [right], [left, right]]
-# end
