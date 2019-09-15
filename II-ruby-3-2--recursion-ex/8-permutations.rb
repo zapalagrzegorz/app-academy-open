@@ -66,7 +66,7 @@ def permutations(array)
   #  make the recursive call
 
   # take the base and join with the rest
-  perms = permutations(array.take(array.count - 1))
+  perms = permutations(array[0...-1])
   # dla permutacji [1,2,3]
 
   # wiemy, że permutacja([2,3]) -> [[2,3],[3,2]]
@@ -99,7 +99,7 @@ def permutations(array)
       # if i == 0 total_permutations << [first] + perm[i..-1]
       # if i == perm.length total_permutations << [first] + perm[i..-1]
 
-      total_permutations << perm[0...i] + [arr.last] + perm[i..-1]
+      total_permutations << perm[0...i] + [array.last] + perm[i..-1]
       # [] + [1] + [2] -> [1,2]
 
       # dla i = 1
