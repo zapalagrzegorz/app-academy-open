@@ -16,6 +16,10 @@ class WordChainer
   #   This should return all words in the dictionary one letter different than the current word.
   #    By "one letter different" we mean that both words have the same length and only differ at one position, e.g. "mat" and "cat" count as adjacent words, but "cat" and "cats" do not, nor do "cola" and "cool."
   def adjacent_words(word)
+    # variable name *masks* (hides) method name; references inside
+    # `adjacent_words` to `adjacent_words` will refer to the variable,
+    # not the method. This is common, because side-effect free methods
+    # are often named after what they return.
     adjacent_words = []
     # word.split("")
 
@@ -50,35 +54,71 @@ class WordChainer
 
   def run(source, target = "")
     @current_words = [source]
-    @all_seen_words = [source]
+    @all_seen_words = { source => nil }
 
+    #  @current_words, @all_seen_words = [source], { source => nil }
+
+    # zatrzymaj wcześniej jeśli w grafie (zbiorze) słów masz już szukane słowo
+    # @current_words.empty? || @all_seen_words.include?(target)
     until @current_words.empty?
-      new_current_words = []
+      explore_current_words()
+      # explore_current_words
+    end
 
-      @current_words.each do |current_word|
-        adjacent_words = adjacent_words(current_word)
+    puts build_path(target)
+  end
 
-        adjacent_words.each do |adjacent_word|
-          next if @all_seen_words.include?(adjacent_word)
+  # buduje ścieżki graf skierowany słów w @all_seen_words
+  # graf jest budowany etapami, po jednej odległości węzła, po jednej odmiennej
+  # literze
+  # po każdej iteracji sprawdza czy są nowe węzły
+  def explore_current_words()
+    new_current_words = []
+    @current_words.each do |current_word|
+      adjacent_words = adjacent_words(current_word)
 
-          new_current_words << adjacent_word
+      adjacent_words.each do |adjacent_word|
+        next if @all_seen_words.include?(adjacent_word)
 
-          @all_seen_words << adjacent_word
-        end
+        new_current_words << adjacent_word
+        @all_seen_words[adjacent_word] = current_word
       end
-
-      puts new_current_words
-      @current_words = new_current_words
-      sleep(1)
     end
 
     # After we finish looping through all the @current_words, print out new_current_words, and reset @current_words to new_current_word
+    # new_current_words.each { |word| puts " #{word} -> #{@all_seen_words[word]}" }
+
+    @current_words = new_current_words
+    # sleep(1)
+  end
+
+  # looks up the target in @all_seen_words
+  def build_path(target)
+    path = [target]
+
+    until @all_seen_words[target].nil?
+      word_letter_away = @all_seen_words[target]
+      path << word_letter_away
+      target = word_letter_away
+    end
+
+    path
+    # @all_seen_words[target]
+
+    # szukamy gallon
+    # @all_seen_words["gallon"] => gallop
+    # @all_seen_words["gallop"] => wallop
+    # ...["wallop"] => wallow
+    # ...["wallow"] => fallow
+    # ...["fallow"] => fellow
+    # ...["fellow"] => yellow
+    # ..."yellow" => nil
   end
 end
 
 word_chainer = WordChainer.new("dictionary.txt")
 
-word_chainer.run("abaci")
+word_chainer.run("yellow", "gallop")
 
 # solution
 # def adjacent_words2(word)
@@ -106,31 +146,3 @@ word_chainer.run("abaci")
 # end
 
 # word_chainer
-
-# Next, let's begin writing a method #run(source, target). Our strategy is:
-
-# Keep a list of @current_words. Start this with just [source].
-
-# Also keep a list of @all_seen_words. Start this with just [source].
-
-# Begin an outer loop which will run as long as @current_words is not empty. This will halt our exploration when all words adjacent to @current_word have been discovered.
-
-# Inside this loop, create a new, empty list of new_current_words. We're going to fill this up with new words (that aren't in @all_seen_words) that are adjacent (one step away) from a word in @current_words.
-
-# To fill up new_current_words, begin a second, inner loop through @current_words.
-
-# For each current_word, begin a third loop, iterating through all adjacent_words(current_word). This is a triply nested loop.
-
-# For each adjacent_word, skip it if it's already in @all_seen_words; we don't need to reconsider a word we've seen before.
-
-# Otherwise, if it's a new word, add it to both new_current_words, and @all_seen_words so we don't repeat it.
-
-# After we finish looping through all the @current_words, print out new_current_words, and reset @current_words to new_current_words.
-
-# Make sure your run method eventually terminates: it should eventually enumerate all the words that are reachable from source, at which point new_current_words will come out empty. After setting @current_words = new_current_words the outermost loop should terminate.
-
-# After executing #run, @all_seen_words will contain a list of all the words encountered in our 'exploration.'
-
-# Test your word chainer to make sure it outputs (1) first the words that are one letter away from source, (2) next words that are one letter away from words one letter away from source (i.e., two letters away from source), etc. This is a breadth first enumeration of words that you can reach from the source.
-
-# Call your TA over to check your work.
