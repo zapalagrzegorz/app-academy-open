@@ -6,16 +6,20 @@ class Stack
 
   def push(el)
     # adds an element to the stack
-    @stack << el
+    stack << el
   end
 
   def pop
     # removes one element from the stack
-    @stack.pop
+    stack.pop
   end
 
   def peek
     # returns, but doesn't remove, the top element in the stack
-    @stack.last
+    stack.last
   end
+
+  private
+
+  attr_reader :stack
 end
