@@ -1,0 +1,25 @@
+load 'stack.ruby'
+load 'queque.ruby'
+stack = new.Stack
+stack = Stack.new
+stack.push(Integer(rand * 10))
+stackSecond = Stack.new
+stackSecond.push(Integer(rand * 10))
+queque = Queque.new
+queque.enqueue(stack)
+queque
+queque.enqueue
+queque.enqueue(stack)
+queque.enqueue(stackSecond)
+queque.push('item')
+queque.unshift('item')
+queque.shift('item')
+queque.shift
+queque.dequeue
+queque
+queque.dequeue
+queque
+queque.dequeue
+queque
+pry -n --save 1..100 pry-hist
+pry -n --save 1..100 pry-histo

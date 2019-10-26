@@ -1,0 +1,4 @@
+map = Map.new
+load 'map.ruby'
+map = Map.new
+map.set('some-key', 9)
