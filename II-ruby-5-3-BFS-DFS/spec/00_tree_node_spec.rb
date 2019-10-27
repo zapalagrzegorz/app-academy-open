@@ -1,16 +1,16 @@
-require 'rspec'
-require '00_tree_node'
+require "rspec"
+require "00_tree_node"
 
 describe PolyTreeNode do
-  let(:node1) { PolyTreeNode.new('root') }
-  let(:node2) { PolyTreeNode.new('child1') }
-  let(:node3) { PolyTreeNode.new('child2') }
+  let(:node1) { PolyTreeNode.new("root") }
+  let(:node2) { PolyTreeNode.new("child1") }
+  let(:node3) { PolyTreeNode.new("child2") }
 
   describe "#initialize" do
-    let(:new_node) { PolyTreeNode.new('new_node') }
+    let(:new_node) { PolyTreeNode.new("new_node") }
 
     it "should set an initial value" do
-      expect(new_node.value).to eq('new_node')
+      expect(new_node.value).to eq("new_node")
     end
 
     it "should set parent to nil" do
@@ -94,8 +94,8 @@ describe PolyTreeNode do
   end
 end
 
-describe 'Searchable' do
-  let(:nodes) { ('a'..'g').map { |value| PolyTreeNode.new(value) } }
+describe "Searchable" do
+  let(:nodes) { ("a".."g").map { |value| PolyTreeNode.new(value) } }
 
   before do
     parent_index = 0
@@ -106,43 +106,44 @@ describe 'Searchable' do
     end
   end
 
-  shared_examples_for 'search method' do
+  shared_examples_for "search method" do
     it "should return itself if it contains the value" do
-      expect(nodes.first.send(search_method, 'a')).to equal(nodes.first)
+      expect(nodes.first.send(search_method, "a")).to equal(nodes.first)
     end
 
     it "should find descendant" do
-      expect(nodes.first.send(search_method, 'g')).to equal(nodes[6])
+      expect(nodes.first.send(search_method, "g")).to equal(nodes[6])
     end
 
     it "should return nil when value is not found" do
-      expect(nodes.first.send(search_method, 'x')).to be_nil
+      expect(nodes.first.send(search_method, "x")).to be_nil
     end
   end
 
   describe "#dfs" do
     let(:search_method) { :dfs }
-    it_behaves_like 'search method'
+    it_behaves_like "search method"
 
     it "should take correct path to descendant" do
       expect(nodes[2]).to_not receive(:dfs)
       [0, 1, 3, 4].each do |index|
         expect(nodes[index]).to receive(:dfs).and_call_original.ordered
       end
-      expect(nodes.first.dfs('e')).to equal(nodes[4])
+      # debugger
+      expect(nodes.first.dfs("e")).to equal(nodes[4])
     end
   end
 
   describe "#bfs" do
     let(:search_method) { :bfs }
-    it_behaves_like 'search method'
+    it_behaves_like "search method"
 
     it "should take correct path to descendant" do
       expect(nodes[6]).to_not receive(:value)
       [0, 1, 2, 3, 4, 5].each do |index|
         expect(nodes[index]).to receive(:value).and_call_original.ordered
       end
-      expect(nodes.first.bfs('f')).to equal(nodes[5])
+      expect(nodes.first.bfs("f")).to equal(nodes[5])
     end
   end
 end
