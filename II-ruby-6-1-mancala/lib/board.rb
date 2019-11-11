@@ -48,9 +48,13 @@ class Board
   end
 
   def one_side_empty?
+    @cups[0..5].all?(&:empty?) || @cups[7..12].all?(&:empty?)
   end
 
   def winner
+    return :draw if @cups[6] == @cups[13]
+
+    @cups[6].count > @cups[13].count ? @name1 : @name2
   end
 
   private
