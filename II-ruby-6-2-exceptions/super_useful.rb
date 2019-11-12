@@ -11,6 +11,15 @@ end
 FRUITS = ["apple", "banana", "orange"]
 
 class CoffeeError < StandardError
+  def message
+    "I can't have any more caffeine. My poor heart couldn't take it. You can try again."
+  end
+end
+
+class NotFruitError < StandardError
+  def message
+    "That doesn't look like a fruit. You tricked me. * runs away *"
+  end
 end
 
 def reaction(maybe_fruit)
@@ -19,7 +28,7 @@ def reaction(maybe_fruit)
   elsif maybe_fruit == "coffee"
     raise CoffeeError
   else
-    raise StandardError
+    raise NotFruitError
   end
 end
 
@@ -30,36 +39,30 @@ def feed_me_a_fruit
     puts "Feed me a fruit! (Enter the name of a fruit:)"
     maybe_fruit = gets.chomp
     reaction(maybe_fruit)
-  rescue CoffeeError
-    puts "Try again. Thanks for coffee."
+  rescue CoffeeError => e
+    puts e.message
     retry
+  rescue NotFruitError => e
+    puts e.message
   end
 end
 
 # PHASE 4
 class BestFriend
-  class Error < RuntimeError
+  class NoBestFriendDetailError < StandardError
   end
 
-  class NoBestFriendDetailError < Error
-  end
-
-  class TooShortRelationError < Error
+  class TooShortRelationError < StandardError
   end
 
   def initialize(name, yrs_known, fav_pastime)
-    if name.empty? || fav_pastime.empty?
-      raise NoBestFriendDetailError, "Name || fav_pastime is empty"
-    else
-      @fav_pastime = fav_pastime
-      @name = name
-    end
+    raise ArgumentError, "'name' cannot be blank" if name.empty?
+    raise ArgumentError.new("'yrs_known' must be greater than or equal to 5 (best friendships take time)") if yrs_known.to_i < 5
+    raise ArgumentError.new("'fav_pasttime' cannot be blank") if fav_pastime.empty?
 
-    if yrs_known >= 5
-      @yrs_known = yrs_known
-    else
-      raise TooShortRelationError, "At least 5 years is needed"
-    end
+    @fav_pastime = fav_pastime
+    @name = name
+    @yrs_known = yrs_known.to_i
   end
 
   def talk_about_friendship
