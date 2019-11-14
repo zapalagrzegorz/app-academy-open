@@ -1,0 +1,21 @@
+
+Ned = Employee.new("Ned", Founder, 1000000, nil) 
+Ned = Employee.new("Ned", "Founder", 1000000, nil) 
+NedMenager = Manager.new("Ned", "Founder", 1000000, nil) 
+
+Shawna = Employee.new("Shawna", "TA", 12000, 'Darren') 
+
+
+ 
+NedMenager.bonus(5)
+
+NedMenager = Manager.new("Ned", "Founder", 1000000, nil)
+NedMenager.add_employee(Darren)
+
+load 'Manager.rb'
+David = Employee.new("David", "TA", 10000, 'Darren') 
+Darren = Manager.new("Darren", "TA Manager", 78000, 'Ned') 
+Darren.add_employee(David)
+
+Darren.total_subsalary_reduce
+
