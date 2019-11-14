@@ -14,8 +14,11 @@ NedMenager.add_employee(Darren)
 
 load 'Manager.rb'
 David = Employee.new("David", "TA", 10000, 'Darren') 
+Bob = Employee.new("Bob", "TA", 10000, 'Darren') 
 Darren = Manager.new("Darren", "TA Manager", 78000, 'Ned') 
 Darren.add_employee(David)
+Darren.add_employee(Bob)
+
 
 Darren.total_subsalary_reduce
 

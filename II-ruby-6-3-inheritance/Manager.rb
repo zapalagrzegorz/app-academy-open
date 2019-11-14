@@ -24,17 +24,21 @@ class Manager < Employee
   end
 
   def each
-    # "each" is the base method called by all the iterators so you only have to define it
-    unless @employees.nil?
-      debugger
-      @employess.each do |val|
-        yield val
-      end
+    debugger
+    for user in @employees
+      yield user
     end
-    # change or manipulate the values in your value array inside this block
-    #   yield value
+
+    # @employess.each do |val|
+    #     yield val
     # end
   end
+
+  #   def each(&block)
+  #     @employees.each do |member|
+  #       block.call(member)
+  #     end
+  #   end
 
   def employees_salary
     super
@@ -58,11 +62,11 @@ class Manager < Employee
   end
 
   def total_subsalary_reduce
-    debugger
-    reduce do |memo, employee|
-      p memo
-      p employee
-      memo.salary + employee.salary
+    reduce do |memo, next_item|
+      debugger
+      #   p item
+      #   p employee
+      memo.salary + next_item.salary
     end
   end
 end
