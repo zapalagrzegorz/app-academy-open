@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Chef
   attr_reader :name
 
@@ -15,6 +17,7 @@ class Chef
   end
 
   private
+
   def put_in_oven(dessert)
     dessert.heat!
   end
