@@ -12,6 +12,7 @@ describe '#my_uniq' do
     expect { my_uniq(1) }.to raise_error(ArgumentError)
     expect { my_uniq('array') }.to raise_error(ArgumentError)
     expect { my_uniq(true) }.to raise_error(ArgumentError)
+    expect { my_uniq(nil) }.to raise_error(ArgumentError)
   end
 
   it 'takes an Array' do
