@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'byebug'
+# require 'byebug'
 
 class Stock_picker
   def initialize(stock_arr)

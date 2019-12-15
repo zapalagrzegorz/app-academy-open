@@ -29,6 +29,8 @@ describe 'Stock_picker' do
       expect(stock_picker.pick_stocks.length).to eq(2)
     end
 
-    it 'the most profitable pair'
+    it 'the most profitable pair' do
+      expect(stock_picker.pick_stocks).to eq([2, 3])
+    end
   end
 end
