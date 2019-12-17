@@ -19,9 +19,22 @@ describe '#my_uniq' do
     expect { my_uniq([]) }.not_to raise_error
   end
 
+  # it "removes duplicates" do
   it 'returns uniq Array' do
     expect(my_uniq(arr)).to eq([1, 2, 3, 4, 5])
   end
+
+  #  it "only contains items from original array" do
+  #     uniqued_array.each do |item|
+  #       expect(array).to include(item)
+  #     end
+  #   end
+
+  # it "does not modify original array" do
+  #   expect {
+  #     my_uniq(array)
+  #   }.to_not change{array}
+  # end
 
   context 'when given empty array' do
     it 'returns empty array' do

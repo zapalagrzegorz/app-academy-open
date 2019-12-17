@@ -16,15 +16,29 @@ require '2_two_sum'
 describe '#two_sum' do
   let(:arr) { [-1, 0, 2, -2, 1] }
 
+  let(:one_zero) { [3, 0, 4] }
+  let(:two_zeros) { [3, 0, 4, 0] }
+
   it 'exists' do
     expect { arr.two_sum }.not_to raise_error
+    expect { two_zeros }.not_to raise_error
   end
 
   it 'returns array' do
     expect(arr.two_sum).to be_an(Array)
+    expect(two_zeros).to be_an(Array)
   end
 
   it 'returns sorted pairs of index' do
+    #  it "finds a zero-sum pair" do
     expect(arr.two_sum).to eq([[0, 4], [2, 3]])
+  end
+
+  it 'is not confused by a single zero' do
+    expect(one_zero.two_sum).to eq([])
+  end
+
+  it 'handles two zeros' do
+    expect(two_zeros.two_sum).to eq([[1, 3]])
   end
 end

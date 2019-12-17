@@ -5,6 +5,7 @@ class Hanoi
   attr_reader :towers
 
   def initialize(size = 3)
+    @size = size
     @target_tower = (1..size).to_a
     @towers = [(1..size).to_a, [], []]
   end
@@ -19,19 +20,14 @@ class Hanoi
         puts e.message
         retry
       end
-
     end
+
+    show_towers
   end
 
   def move(moves)
     src, target = moves
-    # debugger
-
-    if !self[target].empty? && self[src].last > self[target].first
-      raise InvalidMove
-    end
-
-    # raise InvalidMove if
+    validate_moves(src, target)
 
     self[target].unshift(self[src].shift)
   end
@@ -41,6 +37,15 @@ class Hanoi
   end
 
   private
+
+  def validate_moves(src, target)
+    raise InvalidMove unless src.between?(0, @size - 1)
+    raise InvalidMove unless target.between?(0, @size - 1)
+
+    if !self[target].empty? && self[src].last > self[target].first
+      raise InvalidMove
+    end
+  end
 
   def [](arg)
     @towers[arg]
@@ -52,12 +57,20 @@ class Hanoi
   end
 
   def prompt
+    show_towers
+
     puts "Please enter the source and target tower (e.g., '1,3')"
     print '> '
   end
 
+  def show_towers
+    puts "tower #1: #{@towers[0].reverse}"
+    puts "tower #2: #{@towers[1].reverse}"
+    puts "tower #3: #{@towers[2].reverse}"
+  end
+
   def parse(string)
-    move = string.split(',').map { |x| Integer(x) }
+    move = string.split(',').map { |x| Integer(x) - 1 }
     raise InvalidMove unless move.length == 2 && move.all?(Integer)
 
     move
@@ -70,3 +83,5 @@ class InvalidMove < ArgumentError
     puts 'Invalid move'
   end
 end
+
+Hanoi.new.play if $PROGRAM_NAME == __FILE__

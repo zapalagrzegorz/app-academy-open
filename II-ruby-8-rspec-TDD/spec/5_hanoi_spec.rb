@@ -45,9 +45,14 @@ describe 'Hanoi' do
     end
 
     context 'when is correct' do
+      # it 'allows moving to a blank space' do
+      #  it 'allows moving onto a larger disk' do
+
       it 'doesn\'t raise error ' do
         expect { hanoi_moved }.not_to raise_error
       end
+
+      # it 'allows moving onto a larger disk' do
 
       it 'reduces pile from origin' do
         # hanoi_moved.move([0, 1])
@@ -57,10 +62,12 @@ describe 'Hanoi' do
       it 'add pile to the target' do
         expect(hanoi_moved.towers[1]).to eq([1])
       end
-      
+
       it 'added pile gets on top' do
         expect(hanoi_moved_again.towers[2]).to eq([1, 2])
       end
+
+      # it "allows moving to a blank space" do
     end
 
     context 'when it\'s incorrect' do
@@ -69,6 +76,14 @@ describe 'Hanoi' do
         # hanoi.move([0, 1])
         expect { hanoi_moved.move([0, 1]) }.to raise_error InvalidMove
       end
+
+      it 'disallows to pick tower beyond range' do
+        # end
+        # hanoi.move([0, 1])
+        expect { hanoi_moved.move([-1, 3]) }.to raise_error InvalidMove
+      end
+
+      #   it 'does not allow moving from an empty stack' do
     end
     # No larger disk may be placed on top of a smaller disk.
   end
@@ -79,6 +94,9 @@ describe 'Hanoi' do
         expect(hanoi.won?).to be false
       end
     end
+
+    # it 'is won when all disks are moved to tower 1' do
+#  it 'is won when all disks are moved to tower 2' do
     context 'when completed' do
       let(:hanoi_completed) do
         hanoi.move([0, 1])
