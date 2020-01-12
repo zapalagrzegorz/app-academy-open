@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+fish = %w[fish fiiish fiiiiish fiiiish fffish ffiiiiisshh fsh fiiiissshhhhhh]
+
+def sluggish_octopus(fish)
+  longest = ''
+  fish.each do |item|
+    fish.each do |inner_item|
+      long = item.length > inner_item.length ? item : inner_item
+      longest = longest.length > long.length ? longest : long
+    end
+  end
+
+  longest
+end
+
+p sluggish_octopus(fish)
+
+def clever_octopus(fish)
+  longest = ''
+  fish.each do |item|
+    longest = item if item.length > longest.length
+  end
+
+  longest
+end
+
+p clever_octopus(fish)
