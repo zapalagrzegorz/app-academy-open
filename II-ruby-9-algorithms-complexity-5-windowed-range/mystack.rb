@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class MyStack
-  def initialize
-    @store = []
+  def initialize(store = [])
+    @store = store
   end
 
   def peek

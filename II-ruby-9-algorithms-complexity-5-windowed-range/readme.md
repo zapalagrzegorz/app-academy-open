@@ -61,7 +61,7 @@ We will be building the following in order:
 
 ## Phase 2: MyQueue
 
-Since the window only moves one index at a time, it would be nicer to represent it as a queue. Every time we move the window, we could enqueue the next element and dequeue the last element. This would allow us to avoid using Array#slice, so that we can traverse the array in constant time.
+Since the window only moves one index at a time, it would be nicer to represent it as a queue. Every time we move the window, we could enqueue the next element and dequeue the last element. **This would allow us to avoid using Array#slice, so that we can traverse the array in constant time.** (? skoro unshift też trwa O(n), to samo z siebie nie jest rozwiązaniem)
 
 A queue is a simple abstract linear data structure where elements are stored in order and can be added or removed one at a time. A queue follows first in, first out (FIFO). Unlike Ruby's Array data structure, most Queue implementations do not expose methods to slice or sort the data, or to find a specific element. The basic operations are:
 
@@ -82,3 +82,31 @@ class MyQueue
 end
 
 Implement peek, size, empty?, enqueue, and dequeue methods on your Queue.
+
+## Phase 3: MyStack
+
+We want to find the max window range of array in O(n) time, which means we cannot make use of Array#slice, and each window must calculate the min and max instantly. Every time we move the window, we enqueue the next element and dequeue the last element. This solves the problem with slice. However, removing items from MyQueue takes O(n) time. **As the first element of the array is shifted off, the remaining elements will be reassigned in new position in memory. (unshift)** Also, it still leaves us with the problem of expensive min and max operations. To resolve this, we'll have to make clever use of another data structure, the stack.
+
+Stacks are another simple linear data structure. Elements are also stored in order and can be added or removed one at a time. A stack is first in, last out (FILO). Similar to queues, stack implementations do not expose methods to slice or sort the data, or to find a specific element. The basic operations are:
+
+    Stack
+        push: adds an element to the top of the stack
+        pop: removes an element from the top of the stack and returns it
+
+Implement a Stack class. Use the following initialize method as a starting point:
+
+class MyStack
+  def initialize
+    @store = []
+  end
+end
+
+Implement peek, size, empty?, pop and push methods on your Stack.
+
+## Phase 4: StackQueue
+
+With that done, we're going to implement a queue again, but with a twist: rather than use an Array, we will implement it using our MyStack class under the hood because pushing and popping from MyStack takes O(1) time. Done properly, we will still have a queue but with the advantages of dequeuing in O(1) time.
+
+Before you start to code this, sit down and talk to your partner about how you might implement this. You should not modify your MyStack class, but use the interface it provides to implement a queue.
+
+When you're ready, implement this StackQueue class with size, empty?, enqueue, and dequeue methods.
