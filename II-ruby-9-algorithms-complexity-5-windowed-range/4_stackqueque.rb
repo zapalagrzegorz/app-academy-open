@@ -6,7 +6,7 @@
 
 # When you're ready, implement this StackQueue class with size, empty?, enqueue, and dequeue methods.
 class StackQueue
-  def initialize(_current)
+  def initialize
     # @store = [MyStack.new(current), myStack.new([])]
 
     # przy dwóch wartościach, tablica jest zbędna
@@ -29,7 +29,7 @@ class StackQueue
   end
 
   # stań do kolejki
-  # na marginesie - przy rozwiazaniu,lepiej chyba inicjalizować tę strukturę istniejącą tablicą, a nie kolejkować pojedyńczo
+  # na marginesie - przy tym konkretnym rozwiazaniu,lepiej chyba inicjalizować tę strukturę istniejącą tablicą, a nie kolejkować pojedyńczo
   def enqueue
     # @store.last.push(@store.first.pop) unless empty?
     # O(1)
