@@ -1,0 +1,105 @@
+
+
+węzeł ma informacje referencje do HEAD i TAIL
+
+START
+HEAD <--> A <--> B <-->  TAIL
+(A again)
+
+HEAD <--> B <-- A <-->  TAIL
+
+Find A 
+- B == TAIL.prev 
+
+- A.
+- prev = TAIL.prev
+- TAIL.prev = A
+
+
+START
+(A)
+{
+A => LinkedList -A
+B => LinkedList - B
+}
+
+// inject
+// unless head.size < too_many
+
+// A.next = HEAD.next // TAIL
+// A.next.prev = A
+// A.prev = HEAD 
+
+// head.next = A Element
+
+
+HEAD <--> A <-->  TAIL
+
+// inject next
+B element
+// B.next = HEAD.next // A
+// HEAD  B -->  A <-->  TAIL
+
+// HEAD.next = B
+// B.next = HEAD.next // A
+
+HEAD -->  B -->  A <-->  TAIL
+
+// B.prev = HEAD
+// HEAD <-->  B -->  A <-->  TAIL
+
+/// (B.next).prev = B
+// HEAD <-->  B <-->  A <-->  TAIL
+
+
+*****
+inject C, assume we can hold 3 elements
+// HEAD <-->  B <-->  A <-->  TAIL
+
+// inject next
+
+C element
+
+// C.next = HEAD.next // B
+// HEAD C-->  B <-->  A <-->  TAIL
+
+// HEAD.next = C
+// HEAD --> C-->  B <-->  A <-->  TAIL
+
+// C.prev = HEAD
+// HEAD <--> C -->  B <-->  A <-->  TAIL
+
+/// (C.next).prev = C
+// HEAD <--> C <-->  B <-->  A <-->  TAIL
+
+***
+Inject A again - we must push into into front, as we're going to delete from TAIL
+
+argument = A
+
+
+***
+//tu chyba zabrakło przepisania
+//A.prev
+tj. A.prev = A.next
+**
+// HEAD <--> C <-->  B <-->  TAIL
+
+
+// A.next = HEAD.next // C
+// HEAD <--> C <-->  B <-->  TAIL
+A --> C
+
+
+// HEAD.next = A
+// HEAD --> A --> C <-->  B <-->  TAIL
+
+
+// A.prev = HEAD
+HEAD <--> A <--> C <--> B <-->  TAIL
+
+i voila 
+
+
+
+
