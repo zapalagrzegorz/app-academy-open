@@ -26,6 +26,8 @@ class Node
 end
 
 class LinkedList
+  include Enumerable
+
   def initialize
     @head = Node.new('HEAD', 'HEAD')
     @tail = Node.new('TAIL', 'TAIL')
@@ -39,53 +41,81 @@ class LinkedList
   end
 
   def first
-    @head
+    @head.next
   end
 
   def last
-    @tail
+    @tail.prev
   end
 
   def empty?
-    debugger
-    first.next == last
+    first == @tail
   end
 
-  def get(key); end
+  def get(key)
+    node = find(key)
+    return nil unless node
+
+    node.val
+  end
 
   def include?(key)
-    self[key]
+    find(key) ? true : false
   end
 
   # Append a new node to the end of - the list.
-  # head <--> tail
-
-  # head -->  <--tail
-
-  # head <--> node
   def append(key, val)
     node = Node.new(key, val)
-    # H <-- node(k, v) --> T
-    # debugger
-    node.prev = last.prev
-    node.next = last
 
-    # debugger
-    # H <--> node -- > T
-    last.prev.next = node
+    last.next = node
+    node.prev = last
 
-    # H <--> node <-- > T
-    last.prev = node
+    node.next = @tail
+    @tail.prev = node
   end
 
-  def update(key, val); end
+  def update(key, val)
+    node = find(key)
+    return nil unless node
 
-  def remove(key); end
+    node.val = val
+  end
 
-  def each; end
+  def remove(key)
+    node = find(key)
+    return nil unless node
+
+    node.remove
+  end
+
+  def each
+    return if empty?
+
+    node = first
+    loop do
+      yield node
+      break if node == last
+
+      node = node.next
+    end
+  end
 
   # uncomment when you have `each` working and `Enumerable` included
-  # def to_s
-  #   inject([]) { |acc, link| acc << "[#{link.key}, #{link.val}]" }.join(", ")
-  # end
+  def to_s
+    inject([]) { |acc, link| acc << "[#{link.key}, #{link.val}]" }.join(", ")
+  end
+
+  private
+
+  def find(key)
+    return if empty?
+
+    node = first
+    loop do
+      return node if node.key == key
+      break if node == last
+
+      node = node.next
+    end
+  end
 end
