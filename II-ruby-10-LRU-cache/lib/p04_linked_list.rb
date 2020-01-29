@@ -21,7 +21,8 @@ class Node
     # and removes self from list.
     @prev.next = @next
     @next.prev = @prev
-    # removes self?
+    
+    self
   end
 end
 
