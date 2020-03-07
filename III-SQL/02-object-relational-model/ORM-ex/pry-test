@@ -1,0 +1,25 @@
+# frozen_string_literal: true
+
+load 'plays.rb'
+
+play_sample = Play.find_by_title('All My Sons')
+puts "No 'All My Sons' play found" if play_sample
+
+find_by_playwright = Play.find_by_playwright('Arthur Miller')
+puts "OK" if find_by_playwright.one?
+
+
+playwright_all = Playwright.all
+puts "OK" if playwright_all.length == 2
+
+playwright_name = Playwright.find_by_name('Arthur Miller')
+puts "OK" if playwright_name.birth_year == 1915
+
+new_playwright = Playwright.new({"name" => 'John Kowalsky', "birth_year" => 2020})
+
+new_playwright_id = new_playwright.create
+puts "OK" if new_playwright_id.is_a? Numeric
+
+# test to cover error
+new_playwright = Playwright.new({"name" => 'John Kowalsky', "birth_year" => 2020, "id" => 999})
+new_playwright.create

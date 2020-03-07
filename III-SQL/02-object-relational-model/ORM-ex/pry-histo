@@ -1,0 +1,2 @@
+hist -n --save 1..100 pry-histo
+a = 1
