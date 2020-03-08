@@ -20,6 +20,8 @@ new_playwright = Playwright.new({"name" => 'John Kowalsky', "birth_year" => 2020
 new_playwright_id = new_playwright.create
 puts "OK" if new_playwright_id.is_a? Numeric
 
-# test to cover error
 new_playwright = Playwright.new({"name" => 'John Kowalsky', "birth_year" => 2020, "id" => 999})
 new_playwright.create
+
+new_playwright.birth_year = 2019
+new_playwright.update

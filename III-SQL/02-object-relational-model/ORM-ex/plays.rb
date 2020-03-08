@@ -34,6 +34,9 @@ class Play
 
   # Play::find_by_playwright(name)
   def self.find_by_playwright(name)
+    # wypadało zapytać czy taki pisarz jest w bazie
+    #  playwright = Playwright.find_by_name(name)
+    # raise "#{name} not found in DB" unless playwright
     plays = PlayDBConnection.instance.execute(<<-SQL, name)
       SELECT *
       FROM plays
@@ -86,7 +89,7 @@ end
 # Playwright#update
 # Playwright#get_plays (returns all plays written by playwright)
 class Playwright
-  attr_reader :birth_year
+  attr_accessor :birth_year
   # attr_reader :id
   # Playwright::all
   def self.all
@@ -118,7 +121,7 @@ class Playwright
     #   raise "#{self} already in database" if id
     raise "#{self} is already in database" if @id
 
-    PlayDBConnection.instance.execute(<<-SQL, @name, @year)
+    PlayDBConnection.instance.execute(<<-SQL, @name, @birth_year)
       INSERT INTO
         playwrights (name, birth_year)
       VALUES
@@ -126,5 +129,29 @@ class Playwright
     SQL
     # insert returns empty array
     @id = PlayDBConnection.instance.last_insert_row_id
+  end
+
+  def update
+    raise "#{self} not yet id database" unless @id
+
+    PlayDBConnection.instance.execute(<<-SQL, @name, @birth_year, @id)
+      UPDATE
+        playwrights
+      SET
+        name = ?, birth_year = ?
+      WHERE
+      id = ?
+    SQL
+  end
+
+  def get_plays
+    plays = PlayDBConnection.instance.execute(<<-SQL, @id)
+        SELECT *
+        FROM playwrights
+        JOIN plays ON plays.playwright_id = playwrights.id
+        WHERE playwrights.id = ?
+    SQL
+
+    plays.map { |play| Play.new(play) }
   end
 end
