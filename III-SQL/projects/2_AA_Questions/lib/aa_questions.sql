@@ -1,9 +1,9 @@
-PRAGMA foreign_keys = ON;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS question_follows;
 DROP TABLE IF EXISTS replies;
 DROP TABLE IF EXISTS question_likes;
+PRAGMA foreign_keys = ON;
 CREATE TABLE users (
   id INTEGER PRIMARY KEY,
   fname VARCHAR(255) NOT NULL,
@@ -27,10 +27,8 @@ CREATE TABLE replies (
   id INTEGER PRIMARY KEY,
   question_id INTEGER NOT NULL,
   parent_reply INTEGER,
-  --NULLABLE
   user_id INTEGER NOT NULL,
   body VARCHAR(255) NOT NULL,
-  -- question_id INTEGER NOT NULL,
   FOREIGN KEY (parent_reply) REFERENCES replies(id),
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -40,7 +38,7 @@ CREATE TABLE question_likes (
   question_id INTEGER NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id),
   FOREIGN KEY (question_id) REFERENCES questions(id)
-)
+);
 INSERT INTO users (fname, lname)
 VALUES
   ('Grzegorz', 'Zapala'),
@@ -58,29 +56,31 @@ VALUES
         id
       FROM users
       WHERE
-        fname = 'Grzegorz',
-        lname = 'Zapala'
+        fname = 'Grzegorz'
+        AND lname = 'Zapala'
     )
   ),
   (
     'Kiedy można zrezygnować?',
     'Do upływu jakiego czasu można zrezygnować ze zwrotem środków?',
     (
-      SELECT id
+      SELECT
+        id
       FROM users
       WHERE
-        fname = 'Kamil',
-        lname = 'Kisiel'
+        fname = 'Kamil'
+        AND lname = 'Kisiel'
     )
   ),
   (
     'Czemu u was tak drogo?',
     'Jak w tytule?',
     (
-      SELECT id
+      SELECT
+        id
       FROM users
       WHERE
-        fname = 'Kamil',
+        fname = 'Kamil' AND
         lname = 'Kisiel'
     )
   ),
@@ -88,14 +88,14 @@ VALUES
     'Czy mogę wziać urlop?',
     'Jak w tytule?',
     (
-      SELECT id
+      SELECT
+        id
       FROM users
       WHERE
-        fname = 'Kamil',
+        fname = 'Kamil' AND
         lname = 'Kisiel'
     )
-  ),
-);
+  );
 INSERT INTO question_follows (user_id, question_id)
 VALUES
   (1, 1),

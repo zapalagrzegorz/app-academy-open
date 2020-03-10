@@ -11,10 +11,11 @@ class QuestionsDatabase < SQLite3::Database
   DB_FILE = File.join(File.dirname(__FILE__), 'aa_questions.db')
 
   def self.reset!
-    "rm '#{DB_FILE}'",
-    "cat '#{SQL_FILE} | sqlite3 '#{DB_FILE}" 
-    
-    commands.each{ |command| `#{command}`}
+    commands = [
+      "rm '#{DB_FILE}'",
+      "cat '#{SQL_FILE}' | sqlite3 '#{DB_FILE}'"
+    ]
+    commands.each { |command| `#{command}` }
     QuestionsDatabase.open
   end
 
@@ -24,9 +25,14 @@ class QuestionsDatabase < SQLite3::Database
     @database.type_translation = true
   end
 
-  def self.execute(*args)
-    instance.execute(*args)
+  def self.instance
+    reset! if @database.nil?
+    @database
   end
-  
-  def initialize; end
+
+  # def self.execute(*args)
+  #   instance.execute(*args)
+  # end
+
+  # def initialize; end
 end
