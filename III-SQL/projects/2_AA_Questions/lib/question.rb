@@ -4,25 +4,26 @@ require 'byebug'
 require_relative 'questions_database.rb'
 
 # Obiekt użytkownika serwisu
-class User
-  attr_reader :fname, :lname
+class Question
+  attr_reader :title, :body, :user_id
 
   def initialize(props)
-    @fname = props['fname']
-    @lname = props['lname']
+    @title = props['title']
+    @body = props['body']
+    @id = props['user_id']
   end
 
   def self.find_by_id(id)
-    user = QuestionsDatabase.instance.execute(<<-SQL, id)
+    question = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT *
-      FROM users
+      FROM questions
       WHERE id = ?
     SQL
 
     # debugger
-    return nil unless user.first
+    return nil unless question.first
 
-    User.new(user.first)
+    Question.new(question.first)
   end
 
   def self.find_by_name(first, last)
