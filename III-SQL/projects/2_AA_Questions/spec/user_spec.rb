@@ -10,9 +10,8 @@ describe User do
   before(:example) { QuestionsDatabase.reset! }
   after(:example) { QuestionsDatabase.reset! }
 
+  let(:user) { User.find_by_id(1) }
   describe '::find_by_id' do
-    let(:user) { User.find_by_id(1) }
-    # user =
     let(:not_found_user) { User.find_by_id(-1) }
 
     context 'when user is found' do
@@ -61,4 +60,37 @@ describe User do
       end
     end
   end
+
+  describe '#authored_questions' do
+    let(:authored_questions) { user.authored_questions }
+    let(:no_authored_questions) { User.find_by_id(3).authored_questions }
+
+    it 'generates questions of user' do
+      expect(authored_questions).to all be_a(Question)
+    end
+
+    it 'returns nil when no user questions' do
+      expect(no_authored_questions).to be_nil
+    end
+  end
+
+  describe '#authored_replies' do
+    let(:authored_replies) { user.authored_replies }
+    let(:no_authored_replies) { User.find_by_id(4).authored_replies }
+
+    it 'generates user\'s replies' do
+      expect(authored_replies).to all be_a(Reply)
+    end
+
+    it 'generates expected number of replies' do
+      expect(authored_replies.length).to eq(1)
+    end
+
+    it 'returns nil when user has no replies' do
+      expect(no_authored_replies).to be_nil
+    end
+  end
+
+  # User # authored_questions (use Question::find_by_author_id)
+  # User # authored_replies (use Reply::find_by_user_id)
 end

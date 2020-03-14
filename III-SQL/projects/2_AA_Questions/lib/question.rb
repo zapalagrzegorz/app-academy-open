@@ -8,9 +8,10 @@ class Question
   attr_reader :title, :body, :user_id
 
   def initialize(props)
+    @id = props['id']
     @title = props['title']
     @body = props['body']
-    @id = props['user_id']
+    @user_id = props['user_id']
   end
 
   def self.find_by_id(id)
@@ -26,18 +27,24 @@ class Question
     Question.new(question.first)
   end
 
-  def self.find_by_name(first, last)
-    user = QuestionsDatabase.instance.execute(<<-SQL, first, last)
+  def self.find_by_author_id(id)
+    questions = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT *
-      FROM users
-      WHERE fname = ? AND lname = ?
+      FROM questions
+      WHERE user_id = ?
     SQL
-    # debugger
-    return nil unless user.first
 
-    User.new(user.first)
+    return nil if questions.empty?
+
+    questions.map { |question| Question.new(question) }
   end
-  #  User::find_by_name(fname, lname)
-  #   User#authored_questions (use Question::find_by_author_id)
-  #   User#authored_replies (use Reply::find_by_user_id)
+
+  def author
+    User.find_by_id(@user_id)
+  end
+
+  def replies
+    # debugger
+    Reply.find_by_question_id(@id)
+  end
 end

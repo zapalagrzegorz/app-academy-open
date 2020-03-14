@@ -2,9 +2,8 @@
 
 require 'questions_database'
 require 'question'
-#  User::find_by_name(fname, lname)
-#   User#authored_questions (use Question::find_by_author_id)
-#   User#authored_replies (use Reply::find_by_user_id)
+require 'user'
+require 'reply'
 
 describe Question do
   before(:example) { QuestionsDatabase.reset! }
@@ -33,6 +32,59 @@ describe Question do
       it 'returns nil' do
         expect(not_found_question).to be_nil
       end
+    end
+  end
+
+  describe '::find_by_author_id' do
+    let(:questions_by_author) { Question.find_by_author_id(2) }
+    let(:no_questions_by_author) { Question.find_by_author_id(3) }
+
+    context 'when questions of author are found' do
+      it 'generates only Questions instance' do
+        expect(questions_by_author).to all be_an(Question)
+      end
+
+      it 'generates expected number of Questions instance' do
+        expect(questions_by_author.length).to eq(3)
+      end
+    end
+
+    context 'when author has no questions' do
+      it 'returns nil' do
+        expect(no_questions_by_author).to be_nil
+      end
+    end
+  end
+
+  describe '#author' do
+    let(:question_author) { Question.find_by_id(1).author }
+
+    it 'generates author of question' do
+      expect(question_author).to be_an(User)
+    end
+
+    it 'generates specific user-author' do
+      expect(question_author.fname).to eq('Grzegorz')
+      expect(question_author.lname).to eq('Zapala')
+    end
+  end
+
+  describe '#replies' do
+    let(:question_replies) { Question.find_by_id(1).replies }
+    let(:no_question_replies) { Question.find_by_id(4).replies }
+
+    # debugger
+
+    it 'generates replies of question' do
+      expect(question_replies).to all be_an(Reply)
+    end
+
+    it 'generates expected number of replies' do
+      expect(question_replies.length).to eq(2)
+    end
+
+    it 'returns nil if there\'s no replies' do
+      expect(no_question_replies).to be_nil
     end
   end
 end

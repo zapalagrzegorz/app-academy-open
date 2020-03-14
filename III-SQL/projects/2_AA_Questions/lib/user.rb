@@ -2,12 +2,15 @@
 
 require 'byebug'
 require_relative 'questions_database.rb'
+require_relative 'question.rb'
+require_relative 'reply.rb'
 
 # Obiekt użytkownika serwisu
 class User
   attr_reader :fname, :lname
 
   def initialize(props)
+    @id = props['id']
     @fname = props['fname']
     @lname = props['lname']
   end
@@ -36,7 +39,16 @@ class User
 
     User.new(user.first)
   end
-  #  User::find_by_name(fname, lname)
-  #   User#authored_questions (use Question::find_by_author_id)
+
+  def authored_questions
+    Question.find_by_author_id(@id)
+  end
+
+  def authored_replies
+    Reply.find_by_user_id(@id)
+  end
+
+  # def authored_replies
+  # end
   #   User#authored_replies (use Reply::find_by_user_id)
 end
