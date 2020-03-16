@@ -9,8 +9,8 @@ describe Question do
   before(:example) { QuestionsDatabase.reset! }
   after(:example) { QuestionsDatabase.reset! }
 
+  let(:question) { Question.find_by_id(1) }
   describe '::find_by_id' do
-    let(:question) { Question.find_by_id(1) }
     # user =
     let(:not_found_question) { Question.find_by_id(-1) }
 
@@ -37,7 +37,7 @@ describe Question do
 
   describe '::find_by_author_id' do
     let(:questions_by_author) { Question.find_by_author_id(2) }
-    let(:no_questions_by_author) { Question.find_by_author_id(3) }
+    let(:no_questions_by_author) { Question.find_by_author_id(4) }
 
     context 'when questions of author are found' do
       it 'generates only Questions instance' do
@@ -45,7 +45,7 @@ describe Question do
       end
 
       it 'generates expected number of Questions instance' do
-        expect(questions_by_author.length).to eq(3)
+        expect(questions_by_author.length).to eq(2)
       end
     end
 
@@ -85,6 +85,33 @@ describe Question do
 
     it 'returns nil if there\'s no replies' do
       expect(no_question_replies).to be_nil
+    end
+  end
+
+  describe '#followers' do
+    let(:followers) { question.followers }
+    let(:no_followers) { Question.find_by_id(5).followers }
+
+    it 'returns array of users following questions' do
+      expect(followers).to all be_an(User)
+    end
+
+    it 'returns nil if no users is following' do
+      expect(no_followers).to be_nil
+    end
+  end
+
+  # Simple call to QuestionFollow
+  #  Question::most_followed(n)
+  describe '::most_followed' do
+    let(:most_followed) { Question.most_followed(2) }
+
+    it 'returns first as the most followed question' do
+      expect(most_followed.first.id).to eq(1)
+    end
+
+    it 'returns second most followed question as second' do
+      expect(most_followed[1].id).to eq(2)
     end
   end
 end

@@ -23,4 +23,16 @@ class QuestionLike
 
     QuestionLike.new(question_like.first)
   end
+
+  def self.likers_for_question_id(id)
+    question_like = QuestionsDatabase.instance.execute(<<-SQL, id)
+      SELECT *
+      FROM question_likes
+      WHERE id = ?
+    SQL
+
+    return nil unless question_like.first
+
+    QuestionLike.new(question_like.first)
+  end
 end

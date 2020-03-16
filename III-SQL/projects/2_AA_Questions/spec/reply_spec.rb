@@ -44,7 +44,7 @@ describe Reply do
   end
 
   describe ':find_by_user_id' do
-    let(:no_reply_user) { Reply.find_by_user_id(1) }
+    let(:no_reply_user) { Reply.find_by_user_id(4) }
     let(:replies) { Reply.find_by_user_id(2) }
 
     context 'when some replies are found' do

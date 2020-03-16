@@ -63,7 +63,7 @@ describe User do
 
   describe '#authored_questions' do
     let(:authored_questions) { user.authored_questions }
-    let(:no_authored_questions) { User.find_by_id(3).authored_questions }
+    let(:no_authored_questions) { User.find_by_id(4).authored_questions }
 
     it 'generates questions of user' do
       expect(authored_questions).to all be_a(Question)
@@ -91,6 +91,23 @@ describe User do
     end
   end
 
-  # User # authored_questions (use Question::find_by_author_id)
-  # User # authored_replies (use Reply::find_by_user_id)
+  describe '#followed_questions' do
+    let(:followed_questions) { user.followed_questions }
+    let(:no_followed_questions) { User.find_by_id(5).followed_questions }
+
+    it 'returns Questions followed by user' do
+      expect(followed_questions).to all be_an(Question)
+    end
+
+    it 'returns specified number of Questions followed by user' do
+      expect(followed_questions.length).to eq(4)
+    end
+
+    it 'returns nil if there s no questions followed' do
+      expect(no_followed_questions)
+    end
+  end
+
+  #  User#followed_questions
+  #         One-liner calling QuestionFollow method.
 end

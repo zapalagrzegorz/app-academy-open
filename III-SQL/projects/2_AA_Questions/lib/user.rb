@@ -4,6 +4,7 @@ require 'byebug'
 require_relative 'questions_database.rb'
 require_relative 'question.rb'
 require_relative 'reply.rb'
+require_relative 'question_follow.rb'
 
 # Obiekt użytkownika serwisu
 class User
@@ -48,6 +49,9 @@ class User
     Reply.find_by_user_id(@id)
   end
 
+  def followed_questions
+    QuestionFollow.followed_questions_for_user_id(@id)
+  end
   # def authored_replies
   # end
   #   User#authored_replies (use Reply::find_by_user_id)

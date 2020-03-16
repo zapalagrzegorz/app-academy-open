@@ -87,8 +87,21 @@ VALUES
       FROM
         users
       WHERE
-        fname = 'Kamil'
-        AND lname = 'Kisiel'
+        fname = 'Bogdan'
+        AND lname = 'Zapala'
+    )
+  ),
+  (
+    'Czy mogę wziać urlop? - duplikat',
+    'Urlopik - content - duplikat',
+    (
+      SELECT
+        id
+      FROM
+        users
+      WHERE
+        fname = 'Bogdan'
+        AND lname = 'Zapala'
     )
   );
 
@@ -108,9 +121,8 @@ VALUES
   (1, 3),
   (1, 4),
   (2, 1),
-  (3, 1),
-  (4, 1),
-  (5, 1);
+  (2, 2),
+  (3, 1);
 
 CREATE TABLE replies (
   id INTEGER PRIMARY KEY,

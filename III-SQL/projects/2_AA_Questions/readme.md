@@ -120,13 +120,13 @@ Medium
 
 All of these involve joins. Refer back to the joins reading to clarify your understanding of joins.
 
-    QuestionFollow::followers_for_question_id(question_id)
+    +QuestionFollow::followers_for_question_id(question_id)
         This will return an array of User objects!
-    QuestionFollow::followed_questions_for_user_id(user_id)
+    +QuestionFollow::followed_questions_for_user_id(user_id)
         Returns an array of Question objects.
-    User#followed_questions
+    + User#followed_questions
         One-liner calling QuestionFollow method.
-    Question#followers
+    + Question#followers
         One-liner calling QuestionFollow method.
 
 Again, test your queries in the console before moving on.
@@ -134,9 +134,9 @@ Hard
 
 These involve GROUP BY and ORDER. Use JOINs to solve these, do not use Ruby iteration methods.
 
-    QuestionFollow::most_followed_questions(n)
+    + QuestionFollow::most_followed_questions(n)
         Fetches the n most followed questions.
-    Question::most_followed(n)
+    + Question::most_followed(n)
         Simple call to QuestionFollow
 
 If you haven't already, add a QuestionLike class to use your join table question_likes. Some easy queries:
