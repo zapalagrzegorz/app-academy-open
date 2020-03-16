@@ -47,7 +47,7 @@ describe QuestionLike do
       expect(users_id).to contain_exactly(1, 2, 3)
     end
 
-    it 'returns users who likes the question' do
+    it 'returns nil if there s no likers of question doesn exits' do
       users_id = likers_for_question_id.map(&:id)
       expect(users_id).to contain_exactly(1, 2, 3)
     end
