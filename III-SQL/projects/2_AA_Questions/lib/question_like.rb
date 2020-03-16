@@ -24,15 +24,30 @@ class QuestionLike
     QuestionLike.new(question_like.first)
   end
 
+  # powinno zwracać user'ów
   def self.likers_for_question_id(id)
-    question_like = QuestionsDatabase.instance.execute(<<-SQL, id)
-      SELECT *
+    likers = QuestionsDatabase.instance.execute(<<-SQL, id)
+      SELECT users.id, users.fname, users.lname
       FROM question_likes
-      WHERE id = ?
+      JOIN users ON question_likes.user_id = users.id
+      WHERE question_likes.id = ?
     SQL
 
-    return nil unless question_like.first
+    return nil unless likers.first
 
-    QuestionLike.new(question_like.first)
+
+    likers.map { |liker| User.new(liker) }
+
+    
+  end
+
+  def self.num_likes_for_question_id(id)
+    num_likers = QuestionsDatabase.instance.execute(<<-SQL, id)
+      SELECT COUNT(*)
+      FROM question_likes
+      WHERE question_likes.id = ?
+    SQL
+
+    num_likers
   end
 end
