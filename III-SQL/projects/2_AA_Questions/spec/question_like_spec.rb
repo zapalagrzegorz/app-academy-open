@@ -70,8 +70,55 @@ describe QuestionLike do
     end
   end
 
-  # QuestionLike::num_likes_for_question_id(question_id)
-  # Don't just use QuestionLike::likers_for_question_id and count; do a SQL query to just do this.
-  # This is more efficient, since the SQL DB will return just the number, and not the data for each of the likes.
-  # QuestionLike::liked_questions_for_user_id(user_id)
+  describe ':liked_questions_for_user_id' do
+    let(:liked_questions_for_user_id) { QuestionLike.liked_questions_for_user_id(1) }
+    let(:no_liked_questions_for_user_id) { QuestionLike.liked_questions_for_user_id(1) }
+    
+    it 'returns only Questions' do
+      expect(liked_questions_for_user_id).to all be_an(Question)
+    end
+
+    it 'returns questions liked by the user' do
+      questions = liked_questions_for_user_id.map(&:id)
+      expect(questions).to contain_exactly(1, 2, 3, 4)
+    end
+
+    it 'returns nil if there re no questions' do
+      expect(no_liked_questions_for_user_id).to be_nil
+    end
+  end
+
+  describe ':liked_questions_for_user_id' do
+      let(:liked_questions_for_user_id) { QuestionLike.liked_questions_for_user_id(1) }
+      let(:no_liked_questions_for_user_id) { QuestionLike.liked_questions_for_user_id(1) }
+      
+      it 'returns only Questions'
+        expect(liked_questions_for_user_id).to all be_an(Question)
+      end
+
+      it 'returns questions liked by the user' do
+        questions = liked_questions_for_user_id.map(&:id)
+        expect(questions).to contain_exactly(1, 2, 3, 4)
+      end
+
+      it 'returns nil if there re no questions' do
+        expect(no_liked_questions_for_user_id).to be_nil
+      end
+
+      # QuestionLike::most_liked_questions(n)
+
+  end
+
+  describe '::most_liked_questions(n)' do
+    let(:most_liked_questions) { QuestionLike.most_liked_questions(4) }
+    
+    it 'returns only Questions' do
+      expect(most_liked_questions).to all be_an(Question)
+    end
+
+    it 'returns most liked questions ordered descending' do
+      questions = most_liked_questions.map(&:id)
+      expect(questions).to contain_exactly(1, 2, 3)
+    end
+  end     
 end

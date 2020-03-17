@@ -141,17 +141,17 @@ These involve GROUP BY and ORDER. Use JOINs to solve these, do not use Ruby iter
 
 If you haven't already, add a QuestionLike class to use your join table question_likes. Some easy queries:
 
-    QuestionLike::likers_for_question_id(question_id)
-    QuestionLike::num_likes_for_question_id(question_id)
+    +QuestionLike::likers_for_question_id(question_id)
+    +QuestionLike::num_likes_for_question_id(question_id)
         Don't just use QuestionLike::likers_for_question_id and count; do a SQL query to just do this.
         This is more efficient, since the SQL DB will return just the number, and not the data for each of the likes.
-    QuestionLike::liked_questions_for_user_id(user_id)
+    +QuestionLike::liked_questions_for_user_id(user_id)
 
 These instance methods are one-liners with the above:
 
-    Question#likers
-    Question#num_likes
-    User#liked_questions
+    + Question#likers
+    + Question#num_likes
+    + User#liked_questions
 
 And some harder queries with likes:
 

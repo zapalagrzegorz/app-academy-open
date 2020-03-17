@@ -52,7 +52,10 @@ class User
   def followed_questions
     QuestionFollow.followed_questions_for_user_id(@id)
   end
-  # def authored_replies
-  # end
-  #   User#authored_replies (use Reply::find_by_user_id)
+
+  def liked_questions
+    QuestionLike.liked_questions_for_user_id(@id)
+  end
+
+
 end

@@ -50,4 +50,30 @@ class QuestionLike
 
     num_likers
   end
+
+  def liked_questions_for_user_id
+    questions = QuestionsDatabase.instance.execute(<<-SQL, id)
+      SELECT questions.id, questions.title, questions.body, questions.user_id
+      FROM question_likes
+      JOIN questions ON question_likes.question_id =  questions.id
+      WHERE question_likes.user_id = ?
+    SQL
+
+    return nil unless questions.first
+
+
+    questions.map { |question| Question.new(question) }
+  end
+
+  def most_liked_questions() 
+    questions = QuestionsDatabase.instance.execute(<<-SQL, id)
+      SELECT questions.id, questions.title, questions.body, questions.user_id, COUNT(questions.id) as num_likes
+      FROM question_likes
+      JOIN questions ON question_likes.question_id =  questions.id
+      GROUP BY question_likes.question_id
+      ORDER BY num_likes DESC 
+    SQL
+
+    questions.map { |question| Question.new(question) }
+  end
 end

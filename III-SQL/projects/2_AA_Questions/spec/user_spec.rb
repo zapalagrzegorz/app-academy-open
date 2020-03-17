@@ -108,6 +108,26 @@ describe User do
     end
   end
 
+  describe '#liked_questions' do
+    let(:liked_questions) { user.liked_questions(1) }
+    let(:no_liked_questions) { user.liked_questions(5) }
+    
+    it 'returns only Questions'
+      expect(liked_questions).to all be_an(Question)
+    end
+
+    it 'returns questions liked by the user' do
+      questions = liked_questions.map(&:id)
+      expect(questions).to contain_exactly(1, 2, 3, 4)
+    end
+
+    it 'returns nil if there re no questions' do
+      expect(no_liked_questions).to be_nil
+    end
+  end
+
+  User#liked_questions
+
   #  User#followed_questions
   #         One-liner calling QuestionFollow method.
 end

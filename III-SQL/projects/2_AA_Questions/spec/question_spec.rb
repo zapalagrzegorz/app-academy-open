@@ -114,4 +114,41 @@ describe Question do
       expect(most_followed[1].id).to eq(2)
     end
   end
+
+  describe '#likers' do
+    let(:likers_for_question) { question.likers }
+    let(:no_likers_for_question) { Question.find_by_id(5).likers }
+
+    it 'returns only users' do
+      expect(likers_for_question).to all be_an(User)
+    end
+
+    it 'returns users who likes the question' do
+      users_id = likers_for_question.map(&:id)
+      expect(users_id).to contain_exactly(1, 2, 3)
+    end
+
+    it 'returns nil if there s no likers of question doesn exits' do
+      expect(no_likers_for_question).to be_nil
+    end
+
+  end
+
+  describe '#num_likes' do
+    let(:num_likes) { question.num_likes }
+    let(:no_num_likes) { Question.find_by_id(5).num_likes }
+
+    it 'returns integer' do
+      expect(:num_likes).to be_an(integer)
+    end
+
+    it 'returns num likes for question' do
+      expect(:num_likes).to eq(4)
+    end
+
+    it 'returns 0 num likes for question with no likes' do
+      expect(:no_num_likes).to eq(0)
+    end
+
+  end
 end
