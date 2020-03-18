@@ -2,6 +2,7 @@
 
 require 'byebug'
 require_relative 'questions_database.rb'
+require_relative 'question_like'
 
 # Obiekt użytkownika serwisu
 class Question
@@ -54,5 +55,9 @@ class Question
 
   def followers
     QuestionFollow.followers_for_question_id(@id)
+  end
+
+  def self.most_liked(n) 
+    QuestionLike.most_liked_questions(n)
   end
 end

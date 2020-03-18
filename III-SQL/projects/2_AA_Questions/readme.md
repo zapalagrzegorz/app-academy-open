@@ -155,8 +155,8 @@ These instance methods are one-liners with the above:
 
 And some harder queries with likes:
 
-    QuestionLike::most_liked_questions(n)
-    Question::most_liked(n)
+    + QuestionLike::most_liked_questions(n)
+    + Question::most_liked(n)
         Fetches n most liked questions.
     User#average_karma
         Avg number of likes for a User's questions.

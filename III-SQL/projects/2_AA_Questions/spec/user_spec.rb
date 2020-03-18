@@ -126,8 +126,16 @@ describe User do
     end
   end
 
-  User#liked_questions
 
-  #  User#followed_questions
-  #         One-liner calling QuestionFollow method.
+  describe '#average_karma' do
+    let (:average_karma) { user.average_karma}
+    it 'returns number - float' do
+      expect(average_karma).to be_a(Float)
+    end
+
+    it 'returns some specific float number for user' do
+      expect(average_karma).to eq()
+    end
+  
+  end
 end
