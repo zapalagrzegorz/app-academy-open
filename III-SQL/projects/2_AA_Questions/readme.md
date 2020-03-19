@@ -1,4 +1,4 @@
-#AA Questions
+# AA Questions
 
 Today, we're going to build an application that will help us handle questions from students. To do this, we will set up the database and then overlay Ruby code to map the data from the database into Ruby objects in memory that we can work with. Our database queries (written in SQL) will live within our Ruby code.
 Learning Goals
@@ -11,7 +11,7 @@ Learning Goals
         Be able to use joins instead of Ruby code
         Be able to use GROUP BY and ORDER BY instead of Ruby code
 
-SQL
+## SQL
 
 We'll first construct a series of tables. Write the table definitions in a SQL script named import_db.sql.
 
@@ -158,7 +158,7 @@ And some harder queries with likes:
     + QuestionLike::most_liked_questions(n)
     + Question::most_liked(n)
         Fetches n most liked questions.
-    User#average_karma
+    + User#average_karma
         Avg number of likes for a User's questions.
 
 Average Karma is pretty tough. Here are some hints:
@@ -173,9 +173,7 @@ First, write a single query that returns two things: the number of questions ask
         Note that a question that is never liked will take up one row in the joined table. How do we use COUNT(column) to not count this toward the total number of likes?
 
 Next, divide the number of likes by the number of questions. Because COUNT returns two integers, and because integer division rounds down (3 / 2 == 1), we need to CAST one of the numbers to FLOAT. We can do this like so: CAST(value AS FLOAT).
-
-Test your queries before moving on to the next phase.
-Updating/saving records
+instanceg records
 
 So far we haven't created any new records; we've only been parsing data fetched from the database and performing queries.
 
@@ -184,7 +182,8 @@ Let's see how to create a new object. Let's add a #save method to our models (Us
 If a model already exists in the DB, it should have a non-nil id attribute. Calls to #save should issue an UPDATE SQL command for the row with the object's id. Update all the columns with the current version of the values in your object.
 
 The user should be able to get and set the attributes on the object you hand them through reader and writer methods (attr_accessor).
-Bonus I
+
+## Bonus I
 ModelBase class
 
 So you've probably noticed that each of these classes shares a lot of functionality. Let's extract some common methods out into a superclass. Easy stuff first, let's take ::find_by_id out of the individual classes and put it into our superclass. Let's also add a ::all method while we're at it.

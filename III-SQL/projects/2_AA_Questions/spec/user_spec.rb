@@ -7,9 +7,6 @@ require 'user'
 #   User#authored_replies (use Reply::find_by_user_id)
 
 describe User do
-  before(:example) { QuestionsDatabase.reset! }
-  after(:example) { QuestionsDatabase.reset! }
-
   let(:user) { User.find_by_id(1) }
 
   describe '::find_by_id' do
@@ -128,13 +125,31 @@ describe User do
   end
 
   describe '#average_karma' do
-    let(:average_karma) { user.average_karma }
+    let(:average_karma) { User.find_by_id(3).average_karma }
     it 'returns number - float' do
       expect(average_karma).to be_a(Float)
     end
 
     it 'returns some specific float number for user' do
-      expect(average_karma).to eq(1)
+      expect(average_karma).to eq(0.5)
+    end
+  end
+
+  before(:example) { QuestionsDatabase.reset! }
+  after(:example) { QuestionsDatabase.reset! }
+
+  describe '#save' do
+    it 'saves a new record in DB' do
+      expect(User.new('fname' => 'Iks', 'lname' => 'Igrekowski').save).to eq(6)
+    end
+
+    it 'updates a new record in DB' do
+      new_user = User.new('fname' => 'Iks', 'lname' => 'Igrekowski')
+      new_user_id = new_user.save
+      new_user.fname = 'Grzegorz'
+      new_user.save
+
+      expect(User.find_by_id(new_user_id).fname).to eq('Grzegorz')
     end
   end
 end
