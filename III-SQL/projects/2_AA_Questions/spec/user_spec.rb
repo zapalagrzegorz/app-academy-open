@@ -110,8 +110,8 @@ describe User do
   end
 
   describe '#liked_questions' do
-    let(:liked_questions) { user.liked_questions(1) }
-    let(:no_liked_questions) { user.liked_questions(5) }
+    let(:liked_questions) { user.liked_questions }
+    let(:no_liked_questions) { User.find_by_id(5).liked_questions }
 
     it 'returns only Questions' do
       expect(liked_questions).to all be_an(Question)

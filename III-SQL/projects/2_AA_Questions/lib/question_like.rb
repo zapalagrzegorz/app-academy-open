@@ -30,28 +30,25 @@ class QuestionLike
       SELECT users.id, users.fname, users.lname
       FROM question_likes
       JOIN users ON question_likes.user_id = users.id
-      WHERE question_likes.id = ?
+      WHERE question_likes.question_id = ?
     SQL
 
     return nil unless likers.first
 
-
     likers.map { |liker| User.new(liker) }
-
-    
   end
 
   def self.num_likes_for_question_id(id)
-    num_likers = QuestionsDatabase.instance.execute(<<-SQL, id)
-      SELECT COUNT(*)
+    num_likes_arr = QuestionsDatabase.instance.execute(<<-SQL, id)
+      SELECT COUNT(*) as num_likes
       FROM question_likes
-      WHERE question_likes.id = ?
+      WHERE question_likes.question_id = ?
     SQL
 
-    num_likers
+    num_likes_arr.first['num_likes']
   end
 
-  def liked_questions_for_user_id
+  def self.liked_questions_for_user_id(id)
     questions = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT questions.id, questions.title, questions.body, questions.user_id
       FROM question_likes
@@ -61,17 +58,17 @@ class QuestionLike
 
     return nil unless questions.first
 
-
     questions.map { |question| Question.new(question) }
   end
 
-  def most_liked_questions() 
+  def self.most_liked_questions(id)
     questions = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT questions.id, questions.title, questions.body, questions.user_id, COUNT(questions.id) as num_likes
       FROM question_likes
       JOIN questions ON question_likes.question_id =  questions.id
       GROUP BY question_likes.question_id
-      ORDER BY num_likes DESC 
+      ORDER BY num_likes DESC
+      LIMIT ?
     SQL
 
     questions.map { |question| Question.new(question) }

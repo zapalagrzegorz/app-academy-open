@@ -8,7 +8,7 @@ require_relative 'question_follow.rb'
 
 # Obiekt użytkownika serwisu
 class User
-  attr_reader :fname, :lname
+  attr_reader :fname, :lname, :id
 
   def initialize(props)
     @id = props['id']

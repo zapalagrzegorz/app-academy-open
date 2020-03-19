@@ -33,8 +33,6 @@ describe QuestionLike do
     end
   end
 
-  # QuestionLike::likers_for_question_id(question_id)
-
   describe ':likers_for_question_id' do
     let(:likers_for_question_id) { QuestionLike.likers_for_question_id(1) }
 
@@ -58,21 +56,21 @@ describe QuestionLike do
     let(:zero_num_likes_for_question_id) { QuestionLike.num_likes_for_question_id(5) }
 
     it 'returns integer' do
-      expect(:num_likes_for_question_id).to be_an(integer)
+      expect(num_likes_for_question_id).to be_an(Integer)
     end
 
     it 'returns num likes for question' do
-      expect(:num_likes_for_question_id).to eq(4)
+      expect(num_likes_for_question_id).to eq(3)
     end
 
     it 'returns 0 num likes for question with no likes' do
-      expect(:zero_num_likes_for_question_id).to eq(0)
+      expect(zero_num_likes_for_question_id).to eq(0)
     end
   end
 
   describe ':liked_questions_for_user_id' do
     let(:liked_questions_for_user_id) { QuestionLike.liked_questions_for_user_id(1) }
-    let(:no_liked_questions_for_user_id) { QuestionLike.liked_questions_for_user_id(1) }
+    let(:no_liked_questions_for_user_id) { QuestionLike.liked_questions_for_user_id(4) }
 
     it 'returns only Questions' do
       expect(liked_questions_for_user_id).to all be_an(Question)
@@ -89,7 +87,7 @@ describe QuestionLike do
   end
 
   describe '::most_liked_questions(n)' do
-    let(:most_liked_questions) { QuestionLike.most_liked_questions(4) }
+    let(:most_liked_questions) { QuestionLike.most_liked_questions(3) }
 
     it 'returns only Questions' do
       expect(most_liked_questions).to all be_an(Question)
