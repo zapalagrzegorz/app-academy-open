@@ -57,9 +57,8 @@ class User
     QuestionLike.liked_questions_for_user_id(@id)
   end
 
-      # Avg number of likes for a User's questions.
+  # Avg number of likes for a User's questions.
   def average_karma
-
     # First, write a single query that returns two things: the number of questions asked by a user and the number of likes on those questions.
 
     # user questions
@@ -67,7 +66,7 @@ class User
     # likes number
     questions = QuestionsDatabase.instance.execute(<<-SQL, @id)
       SELECT COUNT(*) as questions_num, COUNT(question_likes.id) as likes_num
-      FROM questions 
+      FROM questions
       LEFT JOIN question_likes ON question_likes.question_id =  questions.id
       WHERE questions.user_id = ?
     SQL
@@ -77,13 +76,12 @@ class User
       FROM question_likes
       JOIN questions ON question_likes.question_id =  questions.id
       GROUP BY question_likes.question_id
-      ORDER BY num_likes DESC 
+      ORDER BY num_likes DESC
     SQL
-
-
+  end
+end
 
 # Average Karma is pretty tough. Here are some hints:
-
 
 #     I used a LEFT OUTER JOIN to combine the questions and question_likes table.
 #         You need questions so you can filter by the author, and you need question_likes so you can count the number of likes.
@@ -93,7 +91,3 @@ class User
 #         Note that a question that is never liked will take up one row in the joined table. How do we use COUNT(column) to not count this toward the total number of likes?
 
 # Next, divide the number of likes by the number of questions. Because COUNT returns two integers, and because integer division rounds down (3 / 2 == 1), we need to CAST one of the numbers to FLOAT. We can do this like so: CAST(value AS FLOAT).
-
-
-
-end

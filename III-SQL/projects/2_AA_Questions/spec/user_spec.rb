@@ -11,6 +11,7 @@ describe User do
   after(:example) { QuestionsDatabase.reset! }
 
   let(:user) { User.find_by_id(1) }
+
   describe '::find_by_id' do
     let(:not_found_user) { User.find_by_id(-1) }
 
@@ -111,8 +112,8 @@ describe User do
   describe '#liked_questions' do
     let(:liked_questions) { user.liked_questions(1) }
     let(:no_liked_questions) { user.liked_questions(5) }
-    
-    it 'returns only Questions'
+
+    it 'returns only Questions' do
       expect(liked_questions).to all be_an(Question)
     end
 
@@ -126,16 +127,14 @@ describe User do
     end
   end
 
-
   describe '#average_karma' do
-    let (:average_karma) { user.average_karma}
+    let(:average_karma) { user.average_karma }
     it 'returns number - float' do
       expect(average_karma).to be_a(Float)
     end
 
     it 'returns some specific float number for user' do
-      expect(average_karma).to eq()
+      expect(average_karma).to eq(1)
     end
-  
   end
 end
