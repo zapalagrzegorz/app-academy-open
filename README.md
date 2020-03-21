@@ -9,9 +9,9 @@ Tracks progress of [App Academy Open course](https://open.appacademy.io/)
 
 - [minesweeper](https://github.com/zapalagrzegorz/minesweeper)
 
-- [chess](https://github.com/zapalagrzegorz/chess)
+- [chess - complex inheritance](https://github.com/zapalagrzegorz/chess)
 
-- [poker](https://github.com/zapalagrzegorz/poker)
+- [poker - TDD ex](https://github.com/zapalagrzegorz/poker)
 
 - [LRU Cache - simple LRU Cache implementation](https://github.com/zapalagrzegorz/app-academy-open/tree/master/II-ruby/II-ruby-10-LRU-cache/LRU_cache)
 
