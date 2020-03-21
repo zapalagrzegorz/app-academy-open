@@ -184,6 +184,7 @@ If a model already exists in the DB, it should have a non-nil id attribute. Call
 The user should be able to get and set the attributes on the object you hand them through reader and writer methods (attr_accessor).
 
 ## Bonus I
+
 ModelBase class
 
 So you've probably noticed that each of these classes shares a lot of functionality. Let's extract some common methods out into a superclass. Easy stuff first, let's take ::find_by_id out of the individual classes and put it into our superclass. Let's also add a ::all method while we're at it.
@@ -197,7 +198,8 @@ For the purposes of this project it's necessary to interpolate the name of the t
 ActiveSupport (part of Rails) has an inflector library that adds methods to String to help you do this. In particular, look at the String#tableize method. You can require the inflector with require 'active_support/inflector'.
 
 The sqlite3 gem does not support the ? interpolation for table names. In this case, we don't need to worry about SQL injection on table names but still need to sanitize our WHERE values. How are these interpolated values different and why is one safe while the other is not?
-where
+
+### where
 
 Add a class method where which accepts an options hash as an argument and searches the database for records whose column matches the options key and whose value matches the options value. It should return all the records which match the criteria:
 
