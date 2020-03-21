@@ -8,3 +8,9 @@ Tracks progress of [App Academy Open course](https://open.appacademy.io/)
 - [Knight's Travails](https://github.com/zapalagrzegorz/Knight-s-Travails)
 
 - [minesweeper](https://github.com/zapalagrzegorz/minesweeper)
+
+- [chess](https://github.com/zapalagrzegorz/chess)
+
+- [poker](https://github.com/zapalagrzegorz/poker)
+
+
