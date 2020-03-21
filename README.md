@@ -13,4 +13,10 @@ Tracks progress of [App Academy Open course](https://open.appacademy.io/)
 
 - [poker](https://github.com/zapalagrzegorz/poker)
 
+- [LRU Cache - simple LRU Cache implementation](https://github.com/zapalagrzegorz/app-academy-open/tree/master/II-ruby/II-ruby-10-LRU-cache/LRU_cache)
+
+- [SQL Zoo - sql exercises](https://github.com/zapalagrzegorz/app-academy-open/tree/master/III-SQL/projects/1_sql_zoo)
+
+- [AA_Questions - simple ORM](https://github.com/zapalagrzegorz/app-academy-open/tree/master/III-SQL/projects/2_AA_Questions) 
+
 
