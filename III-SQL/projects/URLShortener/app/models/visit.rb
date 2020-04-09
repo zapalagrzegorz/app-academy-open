@@ -27,7 +27,8 @@ class Visit < ApplicationRecord
              foreign_key: :shortened_url_id,
              class_name: 'ShortenedUrl'
 
-  #  Add a convenience factory method called Visit::record_visit!(user, shortened_url) that will create a Visit object recording a visit from a User to the given ShortenedUrl.
+  #  Add a convenience factory method called Visit::record_visit!(user, shortened_url)
+  # that will create a Visit object recording a visit from a User to the given ShortenedUrl.
 
   def self.record_visit!(visitHsh = {})
     user = visitHsh[:user] || User.first

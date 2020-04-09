@@ -35,9 +35,11 @@ class ShortenedUrl < ApplicationRecord
              class_name: :User
 
   has_many :visitors,
-           #  -> { distinct }, # <<<
+           -> { distinct },
            through: :visits,
            source: :visitor
+
+  # has_many optional tag_topics
 
   # SecureRandom.urlsafe_base64
   # ShortenedUrl::random_code
@@ -51,20 +53,13 @@ class ShortenedUrl < ApplicationRecord
     url_safe_string
   end
 
-  # def self.random_code
-  #   loop do
-  #     random_code = SecureRandom.urlsafe_base64(16)
-  #     return random_code unless ShortenedUrl.exists?(short_url: random_code)
-  #   end
-  # end
-
-  def self.generate_shortened_url(first_user = random_code, long_url: random_code)
-    user = first_user ?
+  def self.generate_shortened_url(options = { user: random_code, long_url: random_code })
+    user = options[:user] ?
              User.first
            :
              User.create(email: random_code)
 
-    ShortenedUrl.create(long_url: random_code, short_url: random_code, user_id: user.id)
+    ShortenedUrl.create(long_url: options[:long_url], short_url: random_code, user_id: user.id)
   end
 
   # num_clicks should count the number of clicks on a ShortenedUrl.
@@ -72,18 +67,12 @@ class ShortenedUrl < ApplicationRecord
     Visit.where('shortened_url_id = ?', id).count
   end
 
-  # num_uniques
   # should determine the number of distinct users who have clicked a link.
-
   def num_uniques
     Visit.select(:user_id).distinct.count
   end
 
-  # num_recent_uniques
   def num_recent_uniques
     Visit.select(:user_id).distinct.where('created_at > ?', 10.minutes.ago).count
   end
-  # Write a factory method that takes a User object and a long_url string and create!s a new ShortenedUrl.
-
-  # Write submitter and submitted_urls associations to ShortenedUrl and User.
 end
