@@ -24,11 +24,12 @@ class ShortenedUrl < ApplicationRecord
   #  validates :long_url, :short_url, :submitter, presence: true
   validates :long_url, :short_url, :submitter, presence: true
   validates :short_url, uniqueness: { case_sensitive: false }
+  validate :no_spamming, :non_premium_max
 
   belongs_to :submitter,
              primary_key: :id,
              foreign_key: :submitter_id,
-             class_name: :User
+             class_name: 'User'
 
   has_many :visitors,
            -> { distinct },
@@ -53,20 +54,6 @@ class ShortenedUrl < ApplicationRecord
     url_safe_string
   end
 
-  # def self.generate_shortened_url(user, long_url)
-  #   # user = options[:user] ?
-  #   #          User.first
-  #   #        :
-  #   #          User.create(email: random_code)
-
-  #   # ShortenedUrl.create(long_url: options[:long_url], short_url: random_code, user_id: user.id)
-  #   ShortenedUrl.create!(
-  #     user_id: user.id,
-  #     long_url: long_url,
-  #     short_url: ShortenedUrl.random_code
-  #   )
-  # end
-
   def self.create_for_user_and_long_url!(user, long_url)
     ShortenedUrl.create!(
       submitter_id: user.id,
@@ -87,5 +74,25 @@ class ShortenedUrl < ApplicationRecord
 
   def num_recent_uniques
     Visit.select(:user_id).distinct.where('created_at > ?', 10.minutes.ago).count
+  end
+
+  # First, write a custom validation method ShortenedUrl#no_spamming.
+  # Remember to provide an informative error message if the validation fails.
+  # Prevent users from submitting more than 5 URLs in a single minute.
+  def no_spamming
+    num_added_urls = ShortenedUrl.where('submitter_id = :submitter_id AND created_at > :created_at', submitter_id: submitter.id, created_at: 5.minutes.ago).count
+
+    if num_added_urls > 1 && !submitter.premium
+      errors[:maximum] << 'No more urls than 1 per 5 minutes for non-premiums'
+      puts ''
+    end
+
+    # Now add a custom validation method ShortenedUrl#nonpremium_max. To do this you'll first have to add a "premium" boolean column to your Users table. This column should default to false unless a boolean is given.
+  end
+
+  def non_premium_max
+    if submitter.submitted_urls.count >= 5 && !submitter.premium
+      errors[:premium] << 'users are only allowed to submit more than 5 urls'
+    end
   end
 end

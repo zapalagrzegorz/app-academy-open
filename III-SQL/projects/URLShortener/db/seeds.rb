@@ -11,7 +11,7 @@
 # zero filozofia - tak jak intuicja podpowiada
 # ale najpierw musisz mieć obiekt shortened_url, aby stworzyć obiekt Otagowania
 
-u1 = User.create!(email: 'gz@gmail.com')
+u1 = User.create!(email: 'gz@gmail.com', premium: true)
 u2 = User.create!(email: 'gz2@gmail.com')
 u3 = User.create!(email: 'gz3@gmail.com')
 
