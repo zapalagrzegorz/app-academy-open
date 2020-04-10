@@ -11,9 +11,37 @@
 # zero filozofia - tak jak intuicja podpowiada
 # ale najpierw musisz mieć obiekt shortened_url, aby stworzyć obiekt Otagowania
 
-#  tt1 = TagTopic.create!(name: 'Search')
-#   tt2 = TagTopic.create!(name: 'Movies')
+u1 = User.create!(email: 'gz@gmail.com')
+u2 = User.create!(email: 'gz2@gmail.com')
+u3 = User.create!(email: 'gz3@gmail.com')
 
-#   Tagging.create!(shortened_url: su1, tag_topic: tt1)
-#   Tagging.create!(shortened_url: su2, tag_topic: tt1)
-#   Tagging.create!(shortened_url: su3, tag_topic: tt2)
+su1 = ShortenedUrl.create_for_user_and_long_url!(
+  u1, 'www.google.com'
+)
+su2 = ShortenedUrl.create_for_user_and_long_url!(
+  u1, 'gmail.com'
+)
+
+su3 = ShortenedUrl.create_for_user_and_long_url!(
+  u1, 'netpr.pl'
+)
+su4 = ShortenedUrl.create_for_user_and_long_url!(
+  u1, 'classroom.google.pl'
+)
+
+tag_topic1 = TagTopic.create!(title: 'tools')
+tag_topic2 = TagTopic.create!(title: 'work')
+
+Visit.record_visit!(user: su1, shortened_url: su1)
+Visit.record_visit!(user: su2, shortened_url: su1)
+Visit.record_visit!(user: su3, shortened_url: su1)
+Visit.record_visit!(user: su1, shortened_url: su2)
+Visit.record_visit!(user: su2, shortened_url: su2)
+Visit.record_visit!(user: su1, shortened_url: su3)
+Visit.record_visit!(user: su2, shortened_url: su3)
+Visit.record_visit!(user: su3, shortened_url: su3)
+
+Tagging.create!(shortened_url: su1, tag_topic: tag_topic1)
+Tagging.create!(shortened_url: su2, tag_topic: tag_topic1)
+Tagging.create!(shortened_url: su3, tag_topic: tag_topic2)
+Tagging.create!(shortened_url: su4, tag_topic: tag_topic1)

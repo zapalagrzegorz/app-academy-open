@@ -12,8 +12,8 @@ class CreateTaggings < ActiveRecord::Migration[5.2]
     # szukanie tylko po kluczu obcym, a nie tylko eliminacja duplikatów
     add_index :taggings, :shortened_url_id
 
-    # zbędne?
-    add_foreign_key :shortened_urls, :taggings, column: :shortened_url_id
-    add_foreign_key :tag_topics, :taggings, column: :tag_topic_id
+    # zbędne? - nie wykonalne, bo jeszcze tabeli nie ma
+    # add_foreign_key :shortened_urls, :taggings, column: :shortened_url_id
+    # add_foreign_key :tag_topics, :taggings, column: :tag_topic_id
   end
 end

@@ -8,6 +8,6 @@ class CreateTagTopics < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add index :tag_topics, :title, :unique
+    add_index :tag_topics, :title, unique: true
   end
 end
