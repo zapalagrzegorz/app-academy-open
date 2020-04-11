@@ -21,10 +21,10 @@ class TagTopic < ApplicationRecord
   has_many :taggings,
            primary_key: :id,
            foreign_key: :tag_topic_id,
-           class_name: 'Tagging'
-  #  czyli?
-  #             dependent: :destroy
+           class_name: 'Tagging',
+           dependent: :destroy
 
+  #             dependent: :destroy
   has_many :shortened_urls,
            through: :taggings,
            source: :shortened_url
@@ -39,7 +39,7 @@ class TagTopic < ApplicationRecord
     # GROUP BY long_url, short_url
     # WHERE TagTopic = ?
     # limit 5
-    # SORT BY DESC
+    # SORT BY DESCs
 
     shortened_urls.joins(:visits)
                   .group(:short_url, :long_url)

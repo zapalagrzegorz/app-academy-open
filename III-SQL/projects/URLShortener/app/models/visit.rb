@@ -31,6 +31,7 @@ class Visit < ApplicationRecord
   # that will create a Visit object recording a visit from a User to the given ShortenedUrl.
 
   def self.record_visit!(visitHsh = {})
+    
     user = visitHsh[:user] || User.first
 
     shortened_url = visitHsh[:shortened_url] || ShortenedUrl.first

@@ -15,8 +15,6 @@
 #  index_users_on_email  (email) UNIQUE
 #
 class User < ApplicationRecord
-  attr_accessor :premium
-
   validates :email, presence: true, uniqueness: { case_sensitive: false }
 
   has_many :visits,

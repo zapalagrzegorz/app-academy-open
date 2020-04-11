@@ -39,13 +39,21 @@ class ShortenedUrl < ApplicationRecord
   has_many :visits,
            primary_key: :id,
            foreign_key: :shortened_url_id,
-           class_name: 'Visit'
+           class_name: 'Visit',
+           dependent: :destroy
   # has_many optional tag_topics
+  has_many :taggings,
+           primary_key: :id,
+           foreign_key: :shortened_url_id,
+           class_name: 'Tagging',
+           dependent: :destroy
 
+  has_many :tag_topics,
+           through: :taggings,
+           source: :tag_topic
   # SecureRandom.urlsafe_base64
   # ShortenedUrl::random_code
   def self.random_code
-    # nil
     url_safe_string = SecureRandom.urlsafe_base64
     while exists? short_url: url_safe_string
       url_safe_string = SecureRandom.urlsafe_base64
@@ -76,23 +84,41 @@ class ShortenedUrl < ApplicationRecord
     Visit.select(:user_id).distinct.where('created_at > ?', 10.minutes.ago).count
   end
 
-  # First, write a custom validation method ShortenedUrl#no_spamming.
-  # Remember to provide an informative error message if the validation fails.
   # Prevent users from submitting more than 5 URLs in a single minute.
   def no_spamming
     num_added_urls = ShortenedUrl.where('submitter_id = :submitter_id AND created_at > :created_at', submitter_id: submitter.id, created_at: 5.minutes.ago).count
 
-    if num_added_urls > 1 && !submitter.premium
-      errors[:maximum] << 'No more urls than 1 per 5 minutes for non-premiums'
+    if num_added_urls > 3 && !submitter.premium
+      errors[:maximum] << 'No more urls than 3 per 5 minutes for non-premiums'
       puts ''
     end
-
-    # Now add a custom validation method ShortenedUrl#nonpremium_max. To do this you'll first have to add a "premium" boolean column to your Users table. This column should default to false unless a boolean is given.
   end
 
   def non_premium_max
     if submitter.submitted_urls.count >= 5 && !submitter.premium
       errors[:premium] << 'users are only allowed to submit more than 5 urls'
     end
+  end
+
+  # self.left_outer_joins(:visits)
+  #           .join(:users)
+  #
+  def self.prune(n)
+    # .joins("LEFT JOIN visits ON visits.sshortened_url_id = shortened_urls.id")
+    ShortenedUrl.joins(:submitter)
+                .left_outer_joins(:visits)
+                .where("(shortened_urls.created_at < \'#{n.minute.ago}\' AND visits.created_at IS NULL)
+          OR shortened_urls.created_at < \'#{n.minute.ago}\'
+          AND users.premium = \'f\'").destroy_all
+    # .where("(shortened_urls.id IN (
+    #   SELECT shortened_urls.id
+    #   FROM shortened_urls
+    #   JOIN visits
+    #   ON visits.shortened_url_id = shortened_urls.id
+    #   GROUP BY shortened_urls.id
+    #   HAVING MAX(visits.created_at) < \'#{n.minute.ago}\'
+    # ) OR (
+    #   visits.id IS NULL and shortened_urls.created_at < \'#{n.minutes.ago}\'
+    # )) AND users.premium = \'f\'")
   end
 end
