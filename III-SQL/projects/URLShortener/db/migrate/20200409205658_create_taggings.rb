@@ -8,6 +8,7 @@ class CreateTaggings < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
     add_index :taggings, %i[tag_topic_id shortened_url_id], unique: true
     # szukanie tylko po kluczu obcym, a nie tylko eliminacja duplikatów
     add_index :taggings, :shortened_url_id
