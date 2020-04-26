@@ -1,0 +1,1532 @@
+  [1m[35m (1387.8ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1304.0ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (42.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200426094026)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426094026_create_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426094026"]]
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-26 09:52:29.012680"], ["updated_at", "2020-04-26 09:52:29.012680"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (126.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "polls_app_development"[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (116.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "polls_app_test"[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1431.6ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1315.8ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (30.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (38.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateUsers (20200426094026)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (26.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426094026_create_users.rb:5
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/migrate/20200426094026_create_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426094026"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-26 09:54:59.601431"], ["updated_at", "2020-04-26 09:54:59.601431"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreatePolls (20200426095658)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20200426095658_create_polls.rb:5
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/migrate/20200426095658_create_polls.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426095658"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateQuestions (20200426100304)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateQuestions (20200426100304)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (243.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+)[0m
+  ↳ db/migrate/20200426100304_create_questions.rb:5
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/migrate/20200426100304_create_questions.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426100304"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateAnswerChoices (20200426101728)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  ↳ db/migrate/20200426101728_create_answer_choices.rb:5
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/migrate/20200426101728_create_answer_choices.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426101728"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateResponses (20200426101912)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answerChoice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1e7807e7d2"
+FOREIGN KEY ("answerChoice_id")
+  REFERENCES "answerChoices" ("id")
+)[0m
+  ↳ db/migrate/20200426101912_create_responses.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateResponses (20200426101912)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (27.9ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+)[0m
+  ↳ db/migrate/20200426101912_create_responses.rb:5
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/migrate/20200426101912_create_responses.rb:5
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/migrate/20200426101912_create_responses.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426101912"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to ChangeNotNullTitleToPolls (20200426112950)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "polls" ALTER COLUMN "title" SET NOT NULL[0m
+  ↳ db/migrate/20200426112950_change_not_null_title_to_polls.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426112950"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (217.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to ChangeNotNullTextoAnswerChoices (20200426113636)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "answer_choices" ALTER COLUMN "text" SET NOT NULL[0m
+  ↳ db/migrate/20200426113636_change_not_null_texto_answer_choices.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426113636"]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4042686100896465855)[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala627"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala627"], ["created_at", "2020-04-26 12:11:38.981926"], ["updated_at", "2020-04-26 12:11:38.981926"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (217.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala576"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala576"], ["created_at", "2020-04-26 12:11:39.204088"], ["updated_at", "2020-04-26 12:11:39.204088"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala444"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala444"], ["created_at", "2020-04-26 12:11:39.214266"], ["updated_at", "2020-04-26 12:11:39.214266"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala165"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala165"], ["created_at", "2020-04-26 12:11:39.223660"], ["updated_at", "2020-04-26 12:11:39.223660"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala252"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala252"], ["created_at", "2020-04-26 12:11:39.233564"], ["updated_at", "2020-04-26 12:11:39.233564"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala86"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala86"], ["created_at", "2020-04-26 12:21:05.701470"], ["updated_at", "2020-04-26 12:21:05.701470"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (218.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala246"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala246"], ["created_at", "2020-04-26 12:21:05.927379"], ["updated_at", "2020-04-26 12:21:05.927379"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala880"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala880"], ["created_at", "2020-04-26 12:21:05.936868"], ["updated_at", "2020-04-26 12:21:05.936868"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala226"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala226"], ["created_at", "2020-04-26 12:21:05.947252"], ["updated_at", "2020-04-26 12:21:05.947252"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala202"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala202"], ["created_at", "2020-04-26 12:21:05.956855"], ["updated_at", "2020-04-26 12:21:05.956855"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala45"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala45"], ["created_at", "2020-04-26 12:21:54.553239"], ["updated_at", "2020-04-26 12:21:54.553239"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala985"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala985"], ["created_at", "2020-04-26 12:21:54.562313"], ["updated_at", "2020-04-26 12:21:54.562313"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala590"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala590"], ["created_at", "2020-04-26 12:21:54.573183"], ["updated_at", "2020-04-26 12:21:54.573183"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala667"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala667"], ["created_at", "2020-04-26 12:21:54.584502"], ["updated_at", "2020-04-26 12:21:54.584502"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala771"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala771"], ["created_at", "2020-04-26 12:21:54.596243"], ["updated_at", "2020-04-26 12:21:54.596243"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Create (1.0ms)[0m  [1m[32mINSERT INTO "polls" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intimate preferences"], ["user_id", 1], ["created_at", "2020-04-26 12:21:54.630933"], ["updated_at", "2020-04-26 12:21:54.630933"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala136"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala136"], ["created_at", "2020-04-26 12:22:19.965726"], ["updated_at", "2020-04-26 12:22:19.965726"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (218.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala442"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala442"], ["created_at", "2020-04-26 12:22:20.189889"], ["updated_at", "2020-04-26 12:22:20.189889"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala653"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala653"], ["created_at", "2020-04-26 12:22:20.198830"], ["updated_at", "2020-04-26 12:22:20.198830"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala797"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala797"], ["created_at", "2020-04-26 12:22:20.207892"], ["updated_at", "2020-04-26 12:22:20.207892"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala726"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala726"], ["created_at", "2020-04-26 12:22:20.216600"], ["updated_at", "2020-04-26 12:22:20.216600"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Create (1.1ms)[0m  [1m[32mINSERT INTO "polls" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intimate preferences"], ["user_id", 1], ["created_at", "2020-04-26 12:22:20.248367"], ["updated_at", "2020-04-26 12:22:20.248367"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Load (0.5ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5008.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "polls_app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (116.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "polls_app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (112.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "polls_app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1298.3ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1306.1ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "answer_choices" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text NOT NULL, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "polls" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (35.4ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (29.5ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (22.4ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (29.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (7.9ms)[0m  [1m[35mALTER TABLE "answer_choices" ADD CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/schema.rb:58
+  [1m[35m (8.0ms)[0m  [1m[35mALTER TABLE "polls" ADD CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (14.2ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (7.0ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (27.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200426113636)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200426101728),
+(20200426112950),
+(20200426095658),
+(20200426101912),
+(20200426094026),
+(20200426100304);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (36.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-26 12:23:39.861173"], ["updated_at", "2020-04-26 12:23:39.861173"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "answer_choices" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (30.0ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text NOT NULL, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "polls" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (37.1ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (30.1ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (31.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (9.7ms)[0m  [1m[35mALTER TABLE "answer_choices" ADD CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/schema.rb:58
+  [1m[35m (8.5ms)[0m  [1m[35mALTER TABLE "polls" ADD CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (8.2ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (8.4ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (7.7ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (32.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200426113636)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200426101728),
+(20200426112950),
+(20200426095658),
+(20200426101912),
+(20200426094026),
+(20200426100304);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-26 12:23:40.315500"], ["updated_at", "2020-04-26 12:23:40.315500"]]
+  ↳ db/schema.rb:13
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-26 12:23:40.328294"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala482"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala482"], ["created_at", "2020-04-26 12:23:40.370186"], ["updated_at", "2020-04-26 12:23:40.370186"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala162"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala162"], ["created_at", "2020-04-26 12:23:40.380761"], ["updated_at", "2020-04-26 12:23:40.380761"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala486"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala486"], ["created_at", "2020-04-26 12:23:40.391828"], ["updated_at", "2020-04-26 12:23:40.391828"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala902"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala902"], ["created_at", "2020-04-26 12:23:40.402721"], ["updated_at", "2020-04-26 12:23:40.402721"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala742"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala742"], ["created_at", "2020-04-26 12:23:40.413272"], ["updated_at", "2020-04-26 12:23:40.413272"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Create (0.6ms)[0m  [1m[32mINSERT INTO "polls" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intimate preferences"], ["user_id", 1], ["created_at", "2020-04-26 12:23:40.440794"], ["updated_at", "2020-04-26 12:23:40.440794"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPoll Create (1.3ms)[0m  [1m[32mINSERT INTO "polls" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intimate preferences"], ["user_id", 2], ["created_at", "2020-04-26 12:24:29.611482"], ["updated_at", "2020-04-26 12:24:29.611482"]]
+  [1m[35m (218.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (421.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "polls_app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (117.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "polls_app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1305.7ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1305.3ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "answer_choices" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (34.6ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text NOT NULL, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "polls" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (32.1ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (33.8ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (21.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (8.7ms)[0m  [1m[35mALTER TABLE "answer_choices" ADD CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/schema.rb:58
+  [1m[35m (6.5ms)[0m  [1m[35mALTER TABLE "polls" ADD CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (7.7ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (7.8ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (6.7ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200426113636)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200426101728),
+(20200426112950),
+(20200426095658),
+(20200426101912),
+(20200426094026),
+(20200426100304);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (34.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-26 12:25:04.463931"], ["updated_at", "2020-04-26 12:25:04.463931"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "answer_choices" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text NOT NULL, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "polls" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (38.1ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (19.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (35.7ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (29.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (8.6ms)[0m  [1m[35mALTER TABLE "answer_choices" ADD CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/schema.rb:58
+  [1m[35m (8.0ms)[0m  [1m[35mALTER TABLE "polls" ADD CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (8.3ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (7.7ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (8.0ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (27.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200426113636)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200426101728),
+(20200426112950),
+(20200426095658),
+(20200426101912),
+(20200426094026),
+(20200426100304);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (36.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-26 12:25:04.913505"], ["updated_at", "2020-04-26 12:25:04.913505"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-26 12:25:04.924565"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala452"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala452"], ["created_at", "2020-04-26 12:25:04.965954"], ["updated_at", "2020-04-26 12:25:04.965954"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala576"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala576"], ["created_at", "2020-04-26 12:25:04.975751"], ["updated_at", "2020-04-26 12:25:04.975751"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala301"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala301"], ["created_at", "2020-04-26 12:25:04.986321"], ["updated_at", "2020-04-26 12:25:04.986321"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala175"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala175"], ["created_at", "2020-04-26 12:25:04.996252"], ["updated_at", "2020-04-26 12:25:04.996252"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala785"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala785"], ["created_at", "2020-04-26 12:25:05.005353"], ["updated_at", "2020-04-26 12:25:05.005353"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Create (0.6ms)[0m  [1m[32mINSERT INTO "polls" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intimate preferences"], ["user_id", 1], ["created_at", "2020-04-26 12:25:05.032461"], ["updated_at", "2020-04-26 12:25:05.032461"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" ORDER BY "polls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala703"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala703"], ["created_at", "2020-04-26 12:28:13.027824"], ["updated_at", "2020-04-26 12:28:13.027824"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala263"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala263"], ["created_at", "2020-04-26 12:28:13.038266"], ["updated_at", "2020-04-26 12:28:13.038266"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala181"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala181"], ["created_at", "2020-04-26 12:28:13.047404"], ["updated_at", "2020-04-26 12:28:13.047404"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala564"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala564"], ["created_at", "2020-04-26 12:28:13.056993"], ["updated_at", "2020-04-26 12:28:13.056993"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala54"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala54"], ["created_at", "2020-04-26 12:28:13.066208"], ["updated_at", "2020-04-26 12:28:13.066208"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Create (1.0ms)[0m  [1m[32mINSERT INTO "polls" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intimate preferences163"], ["user_id", 1], ["created_at", "2020-04-26 12:28:13.098499"], ["updated_at", "2020-04-26 12:28:13.098499"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (10.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "answer_choices" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (31.4ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text NOT NULL, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "polls" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (8.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (31.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (9.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (8.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (39.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (11.9ms)[0m  [1m[35mALTER TABLE "answer_choices" ADD CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/schema.rb:58
+  [1m[35m (6.7ms)[0m  [1m[35mALTER TABLE "polls" ADD CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (8.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "answer_choices" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (33.6ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text NOT NULL, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (10.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "polls" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (8.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (41.8ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (8.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (12.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (7.0ms)[0m  [1m[35mALTER TABLE "answer_choices" ADD CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/schema.rb:58
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE "polls" ADD CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (6.2ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (6.5ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2020-04-26 12:28:40.244274"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-26 12:28:40.258113"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala389"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala389"], ["created_at", "2020-04-26 12:28:40.298337"], ["updated_at", "2020-04-26 12:28:40.298337"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala53"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala53"], ["created_at", "2020-04-26 12:28:40.309400"], ["updated_at", "2020-04-26 12:28:40.309400"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala180"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala180"], ["created_at", "2020-04-26 12:28:40.320848"], ["updated_at", "2020-04-26 12:28:40.320848"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala512"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala512"], ["created_at", "2020-04-26 12:28:40.332106"], ["updated_at", "2020-04-26 12:28:40.332106"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala853"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala853"], ["created_at", "2020-04-26 12:28:40.343464"], ["updated_at", "2020-04-26 12:28:40.343464"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Create (0.6ms)[0m  [1m[32mINSERT INTO "polls" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intimate preferences140"], ["user_id", 1], ["created_at", "2020-04-26 12:28:40.372510"], ["updated_at", "2020-04-26 12:28:40.372510"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Load (0.2ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" ORDER BY "polls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "polls_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "polls_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (152.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "answer_choices" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text NOT NULL, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (9.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "polls" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (35.4ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (7.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (32.1ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (8.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (21.9ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (8.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (10.9ms)[0m  [1m[35mALTER TABLE "answer_choices" ADD CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/schema.rb:58
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "polls" ADD CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (8.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "answer_choices" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (38.6ms)[0m  [1m[35mCREATE TABLE "answer_choices" ("id" bigserial primary key, "text" text NOT NULL, "question_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_answer_choices_on_question_id" ON "answer_choices"  ("question_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (10.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "polls" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (29.0ms)[0m  [1m[35mCREATE TABLE "polls" ("id" bigserial primary key, "title" character varying NOT NULL, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_polls_on_user_id" ON "polls"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (9.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (38.7ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "text" text, "poll_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (20.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_questions_on_poll_id" ON "questions"  ("poll_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (9.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (24.3ms)[0m  [1m[35mCREATE TABLE "responses" ("id" bigserial primary key, "user_id" bigint, "answer_choice_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_answer_choice_id" ON "responses"  ("answer_choice_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE  INDEX  "index_responses_on_user_id" ON "responses"  ("user_id")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (10.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (46.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (20.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (11.1ms)[0m  [1m[35mALTER TABLE "answer_choices" ADD CONSTRAINT "fk_rails_07edaa26da"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/schema.rb:58
+  [1m[35m (8.3ms)[0m  [1m[35mALTER TABLE "polls" ADD CONSTRAINT "fk_rails_16e77efa22"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (8.7ms)[0m  [1m[35mALTER TABLE "questions" ADD CONSTRAINT "fk_rails_6c530c0079"
+FOREIGN KEY ("poll_id")
+  REFERENCES "polls" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (8.5ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_6c6c7309e0"
+FOREIGN KEY ("answer_choice_id")
+  REFERENCES "answer_choices" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (9.6ms)[0m  [1m[35mALTER TABLE "responses" ADD CONSTRAINT "fk_rails_2bd9a0753e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2020-04-26 12:29:59.306216"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-26 12:29:59.320138"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala105"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala105"], ["created_at", "2020-04-26 12:29:59.356842"], ["updated_at", "2020-04-26 12:29:59.356842"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala3"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala3"], ["created_at", "2020-04-26 12:29:59.369721"], ["updated_at", "2020-04-26 12:29:59.369721"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala422"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala422"], ["created_at", "2020-04-26 12:29:59.382692"], ["updated_at", "2020-04-26 12:29:59.382692"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala104"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala104"], ["created_at", "2020-04-26 12:29:59.396188"], ["updated_at", "2020-04-26 12:29:59.396188"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gelozapala285"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "gelozapala285"], ["created_at", "2020-04-26 12:29:59.409050"], ["updated_at", "2020-04-26 12:29:59.409050"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Create (0.6ms)[0m  [1m[32mINSERT INTO "polls" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Intimate preferences583"], ["user_id", 1], ["created_at", "2020-04-26 12:29:59.438969"], ["updated_at", "2020-04-26 12:29:59.438969"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" ORDER BY "polls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mPoll Load (0.3ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" WHERE "polls"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["text", "Do you like girls?"], ["poll_id", 1], ["created_at", "2020-04-26 12:29:59.463518"], ["updated_at", "2020-04-26 12:29:59.463518"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[36mPoll Load (0.4ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  [1m[36mPoll Load (0.4ms)[0m  [1m[34mSELECT  "polls".* FROM "polls" ORDER BY "polls"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."poll_id" = $1[0m  [["poll_id", 1]]
