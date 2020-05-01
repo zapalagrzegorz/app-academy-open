@@ -64,10 +64,11 @@ If your column names are different, you may have to tweak the seed file first (t
 Add presence and uniqueness validations wherever required.
 
 N.B. Remember, Rails 5 automatically validates the presence of belongs_to associations.
-User Can't Create Multiple Responses To The Same Question
+
+### User Can't Create Multiple Responses To The Same Question
 
 We will write a custom validation method, not_duplicate_response, to check that the respondent has not previously answered this question. This is a deceptively hard thing to do and will require several steps:
-Step 1: Response#sibling_responses
+#### Step 1: Response#sibling_responses
 
 We'll write a method Response#sibling_responses. This should return all the other Response objects for the same Question. To do this, first add the following associations:
 Response#question
@@ -89,7 +90,8 @@ This be not good. How can we fix this?
 Remember how associations are actually lazy-loading chain-able query objects? Let's chain a where clause on here to filter out responses with the same id as self.id.
 
 NB: Don't forget that you need to use where.not here because of SQL ternary logic.
-Step 2: not_duplicate_response
+
+#### Step 2: not_duplicate_response
 
 Next use Response#sibling_responses to write Response#respondent_already_answered?. This is a predicate method that checks to see if any sibling exists? with the same respondent_id.
 
