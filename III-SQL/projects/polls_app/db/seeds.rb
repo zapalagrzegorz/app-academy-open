@@ -53,4 +53,4 @@ response4 = Response.create!(user_id: us5.id, answer_choice_id: ac2.id)
 response5 = Response.create!(user_id: us6.id, answer_choice_id: ac2.id)
 
 response6 = Response.create!(user_id: us7.id, answer_choice_id: ac3.id)
-response7 = Response.create!(user_id: us8.id, answer_choice_id: ac4.id)
+# response7 = Response.create!(user_id: us8.id, answer_choice_id: ac4.id)

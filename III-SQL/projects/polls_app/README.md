@@ -96,7 +96,8 @@ NB: Don't forget that you need to use where.not here because of SQL ternary logi
 Next use Response#sibling_responses to write Response#respondent_already_answered?. This is a predicate method that checks to see if any sibling exists? with the same respondent_id.
 
 Now you can (finally) implement your validation. Use #respondent_already_answered? to write a custom validation method that will ensure that the respondent has not already answered it.
-Author Can't Respond To Own Poll
+
+### Author Can't Respond To Own Poll
 
 Enforce that the creator of the poll must not answer their own questions: don't let the creator rig the results!
 
@@ -105,7 +106,8 @@ The simplest way is to use associations to traverse from a Response object back 
 NB If you are having trouble with this portion, read the following. Don't read it until you've attempted it yourself!!
 
 If you are creating a through association that uses another through association, there is a Rails bug that makes this return nil if the record is unsaved. Even Rails has its own list of bugs! To fix this, explicitly use response.question.poll. You might ask, why has Rails not fixed this yet? It is extremely rare to make such tenuous associations in real app development, so it hasn't been a priority. You'll come to see that there are bugs and issues in all code, even in your operating system and the implementations of Ruby! There is a limited amount of developers and time.
-Poll results
+
+## Poll results
 
 Write a method Question#results that returns a hash of choices and counts like so:
 
