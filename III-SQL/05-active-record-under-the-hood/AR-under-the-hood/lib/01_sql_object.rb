@@ -12,11 +12,17 @@ class SQLObject
   end
 
   def self.table_name=(table_name)
-    # ...
+    # class instance variable
+    @custom_table = table_name
   end
 
   def self.table_name
-    # ...
+    # return self.class.custom_table unless self.class.custom_table.nil?
+
+    return self.name.tableize unless @custom_table
+
+    @custom_table
+    # self.name.underscore.pluralize
   end
 
   def self.all
