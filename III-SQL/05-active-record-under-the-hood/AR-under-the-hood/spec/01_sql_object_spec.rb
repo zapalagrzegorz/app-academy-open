@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require '01_sql_object'
 require 'db_connection'
 require 'securerandom'
+require 'byebug'
 
 describe SQLObject do
   before(:each) { DBConnection.reset }
@@ -36,19 +39,20 @@ describe SQLObject do
 
     describe '::columns' do
       it 'returns a list of all column names as symbols' do
-        expect(Cat.columns).to eq([:id, :name, :owner_id])
+        expect(Cat.columns).to eq(%i[id name owner_id])
       end
 
       it 'only queries the DB once' do
         expect(DBConnection.instance).to(
-          receive(:execute2).exactly(1).times.and_call_original)
+          receive(:execute2).exactly(1).times.and_call_original
+        )
         3.times { Cat.columns }
       end
     end
 
     describe '#attributes' do
       it 'returns @attributes hash byref' do
-        cat_attributes = {name: 'Gizmo'}
+        cat_attributes = { name: 'Gizmo' }
         c = Cat.new
         c.instance_variable_set('@attributes', cat_attributes)
 
@@ -68,13 +72,13 @@ describe SQLObject do
   context 'after ::finalize!' do
     before(:all) do
       class Cat < SQLObject
-        self.finalize!
+        finalize!
       end
 
       class Human < SQLObject
         self.table_name = 'humans'
 
-        self.finalize!
+        finalize!
       end
     end
 
@@ -86,15 +90,15 @@ describe SQLObject do
     describe '::finalize!' do
       it 'creates getter methods for each column' do
         c = Cat.new
-        expect(c.respond_to? :something).to be false
-        expect(c.respond_to? :name).to be true
-        expect(c.respond_to? :id).to be true
-        expect(c.respond_to? :owner_id).to be true
+        expect(c.respond_to?(:something)).to be false
+        expect(c.respond_to?(:name)).to be true
+        expect(c.respond_to?(:id)).to be true
+        expect(c.respond_to?(:owner_id)).to be true
       end
 
       it 'creates setter methods for each column' do
         c = Cat.new
-        c.name = "Nick Diaz"
+        c.name = 'Nick Diaz'
         c.id = 209
         c.owner_id = 2
         expect(c.name).to eq 'Nick Diaz'
@@ -104,13 +108,13 @@ describe SQLObject do
 
       it 'created getter methods read from attributes hash' do
         c = Cat.new
-        c.instance_variable_set(:@attributes, {name: "Nick Diaz"})
+        c.instance_variable_set(:@attributes, { name: 'Nick Diaz' })
         expect(c.name).to eq 'Nick Diaz'
       end
 
       it 'created setter methods use attributes hash to store data' do
         c = Cat.new
-        c.name = "Nick Diaz"
+        c.name = 'Nick Diaz'
 
         expect(c.instance_variables).to include(:@attributes)
         expect(c.instance_variables).not_to include(:@name)
@@ -124,12 +128,12 @@ describe SQLObject do
         # #initialize gets called, so we use ::allocate to create a
         # blank Cat object first and then call #initialize manually.
         c = Cat.allocate
-
+        # debugger
         expect(c).to receive(:name=).with('Don Frye')
         expect(c).to receive(:id=).with(100)
         expect(c).to receive(:owner_id=).with(4)
 
-        c.send(:initialize, {name: 'Don Frye', id: 100, owner_id: 4})
+        c.send(:initialize, { name: 'Don Frye', id: 100, owner_id: 4 })
       end
 
       it 'throws an error when given an unknown attribute' do
@@ -166,7 +170,8 @@ describe SQLObject do
 
       it '::all does not cache the results' do
         expect(DBConnection).to(
-          receive(:execute).exactly(2).times.and_call_original)
+          receive(:execute).exactly(2).times.and_call_original
+        )
         2.times { Cat.all }
       end
     end
