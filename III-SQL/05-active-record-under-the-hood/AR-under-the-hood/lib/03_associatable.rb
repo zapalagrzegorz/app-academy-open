@@ -11,22 +11,32 @@ class AssocOptions
 
   def model_class
     # ...
+    # After you have these basic defaults working, write #model_class, which should use String#constantize to go from a class name to the class object.
+    class_name.constantize
   end
 
   def table_name
     # ...
+    class_name.downcase.underscore + 's'
   end
 end
 
 class BelongsToOptions < AssocOptions
   def initialize(name, options = {})
-    # ...
+    @foreign_key = options[:foreign_key] || (name.to_s.underscore + "_id").to_sym
+    @primary_key = options[:primary_key] || :id
+    @class_name = options[:class_name] || name.camelcase
+
+
   end
 end
 
 class HasManyOptions < AssocOptions
   def initialize(name, self_class_name, options = {})
-    # ...
+    @primary_key = options[:primary_key] || :id
+    @foreign_key = options[:foreign_key] || (self_class_name.singularize.underscore + "_id").to_sym
+    @class_name = options[:class_name] || name.singularize.camelcase
+
   end
 end
 

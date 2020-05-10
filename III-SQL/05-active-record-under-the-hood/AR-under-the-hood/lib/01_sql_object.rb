@@ -133,6 +133,9 @@ class SQLObject
     columns = self.class.columns.drop(1)
     
     set_line = columns.map(&:to_s).join(' = ?, ') + ' = ?'
+
+    # set_line = self.class.columns
+    # .map { |attr| "#{attr} = ?" }.join(", ")
     
     DBConnection.execute(<<-SQL, *attribute_values.drop(1))
 
@@ -149,12 +152,7 @@ class SQLObject
   # It is not intended that the user call #insert or #update directly 
   # (leave them public so the specs can call them :-)).
   def save
-    if id.nil?
-      self.insert
-    else
-      self.update
-    end
-    # ...
+    id.nil? ? insert : update
 
   end
 end
