@@ -92,7 +92,10 @@ class SQLObject
     @attributes ||= {}
   end
 
-  # wrote a SQLObject#attribute_values method that returns an array of the values for each attribute. I did this by calling Array#map on SQLObject::columns, calling send on the instance to get the value.
+  # wrote a SQLObject#attribute_values method
+  # that returns an array of the values for each attribute.
+  # I did this by calling Array#map on SQLObject::columns, calling send on the instance
+  # to get the value.
   def attribute_values
     attribute_values = []
 
@@ -101,6 +104,8 @@ class SQLObject
     end
 
     attribute_values
+
+    #     self.class.columns.map { |attr| self.send(attr) }
   end
 
   #   To simplify building this query, I made two local variables:
@@ -120,7 +125,7 @@ class SQLObject
 
     question_marks = (['?'] * columns.length).join(', ')
     table_name = self.class.table_name
-    
+
     DBConnection.execute(<<-SQL, *attribute_values)
       INSERT INTO "#{table_name}" (#{col_names})
       VALUES (#{question_marks})
@@ -131,12 +136,12 @@ class SQLObject
 
   def update
     columns = self.class.columns.drop(1)
-    
+
     set_line = columns.map(&:to_s).join(' = ?, ') + ' = ?'
 
     # set_line = self.class.columns
     # .map { |attr| "#{attr} = ?" }.join(", ")
-    
+
     DBConnection.execute(<<-SQL, *attribute_values.drop(1))
 
       UPDATE
@@ -144,15 +149,14 @@ class SQLObject
       SET
         #{set_line}
       WHERE
-        id = #{self.id}
+        id = #{id}
     SQL
   end
 
-  # This should call #insert or #update depending on whether id.nil?. 
-  # It is not intended that the user call #insert or #update directly 
+  # This should call #insert or #update depending on whether id.nil?.
+  # It is not intended that the user call #insert or #update directly
   # (leave them public so the specs can call them :-)).
   def save
     id.nil? ? insert : update
-
   end
 end
