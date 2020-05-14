@@ -43,27 +43,20 @@ module Associatable
 
   # Begin writing a belongs_to method for Associatable. This method should take in the association name and an options hash. It should build a BelongsToOptions object; save this in a local variable named options.
 
-  # Within belongs_to, call define_method to create a new method to access the association. Within this method:
-
-  #     Use send to get the value of the foreign key.
-  #     Use model_class to get the target model class.
-  #     Use where to select those models where the primary_key column is equal to the foreign key value.
-  #     Call first (since there should be only one such item).
-
-  # Throughout this method definition, use the options object so that defaults are used appropriately.
   def belongs_to(name, options = {})
     # define_method to create a new method to access the association
-    options = BelongsToOptions.new(name, options)
-
+    assoc_options[name] = BelongsToOptions.new(name, options)
+    # option2 = BelongsToOptions.new(name, options)
     define_method(name) do
+      # option2
       # options.foreign_key - nazwa kolumny
       # send(foreign_key) - wartość
+      # debugger
+      foreign_key_value = send(self.class.assoc_options[name].foreign_key)
 
-      foreign_key_value = send(options.foreign_key)
+      where_line = { "#{self.class.assoc_options[name].primary_key}": foreign_key_value }
 
-      where_line = { "#{options.primary_key}": foreign_key_value }
-
-      options.model_class.where(where_line).first
+      self.class.assoc_options[name].model_class.where(where_line).first
     end
   end
 
@@ -81,8 +74,12 @@ module Associatable
     # debugger
   end
 
+  # extend Associatable powoduje, że metody będą dopisane do klasy
+  # to jest metoda statyczna/ ::class_method
   def assoc_options
     # Wait to implement this in Phase IVa. Modify `belongs_to`, too.
+    # lazy initialized
+    @assoc_options ||= {}
   end
 end
 
