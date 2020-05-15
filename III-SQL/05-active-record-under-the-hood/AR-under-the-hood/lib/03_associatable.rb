@@ -39,12 +39,13 @@ class HasManyOptions < AssocOptions
 end
 
 module Associatable
-  #   Phase IIIb: belongs_to, has_many
-
-  # Begin writing a belongs_to method for Associatable. This method should take in the association name and an options hash. It should build a BelongsToOptions object; save this in a local variable named options.
+  # Begin writing a belongs_to method for Associatable. This method should take in the association
+  # name and an options hash.
+  # It should build a BelongsToOptions object; 
 
   def belongs_to(name, options = {})
     # define_method to create a new method to access the association
+    # zobacz #assoc_options
     assoc_options[name] = BelongsToOptions.new(name, options)
     # option2 = BelongsToOptions.new(name, options)
     define_method(name) do
@@ -79,6 +80,10 @@ module Associatable
   def assoc_options
     # Wait to implement this in Phase IVa. Modify `belongs_to`, too.
     # lazy initialized
+    #  @assoc_options  to class variable - zmienna zapisana na obiekcie tej Klasy
+    # zapisana w klasie pozwala na zapisanie w stanie klasy wszystkich informacji
+    # o dotychczasowych powiazaniach
+
     @assoc_options ||= {}
   end
 end
