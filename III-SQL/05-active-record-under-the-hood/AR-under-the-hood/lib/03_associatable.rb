@@ -18,6 +18,7 @@ class AssocOptions
 
   def table_name
     class_name.downcase.underscore + 's'
+    # model_class.table_name
   end
 end
 
@@ -41,23 +42,21 @@ end
 module Associatable
   # Begin writing a belongs_to method for Associatable. This method should take in the association
   # name and an options hash.
-  # It should build a BelongsToOptions object; 
+  # It should build a BelongsToOptions object;
 
   def belongs_to(name, options = {})
-    # define_method to create a new method to access the association
     # zobacz #assoc_options
     assoc_options[name] = BelongsToOptions.new(name, options)
-    # option2 = BelongsToOptions.new(name, options)
     define_method(name) do
-      # option2
       # options.foreign_key - nazwa kolumny
       # send(foreign_key) - wartość
-      # debugger
-      foreign_key_value = send(self.class.assoc_options[name].foreign_key)
 
-      where_line = { "#{self.class.assoc_options[name].primary_key}": foreign_key_value }
+      options = self.class.assoc_options[name]
+      foreign_key_value = send(options.foreign_key)
 
-      self.class.assoc_options[name].model_class.where(where_line).first
+      where_line = { "#{options.primary_key}": foreign_key_value }
+
+      options.model_class.where(where_line).first
     end
   end
 

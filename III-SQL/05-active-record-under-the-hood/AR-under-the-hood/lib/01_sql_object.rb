@@ -11,12 +11,12 @@ class SQLObject
   def self.columns
     return @columns if @columns
 
-    raw_sql_results = DBConnection.execute2(<<-SQL)
+    columns = DBConnection.execute2(<<-SQL).first
       SELECT *
       FROM #{table_name}
     SQL
 
-    @columns = raw_sql_results[0].map(&:to_sym)
+    @columns = columns.map(&:to_sym)
   end
 
   # create getter / setter
@@ -38,11 +38,15 @@ class SQLObject
     @custom_table = table_name
   end
 
+  # instead of traditional setter: metaclass/ eigenclass...
+  # class << self
+  #   attr_writer :table_name
+  # end
+
   def self.table_name
     return name.tableize unless @custom_table
 
     @custom_table
-    # self.name.underscore.pluralize
   end
 
   def self.all
@@ -74,9 +78,9 @@ class SQLObject
   # Set the attribute by calling the setter method. Use #send; avoid using @attributes or #attributes inside #initialize.
   # Hint: we need to call ::columns on a class object, not the instance. For example, we can call Dog::columns but not dog.columns.
   def initialize(params = {})
+    # key,value , JS: for (const key in obj) -> key: obj[key]
     params.each do |attr_name, value|
       column = attr_name.to_sym
-      # p self.class.columns
       unless self.class.columns.include?(column)
         raise "unknown attribute '#{column}'"
       end
@@ -97,15 +101,9 @@ class SQLObject
   # I did this by calling Array#map on SQLObject::columns, calling send on the instance
   # to get the value.
   def attribute_values
-    attribute_values = []
+    attributes.values
 
-    attributes.map do |_value, col_value|
-      attribute_values << col_value
-    end
-
-    attribute_values
-
-    #     self.class.columns.map { |attr| self.send(attr) }
+    # self.class.columns.map { |attr| send(attr) }
   end
 
   #   To simplify building this query, I made two local variables:
@@ -138,9 +136,6 @@ class SQLObject
     columns = self.class.columns.drop(1)
 
     set_line = columns.map(&:to_s).join(' = ?, ') + ' = ?'
-
-    # set_line = self.class.columns
-    # .map { |attr| "#{attr} = ?" }.join(", ")
 
     DBConnection.execute(<<-SQL, *attribute_values.drop(1))
 
