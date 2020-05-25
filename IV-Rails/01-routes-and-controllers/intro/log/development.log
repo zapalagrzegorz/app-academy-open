@@ -1,0 +1,711 @@
+  [1m[35m (1379.0ms)[0m  [1m[35mCREATE DATABASE "intro_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (1317.7ms)[0m  [1m[35mCREATE DATABASE "intro_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "intro_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "intro_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+Started GET "/" for 127.0.0.1 at 2020-05-25 14:27:50 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-25 14:28:57 +0200
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 19ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2020-05-25 14:29:45 +0200
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started GET "/users" for ::1 at 2020-05-25 14:32:14 +0200
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 23ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-05-25 14:33:22 +0200
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 21ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - UsersController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/0b1b6e8f395d5407/variables" for 127.0.0.1 at 2020-05-25 14:33:23 +0200
+Started GET "/users" for ::1 at 2020-05-25 14:42:02 +0200
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-05-25 14:42:22 +0200
+Processing by UsersController#index as HTML
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?fav_food=pizza" for ::1 at 2020-05-25 14:43:52 +0200
+Processing by UsersController#index as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?admin=true" for ::1 at 2020-05-25 14:44:08 +0200
+Processing by UsersController#index as */*
+  Parameters: {"admin"=>"true"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?admin[IT]=true" for ::1 at 2020-05-25 14:44:29 +0200
+Processing by UsersController#index as */*
+  Parameters: {"admin"=>{"IT"=>"true"}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?admin[IT]=true&admin[liar]=false" for ::1 at 2020-05-25 14:45:09 +0200
+Processing by UsersController#index as */*
+  Parameters: {"admin"=>{"IT"=>"true", "liar"=>"false"}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users?admin[IT]=true&admin[liar]=false" for ::1 at 2020-05-25 14:57:45 +0200
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users" for ::1 at 2020-05-25 14:57:59 +0200
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users" for ::1 at 2020-05-25 14:58:58 +0200
+Processing by UsersController#create as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users?admin[liar]=false" for ::1 at 2020-05-25 14:59:19 +0200
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>{"liar"=>"false"}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users?admin[liar]=false" for ::1 at 2020-05-25 15:00:15 +0200
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>{"liar"=>"false"}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:01:18 +0200
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>{"liar"=>false}, "user"=>{"admin"=>{"liar"=>false}}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:01:33 +0200
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>{"liar"=>false}, "user"=>{"admin"=>{"liar"=>false}}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:02:16 +0200
+Processing by UsersController#create as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:02:26 +0200
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>{"liar"=>false}, "user"=>{"admin"=>{"liar"=>false}}}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:03:26 +0200
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>{"liar"=>false}, "user"=>{"admin"=>{"liar"=>false}}}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:04:02 +0200
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>"pizzaman", "user"=>{"admin"=>"pizzaman"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:04:09 +0200
+Processing by UsersController#create as */*
+  Parameters: {"user"=>"pizzaman"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:04:43 +0200
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"fav_food": "pizza",
+}
+
+ActionDispatch::Http::Parameters::ParseError - 765: unexpected token at '{
+"fav_food": "pizza",
+}':
+
+Started POST "/users" for ::1 at 2020-05-25 15:04:49 +0200
+Processing by UsersController#create as */*
+  Parameters: {"fav_food"=>"pizza", "user"=>{"fav_food"=>"pizza"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-25 15:05:22 +0200
+Processing by UsersController#create as */*
+  Parameters: {"admin"=>"pizza"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//users/2" for ::1 at 2020-05-25 15:14:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/2"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "//users/2" for ::1 at 2020-05-25 20:04:34 +0200
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "//users/2" for ::1 at 2020-05-25 20:08:53 +0200
+Processing by UsersController#show as */*
+  Parameters: {"admin"=>"pizza", "id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//users/2" for ::1 at 2020-05-25 20:09:17 +0200
+Processing by UsersController#show as */*
+  Parameters: {"admin"=>{"pizzer"=>"salsa"}, "id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//users/2" for ::1 at 2020-05-25 20:10:22 +0200
+Processing by UsersController#show as */*
+  Parameters: {"admin"=>{"pizzer"=>"viral"}, "id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//users/2" for ::1 at 2020-05-25 20:10:48 +0200
+Processing by UsersController#show as */*
+  Parameters: {"admin"=>{"pizzer"=>"salsa", "fish"=>"viral"}, "id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "//users/2" for ::1 at 2020-05-25 20:10:59 +0200
+Processing by UsersController#show as */*
+  Parameters: {"admin"=>{"pizzer"=>"salsa", "fish"=>"viral"}, "else"=>"someKey\n", "id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (33.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (30.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4733270473093800225)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateUsers (20200525181155)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (30.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200525181155_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200525181155"]]
+  ↳ bin/rails:4
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-25 18:40:22.829324"], ["updated_at", "2020-05-25 18:40:22.829324"]]
+  ↳ bin/rails:4
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4733270473093800225)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Greg"], ["email", "zapala.grzegorz@gmail.com"], ["created_at", "2020-05-25 18:41:33.522414"], ["updated_at", "2020-05-25 18:41:33.522414"]]
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kamil"], ["email", "kamil.kwasniewski@gmail.com"], ["created_at", "2020-05-25 18:41:56.638374"], ["updated_at", "2020-05-25 18:41:56.638374"]]
+  [1m[35m (205.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "kowalsky-john@gmail.com"], ["created_at", "2020-05-25 18:47:18.275136"], ["updated_at", "2020-05-25 18:47:18.275136"]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "//users" for ::1 at 2020-05-25 20:48:02 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"admin"=>{"pizzer"=>"salsa", "fish"=>"viral"}, "else"=>"someKey\n"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 32ms (Views: 9.9ms | ActiveRecord: 11.1ms)
+
+
+Started POST "//users" for ::1 at 2020-05-25 20:59:40 +0200
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:11
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 34ms (Views: 6.0ms | ActiveRecord: 6.2ms)
+
+
+Started POST "//users" for ::1 at 2020-05-25 20:59:54 +0200
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}, "admin"=>{"email"=>"viral"}}
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:11
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 3.5ms)
+
+
+Started POST "//users" for ::1 at 2020-05-25 21:00:01 +0200
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Grisha", "email"=>"viral"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Grisha"], ["email", "viral"], ["created_at", "2020-05-25 19:00:01.222389"], ["updated_at", "2020-05-25 19:00:01.222389"]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 7.7ms)
+
+
+Started POST "//users" for ::1 at 2020-05-25 21:01:19 +0200
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 422 Unprocessable Entity in 27ms (Views: 0.6ms | ActiveRecord: 5.3ms)
+
+
+Started POST "//users/1" for ::1 at 2020-05-25 21:05:04 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "//users/1" for ::1 at 2020-05-25 21:05:17 +0200
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}, "id"=>"1"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `findBy' for #<Class:0x00007f31d43942b8>
+Did you mean?  find_by
+               find_by!
+               find:
+  app/controllers/users_controller.rb:19:in `show'
+
+Started GET "//users/1" for ::1 at 2020-05-25 21:05:33 +0200
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}, "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 200 OK in 31ms (Views: 0.8ms | ActiveRecord: 12.5ms)
+
+
+Started GET "//users/1" for ::1 at 2020-05-25 21:07:03 +0200
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}, "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 5.5ms)
+
+
+
+NameError - undefined local variable or method `name' for #<UsersController:0x00007f31c075ce18>:
+  app/controllers/users_controller.rb:21:in `show'
+
+Started GET "//users/1" for ::1 at 2020-05-25 21:07:16 +0200
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 200 OK in 34ms (Views: 0.6ms | ActiveRecord: 6.3ms)
+
+
+Started PUT "//users/1" for ::1 at 2020-05-25 21:13:06 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:37
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["name", "Grisha"], ["updated_at", "2020-05-25 19:13:06.897888"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:37
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:37
+Completed 200 OK in 46ms (Views: 0.8ms | ActiveRecord: 15.5ms)
+
+
+Started GET "//users/1" for ::1 at 2020-05-25 21:13:15 +0200
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"Grisha"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "//users/1" for ::1 at 2020-05-25 21:13:32 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name2"=>"Grisha2"}, "id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+Unpermitted parameter: :name2
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:37
+Completed 200 OK in 13ms (Views: 1.0ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "//users/10" for ::1 at 2020-05-25 21:21:43 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name2"=>"Grisha2"}, "id"=>"10"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+Unpermitted parameter: :name2
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms)
+
+
+
+NoMethodError - undefined method `update' for nil:NilClass:
+  app/controllers/users_controller.rb:37:in `update'
+
+Started PATCH "//users/10" for ::1 at 2020-05-25 21:22:17 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name2"=>"Grisha2"}, "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 3.4ms)
+
+
+Started PATCH "//users/10" for ::1 at 2020-05-25 21:22:51 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name2"=>"Grisha2"}, "id"=>"10"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.6ms)
+
+
+
+NoMethodError - undefined method `errors' for nil:NilClass:
+  app/controllers/users_controller.rb:41:in `update'
+
+Started PATCH "//users/10" for ::1 at 2020-05-25 21:23:14 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name2"=>"Grisha2"}, "id"=>"10"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 422 Unprocessable Entity in 10ms (Views: 0.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-05-25 21:24:02 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 20ms (Views: 11.0ms | ActiveRecord: 5.8ms)
+
+
+Started PATCH "//users/10" for ::1 at 2020-05-25 21:24:53 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name2"=>"Grisha2"}, "id"=>"10"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 5ms (Views: 1.2ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "//users/5" for ::1 at 2020-05-25 21:26:38 +0200
+Processing by UsersController#update as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 9ms (Views: 0.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "//users/5" for ::1 at 2020-05-25 21:26:45 +0200
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.9ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/users_controller.rb:21:in `show'
+
+Started POST "//users" for ::1 at 2020-05-25 21:29:16 +0200
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Grisha2"], ["email", "viral"], ["created_at", "2020-05-25 19:29:16.016368"], ["updated_at", "2020-05-25 19:29:16.016368"]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/users" for ::1 at 2020-05-25 21:29:40 +0200
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/5" for ::1 at 2020-05-25 21:29:57 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}, "id"=>"5"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:38
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/users/5" for ::1 at 2020-05-25 21:30:01 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}, "id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:38
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/5" for ::1 at 2020-05-25 21:30:02 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}, "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:38
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/5" for ::1 at 2020-05-25 21:30:04 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}, "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:38
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users" for ::1 at 2020-05-25 21:30:37 +0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/users"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-05-25 21:30:46 +0200
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for ::1 at 2020-05-25 21:31:49 +0200
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 22ms (Views: 10.8ms | ActiveRecord: 8.0ms)
+
+
+Started DELETE "/users/5" for ::1 at 2020-05-25 21:32:57 +0200
+
+AbstractController::ActionNotFound - The action 'delete' could not be found for UsersController:
+
+Started DELETE "/users/5" for ::1 at 2020-05-25 21:34:18 +0200
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}, "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:49
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/users_controller.rb:49
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:49
+Completed 200 OK in 35ms (Views: 0.8ms | ActiveRecord: 14.6ms)
+
+
+Started DELETE "/users/5" for ::1 at 2020-05-25 21:34:20 +0200
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}, "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/5" for ::1 at 2020-05-25 21:34:29 +0200
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}, "id"=>"5"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 5.5ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/users_controller.rb:21:in `show'
+
+Started GET "/users/5" for ::1 at 2020-05-25 21:35:11 +0200
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"Grisha2", "email"=>"viral"}, "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 2.1ms)
+
+
