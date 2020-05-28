@@ -1,7 +1,7 @@
 # app-academy-open
 Tracks progress of [App Academy Open course](https://open.appacademy.io/) 
 
-## Course projects
+## Selected course projects
 
 ### Rails
 - [Art Share API - first webservice](https://github.com/zapalagrzegorz/app-academy-open/tree/master/IV-Rails/projects/art-share-api)
