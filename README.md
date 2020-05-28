@@ -19,4 +19,6 @@ Tracks progress of [App Academy Open course](https://open.appacademy.io/)
 
 - [AA_Questions - simple ORM](https://github.com/zapalagrzegorz/app-academy-open/tree/master/III-SQL/projects/2_AA_Questions) 
 
+- [Art Share API - first webservice](https://github.com/zapalagrzegorz/app-academy-open/tree/master/IV-Rails/projects/art-share-api)
+
 
