@@ -1,0 +1,38 @@
+<style>
+td {
+  padding: 5px 15px;
+}
+</style>
+<div style="display: flex; max-width: 600px; margin: auto">
+  <img src="http://placekitten.com/200/200" alt="">
+  <table>
+    <tr>
+      <th>Prop</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><%= @cat.name  %></td>
+    </tr>
+    <tr>
+      <td>Birth date</td>
+      <td><%= @cat.birth_date %></td>
+    </tr>
+        
+    <tr>
+      <td>Color</td>
+      <td><%= @cat.color  %></td>
+    </tr>
+        
+    <tr>
+      <td>Sex</td>
+      <td><%= @cat.sex  %></td>
+    </tr>
+        
+    <tr>
+      <td>Description</td>
+      <td><%= @cat.description %></td>
+    </tr>
+
+  </table>
+</div>
