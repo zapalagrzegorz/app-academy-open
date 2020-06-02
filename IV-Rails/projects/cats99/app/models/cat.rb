@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Cat < ApplicationRecord
-  # unikalny tylko dla danego user'a - każdy z userów może mieć tytuł "undefinded"
   validates :name, uniqueness: { scope: :birth_date }
 
   CAT_COLORS = %w[blue pink yellow magenta green grey black].freeze

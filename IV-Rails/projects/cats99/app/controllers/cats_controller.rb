@@ -32,6 +32,17 @@ class CatsController < ApplicationController
     render :edit
   end
 
+  def update
+    @cat = Cat.find(params[:id])
+    if @cat.update_attributes(cat_params)
+      flash[:success] = 'Cat was successfully updated'
+      redirect_to @cat
+    else
+      flash[:error] = 'Something went wrong'
+      render 'edit'
+    end
+  end
+
   def cat_params
     params.require(:cat).permit(:name, :birth_date, :sex, :color, :description)
   end

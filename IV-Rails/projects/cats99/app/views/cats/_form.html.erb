@@ -1,8 +1,20 @@
-<form action="/cats" method="post">
+<!--
+  Things to change:
+    - pre-filled values ()
+    - action ()
+    - hidden input patch ()
+    - submit button ()
+-->
+
+<form action="<%= cat.persisted? ? cats_url : cat_url(cat) %>" method="POST" >
+  <% if action == "edit" %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end%>
+
   <p>
     <label for="name">Name</label>
 
-    <input id="name" type="text" name=cat[name] value="<%= cat.name  %>" >
+    <input id="name" type="text" name=cat[name] value="<%= cat.name if cat.name %>" >
   </p>
 
   <p>
@@ -41,8 +53,13 @@
 
   <div>
     <label for="description">Description</label>
-    <textarea name="cat[description]" id="description"></textarea>
+    <textarea name="cat[description]" id="description"><%=cat.description if cat.description %></textarea>
   </div>
 
-  <input type="submit" value="Save this kitty">
+  <p>
+    <% if cat.persisted? %>
+      <%= link_to "Return", cat_url(@cat) %>
+    <% end %>
+    <input type="submit" value=<%= action == "new" ? "Save kitty" : "Update kitty" %>>
+  </p>
 </form>
