@@ -8,4 +8,9 @@ class Cat < ApplicationRecord
   validates :birth_date, :color, :name, :sex, :description, presence: true
   validates :sex, inclusion: { in: %w[F M] }
   # inclusion: %w(M F)
+
+  has_many :cat_rental_requests,
+           class_name: 'CatRentalRequest',
+           foreign_key: 'cat_id',
+           dependent: :destroy
 end
