@@ -10,6 +10,7 @@ class Cat < ApplicationRecord
   # inclusion: %w(M F)
 
   has_many :cat_rental_requests,
+           -> { order 'start_date ASC' },
            class_name: 'CatRentalRequest',
            foreign_key: 'cat_id',
            dependent: :destroy

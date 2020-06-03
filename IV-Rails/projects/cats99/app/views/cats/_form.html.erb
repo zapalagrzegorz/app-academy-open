@@ -38,17 +38,18 @@
 
   <div>
     <label>Choose cat sex</label>
-    <div>
-      <label for="male">Male</label>
+    <p class="flex-container" >
+      <label for="male" style="margin-right: 1rem">Male</label>
       <input type="radio" name="cat[sex]" id="male"
         <%= cat.sex == "M" ? "checked" : "" %> 
         value="M">
-
-      <label for="female">Female</label>
+    </p>
+    <p class="flex-container" style="margin-right: 1rem">
+      <label for="female" style="margin-right: 1rem">Female</label>
       <input type="radio" name="cat[sex]" id="female" 
         value="F" 
         <%= cat.sex == "F" ? "checked" : "" %> >
-    </div>
+    </p>
   </div>
 
   <div>

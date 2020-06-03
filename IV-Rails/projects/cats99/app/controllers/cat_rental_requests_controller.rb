@@ -9,17 +9,31 @@ class CatRentalRequestsController < ApplicationController
       redirect_to cat_url(@cat_rental_request.cat_id)
     else
       # flash[:error] = "Something went wrong"
-      render 'new'
+      @cats = Cat.all
+      render :new
     end
   end
 
   def new
-    @cats = Cats.all
+    # debugger
+    @cats = Cat.all
     @cat_rental_request = CatRentalRequest.new
-    render 'new'
+    render :new
+  end
+
+  def approve
+    cat_request = CatRentalRequest.find(params[:id])
+    cat_request.approve!
+    redirect_to cat_url(cat_request.cat)
+  end
+
+  def deny
+    cat_request = CatRentalRequest.find(params[:id])
+    cat_request.deny!
+    redirect_to cat_url(cat_request.cat)
   end
 
   def cat_rental_request_params
-    params.require(:cat_rental_request).permit(:start_date, :end_date)
+    params.require(:cat_rental_request).permit(:start_date, :end_date, :cat_id)
   end
 end
