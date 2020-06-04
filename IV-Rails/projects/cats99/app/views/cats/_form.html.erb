@@ -1,0 +1,66 @@
+<!--
+  Things to change:
+    - pre-filled values ()
+    - action ()
+    - hidden input patch ()
+    - submit button ()
+-->
+
+<form action="<%= cat.persisted? ? cats_url : cat_url(cat) %>" method="POST" >
+  <% if action == "edit" %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end%>
+
+  <p>
+    <label for="name">Name</label>
+
+    <input id="name" type="text" name=cat[name] value="<%= cat.name if cat.name %>" >
+  </p>
+
+  <p>
+    <label for="birth_date">Birth date</label>
+    <input id="birth_date" type="date" name="cat[birth_date]" value="<%= cat.birth_date  %>" max="<%= Date.today %>"  >
+  </p>
+
+  <p>
+    <label for="color">Pick cat's color</label>
+    <select name="cat[color]" id="color">
+      <option disabled selected>--  Cat's color</option>
+
+      <% Cat::CAT_COLORS.each do |color| %>
+        <option value="<%= color %>" <%= cat.color == color ? "selected" : "" %> >
+          <%= color %>
+        </option>
+      <% end %>
+    </select>
+
+  </p>
+
+  <div>
+    <label>Choose cat sex</label>
+    <p class="flex-container" >
+      <label for="male" style="margin-right: 1rem">Male</label>
+      <input type="radio" name="cat[sex]" id="male"
+        <%= cat.sex == "M" ? "checked" : "" %> 
+        value="M">
+    </p>
+    <p class="flex-container" style="margin-right: 1rem">
+      <label for="female" style="margin-right: 1rem">Female</label>
+      <input type="radio" name="cat[sex]" id="female" 
+        value="F" 
+        <%= cat.sex == "F" ? "checked" : "" %> >
+    </p>
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea name="cat[description]" id="description"><%=cat.description if cat.description %></textarea>
+  </div>
+
+  <p>
+    <% if cat.persisted? %>
+      <%= link_to "Return", cat_url(@cat) %>
+    <% end %>
+    <input type="submit" value=<%= action == "new" ? "Save kitty" : "Update kitty" %>>
+  </p>
+</form>
