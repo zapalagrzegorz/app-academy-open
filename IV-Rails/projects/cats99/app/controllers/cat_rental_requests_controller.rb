@@ -22,6 +22,7 @@ class CatRentalRequestsController < ApplicationController
   end
 
   def approve
+    # duplication
     cat_request = CatRentalRequest.find(params[:id])
     cat_request.approve!
     redirect_to cat_url(cat_request.cat)
@@ -30,10 +31,23 @@ class CatRentalRequestsController < ApplicationController
   def deny
     cat_request = CatRentalRequest.find(params[:id])
     cat_request.deny!
+    # aby cat_request.cat nie robił kolejnego zapytania
+    # trzeba zrobić .includes(:cat), aby zaciągnął od razu obiekt
     redirect_to cat_url(cat_request.cat)
   end
 
   def cat_rental_request_params
     params.require(:cat_rental_request).permit(:start_date, :end_date, :cat_id)
   end
+
+  # private
+
+  # def current_cat_rental_request
+  #   @rental_request ||=
+  #     CatRentalRequest.includes(:cat).find(params[:id])
+  # end
+
+  # def current_cat
+  #   current_cat_rental_request.cat
+  # end
 end

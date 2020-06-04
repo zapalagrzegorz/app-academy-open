@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CatRentalRequest < ApplicationRecord
+  STATUS_STATES = %w[APPROVED DENIED PENDING].freeze
+
   validates :start_date, :end_date, :status, presence: true
 
   validates :status, inclusion: { in: %w[PENDING APPROVED DENIED] }
@@ -26,6 +28,12 @@ class CatRentalRequest < ApplicationRecord
 
   def does_not_overlap_approved_request
     # debugger
+    # return if self.denied?
+
+    #     unless overlapping_approved_requests.empty?
+    # errors[:base] <<
+    # 'Request conflicts with existing approved request'
+    # end
     if overlapping_approved_requests.exists?
       errors[:start_or_end_date] << '- at least one of them overlaps with already accepted rent request'
     end
@@ -36,6 +44,9 @@ class CatRentalRequest < ApplicationRecord
   end
 
   def approve!
+    # gdyby jednak użytkownik wysłał wniosek o zatwierdzenie odrzuconego wniosku
+    # raise 'not pending' unless status == 'PENDING'
+
     if overlapping_pending_requests.exists?
       ActiveRecord::Base.transaction do
         update(status: 'APPROVED')
@@ -49,4 +60,11 @@ class CatRentalRequest < ApplicationRecord
   def deny!
     update(status: 'DENIED')
   end
+
+  # private
+  # def start_must_come_before_end
+  #   return if start_date < end_date
+  #   errors[:start_date] << 'must come before end date'
+  #   errors[:end_date] << 'must come after start date'
+  # end
 end

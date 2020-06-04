@@ -22,8 +22,8 @@ class CatsController < ApplicationController
       redirect_to cats_url
     else
       # raise
+      # flash.now[:errors] = @cat.errors.full_messages
       render :new
-      # render json:  @cat
     end
   end
 
@@ -36,12 +36,15 @@ class CatsController < ApplicationController
     @cat = Cat.find(params[:id])
     if @cat.update_attributes(cat_params)
       flash[:success] = 'Cat was successfully updated'
-      redirect_to @cat
+      redirect_to cat_url(@cat)
     else
+      # flash.now[:errors] = @cat.errors.full_messages
       flash[:error] = 'Something went wrong'
       render 'edit'
     end
   end
+
+  private
 
   def cat_params
     params.require(:cat).permit(:name, :birth_date, :sex, :color, :description)
