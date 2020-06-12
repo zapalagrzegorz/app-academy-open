@@ -30,6 +30,12 @@ class CatRentalRequestsController < ApplicationController
 
   def deny
     cat_request = CatRentalRequest.find(params[:id])
+    # CatRentalRequest belongs_to cat, a więc zapytanie do bazy
+    # dla obiektu "właściciela" jest  generowane  dopiero
+    # na żądanie, chyba, że poprosisz o dane wcześniej
+
+    #   #     CatRentalRequest.includes(:cat).find(params[:id])
+    #
     cat_request.deny!
     # aby cat_request.cat nie robił kolejnego zapytania
     # trzeba zrobić .includes(:cat), aby zaciągnął od razu obiekt
@@ -50,4 +56,9 @@ class CatRentalRequestsController < ApplicationController
   # def current_cat
   #   current_cat_rental_request.cat
   # end
+
+  def current_cat_rental_request
+    @rental_request ||=
+      CatRentalRequest.includes(:cat).find(params[:id])
+  end
 end
