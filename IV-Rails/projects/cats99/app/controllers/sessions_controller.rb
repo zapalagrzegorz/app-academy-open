@@ -1,33 +1,41 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  before_action :require_logout, only: %i[new create]
+  before_action :require_login, only: :destroy
+
   def new
-    @session = Session.new
+    @user = User.new
     render 'new'
   end
 
   def create
     # verify credentials
-    @user = User.find_by_credentials(session_params)
+    @user = User.find_by_credentials(
+      params[:user][:username],
+      params[:user][:password]
+    )
 
     # set the session
 
     if @user
       login!(@user)
       flash[:success] = 'You\'ve successfully logged in'
-      redirect_to @user
+      redirect_to cats_url
     else
-      flash[:error] = 'Username or password is incorrect'
+      flash[:alert] = 'Username or password is incorrect'
       render 'new'
     end
   end
 
   def destroy
-    @session = Session.find(params[:id])
-    if @session.destroy
+    if current_user
+      # server-side
+      current_user.reset_session_token!
+      # client-side
+      session[:session_token] = ''
+
       flash[:success] = 'You\'ve successfully logged out'
-    else
-      flash[:error] = 'Something went wrong'
     end
 
     redirect_to cats_url

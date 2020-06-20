@@ -3,7 +3,7 @@
 class CatRentalRequest < ApplicationRecord
   STATUS_STATES = %w[APPROVED DENIED PENDING].freeze
 
-  validates :start_date, :end_date, :status, presence: true
+  validates :start_date, :end_date, :status, :cat, :requester, presence: true
 
   validates :status, inclusion: { in: %w[PENDING APPROVED DENIED] }
 
@@ -14,6 +14,8 @@ class CatRentalRequest < ApplicationRecord
   #   Add associations between CatRentalRequest and Cat.
   # Make sure that when a Cat is deleted, all of its rental requests are also deleted. Use dependent: :destroy.
   belongs_to :cat, class_name: 'Cat', foreign_key: 'cat_id'
+
+  belongs_to :requester, class_name: 'User', foreign_key: 'user_id'
 
   def overlapping_requests
     CatRentalRequest

@@ -1,0 +1,37 @@
+@import "vars";
+
+.menu__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @extend .dark-blue-bg;
+  padding: 1rem 2rem 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.yellow {
+  color: yellow;
+  &:hover {
+    color: yellow;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-skip-ink: none;
+  }
+  &--submit {
+    background-color: transparent;
+    border: 0;
+    padding-bottom: 4px;
+  }
+}
+
+body {
+  .black,
+  .black.button,
+  .black.button.hollow {
+    color: $black;
+  }
+}

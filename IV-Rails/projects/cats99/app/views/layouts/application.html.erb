@@ -4,28 +4,53 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "99 Cats" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application" %>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <% if current_user %>
-      <ul class="no-bullet">
-        <li><%= current_user.username %> </li>
-        <li>
-          <form action="<%= session_url  %>">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Logout">
-          </form>
-        </li>
-      </ul>
+    <div class="menu__container">
+      <div class="h2"><a href="<%= root_url %>" class="yellow">99 Cats</a></div>
+      <div>
+        <% if current_user %>
+          <ul class="no-bullet menu__logout flex-container">
+            <li class="h3" style="padding-right: 1rem"><%= current_user.username %> </li>
+            <li>
+              <form action="<%= session_url  %>" method="POST">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" class="h3 yellow yellow--submit" value="Logout">
+              </form>
+            </li>
+          </ul>
+        <% else %>
+          <%= link_to 'Login', new_session_url, class: "menu__login h3 yellow" %>
+        <% end %>
+      </div>
+    </div>
+
+    <% unless flash.empty? %>
+
+      <div class="grid-container">
+        <div class="grid-x">
+          <div class="cell small-12">
+            <% flash.each do |name, msg| -%>
+              <div class="callout <%= name %>" data-closable>
+                <h2 class="h3 black"><%= msg %></h2>
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              <% end -%>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <% end %>
 
     <%= yield %>
-
-  </body>
-</html>
+  </html>

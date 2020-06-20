@@ -1,44 +1,47 @@
 <% if @cat_rental_request.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@cat_rental_request.errors.count, "error") %> prohibited this cat_rental_request from being saved:</h2>
-
-    <ul>
-      <% @cat_rental_request.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
+  <%= render 'form_errors', model: @cat_rental_request %>
 <% end %>
 
-<h1>Reserve the kitty</h1>
+<div class="grid-container form__container" >
+  <div class="grid-x">
+    <div class="cell small-12">
+      <h1 class="form__header">Reserve the kitty</h1>
+    </div>
 
-<form action="<%= cat_rental_requests_url %>" method="POST" >
+    <div class="cell small-12">
+      <form action="<%= cat_rental_requests_url %>" method="POST" >
 
-  <p>
-    <label for="name">Choose cat</label>
+        <p>
+          <label for="name">Choose cat</label>
 
-    <select name="cat_rental_request[cat_id]" id="name">
-      <option disabled selected>--  Cat's name</option>
+          <select name="cat_rental_request[cat_id]" id="name">
+            <option disabled <%= "selected" unless @cat_id %> >--  Cat's name</option>
 
-      <% @cats.each do |cat| %>
-        <option value="<%= cat.id %>">
-          <%= cat.name %>
-        </option>
-      <% end %>
-    </select>
-  </p>
+            <% @cats.each do |cat| %>
+              <option value="<%= cat.id %>" <%= "selected" if @cat_id.to_s == cat.id.to_s %>>
 
-  <p>
-    <label for="start_date">Start rent date</label>
-    <input name="cat_rental_request[start_date]" id="start_date" type="date" min="<%= Date.today %>"  value="<%=  @cat_rental_request.start_date if @cat_rental_request.start_date   %>" >
-  </p>
+                <p><%= cat.name %></p>
+                <p>@cat_id:   <%=  @cat_id %></p>
+                <p>cat.id <%=  cat.id %></p>
+              </option>
+            <% end %>
+          </select>
+        </p>
 
-  <p>
-    <label for="end_date">End rent date</label>
-    <input name="cat_rental_request[end_date]" id="end_date" type="date" min="<%= Date.today + 1 %>" value="<%= @cat_rental_request.end_date if @cat_rental_request.start_date  %>" >
-  </p>
+        <p>
+          <label for="start_date">Start rent date</label>
+          <input name="cat_rental_request[start_date]" id="start_date" type="date" min="<%= Date.today %>"  value="<%=  @cat_rental_request.start_date if @cat_rental_request.start_date   %>" >
+        </p>
 
-  <p>
-    <input type="submit" value="Make reservation">
-  </p>
-</form>
+        <p>
+          <label for="end_date">End rent date</label>
+          <input name="cat_rental_request[end_date]" id="end_date" type="date" min="<%= Date.today + 1 %>" value="<%= @cat_rental_request.end_date if @cat_rental_request.start_date  %>" >
+        </p>
+
+        <p>
+          <input type="submit" value="Make reservation">
+        </p>
+      </form>
+
+    </div>
+  </div>

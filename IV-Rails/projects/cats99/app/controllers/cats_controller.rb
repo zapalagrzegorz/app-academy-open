@@ -1,13 +1,17 @@
 # frozen_string_literal: true
 
 class CatsController < ApplicationController
+  before_action :require_login, only: %i[create new edit update]
+  before_action :require_login_owner, only: %i[edit update]
+
   def index
     @cats = Cat.all
     render :index
   end
 
   def show
-    @cat = Cat.find(params[:id])
+    @cat = Cat.includes(cat_rental_requests: [:requester]).find(params[:id])
+    # @cat = Cat.find(params[:id])
     render :show
   end
 
@@ -17,29 +21,36 @@ class CatsController < ApplicationController
   end
 
   def create
-    @cat = Cat.new(cat_params)
+    # debugger
+    @cat = current_user.cats.new(cat_params)
+
+    # @cat = Cat.new(cat_params, user_id: current_user.id)
+
     if @cat.save
+      flash[:success] = "Cat '#{cat_params[:name]}' has been successfuly created"
       redirect_to cats_url
     else
-      # raise
-      # flash.now[:errors] = @cat.errors.full_messages
       render :new
     end
   end
 
   def edit
     @cat = Cat.find(params[:id])
-    render :edit
+    if @cat
+      render :edit
+    else
+      flash[:errors] = 'No such cat'
+      redirect_to cats_url
+    end
   end
 
   def update
-    @cat = Cat.find(params[:id])
+    @cat = current_user.cats.find(params[:id])
+
     if @cat.update_attributes(cat_params)
       flash[:success] = 'Cat was successfully updated'
       redirect_to cat_url(@cat)
     else
-      # flash.now[:errors] = @cat.errors.full_messages
-      flash[:error] = 'Something went wrong'
       render 'edit'
     end
   end
@@ -48,5 +59,14 @@ class CatsController < ApplicationController
 
   def cat_params
     params.require(:cat).permit(:name, :birth_date, :sex, :color, :description)
+  end
+
+  def require_login_owner
+    # debugger
+    @cat = current_user.cats.where(id: params[:id])
+    if @cat.empty?
+      flash[:alert] = 'We\'re sorry, you are not permitted to that site'
+      redirect_to root_url
+    end
   end
 end
