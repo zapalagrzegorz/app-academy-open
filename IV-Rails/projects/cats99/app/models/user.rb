@@ -3,7 +3,8 @@
 require 'bcrypt'
 
 class User < ApplicationRecord
-  attr_reader :password
+  # !
+  validates :username, presence: true, uniqueness: true
 
   validates :session_token, :username, presence: true
 
@@ -13,11 +14,13 @@ class User < ApplicationRecord
 
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  attr_reader :password
+
   after_initialize :ensure_session_token
 
-  has_many :cats
+  has_many :cats, dependent: :destroy
 
-  has_many :cat_rental_requests
+  has_many :cat_rental_requests, dependent: :destroy
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -34,6 +37,10 @@ class User < ApplicationRecord
   def is_password?(password)
     BCrypt::Password.new(password_digest).is_password?(password)
   end
+
+  # def owns_cat?(cat)
+  #   cat.user_id == self.id
+  # end
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64

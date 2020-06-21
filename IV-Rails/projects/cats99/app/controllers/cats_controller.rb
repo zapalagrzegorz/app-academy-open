@@ -24,6 +24,7 @@ class CatsController < ApplicationController
     # debugger
     @cat = current_user.cats.new(cat_params)
 
+    # przyjmuje tylko jeden zestaw parametrów
     # @cat = Cat.new(cat_params, user_id: current_user.id)
 
     if @cat.save
@@ -35,12 +36,14 @@ class CatsController < ApplicationController
   end
 
   def edit
-    @cat = Cat.find(params[:id])
-    if @cat
-      render :edit
+    # @cat = Cat.find(params[:id])
+    @cat = current_user.cats.find_by(id: params[:id])
+    if @cat.blank?
+      flash[:alert] = 'We\'re sorry, you are not permitted to that site'
+      redirect_to root_url
     else
-      flash[:errors] = 'No such cat'
-      redirect_to cats_url
+      render :edit
+
     end
   end
 
@@ -63,10 +66,5 @@ class CatsController < ApplicationController
 
   def require_login_owner
     # debugger
-    @cat = current_user.cats.where(id: params[:id])
-    if @cat.empty?
-      flash[:alert] = 'We\'re sorry, you are not permitted to that site'
-      redirect_to root_url
-    end
   end
 end

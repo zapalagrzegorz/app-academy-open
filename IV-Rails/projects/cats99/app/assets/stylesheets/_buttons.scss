@@ -1,0 +1,60 @@
+@import "./settings";
+
+body {
+  .black,
+  .black.button,
+  .black.button.hollow {
+    color: $black;
+  }
+
+  .button:hover {
+    background-color: yellow;
+    color: black;
+  }
+  .button.form__submit {
+    margin-top: 2.5rem;
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.yellow {
+  color: yellow;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  &:hover {
+    color: yellow;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-skip-ink: none;
+  }
+  &--submit {
+    background-color: transparent;
+    border: 0;
+    padding-bottom: 4px;
+  }
+}
+
+table {
+  input[type="submit"] {
+    color: black;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+.text-link {
+  border: 0;
+  background-color: transparent;
+  &:hover {
+    cursor: pointer;
+    text-decoration-color: yellow;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-skip-ink: none;
+  }
+}

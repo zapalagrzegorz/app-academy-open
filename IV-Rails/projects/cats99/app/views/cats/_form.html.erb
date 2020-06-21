@@ -60,9 +60,6 @@
   </div>
 
   <p>
-    <% if cat.persisted? %>
-      <%= link_to "Return", cat_url(@cat), class: "button clear black" %>
-    <% end %>
-    <input type="submit" value=<%= action == "new" ? "Save kitty" : "Update kitty" %>, class="button success">
+    <input type="submit" value=<%= action == "new" ? "Save kitty" : "Update kitty" %>, class="button form__submit">
   </p>
 </form>

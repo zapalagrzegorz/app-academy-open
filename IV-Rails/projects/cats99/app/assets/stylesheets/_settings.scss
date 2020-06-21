@@ -65,7 +65,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 110%;
+$global-font-size: 115%;
 $global-width: rem-calc(930);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -145,7 +145,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $header-color: yellow;
 $header-lineheight: 1.2;
-$header-margin-bottom: 0.5rem;
+$header-margin-bottom: 0rem;
 $header-styles: (
   small: (
     "h1": (
@@ -322,24 +322,24 @@ $button-font-weight: null;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background: transparent;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-color: $white;
+$button-color: yellow;
 $button-color-alt: $black;
 $button-radius: $global-radius;
-$button-border: 1px solid transparent;
+$button-border: 1px dashed yellow;
 $button-hollow-border-width: 1px;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
-  default: 0.9rem,
+  default: 1.2rem,
   large: 1.25rem,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
-$button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+$button-transition: all 0.25s ease-out;
 $button-responsive-expanded: false;
 
 // 12. Button Group
@@ -464,21 +464,21 @@ $form-spacing: rem-calc(16);
 $helptext-color: $black;
 $helptext-font-size: rem-calc(13);
 $helptext-font-style: italic;
-$input-prefix-color: $black;
+$input-prefix-color: black;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
 $form-label-color: $black;
-$form-label-font-size: rem-calc(16);
-$form-label-font-weight: $global-weight-normal;
+$form-label-font-size: rem-calc(20);
+$form-label-font-weight: $global-weight-bold;
 $form-label-line-height: 1.8;
 $select-background: $white;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
-$input-color: $black;
+$input-color: black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
-$input-font-size: rem-calc(18);
+$input-font-size: rem-calc(22);
 $input-font-weight: $global-weight-normal;
 $input-line-height: $global-lineheight;
 $input-background: transparent;
@@ -502,7 +502,7 @@ $label-background: $primary-color;
 $label-color: $white;
 $label-color-alt: $black;
 $label-palette: $foundation-palette;
-$label-font-size: 0.8rem;
+$label-font-size: 1.2rem;
 $label-padding: 0.33333rem 0.5rem;
 $label-radius: $global-radius;
 
@@ -787,7 +787,7 @@ $switch-cursor-disabled: not-allowed;
 // 50. Table
 // ---------
 
-$table-background: #eacfea;
+$table-background: #f3e8f3;
 $table-color-scale: 5%;
 $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);

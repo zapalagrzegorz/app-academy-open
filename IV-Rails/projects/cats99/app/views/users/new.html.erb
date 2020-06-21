@@ -5,23 +5,13 @@
     - hidden input patch ()
     - submit button ()
 -->
+<%= render 'form_errors', model: @user %>
 
-<form action="/users" method="POST" >
+<div class="grid-container light-blue-bg">
+  <h1 class="form__header">Sign up</h1>
 
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-  <div>
-    <label for="name">Username</label>
-
-    <input id="name" type="text" name=user[username] value="<%= user.username if user.username %>" required>
+  <div class="grid-x">
+    <div class="cell small-12">
+      <%= render 'user_form', action: users_url, submit: "Sign up" %>
+    </div>
   </div>
-
-  <div>
-    <label for="password">Password</label>
-    <input id="password" type="password" name="user[password]" minlength="8" required >
-  </div>
-
-  <div>
-    <input type="submit" value="create user">
-  </div>
-</form>

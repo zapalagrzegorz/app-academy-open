@@ -2,7 +2,7 @@
 
 class CatRentalRequestsController < ApplicationController
   before_action :require_login
-  before_action :require_login_owner, only: %i[approve deny]
+  before_action :require_login_by_owner, only: %i[approve deny]
 
   def new
     @cats = Cat.all
@@ -27,23 +27,25 @@ class CatRentalRequestsController < ApplicationController
 
   def approve
     # duplication
-    cat_request = CatRentalRequest.find(params[:id])
-    cat_request.approve!
-    redirect_to cat_url(cat_request.cat)
+    # ponieważ dwa razy masz CatRentalRequest.includes(:cat).find(params[:id]) to można to wyłączyć
+    # do osobnej metody np, currentCatRentalRequest
+    # cat_request = CatRentalRequest.includes(:cat).find(params[:id])
+
+    current_cat_rental_request.approve!
+    redirect_to cat_url(current_cat_rental_request.cat)
   end
 
   def deny
-    cat_request = CatRentalRequest.find(params[:id])
     # CatRentalRequest belongs_to cat, a więc zapytanie do bazy
     # dla obiektu "właściciela" jest  generowane  dopiero
     # na żądanie, chyba, że poprosisz o dane wcześniej
 
     #   #     CatRentalRequest.includes(:cat).find(params[:id])
     #
-    cat_request.deny!
+    current_cat_rental_request.deny!
     # aby cat_request.cat nie robił kolejnego zapytania
     # trzeba zrobić .includes(:cat), aby zaciągnął od razu obiekt
-    redirect_to cat_url(cat_request.cat)
+    redirect_to cat_url(current_cat_rental_request.cat)
   end
 
   private
@@ -61,8 +63,9 @@ class CatRentalRequestsController < ApplicationController
       CatRentalRequest.includes(:cat).find(params[:id])
   end
 
-  def require_login_owner
-    unless current_cat_rental_request.cat_id == current_user.id
+  def require_login_by_owner
+    # owner has
+    unless current_user.id == current_cat.user_id
       flash[:error] = 'You are not permitted to that site'
       redirect_to root_url
     end

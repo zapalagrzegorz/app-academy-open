@@ -18,17 +18,13 @@ input[type="radio"] {
   position: relative;
   top: 4px;
   &:checked {
-    border: 6px solid rgb(192, 192, 113);
+    border: 6px solid yellow;
   }
   & + label {
     position: relative;
     top: -0.9rem;
     margin-right: 2rem;
   }
-}
-
-body textarea {
-  border: 1px solid yellow;
 }
 
 .form {
@@ -40,6 +36,19 @@ body textarea {
   &__container {
     @extend .light-blue-bg;
     margin-bottom: 3rem;
+  }
+  &__submit {
+    margin-top: 2.5rem;
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+body {
+  textarea {
+    border: 1px solid yellow;
   }
 }
 

@@ -1,29 +1,11 @@
-<%# duplikacja z Users/new, poza submit button %>
+<%= render 'form_errors', model: @user %>
 
 <div class="grid-container light-blue-bg">
   <h1 class="form__header">Sign in</h1>
 
   <div class="grid-x">
     <div class="cell small-12">
-      <form action="/session" method="POST" class="form">
-
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-        <div>
-          <label for="name">Username</label>
-
-          <input id="name" type="text" name=user[username] value="<%= @user.username if @user.username %>" required>
-        </div>
-
-        <div>
-          <label for="password">Password</label>
-          <input id="password" type="password" name="user[password]" minlength="6" required >
-        </div>
-
-        <div>
-          <input type="submit" value="Log in" class="button success">
-        </div>
-      </form>
+      <%= render 'user_form', action: session_url, submit: "Log in" %>
     </div>
   </div>
 </div>
