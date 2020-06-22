@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
   # make it available from views
   helper_method :current_user
   #   helper_method :logged_in?

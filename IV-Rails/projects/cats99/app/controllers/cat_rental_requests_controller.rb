@@ -6,8 +6,8 @@ class CatRentalRequestsController < ApplicationController
 
   def new
     @cats = Cat.all
-    @cat_rental_request = CatRentalRequest.new
-    @cat_id = params[:id] if params[:id]
+    @cat_rental_request = CatRentalRequest.new(cat_id: params[:cat_id])
+    # CatRentalRequest.new(cat_id: params[:cat_id])
     # debugger
     render :new
   end

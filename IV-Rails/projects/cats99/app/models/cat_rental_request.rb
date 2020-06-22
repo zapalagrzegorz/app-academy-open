@@ -7,16 +7,12 @@ class CatRentalRequest < ApplicationRecord
   # after_initialize :assign_pending_status
 
   validates :start_date, :end_date, :status, presence: true
-
   validates :status, inclusion: { in: %w[PENDING APPROVED DENIED] }
   #   validates :status, inclusion: STATUS_STATES
-
   validate :does_not_overlap_approved_request
-
   # validate :start_must_come_before_end
 
   belongs_to :cat, class_name: 'Cat', foreign_key: 'cat_id'
-
   belongs_to :requester, class_name: 'User', foreign_key: 'user_id'
 
   def overlapping_approved_requests
