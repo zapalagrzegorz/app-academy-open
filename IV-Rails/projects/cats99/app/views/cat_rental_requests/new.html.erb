@@ -8,7 +8,7 @@
 
     <div class="cell small-12">
       <form action="<%= cat_rental_requests_url %>" method="POST" >
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <%= auth_token %>
         <div>
           <label for="name">Choose cat</label>
 

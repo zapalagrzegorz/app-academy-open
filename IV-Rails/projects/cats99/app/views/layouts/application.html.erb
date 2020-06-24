@@ -21,7 +21,7 @@
             <li class="h3" style="padding-right: 1rem"><%= current_user.username %> </li>
             <li>
               <form action="<%= session_url  %>" method="POST">
-                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <%= auth_token %>
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="submit" class="h3 yellow yellow--submit" value="Logout">
               </form>

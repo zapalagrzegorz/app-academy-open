@@ -3,7 +3,7 @@
 
 <form action="<%= action %>"  method="POST" class="form">
 
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <%= auth_token %>
 
   <div>
     <label for="name">Username</label>
