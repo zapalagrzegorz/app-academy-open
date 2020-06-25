@@ -1,0 +1,30 @@
+@import "vars";
+@import "buttons";
+@import "foundation_and_overrides";
+
+// content-container, .page
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem 1rem;
+  @extend .grid-container;
+  @extend .light-blue-bg;
+}
+
+// container-main
+.content-container {
+  max-width: rem-calc(1200px);
+  padding-left: rem-calc(15);
+  padding-right: rem-calc(15);
+  margin: auto;
+}
+
+// container-footer
+.footer-container {
+  padding: 1rem 2rem 0.5rem;
+  color: white;
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+}

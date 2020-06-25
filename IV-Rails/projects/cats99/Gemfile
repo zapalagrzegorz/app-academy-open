@@ -54,6 +54,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'htmlbeautifier'
+  gem 'letter_opener', '~> 1.7'
   gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -70,6 +71,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem "bcrypt", "~> 3.1"
+gem 'bcrypt', '~> 3.1'
 
-gem "jquery-rails", "~> 4.4"
+gem 'jquery-rails', '~> 4.4'

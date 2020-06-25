@@ -18441,3 +18441,1759 @@ Processing by CatsController#index as HTML
 Completed 200 OK in 95ms (Views: 79.7ms | ActiveRecord: 9.0ms)
 
 
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:16:24 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (4.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (0.9ms)
+  Rendered cats/index.html.erb within layouts/application (24.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 408ms (Views: 355.2ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:17:35 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.1ms)
+  Rendered cats/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:18:27 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.3ms)
+  Rendered cats/index.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:19:54 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.2ms)
+  Rendered cats/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 71ms (Views: 69.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:25:59 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.1ms)
+  Rendered cats/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 7111ms (Views: 7108.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:29:06 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (0.7ms)
+  Rendered cats/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 4172ms (Views: 4170.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:29:55 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.5ms)
+  Rendered cats/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 4699ms (Views: 4697.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:31:47 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.0ms)
+  Rendered cats/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:31:57 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.6ms)
+  Rendered cats/index.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:32:08 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.1ms)
+  Rendered cats/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 6430ms (Views: 6428.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:35:30 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.3ms)
+  Rendered cats/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 4279ms (ActiveRecord: 0.4ms)
+
+
+
+ActionView::Template::Error - ".container" failed to @extend ".grid-container".
+The selector ".grid-container" was not found.
+Use "@extend .grid-container !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:9:in `view template'
+  app/controllers/cats_controller.rb:9:in `index'
+
+Started POST "/__better_errors/a585f9b08bec81cc/variables" for 127.0.0.1 at 2020-06-25 05:35:34 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:35:57 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (2.1ms)
+  Rendered cats/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 3212ms (ActiveRecord: 0.4ms)
+
+
+
+ActionView::Template::Error - ".container" failed to @extend ".light-blue-bg".
+The selector ".light-blue-bg" was not found.
+Use "@extend .light-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:9:in `view template'
+  app/controllers/cats_controller.rb:9:in `index'
+
+Started POST "/__better_errors/437680ab71623e2a/variables" for 127.0.0.1 at 2020-06-25 05:36:01 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:36:06 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.2ms)
+  Rendered cats/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 2328ms (ActiveRecord: 0.3ms)
+
+
+
+ActionView::Template::Error - ".container" failed to @extend ".light-blue-bg".
+The selector ".light-blue-bg" was not found.
+Use "@extend .light-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:9:in `view template'
+  app/controllers/cats_controller.rb:9:in `index'
+
+Started POST "/__better_errors/6ec5e07d11885b66/variables" for 127.0.0.1 at 2020-06-25 05:36:09 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:36:24 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.1ms)
+  Rendered cats/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 4397ms (Views: 4395.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:37:40 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.5ms)
+  Rendered cats/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 84ms (Views: 82.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:37:55 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.2ms)
+  Rendered cats/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 4477ms (Views: 4475.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 05:38:30 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.1ms)
+  Rendered cats/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 4625ms (Views: 4623.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:06:40 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (0.8ms)
+  Rendered cats/index.html.erb within layouts/application (14.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 584ms (Views: 557.7ms | ActiveRecord: 6.9ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:06:43 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aZFwiq2FFVkOJIZSkSoG1h8t02TycOluSBDjr74dYYbLrxOiPdIXmvZeITv//x2d1W0XGhQl7I8XfmLsBSqvcw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Vca2cYZYgN8TF2AA3l3P3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorz"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$1BX1Ti8pDjki4WkC/i8HFuHcKILepiNQYMoqUimEPwrvcJC9FGIMC"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "PzeI9EcCfH5B4Nz4ShEcXw"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PzeI9EcCfH5B4Nz4ShEcXw"], ["updated_at", "2020-06-25 04:06:43.457938"], ["id", 5]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 18ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:06:43 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.5ms)
+  Rendered cats/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 65ms (Views: 63.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:06:45 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.5ms)
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (4.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:06:48 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"jS8wY1dGBsgQf7LvfT/La8QpFKA/fiktEw4DX/9J5KUvEVNLxxEEC+gFFYYT6tAgDmnQ3tkrLMxMYIIcRH4qUA==", "user"=>{"username"=>"zapala.grzegorz2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorz2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$BtVre0/YnybO3qPjJV241.QtVr8GEfxPyG/qZYzMNP8Avb2VT20XO"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qPz44FsODxhrTkB09Zc-cA"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.0ms)
+  Rendered application/_user_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 312ms (Views: 58.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:06:54 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"D4KYLzqepRzO7DuSP0Ccfih1y+UstElhXdFy0ULwMlmtvPsHqsmn3zaWnPtRlYc14jUPm8rhTIACv/OS+cf8rA==", "user"=>{"username"=>"zapala.grzegorz10", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorz10"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$FpkUIgr1VA1XA7IfF3hNHu6YwVtHBeZSOwdnM1wdlpGP1bJZzYowa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "92aYET8zxnMEj76fWK1rlg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (5.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorz10"], ["password_digest", "$2a$12$FpkUIgr1VA1XA7IfF3hNHu6YwVtHBeZSOwdnM1wdlpGP1bJZzYowa"], ["session_token", "92aYET8zxnMEj76fWK1rlg"], ["created_at", "2020-06-25 04:06:54.920773"], ["updated_at", "2020-06-25 04:06:54.920773"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+UserMailer#welcome_email: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 483ms (ActiveRecord: 11.3ms)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/mailers/user_mailer.rb:6:in `welcome_email'
+  app/controllers/users_controller.rb:14:in `create'
+
+Started POST "/__better_errors/c76a4d9ae538c589/variables" for 127.0.0.1 at 2020-06-25 06:06:55 +0200
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:12:19 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"D4KYLzqepRzO7DuSP0Ccfih1y+UstElhXdFy0ULwMlmtvPsHqsmn3zaWnPtRlYc14jUPm8rhTIACv/OS+cf8rA==", "user"=>{"username"=>"zapala.grzegorz10", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorz10"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$nsiXHWDcQKqkTKttZm.jP.iurB74/bHMST9hePTeSzPIWNlEjAZAS"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AYU6kB8_hyllDHoNijCRlQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.1ms)
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 344ms (Views: 53.9ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:12:29 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Et71l7i/N/JF1iLRYz10zkZ9zzfcx3gMvrnFLFW01qKw4Ja/KOg1Mb2shbgN6G+FjD0LSTqSfe3h10Rv7oMYVw==", "user"=>{"username"=>"zapala.grzegorz11", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorz11"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$GWy7kW5vKG.p0hpzau6uueRUZTJhTENbsam0ifiivK9AgbTiG5zA."], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "It3BZzcaFt-uiX6NGrNhBA"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorz11"], ["password_digest", "$2a$12$GWy7kW5vKG.p0hpzau6uueRUZTJhTENbsam0ifiivK9AgbTiG5zA."], ["session_token", "It3BZzcaFt-uiX6NGrNhBA"], ["created_at", "2020-06-25 04:12:30.190074"], ["updated_at", "2020-06-25 04:12:30.190074"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+UserMailer#welcome_email: processed outbound mail in 3.1ms
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 9.1ms)
+
+
+
+NoMethodError - undefined method `username' for #<Hash:0x00007f2ee42fab60>:
+  app/mailers/user_mailer.rb:8:in `welcome_email'
+  app/controllers/users_controller.rb:14:in `create'
+
+Started POST "/__better_errors/f0650b4f36152c0e/variables" for 127.0.0.1 at 2020-06-25 06:12:30 +0200
+Started POST "/__better_errors/f0650b4f36152c0e/eval" for 127.0.0.1 at 2020-06-25 06:13:05 +0200
+Started POST "/__better_errors/f0650b4f36152c0e/eval" for 127.0.0.1 at 2020-06-25 06:13:12 +0200
+Started POST "/__better_errors/f0650b4f36152c0e/eval" for 127.0.0.1 at 2020-06-25 06:13:26 +0200
+Started POST "/__better_errors/f0650b4f36152c0e/eval" for 127.0.0.1 at 2020-06-25 06:13:59 +0200
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:20:25 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Et71l7i/N/JF1iLRYz10zkZ9zzfcx3gMvrnFLFW01qKw4Ja/KOg1Mb2shbgN6G+FjD0LSTqSfe3h10Rv7oMYVw==", "user"=>{"username"=>"zapala.grzegorz11", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorz11"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$UEcK.VKRcZZlqUK2SZuOleOVrE48BcuhrkrrO7hXIZumzsPfY6tc."], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BKzirIhfk3_iBmmqGaCd3A"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.3ms)
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 323ms (Views: 56.8ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:20:32 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Y9gW/CB02rjTDdeS54T/Tw19FF/bWFGkdpVR8fK1HXPB5nXUsCPYeyt3cPuJUeQExz3QIT0NVEUp+9CySYLThg==", "user"=>{"username"=>"zapala.grzegorz111", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorz111"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$sVifrG3kulP5RlFF34ntAe/EKZmlqMZcXnOOZv8TQqYdbEyPIXwWq"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iKaIe_lc6cKCf7QNRCJ6vQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorz111"], ["password_digest", "$2a$12$sVifrG3kulP5RlFF34ntAe/EKZmlqMZcXnOOZv8TQqYdbEyPIXwWq"], ["session_token", "iKaIe_lc6cKCf7QNRCJ6vQ"], ["created_at", "2020-06-25 04:20:33.152143"], ["updated_at", "2020-06-25 04:20:33.152143"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+UserMailer#welcome_email: processed outbound mail in 159.6ms
+Sent mail to  (24.4ms)
+Date: Thu, 25 Jun 2020 06:20:33 +0200
+From: admin@99cats.com
+To: "zapala.grzegorz111" <>
+Message-ID: <5ef4261153750_455d2afec78395c846426@gz-ThinkPad-T450.mail>
+Subject: Thank you for staying with 99Cats
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99Cats</h1>
+    <p>Hello,  zapala.grzegorz111</p>
+    <p>
+      You have successfully signed up to 99Cats.
+    </p>
+    <br/>
+    <p>
+      To login to the site, just follow this link: 99cats.com/session/new.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorz111"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$sVifrG3kulP5RlFF34ntAe/EKZmlqMZcXnOOZv8TQqYdbEyPIXwWq"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "m0grWyWfC4Z1k8Zk9j_amA"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "m0grWyWfC4Z1k8Zk9j_amA"], ["updated_at", "2020-06-25 04:20:33.369144"], ["id", 12]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/
+Completed 302 Found in 470ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:20:33 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:20:33 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (0.9ms)
+  Rendered cats/index.html.erb within layouts/application (24.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m0grWyWfC4Z1k8Zk9j_amA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 89ms (Views: 77.2ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:25:08 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.1ms)
+  Rendered cats/index.html.erb within layouts/application (18.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m0grWyWfC4Z1k8Zk9j_amA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 90ms (Views: 64.6ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:25:10 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QtM7si2CuOn+U53795Le4hVheB6tGwPmUj6SKejIu4jg7ViavdW6KgYpOpKZR8Wp3yG8YEtOBgcNUBNqU/91fQ=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "m0grWyWfC4Z1k8Zk9j_amA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorz111"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$sVifrG3kulP5RlFF34ntAe/EKZmlqMZcXnOOZv8TQqYdbEyPIXwWq"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "m3IcHEnbrkS6WLGcwACP3g"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "m3IcHEnbrkS6WLGcwACP3g"], ["updated_at", "2020-06-25 04:25:10.093587"], ["id", 12]]
+  ↳ app/models/user.rb:51
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 26ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:25:10 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.2ms)
+  Rendered cats/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 73ms (Views: 71.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:25:15 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.6ms)
+  Rendered application/_user_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (5.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:25:18 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"qA5SY3+8+CgBO3JK5Ya1OmrSLhnWYnVZCuo/ieYXh8wKMDFL7+v66/lB1SOLU65xoJLqZzA3cLhVhL7KXSBJOQ==", "user"=>{"username"=>"zapala.grzegorza", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorza"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$WU5PlzWm4OIQ/oVqB0tJ5u1IZxxe/TBsKIpNpjppK4GrU0ihbtFRi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hx3NYcTla8xNekc80aWQeg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorza"], ["password_digest", "$2a$12$WU5PlzWm4OIQ/oVqB0tJ5u1IZxxe/TBsKIpNpjppK4GrU0ihbtFRi"], ["session_token", "hx3NYcTla8xNekc80aWQeg"], ["created_at", "2020-06-25 04:25:18.355757"], ["updated_at", "2020-06-25 04:25:18.355757"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+UserMailer#welcome_email: processed outbound mail in 9.2ms
+Sent mail to  (13.2ms)
+Date: Thu, 25 Jun 2020 06:25:18 +0200
+From: admin@99cats.com
+To: "zapala.grzegorza" <>
+Message-ID: <5ef4272e5f679_455d2afec78395c8465fb@gz-ThinkPad-T450.mail>
+Subject: Thank you for staying with 99Cats
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99Cats</h1>
+    <p>Hello,  zapala.grzegorza</p>
+    <p>
+      You have successfully signed up to 99Cats.
+    </p>
+    <br/>
+    <p>
+      To login to the site, just follow this link: 99cats.com/session/new.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorza"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$WU5PlzWm4OIQ/oVqB0tJ5u1IZxxe/TBsKIpNpjppK4GrU0ihbtFRi"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "DKpf0BLPK0WZYFiuW1ejMQ"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "DKpf0BLPK0WZYFiuW1ejMQ"], ["updated_at", "2020-06-25 04:25:18.414387"], ["id", 13]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/
+Completed 302 Found in 316ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:25:18 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:25:18 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (4.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.6ms)
+  Rendered cats/index.html.erb within layouts/application (16.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "DKpf0BLPK0WZYFiuW1ejMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 105ms (Views: 99.0ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:26:10 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g9ENd//DgWdrRaILwibosoSbyI8sra21j0o+UaECkMQh725fb5SDpJM/BWKs8/P5TtsM8cr4qFTQJL8SGjVeMQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "DKpf0BLPK0WZYFiuW1ejMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorza"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$WU5PlzWm4OIQ/oVqB0tJ5u1IZxxe/TBsKIpNpjppK4GrU0ihbtFRi"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "z2OcS5ENgcrDoSR_3tF08A"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "z2OcS5ENgcrDoSR_3tF08A"], ["updated_at", "2020-06-25 04:26:10.798977"], ["id", 13]]
+  ↳ app/models/user.rb:51
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 29ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:26:11 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.9ms)
+  Rendered cats/index.html.erb within layouts/application (18.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 89ms (Views: 81.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:26:13 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.6ms)
+  Rendered application/_user_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (6.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:26:17 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"uzNZd2W150nD6aP6bwhUA1J6uibvTG26x/wUeCoW4a0ZDTpf9eLlijuTBJMB3U9ImDp+WAkZaFuYkpU7kSEvWA==", "user"=>{"username"=>"zapala.grzegorzab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorzab"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$Li6HCYuy7Ft8IL0KQhACQeN6wf0TxfQ1Bcm4I/Ynvcudy2MyD.B.K"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7ZUScfZjLc0uelDw3hF79w"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorzab"], ["password_digest", "$2a$12$Li6HCYuy7Ft8IL0KQhACQeN6wf0TxfQ1Bcm4I/Ynvcudy2MyD.B.K"], ["session_token", "7ZUScfZjLc0uelDw3hF79w"], ["created_at", "2020-06-25 04:26:17.317416"], ["updated_at", "2020-06-25 04:26:17.317416"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 7.8ms
+Sent mail to  (15.4ms)
+Date: Thu, 25 Jun 2020 06:26:17 +0200
+From: admin@99cats.com
+To: "zapala.grzegorzab" <>
+Message-ID: <5ef4276954f9b_455d2afec78395c84663c@gz-ThinkPad-T450.mail>
+Subject: Thank you for staying with 99Cats
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99Cats</h1>
+    <p>Hello,  zapala.grzegorzab</p>
+    <p>
+      You have successfully signed up to 99Cats.
+    </p>
+    <br/>
+    <p>
+      To login to the site, just follow this link: 99cats.com/session/new.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzab"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$Li6HCYuy7Ft8IL0KQhACQeN6wf0TxfQ1Bcm4I/Ynvcudy2MyD.B.K"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "v7qu37w1PfNGhyQIvCCu-w"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "v7qu37w1PfNGhyQIvCCu-w"], ["updated_at", "2020-06-25 04:26:17.369860"], ["id", 14]]
+  ↳ app/models/user.rb:51
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/
+Completed 302 Found in 315ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:26:17 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:26:17 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.5ms)
+  Rendered cats/index.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v7qu37w1PfNGhyQIvCCu-w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 84ms (Views: 82.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:26:54 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DD0dVeXgYtjQqz5az/nP5hmcOwd94E0fmeq4NvoDaTKuA359dbdgGyjRmTOhLNSt09z/eZu1SP7GhDl1QTSnxw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v7qu37w1PfNGhyQIvCCu-w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzab"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$Li6HCYuy7Ft8IL0KQhACQeN6wf0TxfQ1Bcm4I/Ynvcudy2MyD.B.K"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "jEpYbaCexXwnZryXYRgUIQ"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (4.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "jEpYbaCexXwnZryXYRgUIQ"], ["updated_at", "2020-06-25 04:26:54.114618"], ["id", 14]]
+  ↳ app/models/user.rb:51
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 44ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:26:54 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (2.1ms)
+  Rendered cats/index.html.erb within layouts/application (23.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 96ms (Views: 86.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:26:56 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.8ms)
+  Rendered application/_user_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:26:59 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"DBMvCgapt1xLOBndbWbGm3Va/ezTjkOMj5OZD7RfgGauLUwilv61n7NCvrQDs93Qvxo5kjXbRm3Q/RhMD2hOkw==", "user"=>{"username"=>"zapala.grzegorz123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorz123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$5SoBZC3fDRkzxgS8fzocE.rTFYG7tkn9s0CpXZLEk0Sj5HCpHuVIS"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ZPHyxnhgqwTfNlcLCzNE8Q"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorz123"], ["password_digest", "$2a$12$5SoBZC3fDRkzxgS8fzocE.rTFYG7tkn9s0CpXZLEk0Sj5HCpHuVIS"], ["session_token", "ZPHyxnhgqwTfNlcLCzNE8Q"], ["created_at", "2020-06-25 04:26:59.413897"], ["updated_at", "2020-06-25 04:26:59.413897"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+UserMailer#welcome_email: processed outbound mail in 9.9ms
+Sent mail to contact@appacademy.io (14.5ms)
+Date: Thu, 25 Jun 2020 06:26:59 +0200
+From: admin@99cats.com
+To: App Academy <contact@appacademy.io>
+Message-ID: <5ef427936c7f7_455d2afec78395c84676e@gz-ThinkPad-T450.mail>
+Subject: Thank you for staying with 99Cats
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99Cats</h1>
+    <p>Hello,  zapala.grzegorz123</p>
+    <p>
+      You have successfully signed up to 99Cats.
+    </p>
+    <br/>
+    <p>
+      To login to the site, just follow this link: 99cats.com/session/new.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorz123"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (4.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$5SoBZC3fDRkzxgS8fzocE.rTFYG7tkn9s0CpXZLEk0Sj5HCpHuVIS"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LZ5CwIRbZ-IeJYxCFHyqDw"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LZ5CwIRbZ-IeJYxCFHyqDw"], ["updated_at", "2020-06-25 04:26:59.471227"], ["id", 15]]
+  ↳ app/models/user.rb:51
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/
+Completed 302 Found in 317ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:26:59 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:26:59 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.2ms)
+  Rendered cats/index.html.erb within layouts/application (10.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LZ5CwIRbZ-IeJYxCFHyqDw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 81ms (Views: 79.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:28:51 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wxXRPSHyrSCdYSttiMxiddBgPawS3Sbl6m0OFoZHobVhK7IVsaWv42UbjATmGXk+GiD50vSIIwS1A49VPXBvQA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LZ5CwIRbZ-IeJYxCFHyqDw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorz123"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$5SoBZC3fDRkzxgS8fzocE.rTFYG7tkn9s0CpXZLEk0Sj5HCpHuVIS"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "_1rfldKl-QRz7G9w0np4jw"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "_1rfldKl-QRz7G9w0np4jw"], ["updated_at", "2020-06-25 04:28:51.215373"], ["id", 15]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 31ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:28:51 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.3ms)
+  Rendered cats/index.html.erb within layouts/application (16.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 79ms (Views: 69.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:28:53 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.6ms)
+  Rendered application/_user_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 60ms (Views: 58.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:28:58 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"uXdWmnO9hqRovC5b6XCg86e+z+NnFXZvgYcI7E4bmHQbSTWy4+qEZ5DGiTKHpbu4bf4LnYFAc47e6Ymv9SxWgQ==", "user"=>{"username"=>"zapala.grzegorzbb", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorzbb"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$xmG4hYkHvl0lNN8DRu6t.uBewOiS99uyQnYaqMgL6rM0bKJRBMqBm"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "f1rHpw-r4GU8DjZFeZB6-A"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorzbb"], ["password_digest", "$2a$12$xmG4hYkHvl0lNN8DRu6t.uBewOiS99uyQnYaqMgL6rM0bKJRBMqBm"], ["session_token", "f1rHpw-r4GU8DjZFeZB6-A"], ["created_at", "2020-06-25 04:28:58.480399"], ["updated_at", "2020-06-25 04:28:58.480399"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 7.7ms
+Sent mail to  (14.4ms)
+Date: Thu, 25 Jun 2020 06:28:58 +0200
+From: admin@99cats.com
+To: "zapala.grzegorzbb" <>
+Message-ID: <5ef4280a7c315_455d2afec783967c4683d@gz-ThinkPad-T450.mail>
+Subject: Thank you for staying with 99Cats
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99Cats</h1>
+    <p>Hello,  zapala.grzegorzbb</p>
+    <p>
+      You have successfully signed up to 99Cats.
+    </p>
+    <br/>
+    <p>
+      To login to the site, just follow this link: 99cats.com/session/new.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzbb"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$xmG4hYkHvl0lNN8DRu6t.uBewOiS99uyQnYaqMgL6rM0bKJRBMqBm"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "yqxQFzg2Pw_X9t44sfEPZA"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yqxQFzg2Pw_X9t44sfEPZA"], ["updated_at", "2020-06-25 04:28:58.531700"], ["id", 16]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/
+Completed 302 Found in 308ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:28:58 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:28:58 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.4ms)
+  Rendered cats/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yqxQFzg2Pw_X9t44sfEPZA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 81ms (Views: 80.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:29:32 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iXMrIlpanywOGpGGMQdWcuoqlwVOm1jai9WxyxEhMcIrTUgKyg2d7/ZgNu9f0k05IGpTe6jOXTvUuzCIqhb/Nw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yqxQFzg2Pw_X9t44sfEPZA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzbb"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$xmG4hYkHvl0lNN8DRu6t.uBewOiS99uyQnYaqMgL6rM0bKJRBMqBm"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "nDE5tiT53grHMnbSO1SDEw"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "nDE5tiT53grHMnbSO1SDEw"], ["updated_at", "2020-06-25 04:29:32.875176"], ["id", 16]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 31ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:29:32 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.7ms)
+  Rendered cats/index.html.erb within layouts/application (16.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 76ms (Views: 69.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:29:34 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.9ms)
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 66ms (Views: 62.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:29:39 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"FEN3fQ/fJY7Z5LvHZbBHiQ98wpQnfpabJ4BUf8dyiru2fRRVn4gnTSGeHK4LZVzCxTwG6sErk3p47tU8fEVETg==", "user"=>{"username"=>"zapala.grzegorzd", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorzd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (3.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$BW/chLOSEwMPMMAW6izrbuBz3QBbDGWsS91EUp.OgqgVr5tBrVvru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6IBgfqnvfpq87w-f4TqvFg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorzd"], ["password_digest", "$2a$12$BW/chLOSEwMPMMAW6izrbuBz3QBbDGWsS91EUp.OgqgVr5tBrVvru"], ["session_token", "6IBgfqnvfpq87w-f4TqvFg"], ["created_at", "2020-06-25 04:29:39.771195"], ["updated_at", "2020-06-25 04:29:39.771195"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.5ms)
+UserMailer#welcome_email: processed outbound mail in 7.7ms
+Sent mail to  (16.1ms)
+Date: Thu, 25 Jun 2020 06:29:39 +0200
+From: admin@99cats.com
+To: "zapala.grzegorzd" <>
+Message-ID: <5ef42833c3874_455d2afec78395c846922@gz-ThinkPad-T450.mail>
+Subject: Thank you for staying with 99Cats
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99Cats</h1>
+    <p>Hello,  zapala.grzegorzd</p>
+    <p>
+      You have successfully signed up to 99Cats.
+    </p>
+    <br/>
+    <p>
+      To login to the site, just follow this link: 99cats.com/session/new.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzd"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$BW/chLOSEwMPMMAW6izrbuBz3QBbDGWsS91EUp.OgqgVr5tBrVvru"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "7Yb0AgONvLNmosL6lJtjxg"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "7Yb0AgONvLNmosL6lJtjxg"], ["updated_at", "2020-06-25 04:29:39.826858"], ["id", 17]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/
+Completed 302 Found in 322ms (ActiveRecord: 19.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:29:39 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:29:39 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.4ms)
+  Rendered cats/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7Yb0AgONvLNmosL6lJtjxg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 92ms (Views: 90.7ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:29:57 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"STvCq3KZ3WuvUN6+JvhRHC74GFz6BZQt1HitteA+xELrBaGD4s7fqFcqeddILUpX5LjcIhxQkcyLFiz2WwkKtw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7Yb0AgONvLNmosL6lJtjxg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzd"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$BW/chLOSEwMPMMAW6izrbuBz3QBbDGWsS91EUp.OgqgVr5tBrVvru"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "usIy8_7mDXC5_9lUDiPr2Q"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "usIy8_7mDXC5_9lUDiPr2Q"], ["updated_at", "2020-06-25 04:29:57.160314"], ["id", 17]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 39ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:29:57 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (2.9ms)
+  Rendered cats/index.html.erb within layouts/application (22.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 123ms (Views: 112.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:29:59 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.1ms)
+  Rendered application/_user_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 72ms (Views: 68.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:30:02 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"EYwYARhAPqMvjna/xBdDboymFyZOXSiCNfwL6fBq9rmzsnspiBc8YNf00daqwlglRubTWKgILWNqkoqqS104TA==", "user"=>{"username"=>"zapala.grzegorzn", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorzn"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$eFwXFSLqtzdRBshWj87K5eubuazY0F6gtaXkeKug5PO065tg2309O"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mnuILwOZFMQqgbEQln6gxA"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorzn"], ["password_digest", "$2a$12$eFwXFSLqtzdRBshWj87K5eubuazY0F6gtaXkeKug5PO065tg2309O"], ["session_token", "mnuILwOZFMQqgbEQln6gxA"], ["created_at", "2020-06-25 04:30:03.188176"], ["updated_at", "2020-06-25 04:30:03.188176"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 9.1ms
+Sent mail to zapala.grzegorzn@gmail.com (16.1ms)
+Date: Thu, 25 Jun 2020 06:30:03 +0200
+From: admin@99cats.com
+To: "zapala.grzegorzn" <zapala.grzegorzn@gmail.com>
+Message-ID: <5ef4284b369c4_455d2afec7839474470a6@gz-ThinkPad-T450.mail>
+Subject: Thank you for staying with 99Cats
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99Cats</h1>
+    <p>Hello,  zapala.grzegorzn</p>
+    <p>
+      You have successfully signed up to 99Cats.
+    </p>
+    <br/>
+    <p>
+      To login to the site, just follow this link: 99cats.com/session/new.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzn"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$eFwXFSLqtzdRBshWj87K5eubuazY0F6gtaXkeKug5PO065tg2309O"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "k12m__cYX8NYSd6SErCAGA"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "k12m__cYX8NYSd6SErCAGA"], ["updated_at", "2020-06-25 04:30:03.250086"], ["id", 18]]
+  ↳ app/models/user.rb:51
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/
+Completed 302 Found in 333ms (ActiveRecord: 19.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:30:03 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:30:03 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.4ms)
+  Rendered cats/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k12m__cYX8NYSd6SErCAGA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 64ms (Views: 61.9ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:31:03 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Hv1Zec7jfGEO0h33QN5YfHPRtM/8C1E4odQjmeGkGiW8wzpRXrR+ovaoup4uC0M3uZFwsRpeVNn+uqLaWpPU0A=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k12m__cYX8NYSd6SErCAGA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzn"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$eFwXFSLqtzdRBshWj87K5eubuazY0F6gtaXkeKug5PO065tg2309O"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "tFCB0cUcvr8dS2EqS08nWw"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "tFCB0cUcvr8dS2EqS08nWw"], ["updated_at", "2020-06-25 04:31:03.743118"], ["id", 18]]
+  ↳ app/models/user.rb:51
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 30ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:31:03 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (2.2ms)
+  Rendered cats/index.html.erb within layouts/application (20.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 100ms (Views: 90.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:31:05 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.1ms)
+  Rendered application/_user_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-06-25 06:31:08 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Z0Fr5q0eGVafX2XRYZRaCX0xI5DJvm9GLr+2F2DQHFLFfwjOPUkblWclwrgPQUFCt3Hn7i/raqdx0TdU2+fSpw==", "user"=>{"username"=>"zapala.grzegorzm", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (5.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorzm"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$82aEJmqZ1msA3CyXJB4HlOASAIyWXlRX.V6v4kCicQhq8Kxr.qGmO"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "L0W63K9W-EBzYcouFVSvjg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zapala.grzegorzm"], ["password_digest", "$2a$12$82aEJmqZ1msA3CyXJB4HlOASAIyWXlRX.V6v4kCicQhq8Kxr.qGmO"], ["session_token", "L0W63K9W-EBzYcouFVSvjg"], ["created_at", "2020-06-25 04:31:09.022032"], ["updated_at", "2020-06-25 04:31:09.022032"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.2ms)
+UserMailer#welcome_email: processed outbound mail in 11.3ms
+Sent mail to zapala.grzegorzm <zapala.grzegorzm@gmail.com>) (19.9ms)
+Date: Thu, 25 Jun 2020 06:31:09 +0200
+From: admin@99cats.com
+To: zapala.grzegorzm <zapala.grzegorzm@gmail.com>)
+Message-ID: <5ef4288d11a35_455d2afec783953c47167@gz-ThinkPad-T450.mail>
+Subject: Thank you for staying with 99Cats
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99Cats</h1>
+    <p>Hello,  zapala.grzegorzm</p>
+    <p>
+      You have successfully signed up to 99Cats.
+    </p>
+    <br/>
+    <p>
+      To login to the site, just follow this link: 99cats.com/session/new.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzm"], ["id", 19], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$82aEJmqZ1msA3CyXJB4HlOASAIyWXlRX.V6v4kCicQhq8Kxr.qGmO"], ["id", 19], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "4tjCTFjhTxYc2mZpAoS1HA"], ["id", 19], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "4tjCTFjhTxYc2mZpAoS1HA"], ["updated_at", "2020-06-25 04:31:09.110788"], ["id", 19]]
+  ↳ app/models/user.rb:51
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/
+Completed 302 Found in 373ms (ActiveRecord: 30.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:31:09 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:31:09 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.1ms)
+  Rendered cats/index.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4tjCTFjhTxYc2mZpAoS1HA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 79ms (Views: 77.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2020-06-25 06:35:28 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"b0eveCdXXkhAck+TVtn6UZ869a+m6oaBCNY7qa54XevNecxQtwBci7gI6Po4DOEaVXox0UC/g2BXuLrqFU+THg=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4tjCTFjhTxYc2mZpAoS1HA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorzm"], ["id", 19], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$82aEJmqZ1msA3CyXJB4HlOASAIyWXlRX.V6v4kCicQhq8Kxr.qGmO"], ["id", 19], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "xD4cvK8gbAL6Ez2FC6HbYA"], ["id", 19], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xD4cvK8gbAL6Ez2FC6HbYA"], ["updated_at", "2020-06-25 04:35:28.945669"], ["id", 19]]
+  ↳ app/models/user.rb:51
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 32ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:35:28 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (0.9ms)
+  Rendered cats/index.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 72ms (Views: 63.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:35:30 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.9ms)
+  Rendered application/_user_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 61ms (Views: 59.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:36:52 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.5ms)
+  Rendered application/_user_form.html.erb (1.4ms)
+  Rendered users/new.html.erb within layouts/application (5.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:37:02 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.4ms)
+  Rendered cats/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:37:04 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.7ms)
+  Rendered application/_user_form.html.erb (2.9ms)
+  Rendered users/new.html.erb within layouts/application (9.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 70ms (Views: 67.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:38:15 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:38:15 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.9ms)
+  Rendered cats/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:38:59 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:38:59 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.9ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.0ms)
+  Rendered cats/index.html.erb within layouts/application (4.3ms)
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:39:06 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.5ms)
+  Rendered application/_user_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Started GET "/users/new" for 127.0.0.1 at 2020-06-25 06:39:08 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (99.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.6ms)
+  Rendered application/_user_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 9778ms (Views: 9775.8ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 569ms (Views: 278.1ms | ActiveRecord: 99.3ms)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 5266ms (Views: 5259.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:40:19 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:40:19 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.4ms)
+  Rendered cats/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2020-06-25 06:40:22 +0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.9ms)
+  Rendered application/_user_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2020-06-25 06:41:08 +0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.4ms)
+  Rendered application/_user_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-06-25 06:41:11 +0200
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:41:11 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (1.2ms)
+  Rendered cats/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats/new" for 127.0.0.1 at 2020-06-25 06:41:13 +0200
+Processing by CatsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2020-06-25 06:41:13 +0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.5ms)
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2020-06-25 06:41:21 +0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.4ms)
+  Rendered application/_user_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (9.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 87ms (Views: 84.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2020-06-25 06:41:22 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"u11XpaSA/MQmhMjRFV0/iUoJINJSsH7qHk0igXJ6H38ZYzSNNNf+B97+b7h7iCTCgEnkrLTlewtBI6PCyU3Rig==", "user"=>{"username"=>"zapala.grzegorz", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", ""], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zapala.grzegorz"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "zapala.grzegorz"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$1BX1Ti8pDjki4WkC/i8HFuHcKILepiNQYMoqUimEPwrvcJC9FGIMC"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "RqEJZw8ddLo8p-IVCJMz0A"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "RqEJZw8ddLo8p-IVCJMz0A"], ["updated_at", "2020-06-25 04:41:23.193887"], ["id", 5]]
+  ↳ app/models/user.rb:51
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 273ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2020-06-25 06:41:23 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:10
+  Rendered collection of cats/_cat.html.erb [4 times] (2.2ms)
+  Rendered cats/index.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RqEJZw8ddLo8p-IVCJMz0A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 101ms (Views: 99.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats/new" for 127.0.0.1 at 2020-06-25 06:41:24 +0200
+Processing by CatsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RqEJZw8ddLo8p-IVCJMz0A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  Rendering cats/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.1ms)
+  Rendered cats/_form.html.erb (2.2ms)
+  Rendered cats/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 79ms (Views: 77.2ms | ActiveRecord: 0.3ms)
+
+
