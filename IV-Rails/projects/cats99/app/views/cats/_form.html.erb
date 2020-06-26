@@ -1,16 +1,12 @@
-<!--
-  Things to change:
-    - pre-filled values ()
-    - action ()
-    - hidden input patch ()
-    - submit button ()
--->
+<% action = (cat.persisted? ? cat_url(cat.id) : cats_url) %>
+<% method = (cat.persisted? ? "PATCH" : "POST") %>
 
-<form action="<%= cat.persisted? ? cats_url : cat_url(cat) %>" method="POST" >
-  <% if action == "edit" %>
+<form action="<%= action %>" method="POST" >
+  <% if method == "PATCH" %>
     <input type="hidden" name="_method" value="PATCH">
   <% end%>
 
+  <%= auth_token %>
   <p>
     <label for="name">Name</label>
 
@@ -37,19 +33,21 @@
   </p>
 
   <div>
-    <label>Choose cat sex</label>
-    <p class="flex-container" >
-      <label for="male" style="margin-right: 1rem">Male</label>
-      <input type="radio" name="cat[sex]" id="male"
+    <fieldset>
+      <legend>Please select cat's sex:</legend>
+      <p>
+        <input type="radio" name="cat[sex]" id="male"
         <%= cat.sex == "M" ? "checked" : "" %> 
+        <%= cat.persisted? ? "" : "checked" %>
         value="M">
-    </p>
-    <p class="flex-container" style="margin-right: 1rem">
-      <label for="female" style="margin-right: 1rem">Female</label>
-      <input type="radio" name="cat[sex]" id="female" 
+        <label for="male">Male</label>
+
+        <input type="radio" name="cat[sex]" id="female" 
         value="F" 
         <%= cat.sex == "F" ? "checked" : "" %> >
-    </p>
+        <label for="female" style="margin-right: 1rem">Female</label>
+      </p>
+    </fieldset>
   </div>
 
   <div>
@@ -58,9 +56,6 @@
   </div>
 
   <p>
-    <% if cat.persisted? %>
-      <%= link_to "Return", cat_url(@cat) %>
-    <% end %>
-    <input type="submit" value=<%= action == "new" ? "Save kitty" : "Update kitty" %>>
+    <input type="submit" value=<%= method == "POST" ? "Save kitty" : "Update kitty" %>, class="button form__submit">
   </p>
 </form>

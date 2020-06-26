@@ -5,7 +5,7 @@
 </style>
 <div class="grid-container">
 
-  <div style="max-width: 600px; margin: 3rem auto;" class="show__container">
+  <div class="cats-show__container">
     <h1 class="text-center text-uppercase "><%= @cat.name  %></h1>
     <div class="align-top flex-container">
       <img src="http://placekitten.com/200/200" alt="">
@@ -17,6 +17,15 @@
               <th>Value</th>
             </tr>
           </thead>
+
+          <!--
+          <% [:age, :birth_date, :color, :sex].each do |attr_name| %>
+            <tr>
+              <td><%= attr_name %></td>
+              <td><%= @cat.send(attr_name) %></td>
+            </tr>
+          <% end %>
+          -->
           <tr>
             <td>Birth date</td>
             <td><%= @cat.birth_date %></td>
@@ -38,42 +47,64 @@
           </tr>
 
         </table>
-        <p style="padding: 5px 17px;">
-          <%= link_to "Edit", edit_cat_url(@cat), class: ["button", "warn"] %>
-        </p>
+        <% if current_user&.id == @cat.user_id %>
+          <p style="padding: 5px 17px;">
+            <%= link_to "Edit", edit_cat_url(@cat), class: ["button", "warn"] %>
+          </p>
+
+        <% end %>
 
       </div>
     </div>
     <div>
 
-      <h2>Rental requests</h2>
-      <table class="text-center">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Start date</th>
-            <th>End date</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <% @cat.cat_rental_requests.each do |request| %>
-          <tr>
-            <td><%= request.id %> </td>
-            <td><%= request.start_date %> </td>
-            <td><%= request.end_date  %> </td>
-            <td><%= request.status %></td>
-            <td>
-              <% if request.status == "PENDING" %>
-                <%= button_to( "Approve", approve_cat_rental_request_url(request), class: ["button", "success"], method: :post) %>
+      <% if @cat.cat_rental_requests.any? %>
 
-                <%= button_to( "Deny", approve_cat_rental_request_url(request), class: ["button", "alert"], method: :post) %>
+        <h2>Rental requests</h2>
+        <table class="text-center">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Start date</th>
+              <th>End date</th>
+              <th>Status</th>
+              <th>Requester</th>
+              <% if current_user&.id == @cat.user_id %>
+                <%# <% if current_user.try(:id) == @cat.user_id  %>
+                <th>Actions</th>
               <% end %>
-            </td>
-          </tr>
-        <% end %>
-        <tbody></tbody>
-      </table>
+            </tr>
+          </thead>
+          <% @cat.cat_rental_requests.each do |request| %>
+            <tr>
+              <td><%= request.id %> </td>
+              <td><%= request.start_date %> </td>
+              <td><%= request.end_date  %> </td>
+              <td><%= request.status %></td>
+              <td><%= request.requester.username %></td>
+
+              <% if current_user&.id == @cat.user_id %>
+
+                <td>
+                  <% if request.status == "PENDING" %>
+                    <%= button_to( "Approve", approve_cat_rental_request_url(request), class: ["text-link"], method: :post) %>
+
+                    <%= button_to( "Deny", deny_cat_rental_request_url(request), class: ["text-link"], method: :post) %>
+                  <% end %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </table>
+      <% else %>
+        <h2>No record of rental requests</h2>
+      <% end %>
+
+      <%= link_to "Reserve!", new_cat_rental_request_url(cat_id: @cat.id), class: ["button","form__submit"]  %>
     </div>
   </div>
 </div>
+
+<% content_for :footer do %>
+  <p> Show cat page</p>
+<% end %>

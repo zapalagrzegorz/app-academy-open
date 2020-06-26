@@ -1,3 +1,16 @@
-<h1>Create a new kitty!</h1>
+<%= render 'form_errors', model: @cat %>
 
-<%= render 'form', cat: @cat, action: "new"  %>
+<div class="grid-container form__container">
+  <div class="grid-x">
+    <div class="cell small-12">
+      <h1 class="form__header">Create a new kitty!</h1>
+    </div>
+    <div class="cell small-12">
+      <%= render 'form', cat: @cat  %>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <p> New cat page</p>
+<% end %>
