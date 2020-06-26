@@ -1,0 +1,187 @@
+  [1m[35m (1366.0ms)[0m  [1m[35mCREATE DATABASE "music-app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1341.1ms)[0m  [1m[35mCREATE DATABASE "music-app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (32.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (43.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7512344928468371775)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200626041050)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (21.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200626041050_create_users.rb:5
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200626041050_create_users.rb:5
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20200626041050_create_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200626041050"]]
+  ↳ bin/rails:9
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-26 04:23:28.840262"], ["updated_at", "2020-06-26 04:23:28.840262"]]
+  ↳ bin/rails:9
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7512344928468371775)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2020-06-26 08:49:53 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:50:05 +0200
+
+AbstractController::Helpers::MissingHelperError - Missing helper file helpers/current_user_helper.rb:
+  app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:3:in `<top (required)>'
+  app/controllers/users_controller.rb:3:in `<top (required)>'
+
+Started POST "/__better_errors/111ad6c7a0bebb2e/variables" for 127.0.0.1 at 2020-06-26 08:50:05 +0200
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:50:32 +0200
+
+LoadError - Unable to autoload constant UsersController, expected /home/gz/Code/app-academy-open/IV-Rails/projects/music-app/app/controllers/users_controller.rb to define it:
+
+Started POST "/__better_errors/10bf3fc9a9e60dec/variables" for 127.0.0.1 at 2020-06-26 08:50:33 +0200
+Started GET "/" for 127.0.0.1 at 2020-06-26 08:51:05 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:51:30 +0200
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - You need to supply at least one validation:
+  app/models/user.rb:7:in `<class:User>'
+  app/models/user.rb:4:in `<top (required)>'
+  app/controllers/users_controller.rb:5:in `new'
+
+Started POST "/__better_errors/2ad03b1c1cb5e0f7/variables" for 127.0.0.1 at 2020-06-26 08:51:31 +0200
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:52:11 +0200
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - You need to supply at least one validation:
+  app/models/user.rb:7:in `<class:User>'
+  app/models/user.rb:4:in `<top (required)>'
+  app/controllers/users_controller.rb:5:in `new'
+
+Started POST "/__better_errors/d9c7578bc3291a23/variables" for 127.0.0.1 at 2020-06-26 08:52:11 +0200
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:52:18 +0200
+Processing by UsersController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:56
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:56
+Completed 422 Unprocessable Entity in 31ms (ActiveRecord: 4.9ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email can't be blank, Password digest Password cannot be empty:
+  app/models/user.rb:56:in `ensure_session_token'
+  app/controllers/users_controller.rb:5:in `new'
+
+Started POST "/__better_errors/ef065af6240a892c/variables" for 127.0.0.1 at 2020-06-26 08:52:18 +0200
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:54:00 +0200
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.6ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/gz/Code/app-academy-open/IV-Rails/projects/music-app/app/views"
+:
+  app/controllers/users_controller.rb:6:in `new'
+
+Started POST "/__better_errors/d30ac196b80afdfe/variables" for 127.0.0.1 at 2020-06-26 08:54:00 +0200
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:54:48 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.5ms)
+  Rendered application/_user_form.html.erb (266.3ms)
+  Rendered users/new.html.erb within layouts/application (269.3ms)
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `auth_token' for #<#<Class:0x00007f35f00e1ca8>:0x00007f35f49d5b58>:
+  app/views/application/_user_form.html.erb:6:in `view template'
+  app/views/users/new.html.erb:16:in `_app_views_users_new_html_erb___3751778030133673157_69934856970700'
+  app/controllers/users_controller.rb:6:in `new'
+
+Started POST "/__better_errors/2be6909c4dad9a44/variables" for 127.0.0.1 at 2020-06-26 08:54:49 +0200
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:55:33 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.8ms)
+  Rendered application/_user_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 3.0ms)
+
+
+
+ActionView::Template::Error - File to import not found or unreadable: util/util.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/music-app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/music-app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/music-app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/music-app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/music-app/node_modules:
+  app/views/layouts/application.html.erb:9:in `view template'
+  app/controllers/users_controller.rb:6:in `new'
+
+Started POST "/__better_errors/f03b62276fba9d54/variables" for 127.0.0.1 at 2020-06-26 08:55:34 +0200
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:58:02 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.8ms)
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 1540ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - undefined local variable or method `root_url' for #<#<Class:0x000055abc52cb200>:0x00007f35ec1d7d78>:
+  app/views/layouts/application.html.erb:20:in `view template'
+  app/controllers/users_controller.rb:6:in `new'
+
+Started POST "/__better_errors/c13ec324e33f4906/variables" for 127.0.0.1 at 2020-06-26 08:58:03 +0200
+Started GET "/users/new" for 127.0.0.1 at 2020-06-26 08:58:47 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.9ms)
+  Rendered application/_user_form.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 66ms (Views: 51.9ms | ActiveRecord: 4.0ms)
+
+
