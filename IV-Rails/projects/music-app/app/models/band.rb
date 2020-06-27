@@ -1,5 +1,7 @@
-class Band < ApplicationRecord
+# frozen_string_literal: true
 
-  validate :name, presence: true
-  
+class Band < ApplicationRecord
+  validates :name, presence: true
+
+  has_many :albums
 end

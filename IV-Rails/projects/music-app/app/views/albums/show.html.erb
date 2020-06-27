@@ -1,0 +1,41 @@
+<%# Make sure to provide links back to the album's band and make edit/delete buttons visible from the album's show page %>
+<style>
+  td {
+    padding: 5px 15px;
+  }
+</style>
+<div class="grid-container">
+
+  <div class="cats-show__container">
+    <h1 class="text-center text-uppercase ">Album: <%= @album.title  %></h1>
+
+    <div class="align-top flex-container margin-bottom-2 ">
+      <img src="http://placekitten.com/200/200" alt="">
+      <div class="padding-left-1" >
+        <p class="h3">Band:  <%= @album.band.name %></p>
+        <p class="h4">Year : <%= @album.year  %></p>
+        <p class="h4">Type : <%= @album.studio ? "Studio" : "Live"  %></p>
+      </div>
+    </div>
+
+    <div class="flex-child-grow flex-container align-center">
+
+      <%# if current_user&.id == @album.user_id %>
+      <%# end %>
+      <p style="padding: 0px 17px;" class="margin-0">
+        <%= link_to "Edit", edit_album_url(@album), class: ["button", "warn", "margin-0"] %>
+      </p>
+      <p style="padding: 0px 17px;" class="margin-0">
+        <%= button_to "Delete", album_url(@album), method: :delete, class: ["button", "secondary", "margin-0"]  %>
+      </p>
+
+      <% if false %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <p> Show cat page</p>
+<% end %>

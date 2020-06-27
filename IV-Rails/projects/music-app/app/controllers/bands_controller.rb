@@ -1,42 +1,45 @@
-class BandsController < ApplicationController
+# frozen_string_literal: true
 
+class BandsController < ApplicationController
   def index
-    @bands = Bands.all
+    @bands = Band.all
     render :index
   end
 
   def new
     @band = Band.new
+    render :new
   end
 
   def create
-    @band = Band.new(params[:band])
+    @band = Band.new(bands_param)
     if @band.save
-      flash[:success] = "Band successfully created"
+      flash[:success] = 'Band successfully created'
       redirect_to @band
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render 'new'
     end
   end
 
   def edit
     @band = Band.find(params[:id])
+    render :edit
   end
 
   def update
     @band = Band.find(params[:id])
-      if @band.update_attributes(params[:band])
-        flash[:success] = "Band was successfully updated"
-        redirect_to @band
-      else
-        flash[:error] = "Something went wrong"
-        render 'edit'
-      end
+    if @band.update_attributes(bands_param)
+      flash[:success] = 'Band was successfully updated'
+      redirect_to @band
+    else
+      flash[:error] = 'Something went wrong'
+      render 'edit'
+    end
   end
-  
+
   def show
-    @band = Band.find(id)
+    @band = Band.find(params[:id])
   end
 
   def destroy
@@ -49,13 +52,10 @@ class BandsController < ApplicationController
       redirect_to bands_url
     end
   end
-  
-  
-  
 
-  
-    
+  private
+
+  def bands_param
+    params.require(:band).permit(:name)
   end
-
-
 end
