@@ -11,6 +11,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
   </head>
 
@@ -19,7 +20,7 @@
       <div class="content-container">
         <div class="menu__container-content">
 
-          <div class="h2"><a href="<%= root_url %>" class="yellow">99 Cats</a></div>
+          <div class="h2"><a href="<%= root_url %>" class="yellow">Music App</a></div>
           <div>
             <% if current_user %>
               <ul class="no-bullet menu__logout flex-container">

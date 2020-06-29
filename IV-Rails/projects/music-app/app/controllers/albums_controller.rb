@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
       flash[:success] = 'Album successfully created'
       redirect_to @album
     else
-      flash[:error] = 'Something went wrong'
+      # flash.now[:error] = 'Something went wrong'
       @bands = Band.all
       render 'new'
     end
@@ -33,10 +33,11 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
     if @album.update_attributes(album_params)
-      flash[:success] = 'Object was successfully updated'
+      flash[:success] = 'Album was successfully updated'
       redirect_to @album
     else
-      flash[:error] = 'Something went wrong'
+      @bands = Band.all
+      # flash.now[:error] = 'Something went wrong'
       render 'edit'
     end
   end

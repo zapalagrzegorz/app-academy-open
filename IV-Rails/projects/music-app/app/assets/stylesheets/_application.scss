@@ -47,3 +47,16 @@
 .margin-0 {
   margin: 0;
 }
+
+h1,
+h2 {
+  color: yellow;
+}
+
+a {
+  color: black;
+  &:hover {
+    color: currentColor;
+    text-decoration: underline;
+  }
+}

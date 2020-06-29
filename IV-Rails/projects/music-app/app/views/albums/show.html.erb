@@ -12,9 +12,29 @@
     <div class="align-top flex-container margin-bottom-2 ">
       <img src="http://placekitten.com/200/200" alt="">
       <div class="padding-left-1" >
-        <p class="h3">Band:  <%= @album.band.name %></p>
+
+        <p class="h3">Band:  <%= link_to band_path(@album.band) do %>
+            <%= @album.band.name %>
+          <% end %></p>
         <p class="h4">Year : <%= @album.year  %></p>
-        <p class="h4">Type : <%= @album.studio ? "Studio" : "Live"  %></p>
+        <p >Type : <%= @album.studio ? "Studio" : "Live"  %></p>
+
+        <% unless @album.tracks.count.zero?  %>
+          <ol>
+            <% @album.tracks.each do |track| %>
+              <li>
+                <%= link_to track_url(track) do %>
+                  <%= track.ord %> <%= track.title %>
+                <% end%>
+              </li>
+            <% end %>
+          </ol>
+        <% else %>
+          <p>No recorded tracks!. Add one.</p>
+        <% end %>
+
+        <%= link_to "Add track", new_track_url(@album) %>
+
       </div>
     </div>
 

@@ -7,11 +7,11 @@
     </div>
 
     <div class="cell small-12">
-      <%= render 'form', bands: @bands, album: @album, band_id: nil %>
+      <%= render 'form', albums: @albums, album_id: @album_id, track: @track  %>
     </div>
   </div>
 </section>
 
 <% content_for :footer do %>
-  <p> bands page</p>
+  <p> edit track page</p>
 <% end%>

@@ -1,0 +1,43 @@
+<%# Make sure to provide links back to the album's band and make edit/delete buttons visible from the album's show page %>
+<style>
+  td {
+    padding: 5px 15px;
+  }
+</style>
+<div class="grid-container">
+
+  <div class="cats-show__container">
+    <h1 class="text-center">Track: <%= @track.title  %>  </h1>
+    <p class="h2">Band: <%= @track.band.name  %></p>
+    <div class="align-top flex-container margin-bottom-2 ">
+      <img src="http://placekitten.com/200/200" alt="">
+      <div class="padding-left-1" >
+
+        <p class="h4">Track num.  <%= @track.ord %></p>
+        <p class="h4">Type: <%= @track.regular ? "Regular" : "Bonus"  %></p>
+        <% unless @track.lyrics.blank? %>
+          <p class="h4">Lyrics:</p>
+          <p>  <%= @track.lyrics %></p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="flex-child-grow flex-container align-center">
+
+      <p style="padding: 0px 17px;" class="margin-0">
+        <%= link_to "Edit", edit_track_url(@track), class: ["button", "warn", "margin-0"] %>
+      </p>
+      <p style="padding: 0px 17px;" class="margin-0">
+        <%= button_to "Delete", track_url(@track), method: :delete, class: ["button", "secondary", "margin-0"]  %>
+      </p>
+
+      <% if false %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <p> Show cat page</p>
+<% end %>
