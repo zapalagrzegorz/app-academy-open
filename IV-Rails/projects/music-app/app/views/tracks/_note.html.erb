@@ -1,6 +1,9 @@
 <p>
   <%= note.content %>
 </p>
-<p style="margin-bottom: 2rem">
+<p>
   Authored by: <%= note.user.email %>
 </p>
+<% if current_user.id == note.user.id %>
+  <%= button_to "Delete", note_path(note), method: :delete, form_class: ["block", "text-center"], class: ["button", "alert"], params: {track_id: note.track_id } %>
+<% end %>

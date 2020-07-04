@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user!
-    # debugger
     if current_user.nil?
       flash[:alert] = 'You must be signed in to access this section'
       redirect_to new_session_path

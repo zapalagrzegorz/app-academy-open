@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_user_by_credentials(
-      params[:user][:username],
+      params[:user][:email],
       params[:user][:password]
     )
     if @user
@@ -21,13 +21,16 @@ class SessionsController < ApplicationController
       flash[:success] = 'User successfully signed in'
       redirect_to root_url
     else
-      flash.now[:alert] = 'Something went wrong'
+      @user = User.new(email: params[:user][:email])
+      flash.now[:alert] = 'Email or password is incorrect'
       render 'new'
     end
   end
 
   def destroy
+    current_user.reset_session_token!
     session[:session_token] = nil
-    user.reset_session_token!
+    flash[:success] = 'User successfully signed out'
+    redirect_to new_session_path
   end
 end
