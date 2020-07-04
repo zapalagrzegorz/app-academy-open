@@ -8,11 +8,11 @@
 
   <div class="cats-show__container">
     <h1 class="text-center">Track: <%= @track.title  %>  </h1>
-    <p class="h2">Band: <%= @track.band.name  %></p>
+    <p class="h2"> <%= link_to @track.band.name, band_path(@track.band) %></p>
     <div class="align-top flex-container margin-bottom-2 ">
       <img src="http://placekitten.com/200/200" alt="">
       <div class="padding-left-1" >
-
+        <p class="h3">  <%= link_to @track.album.title, album_path(@track.album) %> </p>
         <p class="h4">Track num.  <%= @track.ord %></p>
         <p class="h4">Type: <%= @track.regular ? "Regular" : "Bonus"  %></p>
         <% unless @track.lyrics.blank? %>
@@ -21,6 +21,19 @@
         <% end %>
       </div>
     </div>
+
+    <section>
+      <h2 class="h3">Notes</h2>
+      <% if @track.notes.any? %>
+        <%# <%= debug(@track.notes.first)  %>
+        <% @track.notes.each do |note|  %>
+          <%= render 'tracks/note', note: note %>
+          <%# czemu tak nie działa %>
+          <%# <%= render 'tracks/note', collection: @track.notes, as: :note %>
+        <% end %>
+      <% end %>
+      <%= render 'tracks/new_note', note: @note, track: @track %>
+    </section>
 
     <div class="flex-child-grow flex-container align-center">
 
@@ -39,5 +52,5 @@
 </div>
 
 <% content_for :footer do %>
-  <p> Show cat page</p>
+  <p> Show track page</p>
 <% end %>

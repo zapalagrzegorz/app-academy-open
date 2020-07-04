@@ -14,21 +14,14 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :notes, dependent: :destroy
+
   def self.find_user_by_credentials(email, password)
     user = User.find_by(email: email)
     return if user.nil?
 
     user.is_password(password) ? user : nil
   end
-
-  # login
-  # find_user_by_credentials
-  ## is_password
-  # login!
-  ## generate_session_token
-  ## reset_session_token
-  # ensure_session_token
-  # logout!
 
   # password setter
   def password=(password)
@@ -37,14 +30,14 @@ class User < ApplicationRecord
   end
 
   def is_password(password)
-    BCrypt.password.new(password_digest).is_password(password)
+    BCrypt::Password.new(password_digest).is_password?(password)
   end
 
   def generate_session_token
     SecureRandom.urlsafe_base64
   end
 
-  def reset_session_token
+  def reset_session_token!
     self.session_token = generate_session_token
     save!
 

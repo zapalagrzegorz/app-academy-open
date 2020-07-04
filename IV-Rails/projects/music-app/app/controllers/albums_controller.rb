@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 class AlbumsController < ApplicationController
+  before_action :require_user!
+
   def new
     @album = Album.new
     @bands = Band.all
-    @band_id = params[:id]
+    @band_id = params[:id].to_i
     render :new
   end
 

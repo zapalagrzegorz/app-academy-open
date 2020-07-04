@@ -1,0 +1,17 @@
+<%= render 'form_errors', model: note %>
+
+<h3 class="h4">New note</h3>
+
+<form action="<%= notes_path(track) %>" method="POST" >
+
+  <%= auth_token %>
+
+  <div>
+    <label for="content">Description</label>
+    <textarea name="notes[content]" id="content"><%=note.content if note.content %></textarea>
+  </div>
+
+  <p>
+    <input type="submit" value="Add comment", class="button form__submit">
+  </p>
+</form>

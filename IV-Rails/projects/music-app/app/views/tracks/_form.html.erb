@@ -13,8 +13,9 @@
 
     <select name="track[album_id]" id="album">
       <option disabled <%= "selected" unless album_id %> >--  Albums's name</option>
+
       <% albums.each do |album| %>
-        <option value="<%= album.id %>" <%= "selected" if album_id == album.id %>>
+        <option value="<%= album.id %>" <%= 'selected=true' if album_id.to_i == album.id %>>
           <%= album.title %>
         </option>
       <% end %>

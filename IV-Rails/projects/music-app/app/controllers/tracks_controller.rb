@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class TracksController < ApplicationController
+  before_action :require_user!
+
   def new
     @track = Track.new
     @album_id = params[:id]
@@ -15,14 +17,18 @@ class TracksController < ApplicationController
       flash[:success] = 'Track successfully created'
       redirect_to @track
     else
-      @albums = Album.where(band_id: @track.album_id)
+      @album = Album.find(@album_id)
+      # debugger
+      @albums = Album.where(band_id: @album.band_id)
       # flash.now[:error] = 'Something went wrong'
       render 'new'
     end
   end
 
   def show
+    @note = Note.new
     @track = Track.includes(album: [:band]).find(params[:id])
+    @notes = @track.notes
   end
 
   def edit

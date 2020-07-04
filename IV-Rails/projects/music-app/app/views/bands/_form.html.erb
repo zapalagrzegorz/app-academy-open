@@ -1,5 +1,5 @@
-<% action = (album.persisted? ? album_url(album.id) : albums_url) %>
-<% method = (album.persisted? ? "PATCH" : "POST") %>
+<% action = (band.persisted? ? band_url(band.id) : bands_url) %>
+<% method = (band.persisted? ? "PATCH" : "POST") %>
 
 <form action="<%= action %>" method="POST" >
   <% if method == "PATCH" %>
@@ -8,51 +8,11 @@
 
   <%= auth_token %>
 
-  <div>
-    <label for="band">Choose band</label>
-
-    <select name="album[band_id]" id="band">
-      <option disabled <%= "selected" unless band_id %> >--  Band's name</option>
-      <% bands.each do |band| %>
-        <option value="<%= band.id %>" <%= "selected" if band_id == band.id %>>
-          <%= band.name %>
-        </option>
-      <% end %>
-    </select>
-  </div>
-
   <p>
-    <label for="title">title</label>
+    <label for="Name">Name</label>
 
-    <input id="title" type="text" name=album[title] value="<%= album.title if album.title %>" >
+    <input id="Name" type="text" name=band[name] value="<%= band.name if band.name %>" >
   </p>
-
-  <p>
-    <label for="year">year</label>
-
-    <input id="year" type="number" name=album[year] value="<%= album.year if album.year %>" >
-  </p>
-
-  <div>
-    <fieldset>
-      <legend>Please select album type:</legend>
-      <p>
-        <input type="radio" name="album[studio]" id="studio" 
-          value="true" 
-          <%= album.studio == true ? "checked" : "" %>
-        >
-        <label for="studio" style="margin-right: 1rem">Studio</label>
-
-        <input type="radio" name="album[studio]" id="live"
-          <%= "checked" if album.studio.blank? %>
-          <%= album.studio == false ? "checked" : "" %> 
-          value="false"
-        >
-        <label for="live">Live</label>
-
-      </p>
-    </fieldset>
-  </div>
 
   <% if false %>
 

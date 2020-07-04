@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class BandsController < ApplicationController
+  before_action :require_user!
+
   def index
     @bands = Band.all
     render :index

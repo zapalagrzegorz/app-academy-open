@@ -9,6 +9,8 @@ class Track < ApplicationRecord
 
   validates :regular, inclusion: [true, false], unless: -> { regular.blank? }
 
+  has_many :notes, dependent: :destroy
+
   belongs_to :album
 
   def band

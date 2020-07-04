@@ -23,9 +23,9 @@
           <div class="h2"><a href="<%= root_url %>" class="yellow">Music App</a></div>
           <div>
             <% if current_user %>
-              <ul class="no-bullet menu__logout flex-container">
-                <li class="h3" style="padding-right: 1rem"><%= current_user.username %> </li>
-                <li>
+              <ul class="no-bullet menu__logout flex-container" style="margin-bottom:0">
+                <li class="h3" style="padding-right: 1rem; color: white; margin-bottom: 0"><%= current_user.email %> </li>
+                <li class="margin-0">
                   <form action="<%= session_url  %>" method="POST">
                     <%= auth_token %>
                     <input type="hidden" name="_method" value="DELETE">

@@ -17,7 +17,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :tracks, except: %i[index new]
+  resources :tracks, except: %i[index new] do
+    member do
+      resources :notes, only: :create
+    end
+  end
 
   root to: redirect('/bands')
 

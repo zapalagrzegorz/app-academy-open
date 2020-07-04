@@ -1,4 +1,6 @@
 <%# Make sure to provide links back to the album's band and make edit/delete buttons visible from the album's show page %>
+<% sorted_tracks = @album.tracks.sort_by(&:ord) %>
+
 <style>
   td {
     padding: 5px 15px;
@@ -20,8 +22,8 @@
         <p >Type : <%= @album.studio ? "Studio" : "Live"  %></p>
 
         <% unless @album.tracks.count.zero?  %>
-          <ol>
-            <% @album.tracks.each do |track| %>
+          <ol class="no-bullet">
+            <% sorted_tracks.each do |track| %>
               <li>
                 <%= link_to track_url(track) do %>
                   <%= track.ord %> <%= track.title %>

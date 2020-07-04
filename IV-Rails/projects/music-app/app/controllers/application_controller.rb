@@ -15,14 +15,15 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user!
-    if @current_user.nil?
+    # debugger
+    if current_user.nil?
       flash[:alert] = 'You must be signed in to access this section'
-      redirect_to root_url
+      redirect_to new_session_path
     end
   end
 
   def require_no_user!
-    if @current_user
+    if current_user
 
       flash[:alert] = 'You must be signed out to access this section'
       redirect_to root_url
