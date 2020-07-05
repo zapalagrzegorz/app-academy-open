@@ -1,0 +1,97 @@
+<% action = (track.persisted? ? track_url(track) : tracks_url) %>
+<% method = (track.persisted? ? "PATCH" : "POST") %>
+
+<form action="<%= action %>" method="POST" >
+  <% if method == "PATCH" %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end%>
+
+  <%= auth_token %>
+
+  <div>
+    <label for="album">Choose album</label>
+
+    <select name="track[album_id]" id="album">
+      <option disabled <%= "selected" unless album_id %> >--  Albums's name</option>
+
+      <% albums.each do |album| %>
+        <option value="<%= album.id %>" <%= 'selected=true' if album_id.to_i == album.id %>>
+          <%= album.title %>
+        </option>
+      <% end %>
+    </select>
+  </div>
+
+  <p>
+    <label for="title">title</label>
+
+    <input id="title" type="text" name=track[title] value="<%= track.title if track.title %>" >
+  </p>
+
+  <p>
+    <label for="ord">Track no.</label>
+
+    <input id="ord" type="number" name=track[ord] value="<%= track.ord if track.ord %>" >
+  </p>
+
+  <div>
+    <fieldset>
+      <legend>Please select track type:</legend>
+      <p>
+        <input type="radio" name="track[regular]" id="regular"
+          <%= "checked" if track.regular.nil? %>
+          <%= track.regular == true ? "checked" : "" %> 
+          value="true"
+        >
+        <label for="regular">Regular</label>
+
+        <input type="radio" name="track[regular]" id="bonus" 
+          value="true" 
+         
+          <%= track.regular == false ? "checked" : "" %>
+        >
+        <label for="bonus" style="margin-right: 1rem">Bonus</label>
+      </p>
+    </fieldset>
+  </div>
+
+  <div>
+    <label for="lyrics">Lyrics</label>
+    <textarea name="track[lyrics]" id="lyrics" cols="10" rows="10"><%= track.lyrics unless track.lyrics.blank? %></textarea>
+  </div>
+
+  <% if false %>
+
+    <!--
+  <p>
+    <label for="birth_date">Birth date</label>
+    <input id="birth_date" type="date" name="cat[birth_date]" value="<%= cat.birth_date  %>" max="<%= Date.today %>"  >
+  </p>
+
+  <p>
+    <label for="color">Pick cat's color</label>
+    <select name="cat[color]" id="color">
+      <option disabled selected>--  Cat's color</option>
+
+      <% Cat::CAT_COLORS.each do |color| %>
+        <option value="<%= color %>" <%= cat.color == color ? "selected" : "" %> >
+          <%= color %>
+        </option>
+      <% end %>
+    </select>
+
+  </p>
+
+  
+
+  <div>
+    <label for="description">Description</label>
+    <textarea name="cat[description]" id="description"><%=cat.description if cat.description %></textarea>
+  </div>
+-->
+
+  <% end %>
+  <p>
+    <input type="submit" value=<%= method == "POST" ? "Save track" : "Update track" %>, class="button form__submit">
+  </p>
+</form>

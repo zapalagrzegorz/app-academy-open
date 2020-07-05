@@ -1,0 +1,55 @@
+<%# Make sure to provide links back to the album's band and make edit/delete buttons visible from the album's show page %>
+<div class="grid-container">
+
+  <article class="cats-show__container">
+    <h1 class="text-center">Track: <%= @track.title  %>  </h1>
+    <p class="h2"> <%= link_to @track.band.name, band_path(@track.band) %></p>
+    <div class="margin-bottom-3">
+
+      <div class="align-top flex-container margin-bottom-normal">
+        <img src="http://placekitten.com/200/200" alt="">
+        <div class="padding-left-1" >
+          <p class="h3">  <%= link_to @track.album.title, album_path(@track.album) %> </p>
+          <p class="h4">Track num.  <%= @track.ord %></p>
+          <p class="h4">Type: <%= @track.regular ? "Regular" : "Bonus"  %></p>
+        </div>
+      </div>
+      <% unless @track.lyrics.blank? %>
+        <p class="h4">Lyrics:</p>
+        <%= ugly_lyrics @track.lyrics %>
+      <% end %>
+    </div>
+
+    <div class="flex-child-grow flex-container align-center margin-bottom-xlarge">
+
+      <p style="padding: 0px 17px;" class="margin-0">
+        <%= link_to "Edit", edit_track_url(@track), class: ["button", "warn", "margin-0"] %>
+      </p>
+
+      <p style="padding: 0px 17px;" class="margin-0">
+        <%= button_to "Delete", track_url(@track), method: :delete, class: ["button", "secondary", "margin-0"]  %>
+      </p>
+
+    </div>
+
+    <section>
+      <h2 class="h3 text-center ">Notes</h2>
+      <div class="margin-bottom-3">
+        <% if @track.notes.any? %>
+          <% @track.notes.each do |note|  %>
+            <%= render 'tracks/note', note: note %>
+            <%# czemu tak nie działa %>
+            <%# <%= render 'tracks/note', collection: @track.notes, as: :note %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <%= render 'tracks/new_note', note: @note, track: @track %>
+    </section>
+  </article>
+
+</div>
+
+<% content_for :footer do %>
+  <p> Show track page</p>
+<% end %>

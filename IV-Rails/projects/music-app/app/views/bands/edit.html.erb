@@ -1,0 +1,17 @@
+<%= render 'form_errors', model: @band %>
+
+<section class="grid-container form__container">
+  <div class="grid-x">
+    <div class="cell small-12">
+      <h1 class="form__header">Edit band: <%= @band.name %></h1>
+    </div>
+
+    <div class="cell small-12">
+      <%= render 'form', band: @band %>
+    </div>
+  </div>
+</section>
+
+<% content_for :footer do %>
+  <p> bands page</p>
+<% end%>
