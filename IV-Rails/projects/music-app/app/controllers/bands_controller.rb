@@ -5,12 +5,14 @@ class BandsController < ApplicationController
 
   def index
     @bands = Band.all
-    render :index
+  end
+
+  def show
+    @band = Band.includes(:albums).find(params[:id])
   end
 
   def new
     @band = Band.new
-    render :new
   end
 
   def create
@@ -20,7 +22,7 @@ class BandsController < ApplicationController
       redirect_to @band
     else
       flash[:error] = 'Something went wrong'
-      render 'new'
+      render :new
     end
   end
 
@@ -36,23 +38,18 @@ class BandsController < ApplicationController
       redirect_to @band
     else
       flash[:error] = 'Something went wrong'
-      render 'edit'
+      render :edit
     end
-  end
-
-  def show
-    @band = Band.includes(:albums).find(params[:id])
   end
 
   def destroy
     @band = Band.find(params[:id])
     if @band.destroy
       flash[:success] = 'Band was successfully deleted.'
-      redirect_to bands_url
     else
       flash[:error] = 'Something went wrong'
-      redirect_to bands_url
     end
+    redirect_to bands_url
   end
 
   private

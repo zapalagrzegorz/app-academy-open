@@ -1,19 +1,14 @@
 <%# Make sure to provide links back to the album's band and make edit/delete buttons visible from the album's show page %>
 <% sorted_tracks = @album.tracks.sort_by(&:ord) %>
 
-<style>
-  td {
-    padding: 5px 15px;
-  }
-</style>
 <div class="grid-container">
 
   <div class="cats-show__container">
     <h1 class="text-center text-uppercase ">Album: <%= @album.title  %></h1>
 
-    <div class="align-top flex-container margin-bottom-2 ">
+    <div class="align-top flex-container margin-bottom-large ">
       <img src="http://placekitten.com/200/200" alt="">
-      <div class="padding-left-1" >
+      <div class="padding-left-normal" >
 
         <p class="h3">Band:  <%= link_to band_path(@album.band) do %>
             <%= @album.band.name %>
@@ -42,8 +37,6 @@
 
     <div class="flex-child-grow flex-container align-center">
 
-      <%# if current_user&.id == @album.user_id %>
-      <%# end %>
       <p style="padding: 0px 17px;" class="margin-0">
         <%= link_to "Edit", edit_album_url(@album), class: ["button", "warn", "margin-0"] %>
       </p>
@@ -51,9 +44,6 @@
         <%= button_to "Delete", album_url(@album), method: :delete, class: ["button", "secondary", "margin-0"]  %>
       </p>
 
-      <% if false %>
-
-      <% end %>
     </div>
   </div>
 </div>

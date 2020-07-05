@@ -6,5 +6,7 @@ class CreateBands < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.timestamps
     end
+
+    # could have added index, with unique!
   end
 end

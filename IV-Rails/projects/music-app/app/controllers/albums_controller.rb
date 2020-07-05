@@ -3,33 +3,29 @@
 class AlbumsController < ApplicationController
   before_action :require_user!
 
-  def new
-    @album = Album.new
-    @bands = Band.all
-    @band_id = params[:id].to_i
-    render :new
-  end
-
-  def create
-    # debugger
-    @album = Album.new(album_params)
-    if @album.save
-      flash[:success] = 'Album successfully created'
-      redirect_to @album
-    else
-      # flash.now[:error] = 'Something went wrong'
-      @bands = Band.all
-      render 'new'
-    end
-  end
-
   def show
     @album = Album.includes(:band).find(params[:id])
+  end
+
+  def new
+    @album = Album.new(band_id: params[:band_id])
+    @bands = Band.all
   end
 
   def edit
     @album = Album.find(params[:id])
     @bands = Band.all
+  end
+
+  def create
+    @album = Album.new(album_params)
+    if @album.save
+      flash[:success] = 'Album successfully created'
+      redirect_to @album
+    else
+      @bands = Band.all
+      render :new
+    end
   end
 
   def update
@@ -39,20 +35,18 @@ class AlbumsController < ApplicationController
       redirect_to @album
     else
       @bands = Band.all
-      # flash.now[:error] = 'Something went wrong'
-      render 'edit'
+      render :edit
     end
   end
 
   def destroy
-    @album = Album.includes(:band).find(params[:id])
-    band = @album.band
-    if @album.destroy
+    album = Album.includes(:band).find(params[:id])
+    if album.destroy
       flash[:success] = 'Album was successfully deleted.'
     else
       flash[:error] = 'Something went wrong'
     end
-    redirect_to band_url(band)
+    redirect_to band_url(album.band)
   end
 
   private

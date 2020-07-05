@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     if @user
       login!(@user)
 
-      flash[:success] = 'User successfully signed in'
+      flash[:success] = '<h1 class="black">User successfully signed in</h1>'
       redirect_to root_url
     else
       @user = User.new(email: params[:user][:email])
@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
   def destroy
     current_user.reset_session_token!
     session[:session_token] = nil
-    flash[:success] = 'User successfully signed out'
+    flash[:success] = '<h1 class="black">User successfully signed out</h1>'
     redirect_to new_session_path
   end
 end
