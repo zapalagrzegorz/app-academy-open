@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to Music App</h1>
+    <p>Hello,  <%= @user.email %></p>
+    <p>
+      Thank for registration with Music App. To complete the process please use 
+      <%= link_to "confirmation link", activate_users_url(activation_token: @user.activation_token)  %>
+    </p>
+
+    <p>
+      If you can't click the link, copy and paste this URL into your browser:
+      <%= activate_users_url(activation_token: @user.activation_token) %>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</body>
+</html>

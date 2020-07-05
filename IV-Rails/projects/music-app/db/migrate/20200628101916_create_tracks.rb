@@ -11,5 +11,7 @@ class CreateTracks < ActiveRecord::Migration[5.2]
       t.text :lyrics
       t.timestamps
     end
+
+    # could've added default value for :regular
   end
 end

@@ -2,6 +2,7 @@
 
 class Band < ApplicationRecord
   validates :name, presence: true
+  # name could be unique
 
   has_many :albums, dependent: :destroy
 

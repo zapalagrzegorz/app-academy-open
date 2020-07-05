@@ -12,9 +12,9 @@
     <label for="band">Choose band</label>
 
     <select name="album[band_id]" id="band">
-      <option disabled <%= "selected" unless band_id %> >--  Band's name</option>
+      <option disabled <%= "selected" unless album.band_id %> >--  Band's name</option>
       <% bands.each do |band| %>
-        <option value="<%= band.id %>" <%= "selected" if band_id == band.id %>>
+        <option value="<%= band.id %>" <%= "selected" if album.band_id == band.id %>>
           <%= band.name %>
         </option>
       <% end %>
@@ -55,34 +55,6 @@
   </div>
 
   <% if false %>
-
-    <!--
-  <p>
-    <label for="birth_date">Birth date</label>
-    <input id="birth_date" type="date" name="cat[birth_date]" value="<%= cat.birth_date  %>" max="<%= Date.today %>"  >
-  </p>
-
-  <p>
-    <label for="color">Pick cat's color</label>
-    <select name="cat[color]" id="color">
-      <option disabled selected>--  Cat's color</option>
-
-      <% Cat::CAT_COLORS.each do |color| %>
-        <option value="<%= color %>" <%= cat.color == color ? "selected" : "" %> >
-          <%= color %>
-        </option>
-      <% end %>
-    </select>
-
-  </p>
-
-  
-
-  <div>
-    <label for="description">Description</label>
-    <textarea name="cat[description]" id="description"><%=cat.description if cat.description %></textarea>
-  </div>
--->
 
   <% end %>
   <p>

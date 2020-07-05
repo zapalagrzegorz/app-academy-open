@@ -8,13 +8,14 @@ class User < ApplicationRecord
 
   validates :password, length: { minimum: 6, maximum: 20, allow_nil: true }
 
-  validates :email, :password_digest, uniqueness: true
+  validates :email, :password_digest, :session_token, uniqueness: true
+  # :session_token tez unique
 
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   validates :password_digest, presence: { message: 'Password cannot be empty' }
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :ensure_activation_token
 
   has_many :notes, dependent: :destroy
 
@@ -36,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def generate_session_token
-    SecureRandom.urlsafe_base64
+    SecureRandom.urlsafe_base64(16)
   end
 
   def reset_session_token!
@@ -48,5 +49,9 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= generate_session_token
+  end
+
+  def ensure_activation_token
+    self.activation_token ||= generate_session_token
   end
 end
