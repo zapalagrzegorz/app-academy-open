@@ -95,10 +95,41 @@ RSpec.configure do |config|
   #   Kernel.srand config.seed
 end
 
+def create_test_user
+  User.create(email: 'test@user.com', password: '123456', activated: true)
+end
+
 def login_test_user(email = 'test@user.com', password = '123456')
   # user exist, is activated
   visit new_session_url
   fill_in 'Email', with: email
   fill_in 'Password', with: password
-  click_on 'Log in'
+  click_on('Log in')
+end
+
+def login_as(user)
+  visit new_session_url
+  fill_in 'Email', with: user.email
+  fill_in 'Password', with: '123456'
+  click_button 'Log in'
+end
+
+def build_three_goals(user)
+  FactoryBot.create(:goal, title: 'pickle a pepper', details: 'some details', user_id: user.id)
+  FactoryBot.create(:goal, title: "get octocat's autograph", details: 'some details', user_id: user.id)
+  FactoryBot.create(:goal, title: 'bake a cake', details: 'some details', user_id: user.id)
+end
+
+def build_three_goals_full(user)
+  # user = create_test_user
+  user.goals.create(title: 'pickle a pepper', details: 'some details', user_id: user.id)
+  user.goals.create(title: 'get octocat\'s autograph', details: 'some details', user_id: user.id)
+  user.goals.create(title: 'bake a cake', details: 'some details', user_id: user.id)
+end
+
+def submit_new_goal(goal_title, user, privacy = { private: false })
+  visit new_user_goal_url(user)
+  fill_in 'title', with: goal_title
+  check 'Private?' if privacy[:private]
+  click_on 'goal-submit'
 end

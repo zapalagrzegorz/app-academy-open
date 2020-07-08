@@ -3,43 +3,37 @@
 class GoalsController < ApplicationController
   before_action :require_user!
 
+  def show
+    # model.includes(user: [:band]).find(params[:id])
+    @goal = Goal.includes(:user).find(params[:id])
+  end
+
   def new
-    @user = User.find(params[:user_id])
-    @goal = @user.goals.new
-    # @user_id = params[:user_id]
-    # @goal = Goal.new
-    # debugger
-    # @users = User.where(band_id: @user.band_id)
+    @goal = Goal.new
+  end
+
+  def edit
+    @goal = Goal.includes(:user).find(params[:id])
   end
 
   def create
-    @goal = Goal.new(goal_params)
+    # debugger
+    @goal = current_user.goals.new(goal_params)
+    # @goal = Goal.new(goal_params)
     if @goal.save
       flash[:success] = 'Goal successfully created'
       redirect_to @goal
     else
-      @user = User.find(@user_id)
+      # @user = User.find(@user_id)
       # debugger
-      @users = User.where(band_id: @user.band_id)
+      # @users = User.where(band_id: @user.band_id)
       # flash.now[:error] = 'Something went wrong'
       render 'new'
     end
   end
 
-  def show
-    @note = Note.new
-    @goal = Goal.includes(user: [:band]).find(params[:id])
-    @notes = @goal.notes
-  end
-
-  def edit
-    @goal = Goal.includes(:user).find(params[:id])
-    @user_id = params[:id]
-    @user = @goal.user
-    @users = User.where(band_id: @user.band_id)
-  end
-
   def update
+    # current_user
     @goal = Goal.find(params[:id])
     if @goal.update_attributes(goal_params)
       flash[:success] = 'Goal was successfully updated'
@@ -57,12 +51,12 @@ class GoalsController < ApplicationController
     else
       flash[:error] = 'Something went wrong'
     end
-    redirect_to band_url(user)
+    redirect_to user
   end
 
   private
 
   def goal_params
-    params.require(:goal).permit(:title, :ord, :regular, :lyrics, :user_id)
+    params.require(:goal).permit(:title, :details, :private, :completed)
   end
 end

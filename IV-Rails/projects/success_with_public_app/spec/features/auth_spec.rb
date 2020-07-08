@@ -27,7 +27,7 @@ end
 feature 'logging in' do
   # login_user
   scenario 'shows username on the homepage after login' do
-    test_user = User.create(email: 'test@user.com', password: '123456', activated: true)
+    test_user = create_test_user
     login_test_user
     expect(page).to have_current_path(user_url(test_user))
     expect(page).to have_content test_user.email
@@ -44,7 +44,7 @@ feature 'logging out' do
   scenario 'doesn\'t show username on the homepage after logout' do
     test_user = User.create(email: 'test@user.com', password: '123456', activated: true)
     login_test_user
-    save_and_open_page
+    # save_and_open_page
     click_on 'Logout'
     expect(page).not_to have_content test_user.email
   end

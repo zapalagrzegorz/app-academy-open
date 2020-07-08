@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # root to: redirect('/')
-  root to: 'users#show'
+  root to: 'users#index'
 
   resource :session, only: %i[new create destroy]
 
   resources :users, only: %i[index new create show] do
     get 'activate', on: :collection
-    resources :goals, only: %i[show new edit create update delete]
+    # gdybym umieścił tu, to odwołanie do tych zasobów zawsze by się wiązało z
+    # id uzytkownika, co jes dosc uciazliwe
+    resources :goals, only: %i[new]
   end
+
+  resources :goals, only: %i[show edit create update destroy]
 end

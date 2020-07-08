@@ -1,3 +1,5 @@
+<% public_goals = @user.goals.reject { |goal| goal.private? } %>
+
 <div class="container">
   <p>Hello, dear user!</p>
   <h1 class=""><%= @user.email %></h1>
@@ -5,4 +7,23 @@
     <a href="/" class="yellow"> Go to main page </a>
   </p>
 
+  <% if @user.goals.any? %>
+
+    <h2>U<%= @user.email %>'s goals</h2>
+    <% if current_user&.id == @user.id %>
+      <% @user.goals.each do |goal| %>
+        <%= render 'goal', goal: goal %>
+        <div>
+          <div style="padding: 0px 17px;" class="margin-0">
+            <%= button_to "Completed", goal_url(goal, goal: { completed: true} ), method: :patch, class: ["button", "success", "margin-0"], id: "goal_#{goal.id}_completed"  %>
+          </div>
+          <%= button_to "Delete #{goal.title}", goal_url(goal), method: :delete, class: ["button", "alert", "margin-0", "button"]  %>
+        </div>
+      <% end %>
+    <% else %>
+      <% public_goals.each do |goal| %>
+        <%= render 'goal', goal: goal %>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>

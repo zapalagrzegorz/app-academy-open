@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: goals
@@ -13,6 +15,8 @@
 #
 FactoryBot.define do
   factory :goal do
+    title { Faker::Lorem.sentence(word_count: 3) }
+    details { Faker::Lorem.sentence(word_count: 5) }
     
   end
 end

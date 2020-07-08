@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -14,6 +16,15 @@
 #
 FactoryBot.define do
   factory :user do
-    
+    email { Faker::Internet.email }
+    password { '123456' }
+    activated { true }
+
+    factory :user_foo do
+      email { 'foo_bar@gmail.com' }
+    end
   end
 end
+# factory :test_user do
+
+# end
