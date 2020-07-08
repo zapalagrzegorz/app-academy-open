@@ -1,0 +1,9 @@
+Welcome to Music App
+===================================================
+
+Hello,  <%= @user.email %>
+
+Thank for registration with Music App. To complete the process please use link 
+<%= activate_users_url(activation_token: @user.activation_token) %>
+
+Thanks for joining and have a great day!
