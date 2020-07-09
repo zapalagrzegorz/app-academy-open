@@ -15,5 +15,14 @@ Rails.application.routes.draw do
     resources :goals, only: %i[new]
   end
 
-  resources :goals, only: %i[show edit create update destroy]
+  resources :goals, only: %i[show edit create update destroy] do
+    # update goals by cheers only via goals page
+    resources :cheers, only: [:create]
+  end
+
+  # show received cheers of current user
+  resources :cheers, only: [:index]
+
+  # zapomniany
+  resources :comments, only: [:create]
 end

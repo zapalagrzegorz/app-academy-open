@@ -1,6 +1,7 @@
 <% public_goals = @user.goals.reject { |goal| goal.private? } %>
 
 <div class="container">
+  <%# <div class="content-container"> %>
   <p>Hello, dear user!</p>
   <h1 class=""><%= @user.email %></h1>
   <p>
@@ -9,7 +10,7 @@
 
   <% if @user.goals.any? %>
 
-    <h2>U<%= @user.email %>'s goals</h2>
+    <h2><%= @user.email %>'s goals</h2>
     <% if current_user&.id == @user.id %>
       <% @user.goals.each do |goal| %>
         <%= render 'goal', goal: goal %>
@@ -26,4 +27,15 @@
       <% end %>
     <% end %>
   <% end %>
+
+  <% if @user.comments.any? %>
+    <h2>Comments to user</h2>
+
+    <% @user.comments.each do |comment| %>
+      <%= render 'comment', comment: comment %>
+    <% end %>
+  <% end %>
+  <%= render 'comments_form', commentable_id: @user.id, commentable_type: "User" %>
 </div>
+
+<%# </div> %>

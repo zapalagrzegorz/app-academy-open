@@ -97,7 +97,7 @@ end
 feature 'deleting goals' do
   # before do
 
-  given!(:test_user) { FactoryBot.create(:user) }
+  given!(:test_user) { FactoryBot.create(:test_user) }
 
   background do
     login_test_user
@@ -106,7 +106,7 @@ feature 'deleting goals' do
   scenario 'should allow to delete a goal' do
     build_three_goals(test_user)
     visit user_url(test_user)
-
+    # save_and_open_page
     click_button 'Delete pickle a pepper'
     expect(page).not_to have_content 'pickle a pepper'
     expect(page).to have_content 'Goal was successfully deleted'

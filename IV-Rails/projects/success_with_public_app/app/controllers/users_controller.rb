@@ -23,7 +23,9 @@ class UsersController < ApplicationController
       msg = UserMailer.activate_email(@user)
       msg.deliver_now
       flash[:success] = "<h1 class='black h2 text-center'>User: #{h(@user.email)} was successfully created.</h1>
-      <p class='h3 text-center'>You need to confirm your email before login.</p>"
+      <p class='h3 text-center'>You need to confirm your email before login.</p>
+      <p>You must activate your account first! Check your email. <br> Run mailcatcher
+      Open http://127.0.0.1:1080/ in the browser</p>"
       redirect_to new_session_path
     else
       render :new

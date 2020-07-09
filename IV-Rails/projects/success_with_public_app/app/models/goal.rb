@@ -14,6 +14,8 @@
 #  updated_at :datetime         not null
 #
 class Goal < ApplicationRecord
+  include Commentable
+
   validates :title, presence: true
 
   validates :title, length: { minimum: 6, maximum: 50 }
@@ -24,4 +26,10 @@ class Goal < ApplicationRecord
             inclusion: { in: [true, false], message: 'Private field can be only true/false' }, unless: -> { :private.blank? }
 
   belongs_to :user
+
+  has_many :cheers, class_name: 'Cheer'
+
+  def cheered_by?(user)
+    cheers.exists?(giver_id: user.id)
+  end
 end

@@ -13,7 +13,10 @@
 #  activation_token :string           not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  cheer_count      :integer          not null
 #
+require 'faker'
+
 FactoryBot.define do
   factory :user do
     email { Faker::Internet.email }
@@ -22,6 +25,10 @@ FactoryBot.define do
 
     factory :user_foo do
       email { 'foo_bar@gmail.com' }
+    end
+
+    factory :test_user do
+      email { 'test@user.com' }
     end
   end
 end

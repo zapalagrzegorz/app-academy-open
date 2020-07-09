@@ -17,6 +17,6 @@ FactoryBot.define do
   factory :goal do
     title { Faker::Lorem.sentence(word_count: 3) }
     details { Faker::Lorem.sentence(word_count: 5) }
-    
+    association :user, factory: :user
   end
 end

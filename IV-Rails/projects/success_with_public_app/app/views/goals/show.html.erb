@@ -14,6 +14,9 @@
           Status: <%= @goal.completed? ? "Completed" : "In progress" %>
         </p>
         <p>Privacy: <%= @goal.private? ? "Private" : "Public" %></p>
+
+        <p>Cheers: <%= @goal.cheers.length %></p>
+
       </div>
     </div>
 
@@ -23,6 +26,7 @@
         <div style="padding: 0px 17px;" class="margin-0">
           <%= button_to "Completed", goal_url(@goal, goal: { completed: true} ), method: :patch, class: ["button", "success", "margin-0"], id: "goal_#{@goal.id}_completed"  %>
         </div>
+
         <p style="padding: 0px 17px;" class="margin-0">
           <%= link_to "Edit", edit_goal_url(@goal), class: ["button", "warn", "margin-0"] %>
         </p>
@@ -30,7 +34,24 @@
           <%= button_to "Delete", goal_url(@goal), method: :delete, class: ["button", "secondary", "margin-0"]  %>
         </p>
       </div>
+      <%# current_user, who has not yet cheered %>
+    <% elsif current_user && current_user.cheer_count > 0 %>
+      <%# what's wrong? %>
+      <%#  !(@goal.cheered_by?(current_user)) %>
+      <%= render "cheer_button", goal: @goal %>
     <% end %>
+
+    <% if @goal.comments.any? %>
+
+      <section>
+        <h2>Goal comments:</h2>
+        <% @goal.comments.each do |comment| %>
+          <%= render 'comment', comment: comment %>
+        <% end %>
+      </section>
+    <% end %>
+
+    <%= render 'comments_form', commentable_id: @goal.id, commentable_type: "Goal" %>
   </div>
 </div>
 

@@ -13,10 +13,13 @@
 #  activation_token :string           not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  cheer_count      :integer          not null
 #
 require 'bcrypt'
 
 class User < ApplicationRecord
+  include Commentable
+
   attr_reader :password
 
   validates :email, :session_token, :activation_token, presence: true
@@ -25,10 +28,19 @@ class User < ApplicationRecord
   validates :email, :password_digest, :session_token, uniqueness: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
-  after_initialize :ensure_session_token, :ensure_activation_token
+  after_initialize :ensure_session_token, :ensure_activation_token, :ensure_cheer_count
 
   has_many :goals
-  
+
+  has_many :author_comments, class_name: 'Comment', foreign_key: 'user_id', dependent: :destroy
+
+  has_many :cheers_given, class_name: 'Cheers', foreign_key: 'giver_id', dependent: :destroy
+
+  has_many :cheers_received, through: :goals, source: :cheers
+
+  # belongs_to :goal
+
+  # has_many :commented_goals, through :author_comments, source: :goal
 
   def self.find_user_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -55,10 +67,18 @@ class User < ApplicationRecord
 
   def reset_session_token!
     self.session_token = generate_session_token
+    # debugger
     save!
 
     session_token
   end
+
+  def decrement_cheer_count!
+    self.cheer_count = cheer_count - 1
+    save!
+  end
+
+  private
 
   def ensure_session_token
     self.session_token ||= generate_session_token
@@ -66,5 +86,9 @@ class User < ApplicationRecord
 
   def ensure_activation_token
     self.activation_token ||= generate_session_token
+  end
+
+  def ensure_cheer_count
+    self.cheer_count ||= Cheer::CHEER_LIMIT
   end
 end
