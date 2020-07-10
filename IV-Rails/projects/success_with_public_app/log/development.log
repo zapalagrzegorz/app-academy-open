@@ -4526,3 +4526,2424 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 111ms (Views: 74.2ms | ActiveRecord: 7.3ms)
 
 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2020-07-09 14:53:58 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (18.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TahPY1QRyoGVfV7E1IYs2g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 218ms (Views: 200.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 14:54:30 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TahPY1QRyoGVfV7E1IYs2g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 14:54:55 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TahPY1QRyoGVfV7E1IYs2g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 48ms (Views: 45.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 14:57:02 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TahPY1QRyoGVfV7E1IYs2g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 14:58:38 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (21.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TahPY1QRyoGVfV7E1IYs2g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 286ms (Views: 261.0ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 14:59:04 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TahPY1QRyoGVfV7E1IYs2g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 14:59:13 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TahPY1QRyoGVfV7E1IYs2g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 15:03:24 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TahPY1QRyoGVfV7E1IYs2g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 15:11:19 +0200
+Started GET "/" for 127.0.0.1 at 2020-07-09 15:11:19 +0200
+Started GET "/" for 127.0.0.1 at 2020-07-09 15:11:19 +0200
+Started GET "/" for ::1 at 2020-07-09 15:11:19 +0200
+Started GET "/" for 127.0.0.1 at 2020-07-09 15:11:19 +0200
+Processing by UsersController#index as HTML
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (12.1ms)
+  Rendering users/index.html.erb within layouts/application
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (18.7ms)
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (13.4ms)
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 1.3ms)
+
+
+
+ActionView::Template::Error - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:10:in `view template'
+
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 12.1ms)
+
+
+
+ActionView::Template::Error - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:10:in `view template'
+
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 1.1ms)
+
+
+Completed 500 Internal Server Error in 295ms (ActiveRecord: 4.6ms)
+
+
+
+ActionView::Template::Error - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:10:in `view template'
+
+
+ActionView::Template::Error - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:10:in `view template'
+
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 0.5ms)
+
+
+
+ActionView::Template::Error - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:10:in `view template'
+
+Started GET "/" for 127.0.0.1 at 2020-07-09 15:12:16 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (24.7ms)
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 6.0ms)
+
+
+
+ActionView::Template::Error - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:10:in `view template'
+
+Started POST "/__better_errors/804e575380918c57/variables" for 127.0.0.1 at 2020-07-09 15:12:17 +0200
+Started GET "/" for ::1 at 2020-07-09 15:14:57 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.4ms)
+
+
+
+ActionView::Template::Error - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:10:in `view template'
+
+Started POST "/__better_errors/d8504949740e44b6/variables" for ::1 at 2020-07-09 15:14:57 +0200
+Started GET "/" for ::1 at 2020-07-09 15:15:38 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 179ms (Views: 177.7ms | ActiveRecord: 0.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/vars"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-09 15:19:14 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.4ms)
+
+
+
+ActionView::Template::Error - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+  app/views/layouts/application.html.erb:10:in `view template'
+
+Started POST "/__better_errors/0da42abe7032eff6/variables" for ::1 at 2020-07-09 15:19:14 +0200
+Started GET "/" for ::1 at 2020-07-09 15:19:44 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:20:21 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:20:22 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.4ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:20:22 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.3ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:20:22 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.6ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:20:22 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.4ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:20:23 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.4ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:20:23 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.4ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:20:38 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:21:15 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.4ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:21:16 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/" for ::1 at 2020-07-09 15:21:34 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:21:42 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:24:11 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 64ms (Views: 62.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:26:01 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/application"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/padding-margin.scss"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-09 15:26:44 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/application"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/padding-margin.scss"):
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-09 15:27:28 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/application"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+
+Sass::SyntaxError - Undefined variable: "$sizes".:
+
+Started GET "/" for ::1 at 2020-07-09 15:28:37 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/application"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-09 15:30:54 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.4ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cats"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/container"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/forms"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/application"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+
+Sass::SyntaxError - File to import not found or unreadable: ./buttons.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cheers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+Started GET "/" for ::1 at 2020-07-09 15:31:16 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.4ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/container"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cats"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/forms"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+
+Sass::SyntaxError - File to import not found or unreadable: ./buttons.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cheers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-09 15:31:43 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.3ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: ./buttons.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cheers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/forms"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cats"):
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/container"):
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+Started GET "/" for ::1 at 2020-07-09 15:32:07 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.8ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: ./vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ./buttons.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cheers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-09 15:33:14 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 270ms (Views: 252.0ms | ActiveRecord: 4.9ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ./vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cheers"):
+
+Sass::SyntaxError - File to import not found or unreadable: vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ./buttons.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+Started GET "/" for ::1 at 2020-07-09 15:33:25 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 235ms (Views: 217.2ms | ActiveRecord: 5.7ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cheers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+
+Sass::SyntaxError - File to import not found or unreadable: ./vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+
+Sass::SyntaxError - File to import not found or unreadable: ./buttons.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+Started GET "/" for ::1 at 2020-07-09 15:35:12 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:35:43 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.7ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: ../utils/vars.
+Load paths:
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/config
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/images
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/app/assets/stylesheets
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/gz/Code/app-academy-open/IV-Rails/projects/success_with_public_app/node_modules:
+
+Started GET "/" for ::1 at 2020-07-09 15:36:44 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:37:48 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.4ms)
+
+
+
+Sass::SyntaxError - Undefined variable: "$light-blue".:
+
+Started GET "/" for ::1 at 2020-07-09 15:38:14 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:38:41 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:39:17 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/components/cheers"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.4.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.4.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-09 15:39:28 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2020-07-09 15:39:41 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered application/_goal.html.erb (0.7ms)
+  Rendered application/_goal.html.erb (0.3ms)
+  Rendered application/_goal.html.erb (0.2ms)
+  Rendered application/_goal.html.erb (0.2ms)
+  Rendered application/_goal.html.erb (0.3ms)
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 LIMIT $3[0m  [["commentable_id", 1], ["commentable_type", "User"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 1], ["commentable_type", "User"]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/application/_comment.html.erb:2
+  Rendered application/_comment.html.erb (4.4ms)
+  Rendered application/_errors.html.erb (0.4ms)
+  Rendered application/_comments_form.html.erb (2.2ms)
+  Rendered users/show.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 116ms (Views: 56.6ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:39:52 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-09 15:40:09 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1" for ::1 at 2020-07-10 07:34:11 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mGoal Load (1.1ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered application/_goal.html.erb (0.8ms)
+  Rendered application/_goal.html.erb (0.2ms)
+  Rendered application/_goal.html.erb (0.2ms)
+  Rendered application/_goal.html.erb (0.2ms)
+  Rendered application/_goal.html.erb (0.2ms)
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 LIMIT $3[0m  [["commentable_id", 1], ["commentable_type", "User"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2[0m  [["commentable_id", 1], ["commentable_type", "User"]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/application/_comment.html.erb:2
+  Rendered application/_comment.html.erb (3.6ms)
+  Rendered application/_errors.html.erb (0.4ms)
+  Rendered application/_comments_form.html.erb (2.7ms)
+  Rendered users/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 53ms (Views: 43.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/goals/9" for ::1 at 2020-07-10 07:34:29 +0200
+Processing by GoalsController#show as HTML
+  Parameters: {"id"=>"9"}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2020-07-10 07:34:29 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-07-10 07:34:37 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.6ms)
+  Rendered application/_user_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-07-10 07:34:40 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.7ms)
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-07-10 07:34:41 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.8ms)
+  Rendered application/_user_form.html.erb (1.2ms)
+  Rendered users/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2020-07-10 07:34:44 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-07-10 07:34:45 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.7ms)
+  Rendered application/_user_form.html.erb (1.5ms)
+  Rendered users/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-07-10 07:35:01 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"sOhJTG2v08nnT0VEEYsaSsDW5XZNUoVBYFo1nGa9EXWgNGq7JUKzS7cGUG1j9EUu3c1ASKwTJ58W5lJGYzKSTg==", "user"=>{"email"=>"zapala.grzegorz@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zapala.grzegorz@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$s9PUswNwEMHtNQ.F3DoiLuK9Z9thKsgvyFOqEb8YGOWwYvNmWf7ru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KJ8Alu9StT6H5uEvEOwPjw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:21
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.3ms)
+  Rendered application/_user_form.html.erb (1.0ms)
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 401ms (Views: 49.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/session/new" for ::1 at 2020-07-10 07:35:06 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2020-07-10 07:35:16 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"30ZWDDpOIWgbnwqTTDsmprOdRt2OvzWIKOnnHwWpAwbPmnX7cqNB6kvWH7o+RHnCrobj42/+l1ZeVYDFACaAPQ==", "user"=>{"email"=>"zapala.grzegorz@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zapala.grzegorz@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:46
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 269ms (Views: 22.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/session" for ::1 at 2020-07-10 07:35:32 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GbPALLEX4NX2us0FTeGqiYBHii4/XTgcyKQF4bLXyCAJb+Pb+fqAV6bz2Cw/nvXtnVwvEN4cmsK+GGI7t1hLGw==", "user"=>{"email"=>"zapala.grzegorz@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zapala.grzegorz@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:46
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 276ms (Views: 30.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for ::1 at 2020-07-10 07:35:39 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.6ms)
+  Rendered application/_user_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-07-10 07:35:49 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"UE/VqjenUwaypixyeXuu2KvWgFTqUEh1zC+xjqZc6SNAk/Zdf0ozhOLvOVsLBPG8ts0lagsR6qu6k9ZUo9NqGA==", "user"=>{"email"=>"123@test.pl", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123@test.pl"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$iNLnfikeFWOGnF0HCEqeOObVTG9skq0izx4GKwmlhvRWYab6JmVN."], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "20YJDUiabwGOMs8jqiqKgw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "session_token", "password_digest", "activation_token", "created_at", "updated_at", "cheer_count") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "123@test.pl"], ["session_token", "20YJDUiabwGOMs8jqiqKgw"], ["password_digest", "$2a$12$iNLnfikeFWOGnF0HCEqeOObVTG9skq0izx4GKwmlhvRWYab6JmVN."], ["activation_token", "XQ-uhuRmqrTSo4QtujSWUQ"], ["created_at", "2020-07-10 05:35:49.413346"], ["updated_at", "2020-07-10 05:35:49.413346"], ["cheer_count", 12]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (208.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21
+  Rendering user_mailer/activate_email.html.erb within layouts/mailer
+  Rendered user_mailer/activate_email.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/activate_email.text.erb within layouts/mailer
+  Rendered user_mailer/activate_email.text.erb within layouts/mailer (0.4ms)
+UserMailer#activate_email: processed outbound mail in 154.2ms
+Sent mail to 123@test.pl (5.0ms)
+Date: Fri, 10 Jul 2020 07:35:49 +0200
+From: Admin <admin@musicapp.com>
+To: 123@test.pl
+Message-ID: <5f07fe35d5b4b_b78062ab5857dbc24307bd@gz-ThinkPad-T450.mail>
+Subject: Activate account at Success with Public App
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5f07fe35d3fc0_b78062ab5857dbc2430661";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5f07fe35d3fc0_b78062ab5857dbc2430661
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to Success with public
+===================================================
+
+Hello,  123@test.pl
+
+Thank for registration with Success with public. To complete the process please use link 
+http://localhost:3000/users/activate?activation_token=XQ-uhuRmqrTSo4QtujSWUQ
+
+Thanks for joining and have a great day!
+
+
+----==_mimepart_5f07fe35d3fc0_b78062ab5857dbc2430661
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to Success with public App</h1>
+    <p>Hello,  123@test.pl</p>
+    <p>
+      Thank for registration with Success with public. To complete the process please use 
+      <a href="http://localhost:3000/users/activate?activation_token=XQ-uhuRmqrTSo4QtujSWUQ">confirmation link</a>
+    </p>
+
+    <p>
+      If you can't click the link, copy and paste this URL into your browser:
+      http://localhost:3000/users/activate?activation_token=XQ-uhuRmqrTSo4QtujSWUQ
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_5f07fe35d3fc0_b78062ab5857dbc2430661--
+
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 716ms (ActiveRecord: 211.0ms)
+
+
+Started GET "/session/new" for ::1 at 2020-07-10 07:35:49 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$hCTQXi.Gq2ztg/DpDZVdmufpAGKHM90Gq6l2ZvXKEoTelSSlF0N2S"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "F4HeY9Y_MKaLZYNLwWIcfA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "session_token", "password_digest", "activated", "activation_token", "created_at", "updated_at", "cheer_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "test@gmail.com"], ["session_token", "F4HeY9Y_MKaLZYNLwWIcfA"], ["password_digest", "$2a$12$hCTQXi.Gq2ztg/DpDZVdmufpAGKHM90Gq6l2ZvXKEoTelSSlF0N2S"], ["activated", true], ["activation_token", "DRoBtHPKWeIdhOvSYL0KMQ"], ["created_at", "2020-07-10 05:39:14.405969"], ["updated_at", "2020-07-10 05:39:14.405969"], ["cheer_count", 12]]
+  ↳ db/seeds.rb:16
+  [1m[35m (219.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alfredo.boyle@okon-goodwin.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$GxfbDTNGFCDIXIvyOLQkNOCTaV984WvVmFpJMm7PnffSPDAvEWffq"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ceMdqGV6vZSnDIbhWDkXRw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "session_token", "password_digest", "activated", "activation_token", "created_at", "updated_at", "cheer_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "alfredo.boyle@okon-goodwin.co"], ["session_token", "ceMdqGV6vZSnDIbhWDkXRw"], ["password_digest", "$2a$12$GxfbDTNGFCDIXIvyOLQkNOCTaV984WvVmFpJMm7PnffSPDAvEWffq"], ["activated", true], ["activation_token", "Q0KAwntHjYzrc-m6l8pcHA"], ["created_at", "2020-07-10 05:39:14.963982"], ["updated_at", "2020-07-10 05:39:14.963982"], ["cheer_count", 12]]
+  ↳ db/seeds.rb:17
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wally@orn.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$.QX4CruEt/WF15nTrBQcyeby4qvhHxjzfTsZvpESvxXczo.Ss3f6q"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bgzZoWXfmtmyhV2fqARacg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "session_token", "password_digest", "activated", "activation_token", "created_at", "updated_at", "cheer_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "wally@orn.org"], ["session_token", "bgzZoWXfmtmyhV2fqARacg"], ["password_digest", "$2a$12$.QX4CruEt/WF15nTrBQcyeby4qvhHxjzfTsZvpESvxXczo.Ss3f6q"], ["activated", true], ["activation_token", "yqsGyDWwlyY_N_KwBfzXlw"], ["created_at", "2020-07-10 05:39:15.210839"], ["updated_at", "2020-07-10 05:39:15.210839"], ["cheer_count", 12]]
+  ↳ db/seeds.rb:18
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGoal Create (0.8ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sed exercitationem voluptate."], ["details", "Sunt ex id sapiente iste."], ["user_id", 9], ["created_at", "2020-07-10 05:39:15.236960"], ["updated_at", "2020-07-10 05:39:15.236960"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mGoal Create (0.4ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Illo quibusdam necessitatibus."], ["details", "Cupiditate atque velit aut rerum."], ["user_id", 10], ["created_at", "2020-07-10 05:39:15.245965"], ["updated_at", "2020-07-10 05:39:15.245965"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGoal Create (0.4ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Provident cumque laborum."], ["details", "Illum atque vitae saepe aliquid."], ["user_id", 9], ["created_at", "2020-07-10 05:39:15.254638"], ["updated_at", "2020-07-10 05:39:15.254638"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mGoal Create (0.5ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ratione dolores reiciendis."], ["details", "Voluptatem rerum asperiores ad libero."], ["user_id", 10], ["created_at", "2020-07-10 05:39:15.263232"], ["updated_at", "2020-07-10 05:39:15.263232"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGoal Create (0.5ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Eius non ipsa."], ["details", "Maiores officiis aperiam soluta et."], ["user_id", 9], ["created_at", "2020-07-10 05:39:15.272079"], ["updated_at", "2020-07-10 05:39:15.272079"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mGoal Create (0.7ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Labore asperiores rerum."], ["details", "Ratione asperiores ex quis aspernatur."], ["user_id", 10], ["created_at", "2020-07-10 05:39:15.281430"], ["updated_at", "2020-07-10 05:39:15.281430"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGoal Create (0.5ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quis expedita sunt."], ["details", "Quidem labore nihil velit perferendis."], ["user_id", 9], ["created_at", "2020-07-10 05:39:15.291505"], ["updated_at", "2020-07-10 05:39:15.291505"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mGoal Create (0.5ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Placeat fuga sint."], ["details", "Voluptatem magni veritatis laboriosam sunt."], ["user_id", 10], ["created_at", "2020-07-10 05:39:15.301252"], ["updated_at", "2020-07-10 05:39:15.301252"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGoal Create (0.5ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quas facilis fuga."], ["details", "Autem mollitia recusandae cum incidunt."], ["user_id", 9], ["created_at", "2020-07-10 05:39:15.310704"], ["updated_at", "2020-07-10 05:39:15.310704"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mGoal Create (0.5ms)[0m  [1m[32mINSERT INTO "goals" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Fuga reprehenderit temporibus."], ["details", "Aut consectetur laudantium dolores nostrum."], ["user_id", 10], ["created_at", "2020-07-10 05:39:15.321931"], ["updated_at", "2020-07-10 05:39:15.321931"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 10], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Et quas facilis."], ["user_id", 9], ["commentable_type", "Goal"], ["commentable_id", 12], ["created_at", "2020-07-10 05:39:15.355517"], ["updated_at", "2020-07-10 05:39:15.355517"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGoal Load (0.3ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 9], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Voluptate saepe aliquam."], ["user_id", 10], ["commentable_type", "Goal"], ["commentable_id", 11], ["created_at", "2020-07-10 05:39:15.367368"], ["updated_at", "2020-07-10 05:39:15.367368"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 10], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Est autem voluptatem."], ["user_id", 9], ["commentable_type", "Goal"], ["commentable_id", 14], ["created_at", "2020-07-10 05:39:15.379418"], ["updated_at", "2020-07-10 05:39:15.379418"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 9], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Ratione earum optio."], ["user_id", 10], ["commentable_type", "Goal"], ["commentable_id", 13], ["created_at", "2020-07-10 05:39:15.391565"], ["updated_at", "2020-07-10 05:39:15.391565"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 10], ["LIMIT", 1], ["OFFSET", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Voluptas aut exercitationem."], ["user_id", 9], ["commentable_type", "Goal"], ["commentable_id", 16], ["created_at", "2020-07-10 05:39:15.403923"], ["updated_at", "2020-07-10 05:39:15.403923"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 9], ["LIMIT", 1], ["OFFSET", 2]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Reiciendis sit est."], ["user_id", 10], ["commentable_type", "Goal"], ["commentable_id", 15], ["created_at", "2020-07-10 05:39:15.415825"], ["updated_at", "2020-07-10 05:39:15.415825"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGoal Load (0.3ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 10], ["LIMIT", 1], ["OFFSET", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Tempore impedit dolores."], ["user_id", 9], ["commentable_type", "Goal"], ["commentable_id", 18], ["created_at", "2020-07-10 05:39:15.428180"], ["updated_at", "2020-07-10 05:39:15.428180"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGoal Load (0.3ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 9], ["LIMIT", 1], ["OFFSET", 3]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Eius ipsum voluptatibus."], ["user_id", 10], ["commentable_type", "Goal"], ["commentable_id", 17], ["created_at", "2020-07-10 05:39:15.438980"], ["updated_at", "2020-07-10 05:39:15.438980"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGoal Load (0.3ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 10], ["LIMIT", 1], ["OFFSET", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Exercitationem distinctio soluta."], ["user_id", 9], ["commentable_type", "Goal"], ["commentable_id", 20], ["created_at", "2020-07-10 05:39:15.449966"], ["updated_at", "2020-07-10 05:39:15.449966"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGoal Load (0.3ms)[0m  [1m[34mSELECT  "goals".* FROM "goals" WHERE "goals"."user_id" = $1 ORDER BY "goals"."id" ASC LIMIT $2 OFFSET $3[0m  [["user_id", 9], ["LIMIT", 1], ["OFFSET", 4]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Consequuntur deserunt quaerat."], ["user_id", 10], ["commentable_type", "Goal"], ["commentable_id", 19], ["created_at", "2020-07-10 05:39:15.460589"], ["updated_at", "2020-07-10 05:39:15.460589"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Sint neque odio."], ["user_id", 9], ["commentable_type", "User"], ["commentable_id", 10], ["created_at", "2020-07-10 05:39:15.469650"], ["updated_at", "2020-07-10 05:39:15.469650"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "commentable_type", "commentable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Ut eius provident."], ["user_id", 10], ["commentable_type", "User"], ["commentable_id", 9], ["created_at", "2020-07-10 05:39:15.479298"], ["updated_at", "2020-07-10 05:39:15.479298"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+Started GET "/session/new" for ::1 at 2020-07-10 07:39:28 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 244ms (Views: 209.2ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/session" for ::1 at 2020-07-10 07:39:49 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"dTHicNHLRxEnnyBLvtZ3p7X3JMixlFU+94nZykHWTjRl7cGHmSYnk3fWNWLMqSjDqOyB9lDV9+CBNb4QRFnNDw==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:46
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:71
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@gmail.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:71
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$hCTQXi.Gq2ztg/DpDZVdmufpAGKHM90Gq6l2ZvXKEoTelSSlF0N2S"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:71
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ehQavI4FeHSDnhaJK6R_QA"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:71
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ehQavI4FeHSDnhaJK6R_QA"], ["updated_at", "2020-07-10 05:39:49.585048"], ["id", 8]]
+  ↳ app/models/user.rb:71
+  [1m[35m (219.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:71
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 478ms (ActiveRecord: 221.9ms)
+
+
+Started GET "/users/8" for ::1 at 2020-07-10 07:39:49 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mGoal Load (0.3ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 LIMIT $3[0m  [["commentable_id", 8], ["commentable_type", "User"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:31
+  Rendered application/_errors.html.erb (0.7ms)
+  Rendered application/_comments_form.html.erb (3.8ms)
+  Rendered users/show.html.erb within layouts/application (19.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ehQavI4FeHSDnhaJK6R_QA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 66ms (Views: 45.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/users/8" for ::1 at 2020-07-10 07:41:26 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mGoal Load (0.3ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."commentable_id" = $1 AND "comments"."commentable_type" = $2 LIMIT $3[0m  [["commentable_id", 8], ["commentable_type", "User"], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:31
+  Rendered application/_errors.html.erb (1.2ms)
+  Rendered application/_comments_form.html.erb (3.4ms)
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ehQavI4FeHSDnhaJK6R_QA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/session" for ::1 at 2020-07-10 07:41:30 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oPnYFisemMB28oUhlNqwyBJRpNINUf5cyn1tUSQjLFuwJfvhY/P4Qia7kAjmpe+sD0oB7OwQXIK8wQqLIayvYA=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ehQavI4FeHSDnhaJK6R_QA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:71
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@gmail.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:71
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$hCTQXi.Gq2ztg/DpDZVdmufpAGKHM90Gq6l2ZvXKEoTelSSlF0N2S"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:71
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "M7RV2SDBeGD9XRpPSJiukA"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:71
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "M7RV2SDBeGD9XRpPSJiukA"], ["updated_at", "2020-07-10 05:41:30.359756"], ["id", 8]]
+  ↳ app/models/user.rb:71
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:71
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 20ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/session/new" for ::1 at 2020-07-10 07:41:30 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2020-07-10 07:42:37 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2020-07-10 07:42:46 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - ".menu__container" failed to @extend ".dark-blue-bg".
+The selector ".dark-blue-bg" was not found.
+Use "@extend .dark-blue-bg !optional" if the extend should be able to fail.
+:
+
+Started GET "/session/new" for ::1 at 2020-07-10 07:43:21 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_user_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+

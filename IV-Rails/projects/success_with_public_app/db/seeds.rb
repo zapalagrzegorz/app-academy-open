@@ -13,6 +13,7 @@
 require 'factory_bot_rails'
 require 'faker'
 
+FactoryBot.create(:user, email: 'test@gmail.com', password: '123456')
 user = FactoryBot.create(:user)
 user2 = FactoryBot.create(:user)
 
