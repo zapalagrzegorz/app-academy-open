@@ -1,0 +1,34 @@
+<header class="main-nav">
+  <nav class="left-nav">
+    <ul>
+      <li id="sections-sidebar-btn">
+        <i class="fa fa-bars"></i>
+        <span>sections</span>
+      </li>
+      <li id="search-modal-btn">
+        <i class="fa fa-search"></i>
+        <span>search</span>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="right-nav">
+    <ul>
+      <li>
+        <button>
+          Subscribe now
+        </button>
+      </li>
+      <li>
+        <button>Log in</button>
+      </li>
+      <li>
+        <button id="gear-dropdown-btn">
+          <i class="fa fa-cog"></i>
+          <span class="sr-only">settings</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <%= render 'shared/gear_dropdown' %>
+</header>
