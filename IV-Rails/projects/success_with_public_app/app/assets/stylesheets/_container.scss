@@ -1,0 +1,32 @@
+@import "vars";
+@import "buttons";
+
+// container-main
+.content-container {
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+
+// content-container, .page
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1rem;
+  // @extend .grid-container;
+  max-width: 900px;
+  @extend .light-blue-bg;
+}
+
+// container-footer
+.footer-container {
+  padding: 1rem 2rem 0.5rem;
+  color: white;
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+}

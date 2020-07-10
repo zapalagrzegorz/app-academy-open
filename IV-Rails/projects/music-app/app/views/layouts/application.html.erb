@@ -24,8 +24,11 @@
           <div>
             <% if current_user %>
               <ul class="no-bullet menu__logout flex-container" style="margin-bottom:0">
-                <li class="h3" style="padding-right: 1rem; color: white; margin-bottom: 0"><%= current_user.email %> </li>
+                <li class="h3" style="padding-right: 1rem; color: white; margin-bottom: 0">
+                  <%= current_user.email %>
+                </li>
                 <li class="margin-0">
+                  <%# button_to %>
                   <form action="<%= session_url  %>" method="POST">
                     <%= auth_token %>
                     <input type="hidden" name="_method" value="DELETE">
@@ -35,7 +38,7 @@
               </ul>
             <% else %>
               <%= link_to 'Login', new_session_url, class: "menu__link h3"%>
-              <%= link_to 'Sign up', new_user_url, class: "menu__link h3" %>
+              <%= link_to 'Sign-up', new_user_url, class: "menu__link h3" %>
             <% end %>
           </div>
         </div>
@@ -60,6 +63,15 @@
       </div>
 
     <% end %>
+
+    <%# <% if flash[:notice] %>
+    <%# <p><%= flash[:notice] %>
+    <%# </p>  %>
+    <%# <% end %>
+    <%# <% if flash[:errors] %>
+    <%# <p><%= flash[:errors].join(", ") %>
+    <%# </p> %>
+    <%# <% end %>
 
     <%= yield %>
 

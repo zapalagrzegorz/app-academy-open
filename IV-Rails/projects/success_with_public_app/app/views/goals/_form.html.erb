@@ -1,0 +1,45 @@
+<% action = (goal.persisted? ? goal_url(goal.id) : goals_url) %>
+<% method = (goal.persisted? ? "PATCH" : "POST") %>
+
+<form action="<%= action %>" method="POST" >
+  <% disabled="true" if method == "PATCH" %>
+
+  <% if method == "PATCH" %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <%= auth_token %>
+
+  <div>
+    <label for="title">title</label>
+
+    <input id="title" type="text" name=goal[title] value="<%= goal.title if goal.title %>" >
+  </div>
+
+  <p>
+
+    <label for='details'>details</label>,
+    <textarea name='goal[details]' id='details'><%= goal.details if goal.details %></textarea>
+  </p>
+
+  <div>
+    <%# don show for create %>
+    <label for="completed">Completed?</label>
+    <input type="checkbox" name="goal[completed]" id="completed"
+       <% disabled="true" if method == "POST" %>
+      <%# disabled for show %>
+    >
+  </div>
+
+  <div>
+    <%# don show for create %>
+    <label for="private">Private?</label>
+    <input type="checkbox" name="goal[private]" id="private"
+     <%# disabled for show %>
+    >
+  </div>
+
+  <p>
+    <input id="goal-submit" type="submit" value='<%= method == "POST" ? "Save goal" : "Update goal" %>' class="button form__submit">
+  </p>
+</form>

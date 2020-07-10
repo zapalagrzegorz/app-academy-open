@@ -12131,3 +12131,330 @@ Processing by BandsController#index as HTML
 Completed 200 OK in 62ms (Views: 52.2ms | ActiveRecord: 3.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-07-05 11:52:33 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started GET "/bands" for 127.0.0.1 at 2020-07-05 11:52:33 +0200
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:10
+  Rendered collection of bands/_band.html.erb [3 times] (1.3ms)
+  Rendered bands/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 259ms (Views: 224.4ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/bands/1" for 127.0.0.1 at 2020-07-05 11:52:36 +0200
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 2.4ms)
+
+
+
+NameError - undefined local variable or method `year_cannot_be_in_future' for #<Class:0x00007f9f5015a8c8>:
+  app/models/album.rb:10:in `<class:Album>'
+  app/models/album.rb:3:in `<top (required)>'
+  app/controllers/bands_controller.rb:11:in `show'
+
+Started POST "/__better_errors/2a8ad188f7f94ba1/variables" for 127.0.0.1 at 2020-07-05 11:52:36 +0200
+Started GET "/bands/1" for 127.0.0.1 at 2020-07-05 11:52:55 +0200
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.7ms)
+
+
+
+NameError - undefined local variable or method `year_cannot_be_in_future' for #<Class:0x00007f9f5057a3b8>:
+  app/models/album.rb:10:in `<class:Album>'
+  app/models/album.rb:3:in `<top (required)>'
+  app/controllers/bands_controller.rb:11:in `show'
+
+Started POST "/__better_errors/74dca9a27192c332/variables" for 127.0.0.1 at 2020-07-05 11:52:55 +0200
+Started GET "/bands/1" for 127.0.0.1 at 2020-07-05 11:53:24 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:12
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:13
+  Rendered bands/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 239ms (Views: 171.4ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/bands/1/albums/new" for 127.0.0.1 at 2020-07-05 11:53:28 +0200
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  Rendering albums/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (0.6ms)
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/_form.html.erb:16
+  Rendered albums/_form.html.erb (1.7ms)
+  Rendered albums/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 57ms (Views: 54.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/albums" for 127.0.0.1 at 2020-07-05 11:53:36 +0200
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"dAub2mp8gCn3s1r12bMyO7WyPOdf0ToLXAVGbN/gu802dkY7DK3XPi7xEP03X0P3q7jPmz+hc/nnK/AXSNdw5w==", "album"=>{"band_id"=>"1", "title"=>"yearsome", "year"=>"2021", "studio"=>"true"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:22
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:22
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/models/album.rb:15:in `year_cannot_be_in_future'
+  app/controllers/albums_controller.rb:22:in `create'
+
+Started POST "/__better_errors/f4db8e58e7c7f18a/variables" for 127.0.0.1 at 2020-07-05 11:53:36 +0200
+Started POST "/albums" for 127.0.0.1 at 2020-07-05 11:53:55 +0200
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"dAub2mp8gCn3s1r12bMyO7WyPOdf0ToLXAVGbN/gu802dkY7DK3XPi7xEP03X0P3q7jPmz+hc/nnK/AXSNdw5w==", "album"=>{"band_id"=>"1", "title"=>"yearsome", "year"=>"2021", "studio"=>"true"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:22
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:22
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 13.5ms)
+
+
+
+NoMethodError - undefined method `year' for Time:Class:
+  app/models/album.rb:16:in `year_cannot_be_in_future'
+  app/controllers/albums_controller.rb:22:in `create'
+
+Started POST "/__better_errors/8a97e2c98ab50387/variables" for 127.0.0.1 at 2020-07-05 11:53:55 +0200
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 11]]
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started POST "/albums" for 127.0.0.1 at 2020-07-05 11:54:33 +0200
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"dAub2mp8gCn3s1r12bMyO7WyPOdf0ToLXAVGbN/gu802dkY7DK3XPi7xEP03X0P3q7jPmz+hc/nnK/AXSNdw5w==", "album"=>{"band_id"=>"1", "title"=>"yearsome", "year"=>"2021", "studio"=>"true"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:22
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:22
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 12.1ms)
+
+
+
+NoMethodError - undefined method `[]=' for #<ActiveModel::Errors:0x00007fddfe351a90>
+Did you mean?  []:
+  app/models/album.rb:16:in `year_cannot_be_in_future'
+  app/controllers/albums_controller.rb:22:in `create'
+
+Started POST "/__better_errors/ecc34048aef0ebd2/variables" for 127.0.0.1 at 2020-07-05 11:54:34 +0200
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 11]]
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started POST "/albums" for 127.0.0.1 at 2020-07-05 11:56:08 +0200
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"dAub2mp8gCn3s1r12bMyO7WyPOdf0ToLXAVGbN/gu802dkY7DK3XPi7xEP03X0P3q7jPmz+hc/nnK/AXSNdw5w==", "album"=>{"band_id"=>"1", "title"=>"yearsome", "year"=>"2021", "studio"=>"true"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NUAxvppfEsItyI8GjSjVkA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:22
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/albums_controller.rb:22
+  Rendering albums/new.html.erb within layouts/application
+  Rendered application/_form_errors.html.erb (1.5ms)
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/_form.html.erb:16
+  Rendered albums/_form.html.erb (3.0ms)
+  Rendered albums/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 80ms (Views: 44.5ms | ActiveRecord: 9.6ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "music-app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1398.7ms)[0m  [1m[35mCREATE DATABASE "music_db_test" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (8.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "albums" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (32.8ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "band_id" bigint, "title" character varying NOT NULL, "year" integer NOT NULL, "studio" boolean DEFAULT TRUE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE  INDEX  "index_albums_on_band_id" ON "albums"  ("band_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (10.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "bands" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (36.0ms)[0m  [1m[35mCREATE TABLE "bands" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (8.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "notes" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (27.7ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "user_id" bigint, "track_id" bigint, "content" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE  INDEX  "index_notes_on_track_id" ON "notes"  ("track_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE  INDEX  "index_notes_on_user_id" ON "notes"  ("user_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (10.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:44
+  [1m[35m (32.6ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "album_id" bigint, "title" character varying NOT NULL, "ord" integer NOT NULL, "regular" boolean NOT NULL, "lyrics" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_album_id" ON "tracks"  ("album_id")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (10.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:55
+  [1m[35m (32.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "activated" boolean DEFAULT FALSE NOT NULL, "activation_token" character varying NOT NULL)[0m
+  ↳ db/schema.rb:55
+  [1m[35m (25.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_activation_token" ON "users"  ("activation_token")[0m
+  ↳ db/schema.rb:55
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:55
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:55
+  [1m[35m (11.7ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_dd448a2456"
+FOREIGN KEY ("band_id")
+  REFERENCES "bands" ("id")
+[0m
+  ↳ db/schema.rb:68
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "tracks" ADD CONSTRAINT "fk_rails_7c47d80164"
+FOREIGN KEY ("album_id")
+  REFERENCES "albums" ("id")
+[0m
+  ↳ db/schema.rb:69
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "albums" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (34.8ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "band_id" bigint, "title" character varying NOT NULL, "year" integer NOT NULL, "studio" boolean DEFAULT TRUE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE  INDEX  "index_albums_on_band_id" ON "albums"  ("band_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "bands" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (37.5ms)[0m  [1m[35mCREATE TABLE "bands" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "notes" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (28.0ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "user_id" bigint, "track_id" bigint, "content" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE  INDEX  "index_notes_on_track_id" ON "notes"  ("track_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE  INDEX  "index_notes_on_user_id" ON "notes"  ("user_id")[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:44
+  [1m[35m (32.2ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "album_id" bigint, "title" character varying NOT NULL, "ord" integer NOT NULL, "regular" boolean NOT NULL, "lyrics" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_album_id" ON "tracks"  ("album_id")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:55
+  [1m[35m (35.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "activated" boolean DEFAULT FALSE NOT NULL, "activation_token" character varying NOT NULL)[0m
+  ↳ db/schema.rb:55
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_activation_token" ON "users"  ("activation_token")[0m
+  ↳ db/schema.rb:55
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:55
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:55
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_dd448a2456"
+FOREIGN KEY ("band_id")
+  REFERENCES "bands" ("id")
+[0m
+  ↳ db/schema.rb:68
+  [1m[35m (7.3ms)[0m  [1m[35mALTER TABLE "tracks" ADD CONSTRAINT "fk_rails_7c47d80164"
+FOREIGN KEY ("album_id")
+  REFERENCES "albums" ("id")
+[0m
+  ↳ db/schema.rb:69
+  [1m[35m (32.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200705050826)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200626041050),
+(20200627104719),
+(20200627090853),
+(20200704174854),
+(20200703051331),
+(20200704175913),
+(20200628101916);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (33.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-06 10:29:35.591447"], ["updated_at", "2020-07-06 10:29:35.591447"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-07-06 10:29:35.602792"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

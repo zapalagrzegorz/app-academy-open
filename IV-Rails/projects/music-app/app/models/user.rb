@@ -19,7 +19,9 @@ class User < ApplicationRecord
 
   has_many :notes, dependent: :destroy
 
+  # finds user in db by email and password
   def self.find_user_by_credentials(email, password)
+    # debugger
     user = User.find_by(email: email)
     return if user.nil?
 
@@ -32,6 +34,8 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  # checks given text-password against hashed-salted password in db
+  # should be is_password?
   def is_password(password)
     BCrypt::Password.new(password_digest).is_password?(password)
   end
