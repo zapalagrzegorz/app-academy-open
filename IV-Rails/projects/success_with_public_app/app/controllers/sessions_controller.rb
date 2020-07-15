@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       flash[:alert] = 'Username or password is incorrect'
       render 'new'
     elsif !@user.activated?
-      flash.now[:alert] = 'You must activate your account first! Check your email. <br> Run mailcatcher
+      flash.now[:alert] = 'You must activate your account first! Check your email. <br> Check server console log for a link in email or run mailcatcher
         Open http://127.0.0.1:1080/ in the browser'
       render :new
     else
