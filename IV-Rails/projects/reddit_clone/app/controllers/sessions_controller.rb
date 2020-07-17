@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   end
 
   # create the session
+  # find user
   # set session (cookie) and user matching data
 
   def create
@@ -27,6 +28,6 @@ class SessionsController < ApplicationController
   def destroy
     current_user.reset_session_token!
     session[:session_token] = nil
-    redirect_to users_url
+    redirect_to root_url
   end
 end

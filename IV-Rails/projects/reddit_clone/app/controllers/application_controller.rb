@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   def login!(user)
     # @user = User.find_by(email: email)
     session[:session_token] = user.reset_session_token!
+    # debugger
     # session_token if @user.password == password
   end
 
@@ -16,6 +17,7 @@ class ApplicationController < ActionController::Base
 
   # checks session against users' session tokens
   def current_user
+    # debugger
     return nil if session[:session_token].nil?
 
     @current_user ||= User.find_by(session_token: session[:session_token])

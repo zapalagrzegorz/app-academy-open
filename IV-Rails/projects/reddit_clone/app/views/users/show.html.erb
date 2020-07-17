@@ -10,7 +10,22 @@
     <a href="/" class="yellow"> Go to main page </a>
   </p>
 
-  <%# <%= render 'comments_form', commentable_id: @user.id, commentable_type: "User" %> %>
+  <% if @user.subs.any? %>
+    Your forums:
+    <ul>
+      <% @user.subs.each do |sub| %>
+        <li>
+          <%= link_to sub.title, sub_url(sub), class: [""] %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>
+      You haven't got any forum yet.
+    </p>
+  <% end %>
+
+  <%# <%= render 'comments_form', commentable_id: @user.id, commentable_type: "User" %>
 </div>
 
 <%# </div> %>

@@ -1,0 +1,42 @@
+<div class="grid-container">
+
+  <div>
+    <h1><%= @post.title %></h1>
+    <% if @post.content %>
+
+      <p><strong>content</strong></p>
+      <p><%= @post.content %></p>
+      <p>Author: <%= @post.author.email %></p>
+    <% end %>
+
+    <br>
+    <%# sub posts %>
+    <p><strong>Subs</strong></p>
+
+    <% if @post.subs.any? %>
+      <ul>
+        <% @post.subs.each do |sub| %>
+          <li>
+            <%= link_to sub.title, sub_url(sub), class: [""] %>
+          </li>
+        <% end %>
+      </ul>
+
+    <% end %>
+
+    <%= link_to "make new post", '/' , class: ["button"] %>
+
+    <% if current_user.id == @post.author_id %>
+      <p>As an author you can  <%= link_to 'edit', edit_post_path, class: ["button"] %> and 
+
+        <%= link_to 'delete', post_path, class: ["button"], method: :delete  %>
+
+        this post
+      </p>
+    <% end %>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <p> Show post page</p>
+<% end %>

@@ -1,0 +1,26 @@
+<% action = (sub.persisted? ? sub_url(sub.id) : subs_url) %>
+<% method = (sub.persisted? ? "PATCH" : "POST") %>
+
+<form action="<%= action %>" method="POST" >
+
+  <% if method == "PATCH" %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <%= auth_token %>
+
+  <p>
+    <label for="title">title</label>
+
+    <input id="title" type="text" name=sub[title] value="<%= sub.title if sub.title %>" >
+  </p>
+
+  <p>
+    <label for='description'>description</label>
+    <textarea name='sub[description]' id='description'><%= sub.description if sub.description %></textarea>
+  </p>
+
+  <p>
+    <input id="sub-submit" type="submit" value='<%= method == "POST" ? "Save sub" : "Update sub" %>' class="button form__submit">
+  </p>
+</form>
