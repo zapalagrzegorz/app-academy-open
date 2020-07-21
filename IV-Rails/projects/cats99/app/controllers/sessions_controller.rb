@@ -18,13 +18,16 @@ class SessionsController < ApplicationController
 
     # set the session
 
-    if @user
-      login!(@user)
-      flash[:success] = 'You\'ve successfully logged in'
-      redirect_to cats_url
-    else
+    if @user.nil?
       flash[:alert] = 'Username or password is incorrect'
       render 'new'
+    elsif !@user.activated?
+      flash.now[:errors] = ['You must activate your account first! Check your email.']
+      render :new
+    else
+      login!(@user)
+      flash[:success] = 'You\'ve successfully logged in'
+      redirect_to root_url
     end
   end
 
