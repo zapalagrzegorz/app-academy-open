@@ -1,0 +1,59 @@
+/* poprawka dla widoku mobilnego iframe'a */
+iframe {
+  max-width: 100%;
+}
+
+/* każdy link musi mieć tekst - jeżeli linkiem jest wyłącznie ikona, wówczas zachować tekst tylko dla SR */
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* alty img'owe domyślnie wychodzą za linię */
+img {
+  word-break: break-word;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.background-image {
+  z-index: 1;
+  position: absolute; // ustawienie względej pozycji obrazka
+  top: 0; // wyrównanie obrazka do góry kontenera
+  left: 0; // wyrównanie obrazka do lewej strony kontenera
+  width: 100%; // rozciągnięcie obrazka na całą szerokość kontenera
+  height: 100%; // rozciągnięcie obrazka na całą wysokość kontenera
+  object-fit: cover; // dopasowanie obrazka do kontenera - zachowanie jak background-image
+  object-position: center center; // wyśrodkowanie obrazka na wzór background-position
+
+  //polifil dla IE która nie wspiera object-fit i object-position
+  font-family: 'object-fit: cover; object-position: center center;';
+}
+
+.svg-fa {
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  outline-color: rgba(0, 0, 0, 0.1);
+  position: relative; // outline: 0;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+.hidden {
+  display: none;
+}
+// *:focus {
+//   outline: orange solid medium !important;
+// }
