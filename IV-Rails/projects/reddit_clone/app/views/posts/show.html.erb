@@ -11,9 +11,9 @@
 
     <br>
     <%# sub posts %>
-    <p><strong>Subs</strong></p>
 
     <% if @post.subs.any? %>
+      <p>This post belongs to following <strong>Subs</strong></p>
       <ul>
         <% @post.subs.each do |sub| %>
           <li>
@@ -24,7 +24,7 @@
 
     <% end %>
 
-    <%= link_to "make new post", '/' , class: ["button"] %>
+    <br>
 
     <% if current_user.id == @post.author_id %>
       <p>As an author you can  <%= link_to 'edit', edit_post_path, class: ["button"] %> and 
@@ -34,6 +34,23 @@
         this post
       </p>
     <% end %>
+
+    <% if @post.comments.any? %>
+      <section>
+        <h2>Comments</h2>
+        <% @post.comments.each do |comment| %>
+          <blockquote><%= comment.content %> </blockquote>
+          <p>author: <%= comment.author.email %>  </p>
+        <% end %>
+
+      </section>
+    <% end%>
+
+    <br>
+    <p><%= link_to "Comment", new_post_comment_url(@post) %> this!</p>
+
+    <br>
+    <%= link_to "make new post", '/' , class: ["button"] %>
   </div>
 </div>
 

@@ -35,8 +35,7 @@
     <label for="<%= sub.title %>">
       <input type="checkbox" name="post[sub_ids][]" id="<%= sub.title %>"
         value="<%= sub.id %>" 
-        <% checked if post.sub_ids.include?(sub.id) %>
-
+        <%= "checked" if post.sub_ids.include?(sub.id) %>
       >
       <%= sub.title %>
     </label>

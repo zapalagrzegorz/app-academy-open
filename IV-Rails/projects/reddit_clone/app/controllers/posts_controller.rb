@@ -22,17 +22,37 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author_id = current_user.id
+
+    if @post.sub_ids.length.zero?
+      flash[:error] = 'Post must be belong to at least one sub'
+      @subs = Sub.all
+      render 'new'
+      return
+    end
+
     if @post.save
       flash[:success] = 'Post successfully created'
       redirect_to @post
+    # end
+
     else
       flash[:error] = 'Something went wrong'
+      @subs = Sub.all
       render 'new'
     end
   end
 
   def update
     @post = Post.find(params[:id])
+
+    # debugger
+    if params[:post][:sub_ids].length == 1
+      flash[:error] = 'Post must be belong to at least one sub'
+      @subs = Sub.all
+      render 'new'
+      return
+    end
+
     if @post.update_attributes(post_params)
       flash[:success] = 'Post was successfully updated'
       redirect_to @post
@@ -56,7 +76,7 @@ class PostsController < ApplicationController
 
   def require_author
     @post = Post.find(params[:id])
-    return if post.author_id == current_user.id
+    return if @post.author_id == current_user.id
 
     flash[:error] = 'You\'re not allowed to do this'
     redirect_to root_url

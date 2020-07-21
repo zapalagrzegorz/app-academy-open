@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SubsController < ApplicationController
+  before_action :require_user!, except: :index
   before_action :require_moderator, only: %i[edit update destroy]
 
   def index
@@ -53,10 +54,8 @@ class SubsController < ApplicationController
     redirect_to subs_url
   end
 
-
-
   private
-  
+
   def sub_params
     params.require(:sub).permit(:title, :description)
   end

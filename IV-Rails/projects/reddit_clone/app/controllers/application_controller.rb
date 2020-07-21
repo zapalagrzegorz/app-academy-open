@@ -22,4 +22,11 @@ class ApplicationController < ActionController::Base
 
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
+
+  def require_user!
+    if current_user.nil?
+      flash[:alert] = 'You must be signed in to access this section'
+      redirect_to new_session_path
+    end
+  end
 end

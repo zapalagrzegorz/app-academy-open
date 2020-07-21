@@ -15,6 +15,9 @@ class User < ApplicationRecord
 
   has_many :posts, class_name: 'Post', foreign_key: 'author_id'
 
+  has_many :comments, class_name: "Comment", foreign_key: 'author_id'
+
+
   def password=(password)
     @password = password
     self.password_hash = BCrypt::Password.create(password)
