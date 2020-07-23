@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :comments, only: :new
   end
 
-  resources :comments, only: :create
+  resources :comments, only: %i[show create]
 
   # resources vs resource?
 

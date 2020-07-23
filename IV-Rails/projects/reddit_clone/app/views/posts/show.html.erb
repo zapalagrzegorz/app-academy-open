@@ -35,12 +35,12 @@
       </p>
     <% end %>
 
-    <% if @post.comments.any? %>
+    <% if @top_comments.any? %>
       <section>
         <h2>Comments</h2>
-        <% @post.comments.each do |comment| %>
-          <blockquote><%= comment.content %> </blockquote>
-          <p>author: <%= comment.author.email %>  </p>
+        <% @top_comments.each do |comment| %>
+          <%= render 'comment' %>
+          <p> <%= link_to 'See and reply', comment_url(comment), class: ["button"] %> See and reply</p>
         <% end %>
 
       </section>

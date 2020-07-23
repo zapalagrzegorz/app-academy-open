@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.includes(:author).find(params[:id])
+    @top_comments = @post.comments.where(parent_comment_id: nil)
   end
 
   def new
@@ -15,8 +16,6 @@ class PostsController < ApplicationController
   def edit
     # post is in require_author
     @subs = Sub.all
-    # jeżeli before_action może ustanowić pole dostępne na czas requestu, to treść jest zbędna
-    # @post = Post.find(params[:id])
   end
 
   def create
@@ -45,7 +44,6 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    # debugger
     if params[:post][:sub_ids].length == 1
       flash[:error] = 'Post must be belong to at least one sub'
       @subs = Sub.all

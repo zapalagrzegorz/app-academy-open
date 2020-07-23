@@ -3,12 +3,18 @@
 
 <h3>New Comment</h3>
 
-<%= render 'form_errors', model: @comment %>
+<%= render 'form_errors', model: comment %>
 
 <form action="<%= comments_url %>" method="POST">
   <%= auth_token %>
 
-  <input type="hidden" name="comment[post_id]" value="<%= post_id %>">
+  <% if post_id %>
+    <input type="hidden" name="comment[post_id]" value="<%= post_id %>">
+  <% else %>
+    <% if parent_comment_id %>
+      <input type="hidden" name="comment[parent_comment_id]" value="<%= comment.id %>">
+    <% end %>
+  <% end%>
 
   <label>Comment
     <textarea name="comment[content]"></textarea>

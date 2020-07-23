@@ -9,6 +9,5 @@ class Post < ApplicationRecord
   has_many :post_subs, inverse_of: :post
   has_many :subs, through: :post_subs, source: :sub
 
-  # post#subs_ids =
   has_many :comments
 end
