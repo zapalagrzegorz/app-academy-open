@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  def show
+    @comment = Comment.includes(:post).find(params[:id])
+    @post_id = @comment.post.id
+  end
+
   def new
     @comment = Comment.new
     @post_id = params[:post_id]
@@ -20,6 +25,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :post_id)
+    params.require(:comment).permit(:content, :post_id, :parent_comment_id)
   end
 end

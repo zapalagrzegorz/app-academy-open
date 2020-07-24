@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: subs
+#
+#  id           :bigint           not null, primary key
+#  title        :string           not null
+#  description  :text
+#  moderator_id :bigint           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
 class Sub < ApplicationRecord
   # Sub should have title and description attributes and a moderator association. The creator of the Sub is the moderator.
   # t.string :title, null: false

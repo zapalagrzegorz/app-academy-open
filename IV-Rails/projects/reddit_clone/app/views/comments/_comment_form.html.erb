@@ -8,18 +8,20 @@
 <form action="<%= comments_url %>" method="POST">
   <%= auth_token %>
 
-  <% if post_id %>
-    <input type="hidden" name="comment[post_id]" value="<%= post_id %>">
-  <% else %>
-    <% if parent_comment_id %>
-      <input type="hidden" name="comment[parent_comment_id]" value="<%= comment.id %>">
-    <% end %>
-  <% end%>
+  <%# <% if post_id %>
+  <input type="hidden" name="comment[post_id]" value="<%= post_id %>">
+  <%# <% else %>
+  <%# <% if parent_comment_id %>
+  <input type="hidden" name="comment[parent_comment_id]" value="<%= comment.id %>">
+  <%# <% end %>
+  <%# <% end%>
 
-  <label>Comment
+  <label>
+    Your comment
+    <br>
     <textarea name="comment[content]"></textarea>
   </label>
   <br>
 
-  <input type="submit" value="Save Comment">
+  <input type="submit" value="Sent comment">
 </form>

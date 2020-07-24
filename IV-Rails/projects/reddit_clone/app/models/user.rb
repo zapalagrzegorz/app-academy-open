@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :bigint           not null, primary key
+#  email         :string           not null
+#  password_hash :string           not null
+#  session_token :string           not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
 require 'bcrypt'
 
 class User < ApplicationRecord

@@ -2,6 +2,7 @@
 
   <div>
     <h1><%= @post.title %></h1>
+
     <% if @post.content %>
 
       <p><strong>content</strong></p>
@@ -38,16 +39,21 @@
     <% if @top_comments.any? %>
       <section>
         <h2>Comments</h2>
-        <% @top_comments.each do |comment| %>
-          <%= render 'comment' %>
-          <p> <%= link_to 'See and reply', comment_url(comment), class: ["button"] %> See and reply</p>
-        <% end %>
+        <ul>
+
+          <% @top_comments.each do |comment| %>
+            <li>
+              <%= render partial: 'comment', locals: { comment: comment, nested: false } %>
+            </li>
+          <% end %>
+        </ul>
 
       </section>
     <% end%>
 
     <br>
-    <p><%= link_to "Comment", new_post_comment_url(@post) %> this!</p>
+    <p>
+      <strong><%= link_to "Add new comment!", new_post_comment_url(@post) %></strong></p>
 
     <br>
     <%= link_to "make new post", '/' , class: ["button"] %>

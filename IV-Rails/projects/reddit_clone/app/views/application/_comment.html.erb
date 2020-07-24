@@ -1,3 +1,16 @@
 <blockquote><%= comment.content %> </blockquote>
 <p>author: <%= comment.author.email %>  </p>
 <br>
+
+<p> <%= link_to 'Reply', comment_url(comment), class: ["button"] %> to this comment</p>
+
+<% if comment.child_comments.any? %>
+  <ul>
+
+    <li>
+      <% comment.child_comments.each do |comment| %>
+        <%= render 'comment', nested: true, comment: comment %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
