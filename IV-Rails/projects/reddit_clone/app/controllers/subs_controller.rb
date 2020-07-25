@@ -20,18 +20,8 @@ class SubsController < ApplicationController
     @sub = Sub.find(params[:id])
   end
 
-  def update
-    @sub = Sub.find(params[:id])
-    if @sub.update_attributes(sub_params)
-      flash[:success] = 'Sub was successfully updated'
-      redirect_to @sub
-    else
-      flash[:error] = 'Something went wrong'
-      render 'edit'
-    end
-  end
-
   def create
+    # @sub = current_user.subs.new(sub_params)
     @sub = Sub.new(sub_params)
     @sub.moderator_id = current_user.id
     # debugger
@@ -41,6 +31,17 @@ class SubsController < ApplicationController
     else
       flash[:error] = 'Something went wrong'
       render 'new'
+    end
+  end
+
+  def update
+    @sub = Sub.find(params[:id])
+    if @sub.update_attributes(sub_params)
+      flash[:success] = 'Sub was successfully updated'
+      redirect_to @sub
+    else
+      flash[:error] = 'Something went wrong'
+      render 'edit'
     end
   end
 
@@ -61,10 +62,12 @@ class SubsController < ApplicationController
   end
 
   def require_moderator
+    #     return if current_user.subs.find_by(id: params[:id])
     sub = Sub.find(params[:id])
     return if sub.moderator_id == current_user.id
 
     flash[:error] = 'You\'re not allowed to do this'
+    # render json: 'Forbidden', status: :forbidden
     redirect_to root_url
   end
 end

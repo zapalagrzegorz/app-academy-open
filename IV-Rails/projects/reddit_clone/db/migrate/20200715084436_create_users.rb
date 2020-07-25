@@ -10,6 +10,9 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email, null: false
       t.string :password_hash, null: false
       # nie szukasz po password_hashu, ale po emailu
+      # !to czemu nie dałem wcześniej indeksu dla email'a?
+      # t.index :email, unique: true
+
       # dopiero jak znajdziesz usera, to pytasz czy password = odkodowany_password_hash =
       # t.index :password_hash, unique: true
 

@@ -18,9 +18,10 @@ class Sub < ApplicationRecord
 
   # t.bigint :moderator_id, null: false
   validates :title, :description, presence: true
+  #   validates :name, uniqueness: true
 
-  belongs_to :moderator, class_name: 'User', foreign_key: 'moderator_id'
+  belongs_to :moderator, class_name: 'User', foreign_key: 'moderator_id', inverse_of: :subs
 
   has_many :post_subs, dependent: :destroy, inverse_of: :post
-  has_many :posts, through: :post_subs, source: :post
+  has_many :posts, through: :post_subs, source: :post, inverse_of: :subs
 end

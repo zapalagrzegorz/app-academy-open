@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  #   before_action :require_signed_in!, except: [:show]
   before_action :require_author, only: %i[edit update destroy]
 
   def show
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    #     @post = current_user.posts.new(post_params)
     @post = Post.new(post_params)
     @post.author_id = current_user.id
 
@@ -74,9 +76,18 @@ class PostsController < ApplicationController
     redirect_to sub_path(@post.sub)
   end
 
+  # def downvote
+  #   vote(-1)
+  # end
+
+  # def upvote
+  #   vote(1)
+  # end
+
   private
 
   def require_author
+    #   #   return if current_user.posts.find_by(id: params[:id])
     @post = Post.find(params[:id])
     return if @post.author_id == current_user.id
 
@@ -87,4 +98,20 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :url, :content, sub_ids: [])
   end
+
+  # def require_user_owns_post!
+  #   return if current_user.posts.find_by(id: params[:id])
+  #   render json: 'Forbidden', status: :forbidden
+  # end
+
+  # def vote(direction)
+  #   @post = Post.find(params[:id])
+  #   @user_vote = @post.user_votes.find_or_initialize_by(user: current_user)
+
+  #   unless @user_vote.update(value: direction)
+  #     flash[:errors] = @user_vote.errors.full_messages
+  #   end
+
+  #   redirect_to post_url(@post)
+  # end
 end

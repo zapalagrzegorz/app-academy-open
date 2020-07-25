@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  # before_action :require_signed_out!, only: [:new, :create]
+  # before_action :require_signed_in!, only: [:destroy]
+
   def new
     @user = User.new
   end

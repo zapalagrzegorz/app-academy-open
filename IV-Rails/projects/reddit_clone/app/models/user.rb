@@ -16,18 +16,40 @@ require 'bcrypt'
 class User < ApplicationRecord
   attr_reader :password
 
+  after_initialize :ensure_session_token
+
   validates :email, :session_token, presence: true, uniqueness: true
+
   validates :password_hash, presence: { message: 'Password cannot be blank' }
   validates :password, length: { minimum: 6, maximum: 20, allow_nil: true }
 
-  after_initialize :ensure_session_token
+  has_many :subs, class_name: 'Sub', foreign_key: 'moderator_id', inverse_of: :moderator
 
-  has_many :subs, class_name: 'Sub', foreign_key: 'moderator_id'
+  has_many :posts, class_name: 'Post', foreign_key: 'author_id', inverse_of: :author
 
-  has_many :posts, class_name: 'Post', foreign_key: 'author_id'
+  has_many :comments, class_name: 'Comment', foreign_key: 'author_id', inverse_of: :author
 
-  has_many :comments, class_name: "Comment", foreign_key: 'author_id'
+  #   has_many :user_votes, inverse_of: :user
 
+  def self.find_user_by_credentials(email, password)
+    user = User.find_by(email: email)
+
+    return if user.nil?
+
+    user.is_password?(password) ? user : nil
+  end
+
+  # gdyby to była klasa statyczna
+  # wywołanie jej w ramach obiektu to:
+  # self.class.generate_session_token
+  def generate_session_token
+    SecureRandom.urlsafe_base64
+    # zapobiegaj duplikatom
+    # begin
+    #   token = SecureRandom.urlsafe_base64(16)
+    # end while User.exists?(session_token: token)
+    # token
+  end
 
   def password=(password)
     @password = password
@@ -49,19 +71,8 @@ class User < ApplicationRecord
     # session[:session_token] = nil
   end
 
+  # private
   def ensure_session_token
     self.session_token ||= generate_session_token
-  end
-
-  def generate_session_token
-    SecureRandom.urlsafe_base64
-  end
-
-  def self.find_user_by_credentials(email, password)
-    user = User.find_by(email: email)
-
-    return if user.nil?
-
-    user.is_password?(password) ? user : nil
   end
 end
