@@ -5,7 +5,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.includes(:author).find(params[:id])
-    @top_comments = @post.comments.where(parent_comment_id: nil)
+    # @all_comments = @post.comments.includes(:author)
+    @comments_by_parent_id = @post.comments_by_parent_id
+    # includes(:author)
+    # czemu to nie ściąga przynajmniej 1 poziomu?
+    # @top_comments = @post.comments.includes(:author).includes(:child_comments).where(parent_comment_id: nil)
   end
 
   def new

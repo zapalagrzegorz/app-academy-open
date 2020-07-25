@@ -1,16 +1,25 @@
-<blockquote><%= comment.content %> </blockquote>
+<%# comment %>
+<%# all_comments %>
+
+<p>
+  <i>
+    <%= comment.content %>
+  </i>
+</p>
 <p>author: <%= comment.author.email %>  </p>
-<br>
 
 <p> <%= link_to 'Reply', comment_url(comment), class: ["button"] %> to this comment</p>
+<br>
 
-<% if comment.child_comments.any? %>
+<% unless comments_by_parent_id[comment.id].nil? %>
+
   <ul>
+    <%# O(1) %>
+    <% comments_by_parent_id[comment.id].each do |sub_comment| %>
+      <li>
+        <%= render 'comment', comment: sub_comment, comments_by_parent_id: comments_by_parent_id %>
+      </li>
+    <% end %>
 
-    <li>
-      <% comment.child_comments.each do |comment| %>
-        <%= render 'comment', nested: true, comment: comment %>
-      <% end %>
-    </li>
   </ul>
 <% end %>

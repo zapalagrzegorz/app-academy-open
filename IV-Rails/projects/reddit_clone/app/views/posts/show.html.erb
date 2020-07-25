@@ -7,6 +7,7 @@
 
       <p><strong>content</strong></p>
       <p><%= @post.content %></p>
+      <p><small><%= @post.created_at %></small></p>
       <p>Author: <%= @post.author.email %></p>
     <% end %>
 
@@ -36,20 +37,20 @@
       </p>
     <% end %>
 
-    <% if @top_comments.any? %>
+    <% if @post.comments_by_parent_id[@post.id].any? %>
       <section>
         <h2>Comments</h2>
         <ul>
 
-          <% @top_comments.each do |comment| %>
+          <% @comments_by_parent_id[nil].each do |comment| %>
             <li>
-              <%= render partial: 'comment', locals: { comment: comment, nested: false } %>
+              <%= render 'comment', comment: comment, comments_by_parent_id: @comments_by_parent_id  %>
             </li>
           <% end %>
         </ul>
 
       </section>
-    <% end%>
+    <% end %>
 
     <br>
     <p>

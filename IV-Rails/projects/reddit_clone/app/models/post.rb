@@ -22,5 +22,10 @@ class Post < ApplicationRecord
   has_many :post_subs, inverse_of: :post
   has_many :subs, through: :post_subs, source: :sub
 
+  # wyciąga wszystkie komentarze, dlatego, że każdy subkomentarz ma post_id
   has_many :comments
+
+  def comments_by_parent_id
+    comments.group_by(&:parent_comment_id)
+  end
 end
