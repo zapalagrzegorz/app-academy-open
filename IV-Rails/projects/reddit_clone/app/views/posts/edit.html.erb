@@ -1,0 +1,17 @@
+<%= render 'form_errors', model: @post %>
+
+<section class="grid-container form__container">
+  <div class="grid-x">
+    <div class="cell small-12">
+      <h1 class="form__header">Edit post: <%= @post.title %></h1>
+    </div>
+
+    <div class="cell small-12">
+      <%= render 'form', post: @post, subs: @subs  %>
+    </div>
+  </div>
+</section>
+
+<% content_for :footer do %>
+  <p> edit sub page</p>
+<% end%>

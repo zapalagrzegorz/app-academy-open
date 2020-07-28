@@ -1,0 +1,39 @@
+<div class="grid-container">
+
+  <div>
+    <h1><%= @sub.title %></h1>
+    <% if @sub.description %>
+
+      <p><strong>description</strong></p>
+      <p><%= @sub.description %></p>
+      <p>moderator: <%= @sub.moderator.email %></p>
+    <% end %>
+
+    <%= link_to "make new post", new_post_url , class: ["button"] %>
+    <br>
+    <%# sub posts %>
+    <% if @sub.posts.any? %>
+      <ul>
+        <% @sub.posts.each do |post| %>
+          <li>
+            <%= link_to post.title, post_url(post), class: [""] %>
+          </li>
+        <% end %>
+      </ul>
+
+    <% end %>
+
+    <% if current_user.id == @sub.moderator_id %>
+      <p>As a moderator you can  <%= link_to 'edit', edit_sub_path, class: ["button"] %> and 
+
+        <%= link_to 'close', sub_path, class: ["button"], method: :delete  %>
+
+        this forum
+      </p>
+    <% end %>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <p> Show sub forum page</p>
+<% end %>
