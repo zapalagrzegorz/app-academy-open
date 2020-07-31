@@ -38,5 +38,31 @@ Array.prototype.twoSum = function () {
 
 // const arr = [1, 2, 3, -2, -3, 0, -1].twoSum();
 // console.log(arr);
+// Array#transpose - where we have a two-dimensional array representing a matrix. returns the transpose
 
-Array.prototype.transpose = function () {};
+// should not mutate the original array
+
+Array.prototype.transpose = function () {
+  const transposed = [];
+
+  // wiersz
+  this.forEach((row, rowIndex) => {
+    // kolumna
+    row.forEach((column, columnIndex) => {
+      // [row][]
+      if (transposed[columnIndex] === undefined) transposed[columnIndex] = [];
+      // if (transposed[columnIndex] === undefined) transposed[columnIndex] = [];
+      transposed[columnIndex][rowIndex] = column;
+    });
+  });
+
+  return transposed;
+};
+
+arr = [
+  [1, 2],
+  [4, 5],
+  [7, 8],
+];
+
+console.log(arr.transpose());
