@@ -19,6 +19,7 @@ Student.prototype.name = function () {
 };
 
 Student.prototype.enroll = function (course) {
+  //  if (!this.courses.includes(course)) {
   try {
     this.hasConflict(course);
     this.courses.push(course);
@@ -28,8 +29,15 @@ Student.prototype.enroll = function (course) {
   }
 };
 
+// Student.prototype.courseLoad - returns a hash of departments to number of credits the student is taking in that department
 Student.prototype.courseLoad = function () {
-  return this.courses;
+  const courseLoad = {};
+  // return 
+  this.courses.forEach(course =>{
+    // intializse
+    courseLoad[course.department] = courseLoad[course.department] || 0;
+    courseLoad[course.department] += course.credits;
+  }); 
 };
 
 
@@ -90,3 +98,15 @@ student.enroll(geometry);
 // Write a Student.prototype.hasConflict helper method
 // Recap
 // Though we will be relying on Rails for most of our data modeling going forward, there are times when model logic is best handled on the frontend. In this case we may find it beneficial to use OOP to aid us in that abstraction.
+
+// // Student.prototype.courseLoad = function () {
+//   const courseLoad = {};
+
+//   this.courses.forEach(course => {
+//     let dpt = course.department;
+//     courseLoad[dpt] = courseLoad[dpt] || 0;
+//     courseLoad[dpt] += course.credits;
+//   });
+
+//   return courseLoad;
+// };
