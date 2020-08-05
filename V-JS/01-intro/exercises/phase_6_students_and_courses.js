@@ -66,12 +66,17 @@ Course.prototype.addStudent = function (student) {
 // Write a method Course.prototype.conflictsWith which takes a second Course and returns true if they conflict
 
 Course.prototype.conflictsWith = function (course) {
-  const isConflict = this.dayWeek.find((day) =>
+  return this.dayWeek.some((day) =>
     course.dayWeek.includes(day) && course.blockNum == this.blockNum
   );
 
-  if (isConflict) return true;
 };
+
+// Course.prototype.conflictsWith = function (other) {
+//   if (this.block !== other.block) { return false; }
+
+//   return this.days.some(day => other.days.indexOf(day) !== -1 );
+// };
 
 const algebra = new Course('Algebra', 'Math', 10, ['mon', 'tue'], 2);
 const geometry = new Course('Geometry', 'Math', 9, ['tue', 'fri'], 2);
@@ -81,7 +86,7 @@ const geometry = new Course('Geometry', 'Math', 9, ['tue', 'fri'], 2);
 
 
 Student.prototype.hasConflict = function (course) {
-  const conflictingCourse = this.courses.find((studentCourse) => studentCourse.conflictsWith(course));
+  const conflictingCourse = this.courses.some((studentCourse) => studentCourse.conflictsWith(course));
 
   if (conflictingCourse) {
     throw new Error(`${course.name} conflicts with ${conflictingCourse.name}`);

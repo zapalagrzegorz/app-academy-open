@@ -11,3 +11,6 @@ history/**
 **/history/**
 *.zip
 **/tmp
+/node_modules
+/node_modules/**
+**/node_modules
