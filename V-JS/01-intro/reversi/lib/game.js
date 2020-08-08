@@ -5,16 +5,16 @@ const Board = require("./board.js");
 /**
  * Sets up the game with a board and the first player to play a turn.
  */
-function Game () {
+function Game() {
   this.board = new Board();
   this.turn = "black";
-};
+}
 
 /**
  * Flips the current turn to the opposite color.
  */
 Game.prototype._flipTurn = function () {
-  this.turn = (this.turn == "black") ? "white" : "black";
+  this.turn = this.turn == "black" ? "white" : "black";
 };
 
 // Dreaded global state!
@@ -27,7 +27,7 @@ Game.prototype.play = function () {
   rlInterface = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
-    terminal: false
+    terminal: false,
   });
 
   this.runLoop(function () {
@@ -42,11 +42,22 @@ Game.prototype.play = function () {
  */
 Game.prototype.playTurn = function (callback) {
   this.board.print();
-  rlInterface.question(
-    `${this.turn}, where do you want to move?`,
-    handleResponse.bind(this)
-  );
 
+  if (this.turn == "white") {
+    const aiMove = randomMove.call(this, this.turn);
+    handleResponse.call(this, aiMove);
+  } else {
+    rlInterface.question(
+      `${this.turn}, where do you want to move?`,
+      handleResponse.bind(this)
+    );
+  }
+  function randomMove(color){
+    const validMoves = this.board.validMoves(color);
+    console.log(validMoves);
+    const randomIndex = Math.floor(validMoves.length * Math.random())
+    return `[${validMoves[0]}]`
+  }
   function handleResponse(answer) {
     const pos = JSON.parse(answer);
     if (!this.board.validMove(pos, this.turn)) {

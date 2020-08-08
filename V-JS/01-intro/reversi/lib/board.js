@@ -49,7 +49,7 @@ Board.prototype.isValidPos = function (pos) {
  * throwing an Error if the position is invalid.
  */
 Board.prototype.getPiece = function (pos) {
-  if (!this.isValidPos(pos)) throw Error("invalid position");
+  if (!this.isValidPos(pos)) throw new Error("Invalid position");
   const [x, y] = pos;
 
   return this.grid[x][y];
@@ -60,7 +60,8 @@ Board.prototype.getPiece = function (pos) {
  * matches a given color.
  */
 Board.prototype.isMine = function (pos, color) {
-  if (this.getPiece(pos) && this.getPiece(pos).color == color) return true;
+  const piece = this.getPiece(pos)
+  if (piece && piece.color === color) return true;
   return false;
 };
 
@@ -91,7 +92,8 @@ Board.prototype._positionsToFlip = function (pos, color, dir, piecesToFlip) {
   const newPos = [posX + x, posY + y];
   piecesToFlip = piecesToFlip ? piecesToFlip : [];
 
-  if (!this.isValidPos(pos) && !this.isValidPos(newPos)) return [];
+  if (!this.isValidPos(pos) || !this.isValidPos(newPos)) return [];
+  
   if (!this.isOccupied(newPos)) return [];
 
   if (this.isOccupied(newPos) && this.isMine(newPos, color))
@@ -111,7 +113,7 @@ Board.prototype.validMove = function (pos, color) {
   // is not already occupied
   if (this.isOccupied(pos)) return false;
 
-  const val = this.constructor.DIRS.some(
+  const val = Board.DIRS.some(
     (dir) => this._positionsToFlip(pos, color, dir).length
   );
   return val;
@@ -127,35 +129,66 @@ Board.prototype.placePiece = function (pos, color) {
   if (!this.validMove(pos, color)) throw new Error("Invalid move");
   const [x, y] = pos;
   this.grid[x][y] = new Piece(color);
-  this.constructor.DIRS.forEach((dir) => {
-    const arr = this._positionsToFlip(pos, color, dir);
-    arr.forEach((toFlip) => this.getPiece(toFlip).flip());
+  Board.DIRS.forEach((dir) => {
+    const positionsToFlip = this._positionsToFlip(pos, color, dir);
+    positionsToFlip.forEach((posToFlip) => this.getPiece(posToFlip).flip());
   });
-  // const toFlipps = toFlippsAll.filter(arr=> arr.length);
-
-  // toFlipps.forEach( (toFlip) => this.getPiece(toFlip).flip );
 };
 
 /**
  * Produces an array of all valid positions on
  * the Board for a given color.
  */
-Board.prototype.validMoves = function (color) {};
+Board.prototype.validMoves = function (color) {
+  const validMoves = []
+  // checks empty space,
+  // if isValid, push
+  this.grid.forEach( (row, rowIndex)=>{
+    row.forEach( (_, columnIndex)=> {
+      if(this.validMove([rowIndex,columnIndex], color)){
+        validMoves.push([rowIndex,columnIndex]) 
+      } 
+    })
+  })
+  return validMoves
+};
 
 /**
  * Checks if there are any valid moves for the given color.
  */
-Board.prototype.hasMove = function (color) {};
+Board.prototype.hasMove = function (color) {
+  if(this.validMoves(color).length) return true;
+  return false
+};
 
 /**
  * Checks if both the white player and
  * the black player are out of moves.
  */
-Board.prototype.isOver = function () {};
+Board.prototype.isOver = function () {
+  if(!this.hasMove('white') && !this.hasMove('black')){
+    return true;
+  }
+  return false
+};
 
 /**
  * Prints a string representation of the Board to the console.
  */
-Board.prototype.print = function () {};
+Board.prototype.print = function () {
+  console.log('  01234567');
+  this.grid.forEach( (row, rowIndex)=>{
+    const rowLog = [rowIndex, ' '];
+    row.forEach( (_, columnIndex)=>{
+      if(this.isOccupied([rowIndex, columnIndex])){
+        rowLog.push(this.getPiece([rowIndex, columnIndex]));
+      } else{
+        rowLog.push('_')
+      }
+    });
+    console.log(rowLog.join(""))
+  })
+ 
+};
 
 module.exports = Board;

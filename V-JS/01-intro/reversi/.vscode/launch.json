@@ -4,6 +4,8 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+    
+
     {
       "args": [
         "-u",
@@ -25,7 +27,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/bin/main.js"
+      "program": "${workspaceFolder}/lib/play.js"
     }
   ]
 }
