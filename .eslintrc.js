@@ -3,16 +3,17 @@ module.exports = {
   env: {
     es2020: true,
     browser: true,
-    commonjs: true
+    commonjs: true,
   },
   extends: 'eslint:recommended',
   parserOptions: {
     ecmaVersion: 11,
+    sourceType: 'module',
   },
   rules: {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
+    quotes: ['warn', 'single'],
     semi: ['error', 'always'],
   },
 };
