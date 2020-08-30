@@ -14,7 +14,7 @@ GameView.prototype.start = function() {
 
   const step = () => {
     this.game.draw(this.ctx);
-    this.game.moveObjects();
+    this.game.step();
     window.requestAnimationFrame(step);
   };
 

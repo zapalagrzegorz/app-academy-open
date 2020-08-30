@@ -101,16 +101,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Asteroid(options) {
+  options.color = Asteroid.COLOR;
+  options.radius = Asteroid.RADIUS;
   _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"].call(this, options);
-  this.color = Asteroid.COLOR;
-  this.radius = Asteroid.RADIUS;
-  this.vel = _utils__WEBPACK_IMPORTED_MODULE_0__["default"].randomVec(10);
+  this.vel = _utils__WEBPACK_IMPORTED_MODULE_0__["default"].randomVec(5);
 }
 
-_utils__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(Asteroid, _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"]); // Pick a default COLOR and RADIUS for Asteroids. Set these as properties of the Asteroid class: Asteroid.COLOR and Asteroid.RADIUS
+_utils__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(Asteroid, _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"]); // Pick a default COLOR and RADIUS for Asteroids. 
+// Set these as properties of the Asteroid class: Asteroid.COLOR and Asteroid.RADIUS
 
 Asteroid.COLOR = 'darkgrey';
-Asteroid.RADIUS = '10';
+Asteroid.RADIUS = '20';
 /* harmony default export */ __webpack_exports__["default"] = (Asteroid);
 
 /***/ }),
@@ -125,26 +126,49 @@ Asteroid.RADIUS = '10';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _asteroid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./asteroid */ "./src/asteroid.js");
+/* harmony import */ var _ship__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ship */ "./src/ship.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 // Write a Game class in src/game.js.
 //  Define the following constants on the Game class: DIM_X, DIM_Y, and NUM_ASTEROIDS.
 
 
 
+
 function Game() {
   this.asteroids = [];
+  this.ship = new _ship__WEBPACK_IMPORTED_MODULE_1__["default"]({
+    pos: Game.prototype.randomPosition(),
+    game: this
+  }); // console.log(this.ship);
 }
 
 Game.DIM_X = window.innerWidth * 0.8;
 Game.DIM_Y = window.innerHeight * 0.8;
-Game.NUM_ASTEROIDS = 10;
+Game.NUM_ASTEROIDS = 3;
 
 Game.prototype.addAsteroids = function () {
   for (var i = Game.NUM_ASTEROIDS; i > 0; i--) {
     var config = {
-      pos: Game.prototype.randomPosition()
+      pos: Game.prototype.randomPosition(),
+      game: this
     };
     this.asteroids.push(new _asteroid__WEBPACK_IMPORTED_MODULE_0__["default"](config));
   }
+};
+
+Game.prototype.allObjects = function () {
+  return [].concat(_toConsumableArray(this.asteroids), [this.ship]);
 }; // Randomly place the asteroids within the dimensions of the game grid.
 
 
@@ -154,16 +178,62 @@ Game.prototype.randomPosition = function () {
 
 
 Game.prototype.draw = function (ctx) {
-  ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
-  this.asteroids.forEach(function (asteroid) {
-    asteroid.draw(ctx);
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
+  this.allObjects().forEach(function (object) {
+    object.draw(ctx);
   });
 }; // Write a Game.prototype.moveObjects method. It should call move on each of the asteroids.
 
 
 Game.prototype.moveObjects = function () {
-  this.asteroids.forEach(function (asteroid) {
+  this.allObjects().forEach(function (asteroid) {
     asteroid.move();
+  });
+};
+
+Game.prototype.wrap = function (pos) {
+  var wrappedPos = _toConsumableArray(pos);
+
+  if (pos[0] > Game.DIM_X) {
+    wrappedPos[0] = 0;
+  }
+
+  if (pos[0] < 0) {
+    wrappedPos[0] = Game.DIM_X;
+  }
+
+  if (pos[1] > Game.DIM_Y) {
+    wrappedPos[1] = 0;
+  }
+
+  if (pos[1] < 0) {
+    wrappedPos[1] = Game.DIM_Y;
+  }
+
+  return wrappedPos;
+};
+
+Game.prototype.checkCollisions = function () {
+  var _this = this;
+
+  this.allObjects().forEach(function (object) {
+    _this.allObjects().forEach(function (otherObject) {
+      if (object !== otherObject && object.isCollidedWith(otherObject)) {
+        object.collideWith(otherObject);
+      }
+    });
+  });
+};
+
+Game.prototype.step = function () {
+  this.moveObjects();
+  this.checkCollisions();
+};
+
+Game.prototype.remove = function (asteroid) {
+  this.asteroids = this.asteroids.filter(function (memoryAsteroid) {
+    return asteroid != memoryAsteroid;
   });
 };
 
@@ -194,7 +264,7 @@ GameView.prototype.start = function () {
   var step = function step() {
     _this.game.draw(_this.ctx);
 
-    _this.game.moveObjects();
+    _this.game.step();
 
     window.requestAnimationFrame(step);
   };
@@ -261,11 +331,13 @@ function MovingObject(options) {
   var pos = options.pos,
       vel = options.vel,
       radius = options.radius,
-      color = options.color;
+      color = options.color,
+      game = options.game;
   this.pos = pos;
   this.vel = vel;
   this.radius = radius;
   this.color = color;
+  this.game = game;
 }
 
 MovingObject.prototype.draw = function (ctx) {
@@ -276,11 +348,53 @@ MovingObject.prototype.draw = function (ctx) {
 };
 
 MovingObject.prototype.move = function () {
+  this.pos = this.game.wrap(this.pos);
   this.pos[0] += this.vel[0];
   this.pos[1] += this.vel[1];
 };
 
+MovingObject.prototype.isCollidedWith = function (otherObject) {
+  var dist = Math.sqrt(Math.pow(this.pos[0] - otherObject.pos[0], 2) + Math.pow(this.pos[1] - otherObject.pos[1], 2));
+
+  if (dist < this.radius * 2) {
+    return true;
+  }
+};
+
+MovingObject.prototype.collideWith = function (otherObject) {
+  this.game.remove(this);
+  this.game.remove(otherObject);
+};
+
 /* harmony default export */ __webpack_exports__["default"] = (MovingObject);
+
+/***/ }),
+
+/***/ "./src/ship.js":
+/*!*********************!*\
+  !*** ./src/ship.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
+/* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moving_object */ "./src/moving_object.js");
+
+
+
+function Ship(options) {
+  options.color = Ship.COLOR;
+  options.radius = Ship.RADIUS;
+  options.vel = [0, 0];
+  _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"].call(this, options);
+}
+
+_utils__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(Ship, _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"]);
+Ship.COLOR = '#fe019a';
+Ship.RADIUS = '13';
+/* harmony default export */ __webpack_exports__["default"] = (Ship);
 
 /***/ }),
 
