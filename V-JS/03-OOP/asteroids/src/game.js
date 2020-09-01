@@ -12,7 +12,7 @@ function Game() {
 
 Game.DIM_X = window.innerWidth * 0.8;
 Game.DIM_Y = window.innerHeight * 0.8;
-Game.NUM_ASTEROIDS = 3;
+Game.NUM_ASTEROIDS = 6;
 
 Game.prototype.addAsteroids = function () {
   for (let i = Game.NUM_ASTEROIDS; i > 0; i--) {
@@ -69,6 +69,9 @@ Game.prototype.checkCollisions = function () {
   this.allObjects().forEach((object) => {
     this.allObjects().forEach((otherObject) => {
       if (object !== otherObject && object.isCollidedWith(otherObject)) {
+        // wszystkie obiekty mają tę metodę przez definicję w parencie
+        // definicja ta może być pusta
+        // można też ją nadpisać w normalnym obiekcie
         object.collideWith(otherObject);
       }
     });

@@ -12,4 +12,9 @@ Util.inherits(Ship, MovingObject);
 Ship.COLOR = '#fe019a' ;
 Ship.RADIUS = '13';
 
+Ship.prototype.relocate = function(){
+  this.vel = [0,0];
+  this.pos = this.game.randomPosition();
+};
+
 export default Ship;

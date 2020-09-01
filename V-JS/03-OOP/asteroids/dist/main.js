@@ -97,6 +97,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
 /* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moving_object */ "./src/moving_object.js");
+/* harmony import */ var _ship__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ship */ "./src/ship.js");
+
 
 
 
@@ -105,13 +107,21 @@ function Asteroid(options) {
   options.radius = Asteroid.RADIUS;
   _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"].call(this, options);
   this.vel = _utils__WEBPACK_IMPORTED_MODULE_0__["default"].randomVec(5);
-}
+} // Asteroid.prototype.collideWith(otherObject): if otherObject instanceof Ship, call Ship.prototype.relocate. The Ship.prototype.relocate method should reset the Ship's position to game.randomPosition() and reset velocity to the zero vector.
 
-_utils__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(Asteroid, _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"]); // Pick a default COLOR and RADIUS for Asteroids. 
+
+_utils__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(Asteroid, _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"]); // Pick a default COLOR and RADIUS for Asteroids.
 // Set these as properties of the Asteroid class: Asteroid.COLOR and Asteroid.RADIUS
 
 Asteroid.COLOR = 'darkgrey';
 Asteroid.RADIUS = '20';
+
+Asteroid.prototype.collideWith = function (otherObject) {
+  if (otherObject instanceof _ship__WEBPACK_IMPORTED_MODULE_2__["default"]) {
+    otherObject.relocate();
+  }
+};
+
 /* harmony default export */ __webpack_exports__["default"] = (Asteroid);
 
 /***/ }),
@@ -155,7 +165,7 @@ function Game() {
 
 Game.DIM_X = window.innerWidth * 0.8;
 Game.DIM_Y = window.innerHeight * 0.8;
-Game.NUM_ASTEROIDS = 3;
+Game.NUM_ASTEROIDS = 6;
 
 Game.prototype.addAsteroids = function () {
   for (var i = Game.NUM_ASTEROIDS; i > 0; i--) {
@@ -220,6 +230,9 @@ Game.prototype.checkCollisions = function () {
   this.allObjects().forEach(function (object) {
     _this.allObjects().forEach(function (otherObject) {
       if (object !== otherObject && object.isCollidedWith(otherObject)) {
+        // wszystkie obiekty mają tę metodę przez definicję w parencie
+        // definicja ta może być pusta
+        // można też ją nadpisać w normalnym obiekcie
         object.collideWith(otherObject);
       }
     });
@@ -361,10 +374,7 @@ MovingObject.prototype.isCollidedWith = function (otherObject) {
   }
 };
 
-MovingObject.prototype.collideWith = function (otherObject) {
-  this.game.remove(this);
-  this.game.remove(otherObject);
-};
+MovingObject.prototype.collideWith = function () {};
 
 /* harmony default export */ __webpack_exports__["default"] = (MovingObject);
 
@@ -394,6 +404,12 @@ function Ship(options) {
 _utils__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(Ship, _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"]);
 Ship.COLOR = '#fe019a';
 Ship.RADIUS = '13';
+
+Ship.prototype.relocate = function () {
+  this.vel = [0, 0];
+  this.pos = this.game.randomPosition();
+};
+
 /* harmony default export */ __webpack_exports__["default"] = (Ship);
 
 /***/ }),
