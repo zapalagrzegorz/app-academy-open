@@ -18,5 +18,7 @@
     "webpack-merge": "^5.1.2",
     "webpack-stream": "^5.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "keymaster": "^1.6.2"
+  }
 }
