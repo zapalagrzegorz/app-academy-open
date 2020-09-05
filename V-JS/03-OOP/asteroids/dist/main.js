@@ -405,6 +405,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
 /* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moving_object */ "./src/moving_object.js");
 /* harmony import */ var _ship__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ship */ "./src/ship.js");
+/* harmony import */ var _bullet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bullet */ "./src/bullet.js");
+
 
 
 
@@ -427,9 +429,38 @@ Asteroid.prototype.collideWith = function (otherObject) {
   if (otherObject instanceof _ship__WEBPACK_IMPORTED_MODULE_2__["default"]) {
     otherObject.relocate();
   }
+
+  if (otherObject instanceof _bullet__WEBPACK_IMPORTED_MODULE_3__["default"]) {
+    this.game.remove(otherObject);
+    this.game.remove(this);
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Asteroid);
+
+/***/ }),
+
+/***/ "./src/bullet.js":
+/*!***********************!*\
+  !*** ./src/bullet.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
+/* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moving_object */ "./src/moving_object.js");
+
+
+
+function Bullet(options) {
+  this.isWrappable = false;
+  _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"].call(this, options);
+}
+
+_utils__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(Bullet, _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (Bullet);
 
 /***/ }),
 
@@ -444,6 +475,7 @@ Asteroid.prototype.collideWith = function (otherObject) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _asteroid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./asteroid */ "./src/asteroid.js");
 /* harmony import */ var _ship__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ship */ "./src/ship.js");
+/* harmony import */ var _bullet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bullet */ "./src/bullet.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -462,8 +494,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
+
 function Game() {
   this.asteroids = [];
+  this.bullets = [];
   this.ship = new _ship__WEBPACK_IMPORTED_MODULE_1__["default"]({
     pos: Game.prototype.randomPosition(),
     game: this
@@ -472,7 +506,17 @@ function Game() {
 
 Game.DIM_X = window.innerWidth * 0.8;
 Game.DIM_Y = window.innerHeight * 0.8;
-Game.NUM_ASTEROIDS = 6;
+Game.NUM_ASTEROIDS = 6; // Game.prototype.add(obj) method that added to this.asteroids/this.bullets if obj instanceof Asteroid/obj instanceof Bullet. I wrote a similar Game.prototype.remove(obj) method. This was easier than having two methods each for Asteroid and Bullet.
+
+Game.prototype.add = function (object) {
+  if (object instanceof _asteroid__WEBPACK_IMPORTED_MODULE_0__["default"]) {
+    this.asteroids.push(object);
+  }
+
+  if (object instanceof _bullet__WEBPACK_IMPORTED_MODULE_2__["default"]) {
+    this.bullets.push(object);
+  }
+};
 
 Game.prototype.addAsteroids = function () {
   for (var i = Game.NUM_ASTEROIDS; i > 0; i--) {
@@ -485,7 +529,7 @@ Game.prototype.addAsteroids = function () {
 };
 
 Game.prototype.allObjects = function () {
-  return [].concat(_toConsumableArray(this.asteroids), [this.ship]);
+  return [].concat(_toConsumableArray(this.asteroids), _toConsumableArray(this.bullets), [this.ship]);
 }; // Randomly place the asteroids within the dimensions of the game grid.
 
 
@@ -504,8 +548,8 @@ Game.prototype.draw = function (ctx) {
 
 
 Game.prototype.moveObjects = function () {
-  this.allObjects().forEach(function (asteroid) {
-    asteroid.move();
+  this.allObjects().forEach(function (movingObject) {
+    movingObject.move();
   });
 };
 
@@ -551,10 +595,28 @@ Game.prototype.step = function () {
   this.checkCollisions();
 };
 
-Game.prototype.remove = function (asteroid) {
-  this.asteroids = this.asteroids.filter(function (memoryAsteroid) {
-    return asteroid != memoryAsteroid;
-  });
+Game.prototype.remove = function (object) {
+  if (object instanceof _asteroid__WEBPACK_IMPORTED_MODULE_0__["default"]) {
+    this.asteroids = this.asteroids.filter(function (memoryAsteroid) {
+      return object != memoryAsteroid;
+    });
+  }
+
+  if (object instanceof _bullet__WEBPACK_IMPORTED_MODULE_2__["default"]) {
+    this.bullets = this.bullets.filter(function (otherBullet) {
+      return object != otherBullet;
+    });
+  }
+};
+
+Game.prototype.isOutOfBounds = function (object) {
+  // góra gdy pos Y < 0,
+  if (object.pos[0] < 0) return true;
+  if (object.pos[1] < 0) return true;
+  if (object.pos[0] + 2 * object.radius > Game.DIM_X) return true;
+  if (object.pos[1] + 2 * object.radius > Game.DIM_Y) return true; // lewo gdy pos X < 0;
+  // prawo gdy pos X + 2*radius > length
+  // dół gdy pos Y + 2*radius > height
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Game);
@@ -615,7 +677,8 @@ GameView.prototype.bindKeyHandlers = function () {
   keymaster__WEBPACK_IMPORTED_MODULE_0___default()('right', function () {
     _this2.game.ship.power([1, 0]);
   });
-  keymaster__WEBPACK_IMPORTED_MODULE_0___default()('space', function () {// this.game.ship.power([1, 0]);
+  keymaster__WEBPACK_IMPORTED_MODULE_0___default()('space', function () {
+    _this2.game.ship.fireBullet();
   });
 };
 
@@ -695,7 +758,14 @@ MovingObject.prototype.draw = function (ctx) {
 };
 
 MovingObject.prototype.move = function () {
-  this.pos = this.game.wrap(this.pos);
+  if (this.game.isOutOfBounds(this)) {
+    if (this.isWrappable) {
+      this.pos = this.game.wrap(this.pos);
+    } else {
+      this.game.remove(this);
+    }
+  }
+
   this.pos[0] += this.vel[0];
   this.pos[1] += this.vel[1];
 };
@@ -710,6 +780,7 @@ MovingObject.prototype.isCollidedWith = function (otherObject) {
 
 MovingObject.prototype.collideWith = function () {};
 
+MovingObject.prototype.isWrappable = true;
 /* harmony default export */ __webpack_exports__["default"] = (MovingObject);
 
 /***/ }),
@@ -725,6 +796,8 @@ MovingObject.prototype.collideWith = function () {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/utils.js");
 /* harmony import */ var _moving_object__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moving_object */ "./src/moving_object.js");
+/* harmony import */ var _bullet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bullet */ "./src/bullet.js");
+
 
 
 
@@ -738,7 +811,7 @@ function Ship(options) {
 _utils__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(Ship, _moving_object__WEBPACK_IMPORTED_MODULE_1__["default"]);
 Ship.COLOR = '#fe019a';
 Ship.RADIUS = '13';
-Ship.MAX_SPEED = 7;
+Ship.MAX_SPEED = 5;
 
 Ship.prototype.relocate = function () {
   this.vel = [0, 0];
@@ -750,8 +823,38 @@ Ship.prototype.power = function (impulse) {
   this.vel[1] += impulse[1];
   if (this.vel[0] > Ship.MAX_SPEED) this.vel[0] = Ship.MAX_SPEED;
   if (this.vel[0] < -Ship.MAX_SPEED) this.vel[0] = -Ship.MAX_SPEED;
-  if (this.vel[1] > Ship.MAX_SPEED) this.vel[0] = Ship.MAX_SPEED;
-  if (this.vel[1] < -Ship.MAX_SPEED) this.vel[0] = -Ship.MAX_SPEED;
+  if (this.vel[1] > Ship.MAX_SPEED) this.vel[1] = Ship.MAX_SPEED;
+  if (this.vel[1] < -Ship.MAX_SPEED) this.vel[1] = -Ship.MAX_SPEED;
+};
+
+Ship.prototype.fireBullet = function () {
+  if (!this.vel[0] && !this.vel[1]) return;
+  var Yvel = 0;
+  var Xvel = 0;
+
+  if (this.vel[0] > 0) {
+    Yvel = this.vel[0] + 2;
+  } else if (this.vel[0] < 0) {
+    Yvel = this.vel[0] - 2;
+  }
+
+  if (this.vel[1] > 0) {
+    Xvel = this.vel[1] + 2;
+  } else if (this.vel[1] < 0) {
+    Xvel = this.vel[1] - 2;
+  } // setupBulletVelocity(vel)
+
+
+  var options = {
+    pos: [this.pos[0] - this.radius, this.pos[1] - this.radius],
+    vel: [Yvel, Xvel],
+    radius: 2,
+    color: 'blue',
+    game: this.game
+  };
+  var bullet = new _bullet__WEBPACK_IMPORTED_MODULE_2__["default"](options); // Add the bullet to an array of Game bullets.
+
+  this.game.add(bullet);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Ship);

@@ -41,7 +41,7 @@ GameView.prototype.bindKeyHandlers = function () {
   });
 
   key('space', () => {
-    // this.game.ship.power([1, 0]);
+    this.game.ship.fireBullet();
   });
 };
 

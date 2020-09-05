@@ -1,6 +1,7 @@
 import Util from './utils';
 import MovingObject from './moving_object';
 import Ship from './ship';
+import Bullet from './bullet';
 
 function Asteroid(options) {
   options.color = Asteroid.COLOR;
@@ -20,6 +21,10 @@ Asteroid.RADIUS = '20';
 Asteroid.prototype.collideWith = function (otherObject) {
   if (otherObject instanceof Ship) {
     otherObject.relocate();
+  }
+  if (otherObject instanceof Bullet) {
+    this.game.remove(otherObject);
+    this.game.remove(this);
   }
 };
 
