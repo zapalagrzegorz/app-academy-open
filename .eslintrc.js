@@ -4,6 +4,7 @@ module.exports = {
     es2020: true,
     browser: true,
     commonjs: true,
+    jquery: true,
   },
   extends: 'eslint:recommended',
   parserOptions: {

@@ -1,0 +1,44 @@
+html,
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+h1 {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.ttt ul {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  flex-wrap: wrap;
+  list-style: none;
+  border: 5px solid black;
+}
+.ttt li {
+  background-color: darkgray;
+  width: 33.3%;
+  border: 5px solid black;
+  /* border-bottom: 0; */
+  /* border-left: 0; */
+}
+
+.ttt li:hover {
+  cursor: pointer;
+  background-color: yellow;
+}
+
+.ttt li:nth-child(3n + 1) {
+  /* border-bottom:0; */
+  /* border-left: 5px solid black;  */
+}
+.ttt li:nth-child(7),
+.ttt li:nth-child(8),
+.ttt li:nth-child(9) {
+  /* border-bottom: 5px solid black;  */
+}
