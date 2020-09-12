@@ -11235,8 +11235,18 @@ var Game = __webpack_require__(/*! ./game.js */ "./src/game.js"); // require app
 
 
 $(function () {
-  var $tttContainer = $('.ttt');
-  var view = new View(new Game(), $tttContainer); // Your code here
+  // const $tttContainer = $('.ttt');
+  // g = new Game();
+  // g.run(reader, completion);
+  $('body').append($('<figure class="ttt"></figure>)'));
+  new View(new Game(), $('.ttt'));
+  document.addEventListener('keydown', function (e) {
+    if (e.key == 'Escape') {
+      $('.ttt').remove();
+      $('body').append($('<figure class="ttt"></figure>)'));
+      new View(new Game(), $('.ttt'));
+    }
+  }); // Your code here
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -11273,6 +11283,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var MoveError = __webpack_require__(/*! ./moveError */ "./src/moveError.js");
+
 var View = /*#__PURE__*/function () {
   function View(game, $el) {
     _classCallCheck(this, View);
@@ -11280,22 +11292,59 @@ var View = /*#__PURE__*/function () {
     this.game = game;
     this.$el = $el;
     this.setupBoard();
-  }
+    this.bindEvents();
+  } // Write a View.prototype.bindEvents method. When a user clicks on a cell, call Game.prototype.playMove to register their move. Manipulate the cell <li> to show the current player's mark. Add/remove CSS classes to change the cell background to white and display the 'X's and 'O's in different colors. I did all this in a View.prototype.makeMove method. I also popped an alert if the move was invalid.
+
 
   _createClass(View, [{
     key: "bindEvents",
-    value: function bindEvents() {}
+    value: function bindEvents() {
+      var _this = this;
+
+      this.$el.on('click', 'li', function (e) {
+        _this.makeMove($(e.currentTarget));
+      });
+    }
   }, {
     key: "makeMove",
-    value: function makeMove($square) {} // Write a View.prototype.setupBoard method; it should make a grid to represent the board. Build the grid using an unordered list (<ul>). The cells can be represented inside the grid using <li> elements. By giving the <ul> a display property of flex, giving it a fixed width, and setting flex-wrap: wrap the <li> elements will appear as a 3x3 grid. (You need to do some quick division or tinkering to figure out how wide the <li> elements need to be). Set a border on the cells to make it look like a real grid. Style unclicked cells with a gray background. Change the background to yellow while the user :hovers over an unclicked cell.
+    value: function makeMove($square) {
+      var currentPlayer = this.game.currentPlayer;
+      var pos = $square.data('pos');
 
+      try {
+        this.game.playMove(pos);
+        $square.addClass('marked').text(currentPlayer);
+
+        if (this.game.isOver()) {
+          var winner = this.game.winner();
+
+          if (winner) {
+            this.$el.append("<h1>".concat(winner, " wins!</h1>"));
+            this.$el.addClass('over');
+            this.$el.find("li:contains(".concat(winner, ")")).addClass('win');
+          } else {
+            this.$el.append('Draw!');
+          }
+        }
+      } catch (e) {
+        if (e instanceof MoveError) {
+          alert(e.msg);
+        } else {
+          throw e;
+        }
+      }
+    }
   }, {
     key: "setupBoard",
     value: function setupBoard() {
+      // this.$el.empty();
       var $ul = $('<ul>');
 
-      for (var i = 0; i < 9; i++) {
-        $ul.append($('<li>'));
+      for (var row = 0; row < 3; row++) {
+        for (var column = 0; column < 3; column++) {
+          var $li = $('<li>').data('pos', [row, column]);
+          $ul.append($li);
+        }
       }
 
       this.$el.append($ul);
