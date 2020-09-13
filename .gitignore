@@ -14,3 +14,5 @@ history/**
 /node_modules
 /node_modules/**
 **/node_modules
+**/prototypal_syntax_solution
+/dist
