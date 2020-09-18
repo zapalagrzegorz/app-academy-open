@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FollowsController < ApplicationController
   before_action :require_logged_in!
 
@@ -5,6 +7,7 @@ class FollowsController < ApplicationController
     # simulate latency
     sleep(1)
 
+    # wartość follower_id jest przyjmowana z current_user
     @follow = current_user.out_follows.create!(followee_id: params[:user_id])
 
     respond_to do |format|
