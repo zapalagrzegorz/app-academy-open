@@ -3,9 +3,11 @@
   "private": true,
   "scripts": {
     "postinstall": "webpack --mode=development",
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    "start": "webpack --mode=development --watch "
   },
   "dependencies": {
+    "jquery": "^3.5.1",
     "webpack": "^4.6.0"
   },
   "devDependencies": {

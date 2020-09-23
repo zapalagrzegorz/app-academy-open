@@ -7,7 +7,9 @@ class FollowsController < ApplicationController
     # simulate latency
     sleep(1)
 
+    # follow'uj za target User'em
     # wartość follower_id jest przyjmowana z current_user
+
     @follow = current_user.out_follows.create!(followee_id: params[:user_id])
 
     respond_to do |format|

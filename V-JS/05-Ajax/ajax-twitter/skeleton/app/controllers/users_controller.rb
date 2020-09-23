@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :require_not_logged_in!, only: [:create, :new]
+  before_action :require_not_logged_in!, only: %i[create new]
   before_action :require_logged_in!, only: [:show]
 
   def create
@@ -33,17 +35,26 @@ class UsersController < ApplicationController
   end
 
   def search
-    if params[:query].present?
-      @users = User.where('username ~ ?', params[:query])
-    else
-      @users = User.none
-    end
+    @users = if params[:query].present?
+               User.where('username ~ ?', params[:query])
+             else
+               User.none
+             end
 
-    render :search
+    # respond_to do |format|
+    #   format.html { render :search }
+    #   format.json { render json: @users }
+    # end
+
+    respond_to do |format|
+      format.html { render :search }
+      format.json { render :search }
+    end
   end
 
   protected
+
   def user_params
-    self.params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password)
   end
 end

@@ -57,6 +57,15 @@ class User < ApplicationRecord
   end
 
   def feed_tweets(_limit = nil, _max_created_at = nil)
+    # LEFT OUTER JOIN
+    # zwróć wszyskie z lewej tabeli, łączne elementy i z prawej null, jeśli nie ma matched record
+    # po co tabela follows?
+    # daj followsy, tam gdzie uzytkownicy są śledzeni (wszystkich śledzonych)
+    # .where('tweets.user_id = :id OR follows.follower_id = :id', id: id)
+    # i do tego tam gdzie śledzącykm jest nasz użytkownik!
+    # daj mi moje tweety oraz tweety śledzonych użytkowników!
+    # follows.follower_id - tj uzytkownik który sledzi
+    #
     @tweets = Tweet
               .joins(:user)
               .joins('LEFT OUTER JOIN follows ON users.id = follows.followee_id')

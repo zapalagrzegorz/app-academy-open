@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -9,7 +11,7 @@
 User.destroy_all
 Tweet.destroy_all
 
-CATS = %w(breakfast earl curie markov gizmo kiki sally)
+CATS = %w[breakfast earl curie markov gizmo kiki sally].freeze
 
 CATS.each do |cat|
   u = User.create!(username: cat, password: "#{cat}#{cat}")
@@ -28,7 +30,7 @@ MESSAGES = [
   'Do cats know how to tweet? YES, we do.',
   'Set world napping record',
   'xvyadfoiuasdfnasfdn'
-]
+].freeze
 
 User.all.each do |user|
   40.times do
@@ -36,3 +38,5 @@ User.all.each do |user|
     Tweet.create!(user_id: user.id, content: msg, created_at: rand(3000).days.ago)
   end
 end
+
+Follow.create!

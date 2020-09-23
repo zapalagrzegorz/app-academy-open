@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TweetsController < ApplicationController
   before_action :require_logged_in!
 
@@ -8,6 +10,7 @@ class TweetsController < ApplicationController
     @tweet = current_user.tweets.build(tweet_params)
 
     if @tweet.save
+      # ? request?
       redirect_to request.referrer
     else
       # Lazy: even respond with JSON to invalid HTML request.
@@ -16,6 +19,7 @@ class TweetsController < ApplicationController
   end
 
   private
+
   def tweet_params
     params.require(:tweet).permit(:content, mentioned_user_ids: [])
   end
