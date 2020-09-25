@@ -11,33 +11,28 @@ class FollowToggle {
   }
 
   render() {
-    
-
-    if(this.followState == 'unfollowing' || this.followState == 'following'){
-      // this.$el.get(0).disabled = true;
+    if (this.followState == 'unfollowing' || this.followState == 'following') {
       this.$el.prop('disabled', true);
-    } else{
+    } else {
       this.$el.text(this.followState ? 'Unfollow' : 'Follow');
-      // this.$el.get(0).disabled = false;
       this.$el.prop('disabled', false);
     }
   }
 
   // Prevent the default action.
-  // Make a $.ajax request to POST /users/:id/follow if we are not following the user (check followState), else, it should make a DELETE request.
-  // On success of the POST/DELETE, we should toggle the followState and re-render.
   handleClick(e) {
     e.preventDefault();
     this.followState = this.followState ? 'unfollowing' : 'following';
     this.render();
-    
+
     const successCb = () => {
-      this.followState = (this.followState == 'unfollowing') ? false : true;
+      this.followState = this.followState == 'unfollowing' ? false : true;
       this.render();
     };
-    const ajaxCall = (this.followState == 'unfollowing')
-      ? API_UTIL.unfollowUser(this.id)
-      : API_UTIL.followUser(this.id);
+    const ajaxCall =
+      this.followState == 'unfollowing'
+        ? API_UTIL.unfollowUser(this.id)
+        : API_UTIL.followUser(this.id);
 
     ajaxCall
       .done(successCb)

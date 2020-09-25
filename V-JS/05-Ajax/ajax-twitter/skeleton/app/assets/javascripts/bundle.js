@@ -119,6 +119,29 @@ const APIUtil = {
     });
     return $.ajax('/users/search', options);
   },
+  debounce: (fn, interval) => {
+    // Setup a timer
+    let timeout;
+
+    // Return a function to run debounced
+    return function () {
+      // Setup the arguments
+      let args = arguments;
+
+      /* context - this, jest chyba po to, że gdyby w metodzie było odwołanie do this, to jest aby go zachować */
+      let context = this;
+
+      // If there's a timer, cancel it
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+
+      // Setup the new requestAnimationFrame()
+      timeout = setTimeout(function () {
+        fn.apply(context, args);
+      }, interval);
+    };
+  },
 };
 
 module.exports = APIUtil;
@@ -147,33 +170,28 @@ class FollowToggle {
   }
 
   render() {
-    
-
-    if(this.followState == 'unfollowing' || this.followState == 'following'){
-      // this.$el.get(0).disabled = true;
+    if (this.followState == 'unfollowing' || this.followState == 'following') {
       this.$el.prop('disabled', true);
-    } else{
+    } else {
       this.$el.text(this.followState ? 'Unfollow' : 'Follow');
-      // this.$el.get(0).disabled = false;
       this.$el.prop('disabled', false);
     }
   }
 
   // Prevent the default action.
-  // Make a $.ajax request to POST /users/:id/follow if we are not following the user (check followState), else, it should make a DELETE request.
-  // On success of the POST/DELETE, we should toggle the followState and re-render.
   handleClick(e) {
     e.preventDefault();
     this.followState = this.followState ? 'unfollowing' : 'following';
     this.render();
-    
+
     const successCb = () => {
-      this.followState = (this.followState == 'unfollowing') ? false : true;
+      this.followState = this.followState == 'unfollowing' ? false : true;
       this.render();
     };
-    const ajaxCall = (this.followState == 'unfollowing')
-      ? API_UTIL.unfollowUser(this.id)
-      : API_UTIL.followUser(this.id);
+    const ajaxCall =
+      this.followState == 'unfollowing'
+        ? API_UTIL.unfollowUser(this.id)
+        : API_UTIL.followUser(this.id);
 
     ajaxCall
       .done(successCb)
@@ -221,12 +239,14 @@ $(() => {
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {const APIUtil = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+const FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
 
 class UsersSearch {
   constructor(el) {
     this.$el = el;
     this.$usersList = el.find('ul.users');
     this.$input = el.find('input');
+    this.onInput = APIUtil.debounce(this.onInput, 500);
     this.$input.on('input', (e) => this.onInput(e));
   }
 
@@ -235,6 +255,7 @@ class UsersSearch {
   onInput(e) {
     const value = e.currentTarget.value;
     const $XHR = APIUtil.searchUsers(value);
+    this.$usersList.empty();
 
     const successCb = (resp) => {
       resp.forEach((user) => {
@@ -242,12 +263,15 @@ class UsersSearch {
           <li><a href="/users/${user.id}">${user.username}</a></li>
           <button type="button" class="follow-toggle" 
             data-user-id="${user.id}" 
-            data-initial-follow-state="<%= current_user.follows?(user) %>"></button>
+            data-initial-follow-state="${user.followed}"></button>
         `);
 
         this.$usersList.append(userItem);
       });
-      // this.render();
+
+      this.$el.find('.follow-toggle').each((_, el) => {
+        new FollowToggle($(el));
+      });
     };
 
     $XHR.done(successCb).fail((err) => console.log(err));
