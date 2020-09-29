@@ -24,6 +24,18 @@ const APIUtil = {
     });
     return $.ajax('/users/search', options);
   },
+
+  createTweet: (formData) => {
+    const dataObject = Object.assign(formData, {
+      authenticity_token: $('[name="csrf-token"]')[0].content,
+    });
+    const options = Object.assign({
+      method: 'POST',
+      dataType: 'json',
+      data: dataObject,
+    });
+    return $.ajax('/tweets', options);
+  },
   debounce: (fn, interval) => {
     // Setup a timer
     let timeout;

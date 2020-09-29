@@ -119,6 +119,18 @@ const APIUtil = {
     });
     return $.ajax('/users/search', options);
   },
+
+  createTweet: (formData) => {
+    const dataObject = Object.assign(formData, {
+      authenticity_token: $('[name="csrf-token"]')[0].content,
+    });
+    const options = Object.assign({
+      method: 'POST',
+      dataType: 'json',
+      data: dataObject,
+    });
+    return $.ajax('/tweets', options);
+  },
   debounce: (fn, interval) => {
     // Setup a timer
     let timeout;
@@ -160,10 +172,11 @@ module.exports = APIUtil;
 const API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
 
 class FollowToggle {
-  constructor($el) {
+  constructor($el, options) {
     this.$el = $el;
-    this.id = $el.data('userId');
-    this.followState = $el.data('initialFollowState');
+    this.id = $el.data('userId') || options.userId;
+    this.followState =
+      $el.data('initialFollowState') || options.initialFollowState;
     this.render();
     // closure!
     this.$el.on('click', (e) => this.handleClick(e));
@@ -250,8 +263,6 @@ class UsersSearch {
     this.$input.on('input', (e) => this.onInput(e));
   }
 
-  // render(){}
-
   onInput(e) {
     const value = e.currentTarget.value;
     const $XHR = APIUtil.searchUsers(value);
@@ -267,10 +278,15 @@ class UsersSearch {
         `);
 
         this.$usersList.append(userItem);
-      });
 
-      this.$el.find('.follow-toggle').each((_, el) => {
-        new FollowToggle($(el));
+        const followToggleBtnOptions = {
+          userId: user.id,
+          initialFollowState: user.followed,
+        };
+        new FollowToggle(
+          this.$el.find('.follow-toggle'),
+          followToggleBtnOptions
+        );
       });
     };
 

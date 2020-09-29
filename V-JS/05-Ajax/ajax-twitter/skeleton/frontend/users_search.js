@@ -10,8 +10,6 @@ class UsersSearch {
     this.$input.on('input', (e) => this.onInput(e));
   }
 
-  // render(){}
-
   onInput(e) {
     const value = e.currentTarget.value;
     const $XHR = APIUtil.searchUsers(value);
@@ -27,10 +25,15 @@ class UsersSearch {
         `);
 
         this.$usersList.append(userItem);
-      });
 
-      this.$el.find('.follow-toggle').each((_, el) => {
-        new FollowToggle($(el));
+        const followToggleBtnOptions = {
+          userId: user.id,
+          initialFollowState: user.followed,
+        };
+        new FollowToggle(
+          this.$el.find('.follow-toggle'),
+          followToggleBtnOptions
+        );
       });
     };
 
