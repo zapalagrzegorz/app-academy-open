@@ -121,13 +121,10 @@ const APIUtil = {
   },
 
   createTweet: (formData) => {
-    const dataObject = Object.assign(formData, {
-      authenticity_token: $('[name="csrf-token"]')[0].content,
-    });
     const options = Object.assign({
       method: 'POST',
       dataType: 'json',
-      data: dataObject,
+      data: formData,
     });
     return $.ajax('/tweets', options);
   },
@@ -219,6 +216,104 @@ module.exports = FollowToggle;
 
 /***/ }),
 
+/***/ "./frontend/tweet_compose.js":
+/*!***********************************!*\
+  !*** ./frontend/tweet_compose.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {const API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+const MAX_TWEET_CHARS = 140;
+
+class TweetCompose {
+  constructor(el) {
+    this.$el = el;
+    this.$inputs = this.$el.find(':input');
+    this.$textArea = this.$el.find('textarea');
+    this.$el.on('submit', (e) => {
+      this.submit(e);
+    });
+    this.$textArea.on('input', () => {
+      this.countCharsLeft();
+    });
+    this.countCharsLeft();
+  }
+
+  submit(e) {
+    e.preventDefault();
+    const formData = this.$el.serialize();
+    this.$el.find(':input').prop('disabled', true);
+    API_UTIL.createTweet(formData)
+      .done((tweet) => {
+        console.log(JSON.stringify(tweet));
+        const tweetsContainerId = this.$el.data('tweetsList');
+        const template = this.buildTweetTemplate(tweet);
+
+        $(`#${tweetsContainerId}`).prepend(template);
+        this.clearInput();
+      })
+      .fail((qXHR, textStatus, errorThrown) => {
+        console.error(qXHR, textStatus, errorThrown);
+      })
+      .always(() => {
+        const inputs = this.$inputs;
+        inputs.each((_, el) => {
+          $(el).prop('disabled', false);
+        });
+      });
+  }
+
+  clearInput() {
+    this.$inputs.not('[type="submit"], [type="hidden"]').each((_, el) => {
+      $(el).val('');
+    });
+  }
+
+  handleSuccess() {
+    this.clearInput();
+  }
+
+  buildTweetTemplate(tweet) {
+    let mentions = '';
+    let mentionedUsers = '';
+    if (tweet.mentions.length) {
+      tweet.mentions.forEach((mention) => {
+        mentionedUsers += `
+        <li>
+          <a href="/users/${mention.user.id}">
+            ${mention.user.username}
+          </a>
+        </li>`;
+      });
+    }
+    if (mentionedUsers) {
+      mentions = `<ul>${mentionedUsers}</ul>`;
+    }
+
+    const template = `
+    <li>
+      ${tweet.content}
+      -- <a href="/users/${tweet.user.id}">${tweet.user.username}</a>
+      -- ${tweet.created_at}
+      ${mentions}
+    </li>`;
+
+    return template;
+  }
+
+  countCharsLeft() {
+    const charsLeft = MAX_TWEET_CHARS - this.$textArea.val().length;
+    $('.chars-left').text(charsLeft);
+  }
+}
+
+module.exports = TweetCompose;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./frontend/twitter.js":
 /*!*****************************!*\
   !*** ./frontend/twitter.js ***!
@@ -228,6 +323,7 @@ module.exports = FollowToggle;
 
 /* WEBPACK VAR INJECTION */(function($) {const FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
 const UsersSearch = __webpack_require__(/*! ./users_search */ "./frontend/users_search.js");
+const TweetCompose = __webpack_require__(/*! ./tweet_compose */ "./frontend/tweet_compose.js");
 
 $(() => {
   $('button.follow-toggle').each((_, el) => {
@@ -238,6 +334,9 @@ $(() => {
     new UsersSearch($(el));
   });
 
+  $('.tweet-compose').each((_, el) => {
+    new TweetCompose($(el));
+  });
 });
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

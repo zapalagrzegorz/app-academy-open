@@ -26,13 +26,10 @@ const APIUtil = {
   },
 
   createTweet: (formData) => {
-    const dataObject = Object.assign(formData, {
-      authenticity_token: $('[name="csrf-token"]')[0].content,
-    });
     const options = Object.assign({
       method: 'POST',
       dataType: 'json',
-      data: dataObject,
+      data: formData,
     });
     return $.ajax('/tweets', options);
   },
