@@ -110,13 +110,13 @@ const APIUtil = {
   },
 
   searchUsers: (queryVal) => {
-    const options = Object.assign({
+    const options = {
       dataType: 'json',
       data: {
         query: queryVal,
         authenticity_token: $('[name="csrf-token"]')[0].content,
       },
-    });
+    };
     return $.ajax('/users/search', options);
   },
 
@@ -127,6 +127,41 @@ const APIUtil = {
       data: formData,
     });
     return $.ajax('/tweets', options);
+  },
+
+  fetchTweets: () => {
+    const methodOptions = { url: '/feed' };
+    const options = Object.assign(_commonOptions, methodOptions);
+    return $.ajax(options);
+  },
+
+  buildTweetTemplate(tweet) {
+    let mentions = '';
+    let mentionedUsers = '';
+    if (tweet.mentions.length) {
+      tweet.mentions.forEach((mention) => {
+        mentionedUsers += `
+        <li>
+          <a href="/users/${mention.user.id}">
+            ${mention.user.username}
+          </a>
+        </li>`;
+      });
+    }
+
+    if (mentionedUsers) {
+      mentions = `<ul>${mentionedUsers}</ul>`;
+    }
+
+    const template = `
+    <li>
+      ${tweet.content}
+      -- <a href="/users/${tweet.user.id}">${tweet.user.username}</a>
+      -- ${tweet.created_at}
+      ${mentions}
+    </li>`;
+
+    return template;
   },
   debounce: (fn, interval) => {
     // Setup a timer
@@ -216,6 +251,56 @@ module.exports = FollowToggle;
 
 /***/ }),
 
+/***/ "./frontend/infinite_tweets.js":
+/*!*************************************!*\
+  !*** ./frontend/infinite_tweets.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+
+class InfiniteTweets {
+  constructor($el) {
+    this.$container = $el;
+    this.$feedList = $el.find('#feed');
+    this.$fetchMoreBtn = this.$container.find('button');
+    this.$fetchMoreBtn.on('click', (e) => {
+      this.fetchMoreTweets(e);
+    });
+  }
+
+  fetchMoreTweets() {
+    this.$el.find('button').prop('disabled', true);
+    API_UTIL.fetchTweets()
+      .done((tweets) => {
+        console.log(tweets);
+        // #insertTweets
+        this.insertTweets(tweets);
+      })
+      .fail((qXHR, textStatus, errorThrown) => {
+        console.error(qXHR, textStatus, errorThrown);
+      })
+      .always(() => {
+        this.$el.find('button').prop('disabled', true);
+      });
+  }
+
+  insertTweets(tweets) {
+    let tweetsTemplate = '';
+    tweets.forEach((tweet) => {
+      tweetsTemplate += API_UTIL.buildTweetTemplate(tweet);
+    });
+
+    this.$feedList.append(tweetsTemplate);
+  }
+}
+
+module.exports = InfiniteTweets;
+
+
+/***/ }),
+
 /***/ "./frontend/tweet_compose.js":
 /*!***********************************!*\
   !*** ./frontend/tweet_compose.js ***!
@@ -256,7 +341,7 @@ class TweetCompose {
       .done((tweet) => {
         console.log(JSON.stringify(tweet));
         const tweetsContainerId = this.$el.data('tweetsList');
-        const template = this.buildTweetTemplate(tweet);
+        const template = API_UTIL.buildTweetTemplate(tweet);
 
         $(`#${tweetsContainerId}`).prepend(template);
         this.clearInput();
@@ -279,35 +364,6 @@ class TweetCompose {
 
   handleSuccess() {
     this.clearInput();
-  }
-
-  buildTweetTemplate(tweet) {
-    let mentions = '';
-    let mentionedUsers = '';
-    if (tweet.mentions.length) {
-      tweet.mentions.forEach((mention) => {
-        mentionedUsers += `
-        <li>
-          <a href="/users/${mention.user.id}">
-            ${mention.user.username}
-          </a>
-        </li>`;
-      });
-    }
-
-    if (mentionedUsers) {
-      mentions = `<ul>${mentionedUsers}</ul>`;
-    }
-
-    const template = `
-    <li>
-      ${tweet.content}
-      -- <a href="/users/${tweet.user.id}">${tweet.user.username}</a>
-      -- ${tweet.created_at}
-      ${mentions}
-    </li>`;
-
-    return template;
   }
 
   countCharsLeft() {
@@ -360,6 +416,7 @@ module.exports = TweetCompose;
 /* WEBPACK VAR INJECTION */(function($) {const FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
 const UsersSearch = __webpack_require__(/*! ./users_search */ "./frontend/users_search.js");
 const TweetCompose = __webpack_require__(/*! ./tweet_compose */ "./frontend/tweet_compose.js");
+const InfiniteTweets = __webpack_require__(/*! ./infinite_tweets */ "./frontend/infinite_tweets.js");
 
 $(() => {
   $('button.follow-toggle').each((_, el) => {
@@ -372,6 +429,10 @@ $(() => {
 
   $('.tweet-compose').each((_, el) => {
     new TweetCompose($(el));
+  });
+
+  $('.infinite-tweets').each((_, el) => {
+    new InfiniteTweets($(el));
   });
 });
 

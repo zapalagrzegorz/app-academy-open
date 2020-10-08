@@ -15,13 +15,13 @@ const APIUtil = {
   },
 
   searchUsers: (queryVal) => {
-    const options = Object.assign({
+    const options = {
       dataType: 'json',
       data: {
         query: queryVal,
         authenticity_token: $('[name="csrf-token"]')[0].content,
       },
-    });
+    };
     return $.ajax('/users/search', options);
   },
 
@@ -32,6 +32,41 @@ const APIUtil = {
       data: formData,
     });
     return $.ajax('/tweets', options);
+  },
+
+  fetchTweets: () => {
+    const methodOptions = { url: '/feed' };
+    const options = Object.assign(_commonOptions, methodOptions);
+    return $.ajax(options);
+  },
+
+  buildTweetTemplate(tweet) {
+    let mentions = '';
+    let mentionedUsers = '';
+    if (tweet.mentions.length) {
+      tweet.mentions.forEach((mention) => {
+        mentionedUsers += `
+        <li>
+          <a href="/users/${mention.user.id}">
+            ${mention.user.username}
+          </a>
+        </li>`;
+      });
+    }
+
+    if (mentionedUsers) {
+      mentions = `<ul>${mentionedUsers}</ul>`;
+    }
+
+    const template = `
+    <li>
+      ${tweet.content}
+      -- <a href="/users/${tweet.user.id}">${tweet.user.username}</a>
+      -- ${tweet.created_at}
+      ${mentions}
+    </li>`;
+
+    return template;
   },
   debounce: (fn, interval) => {
     // Setup a timer

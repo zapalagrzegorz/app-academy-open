@@ -56,7 +56,8 @@ class User < ApplicationRecord
     save!
   end
 
-  def feed_tweets(_limit = nil, _max_created_at = nil)
+  def feed_tweets(limit = nil, max_created_at = nil)
+    # Time.now.midnight
     # LEFT OUTER JOIN
     # zwróć wszyskie z lewej tabeli, łączne elementy i z prawej null, jeśli nie ma matched record
     # po co tabela follows?
@@ -72,8 +73,12 @@ class User < ApplicationRecord
               .where('tweets.user_id = :id OR follows.follower_id = :id', id: id)
               .order('tweets.created_at DESC')
               .distinct
+    # .where('tweets.created_at < :max_created_at', max_created_at: max_created_at)
+    # .limit(':limit', limit: limit)
 
     # TODO: How can we use limit/max_created_at here??
+    @tweets = @tweets.limit(limit) if limit
+    @tweets = @tweets.where('tweets.created_at < ?', max_created_at) if max_created_at
 
     @tweets
   end

@@ -31,7 +31,7 @@ class TweetCompose {
       .done((tweet) => {
         console.log(JSON.stringify(tweet));
         const tweetsContainerId = this.$el.data('tweetsList');
-        const template = this.buildTweetTemplate(tweet);
+        const template = API_UTIL.buildTweetTemplate(tweet);
 
         $(`#${tweetsContainerId}`).prepend(template);
         this.clearInput();
@@ -54,35 +54,6 @@ class TweetCompose {
 
   handleSuccess() {
     this.clearInput();
-  }
-
-  buildTweetTemplate(tweet) {
-    let mentions = '';
-    let mentionedUsers = '';
-    if (tweet.mentions.length) {
-      tweet.mentions.forEach((mention) => {
-        mentionedUsers += `
-        <li>
-          <a href="/users/${mention.user.id}">
-            ${mention.user.username}
-          </a>
-        </li>`;
-      });
-    }
-
-    if (mentionedUsers) {
-      mentions = `<ul>${mentionedUsers}</ul>`;
-    }
-
-    const template = `
-    <li>
-      ${tweet.content}
-      -- <a href="/users/${tweet.user.id}">${tweet.user.username}</a>
-      -- ${tweet.created_at}
-      ${mentions}
-    </li>`;
-
-    return template;
   }
 
   countCharsLeft() {
