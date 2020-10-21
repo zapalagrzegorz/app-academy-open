@@ -7,10 +7,14 @@
     "start": "webpack --mode=development --watch "
   },
   "dependencies": {
+    "@babel/preset-env": "^7.12.1",
     "jquery": "^3.5.1",
     "webpack": "^4.6.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.1",
+    "babel-loader": "^8.1.0",
     "webpack-cli": "^3.3.4"
   }
 }

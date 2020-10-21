@@ -28,14 +28,7 @@ class TweetCompose {
     const formData = this.$el.serialize();
     this.$el.find(':input').prop('disabled', true);
     API_UTIL.createTweet(formData)
-      .done((tweet) => {
-        console.log(JSON.stringify(tweet));
-        const tweetsContainerId = this.$el.data('tweetsList');
-        const template = API_UTIL.buildTweetTemplate(tweet);
-
-        $(`#${tweetsContainerId}`).prepend(template);
-        this.clearInput();
-      })
+      .done(this.handleSuccess.bind(this))
       .fail((qXHR, textStatus, errorThrown) => {
         console.error(qXHR, textStatus, errorThrown);
       })
@@ -52,7 +45,12 @@ class TweetCompose {
     this.countCharsLeft();
   }
 
-  handleSuccess() {
+  handleSuccess(tweet) {
+    // const template = API_UTIL.buildTweetTemplate(tweet);
+    const $tweetFeed = $(this.$el.data('tweetsFeed'));
+
+    // logikę dodawania tweeta do listy obsługuje feed tweet'a
+    $tweetFeed.trigger('insert-tweet', tweet);
     this.clearInput();
   }
 

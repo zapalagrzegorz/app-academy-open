@@ -34,7 +34,11 @@ const APIUtil = {
     return $.ajax('/tweets', options);
   },
 
-  fetchTweets: () => {
+  fetchTweets: (maxCreatedAt) => {
+    _commonOptions.data = maxCreatedAt
+      ? Object.assign(_commonOptions.data, { max_created_at: maxCreatedAt })
+      : _commonOptions.data;
+
     const methodOptions = { url: '/feed' };
     const options = Object.assign(_commonOptions, methodOptions);
     return $.ajax(options);

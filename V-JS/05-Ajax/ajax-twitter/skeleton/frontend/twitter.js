@@ -5,7 +5,7 @@ const InfiniteTweets = require('./infinite_tweets');
 
 $(() => {
   $('button.follow-toggle').each((_, el) => {
-    new FollowToggle($(el));
+    new FollowToggle(el);
   });
 
   $('nav.users-search').each((_, el) => {

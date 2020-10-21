@@ -93,103 +93,93 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {const _commonOptions = {
+/* WEBPACK VAR INJECTION */(function($) {var _commonOptions = {
   dataType: 'json',
-  data: { authenticity_token: $('[name="csrf-token"]')[0].content },
+  data: {
+    authenticity_token: $('[name="csrf-token"]')[0].content
+  }
 };
-
-const APIUtil = {
-  followUser: (id) => {
-    const options = Object.assign({ method: 'POST' }, _commonOptions);
-    return $.ajax(`/users/${id}/follow`, options);
+var APIUtil = {
+  followUser: function followUser(id) {
+    var options = Object.assign({
+      method: 'POST'
+    }, _commonOptions);
+    return $.ajax("/users/".concat(id, "/follow"), options);
   },
-
-  unfollowUser: (id) => {
-    const options = Object.assign({ method: 'DELETE' }, _commonOptions);
-    return $.ajax(`/users/${id}/follow`, options);
+  unfollowUser: function unfollowUser(id) {
+    var options = Object.assign({
+      method: 'DELETE'
+    }, _commonOptions);
+    return $.ajax("/users/".concat(id, "/follow"), options);
   },
-
-  searchUsers: (queryVal) => {
-    const options = {
+  searchUsers: function searchUsers(queryVal) {
+    var options = {
       dataType: 'json',
       data: {
         query: queryVal,
-        authenticity_token: $('[name="csrf-token"]')[0].content,
-      },
+        authenticity_token: $('[name="csrf-token"]')[0].content
+      }
     };
     return $.ajax('/users/search', options);
   },
-
-  createTweet: (formData) => {
-    const options = Object.assign({
+  createTweet: function createTweet(formData) {
+    var options = Object.assign({
       method: 'POST',
       dataType: 'json',
-      data: formData,
+      data: formData
     });
     return $.ajax('/tweets', options);
   },
-
-  fetchTweets: () => {
-    const methodOptions = { url: '/feed' };
-    const options = Object.assign(_commonOptions, methodOptions);
+  fetchTweets: function fetchTweets(maxCreatedAt) {
+    _commonOptions.data = maxCreatedAt ? Object.assign(_commonOptions.data, {
+      max_created_at: maxCreatedAt
+    }) : _commonOptions.data;
+    var methodOptions = {
+      url: '/feed'
+    };
+    var options = Object.assign(_commonOptions, methodOptions);
     return $.ajax(options);
   },
+  buildTweetTemplate: function buildTweetTemplate(tweet) {
+    var mentions = '';
+    var mentionedUsers = '';
 
-  buildTweetTemplate(tweet) {
-    let mentions = '';
-    let mentionedUsers = '';
     if (tweet.mentions.length) {
-      tweet.mentions.forEach((mention) => {
-        mentionedUsers += `
-        <li>
-          <a href="/users/${mention.user.id}">
-            ${mention.user.username}
-          </a>
-        </li>`;
+      tweet.mentions.forEach(function (mention) {
+        mentionedUsers += "\n        <li>\n          <a href=\"/users/".concat(mention.user.id, "\">\n            ").concat(mention.user.username, "\n          </a>\n        </li>");
       });
     }
 
     if (mentionedUsers) {
-      mentions = `<ul>${mentionedUsers}</ul>`;
+      mentions = "<ul>".concat(mentionedUsers, "</ul>");
     }
 
-    const template = `
-    <li>
-      ${tweet.content}
-      -- <a href="/users/${tweet.user.id}">${tweet.user.username}</a>
-      -- ${tweet.created_at}
-      ${mentions}
-    </li>`;
-
+    var template = "\n    <li>\n      ".concat(tweet.content, "\n      -- <a href=\"/users/").concat(tweet.user.id, "\">").concat(tweet.user.username, "</a>\n      -- ").concat(tweet.created_at, "\n      ").concat(mentions, "\n    </li>");
     return template;
   },
-  debounce: (fn, interval) => {
+  debounce: function debounce(fn, interval) {
     // Setup a timer
-    let timeout;
+    var timeout; // Return a function to run debounced
 
-    // Return a function to run debounced
     return function () {
       // Setup the arguments
-      let args = arguments;
-
+      var args = arguments;
       /* context - this, jest chyba po to, że gdyby w metodzie było odwołanie do this, to jest aby go zachować */
-      let context = this;
 
-      // If there's a timer, cancel it
+      var context = this; // If there's a timer, cancel it
+
       if (timeout) {
         clearTimeout(timeout);
-      }
+      } // Setup the new requestAnimationFrame()
 
-      // Setup the new requestAnimationFrame()
+
       timeout = setTimeout(function () {
         fn.apply(context, args);
       }, interval);
     };
-  },
+  }
 };
-
 module.exports = APIUtil;
-
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -201,53 +191,68 @@ module.exports = APIUtil;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-const API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-class FollowToggle {
-  constructor($el, options) {
-    this.$el = $el;
-    this.id = $el.data('userId') || options.userId;
-    this.followState =
-      $el.data('initialFollowState') || options.initialFollowState;
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+
+var FollowToggle = /*#__PURE__*/function () {
+  function FollowToggle(el, options) {
+    var _this = this;
+
+    _classCallCheck(this, FollowToggle);
+
+    this.$el = $(el);
+    this.id = this.$el.data('userId') || (options === null || options === void 0 ? void 0 : options.userId);
+    this.followState = this.$el.data().initialFollowState || (options === null || options === void 0 ? void 0 : options.initialFollowState); // closure!
+
+    this.$el.on('click', function (e) {
+      return _this.handleClick(e);
+    });
     this.render();
-    // closure!
-    this.$el.on('click', (e) => this.handleClick(e));
   }
 
-  render() {
-    if (this.followState == 'unfollowing' || this.followState == 'following') {
-      this.$el.prop('disabled', true);
-    } else {
-      this.$el.text(this.followState ? 'Unfollow' : 'Follow');
-      this.$el.prop('disabled', false);
-    }
-  }
+  _createClass(FollowToggle, [{
+    key: "render",
+    value: function render() {
+      if (this.followState == 'unfollowing' || this.followState == 'following') {
+        this.$el.prop('disabled', true);
+      } else {
+        this.$el.text(this.followState ? 'Unfollow' : 'Follow');
+        this.$el.prop('disabled', false);
+      }
+    } // Prevent the default action.
 
-  // Prevent the default action.
-  handleClick(e) {
-    e.preventDefault();
-    this.followState = this.followState ? 'unfollowing' : 'following';
-    this.render();
+  }, {
+    key: "handleClick",
+    value: function handleClick(e) {
+      var _this2 = this;
 
-    const successCb = () => {
-      this.followState = this.followState == 'unfollowing' ? false : true;
+      e.preventDefault();
+      this.followState = this.followState ? 'unfollowing' : 'following';
       this.render();
-    };
-    const ajaxCall =
-      this.followState == 'unfollowing'
-        ? API_UTIL.unfollowUser(this.id)
-        : API_UTIL.followUser(this.id);
 
-    ajaxCall
-      .done(successCb)
-      .fail((jqXHR, textStatus, errorThrown) =>
-        console.log([jqXHR, textStatus, errorThrown])
-      );
-  }
-}
+      var successCb = function successCb() {
+        _this2.followState = _this2.followState == 'unfollowing' ? false : true;
+
+        _this2.render();
+      };
+
+      var ajaxCall = this.followState == 'unfollowing' ? API_UTIL.unfollowUser(this.id) : API_UTIL.followUser(this.id);
+      ajaxCall.done(successCb).fail(function (jqXHR, textStatus, errorThrown) {
+        return console.log([jqXHR, textStatus, errorThrown]);
+      });
+    }
+  }]);
+
+  return FollowToggle;
+}();
 
 module.exports = FollowToggle;
-
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -258,46 +263,77 @@ module.exports = FollowToggle;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-const API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-class InfiniteTweets {
-  constructor($el) {
-    this.$container = $el;
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+
+var InfiniteTweets = /*#__PURE__*/function () {
+  function InfiniteTweets($el) {
+    var _this = this;
+
+    _classCallCheck(this, InfiniteTweets);
+
+    this.$el = $el;
     this.$feedList = $el.find('#feed');
-    this.$fetchMoreBtn = this.$container.find('button');
-    this.$fetchMoreBtn.on('click', (e) => {
-      this.fetchMoreTweets(e);
+    this.$fetchMoreBtn = this.$el.find('button');
+    this.maxCreatedAt = null;
+    this.$fetchMoreBtn.on('click', function (e) {
+      _this.fetchMoreTweets(e);
     });
+    this.$el.on('insert-tweet', this.insertTweet.bind(this));
   }
 
-  fetchMoreTweets() {
-    this.$el.find('button').prop('disabled', true);
-    API_UTIL.fetchTweets()
-      .done((tweets) => {
-        console.log(tweets);
-        // #insertTweets
-        this.insertTweets(tweets);
-      })
-      .fail((qXHR, textStatus, errorThrown) => {
+  _createClass(InfiniteTweets, [{
+    key: "fetchMoreTweets",
+    value: function fetchMoreTweets() {
+      var _this2 = this;
+
+      this.$fetchMoreBtn.prop('disabled', true);
+      API_UTIL.fetchTweets(this.maxCreatedAt).done(function (tweets) {
+        _this2.maxCreatedAt = tweets[tweets.length - 1].created_at;
+
+        _this2.insertTweets(tweets);
+
+        if (tweets.length < 20) {
+          _this2.$fetchMoreBtn.replaceWith('<p>No more tweets!</p>');
+        }
+      }).fail(function (qXHR, textStatus, errorThrown) {
         console.error(qXHR, textStatus, errorThrown);
-      })
-      .always(() => {
-        this.$el.find('button').prop('disabled', true);
+      }).always(function () {
+        _this2.$fetchMoreBtn.prop('disabled', false);
       });
-  }
+    }
+  }, {
+    key: "insertTweets",
+    value: function insertTweets(tweets) {
+      var tweetsTemplate = '';
+      tweets.forEach(function (tweet) {
+        tweetsTemplate += API_UTIL.buildTweetTemplate(tweet);
+      });
+      this.$feedList.append(tweetsTemplate);
+    }
+  }, {
+    key: "insertTweet",
+    value: function insertTweet(e, data) {
+      this.$feedList.append(API_UTIL.buildTweetTemplate(data)); // nie zaciągaj dodanej właśnie publikacji
 
-  insertTweets(tweets) {
-    let tweetsTemplate = '';
-    tweets.forEach((tweet) => {
-      tweetsTemplate += API_UTIL.buildTweetTemplate(tweet);
-    });
+      if (!this.maxCreatedAt) {
+        this.maxCreatedAt = data.created_at;
+      } // }
 
-    this.$feedList.append(tweetsTemplate);
-  }
-}
+    } // insertTweet(event, data) {
+    //   this.$el.find('ul.tweets').prepend(this.tweetElement(data));
+
+  }]);
+
+  return InfiniteTweets;
+}();
 
 module.exports = InfiniteTweets;
-
 
 /***/ }),
 
@@ -308,100 +344,106 @@ module.exports = InfiniteTweets;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {const API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
-const MAX_TWEET_CHARS = 140;
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-class TweetCompose {
-  constructor(el) {
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var API_UTIL = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+
+var MAX_TWEET_CHARS = 140;
+
+var TweetCompose = /*#__PURE__*/function () {
+  function TweetCompose(el) {
+    var _this = this;
+
+    _classCallCheck(this, TweetCompose);
+
     this.$el = el;
     this.$textArea = this.$el.find('textarea');
     this.users = this.setUsers();
     this.mentionedUsersContainer = this.$el.find('.mentioned-users');
-    this.$el.on('submit', (e) => {
-      this.submit(e);
+    this.$el.on('submit', function (e) {
+      _this.submit(e);
     });
-    this.$el.on('click', '.remove-mentioned-user', (e) => {
-      this.removeMention(e);
+    this.$el.on('click', '.remove-mentioned-user', function (e) {
+      _this.removeMention(e);
     });
-    this.$textArea.on('input', () => {
-      this.countCharsLeft();
+    this.$textArea.on('input', function () {
+      _this.countCharsLeft();
     });
-    this.$el.find('#addMention').on('click', () => {
-      this.addMention();
+    this.$el.find('#addMention').on('click', function () {
+      _this.addMention();
     });
     this.countCharsLeft();
   }
 
-  submit(e) {
-    e.preventDefault();
-    const $inputs = this.$el.find(':input');
-    const formData = this.$el.serialize();
-    this.$el.find(':input').prop('disabled', true);
-    API_UTIL.createTweet(formData)
-      .done((tweet) => {
-        console.log(JSON.stringify(tweet));
-        const tweetsContainerId = this.$el.data('tweetsList');
-        const template = API_UTIL.buildTweetTemplate(tweet);
-
-        $(`#${tweetsContainerId}`).prepend(template);
-        this.clearInput();
-      })
-      .fail((qXHR, textStatus, errorThrown) => {
+  _createClass(TweetCompose, [{
+    key: "submit",
+    value: function submit(e) {
+      e.preventDefault();
+      var $inputs = this.$el.find(':input');
+      var formData = this.$el.serialize();
+      this.$el.find(':input').prop('disabled', true);
+      API_UTIL.createTweet(formData).done(this.handleSuccess.bind(this)).fail(function (qXHR, textStatus, errorThrown) {
         console.error(qXHR, textStatus, errorThrown);
-      })
-      .always(() => {
-        $inputs.each((_, el) => {
+      }).always(function () {
+        $inputs.each(function (_, el) {
           $(el).prop('disabled', false);
         });
       });
-  }
+    }
+  }, {
+    key: "clearInput",
+    value: function clearInput() {
+      this.$textArea.val('');
+      this.countCharsLeft();
+    }
+  }, {
+    key: "handleSuccess",
+    value: function handleSuccess(tweet) {
+      // const template = API_UTIL.buildTweetTemplate(tweet);
+      var $tweetFeed = $(this.$el.data('tweetsFeed')); // logikę dodawania tweeta do listy obsługuje feed tweet'a
 
-  clearInput() {
-    this.$textArea.val('');
+      $tweetFeed.trigger('insert-tweet', tweet);
+      this.clearInput();
+    }
+  }, {
+    key: "countCharsLeft",
+    value: function countCharsLeft() {
+      var charsLeft = MAX_TWEET_CHARS - this.$textArea.val().length;
+      $('.chars-left').text(charsLeft);
+    }
+  }, {
+    key: "setUsers",
+    value: function setUsers() {
+      var rawUsers = this.$el.find('.mentioned-users');
+      var usersInvalidJSON = rawUsers.get(0).dataset.users.split('');
+      usersInvalidJSON.splice(usersInvalidJSON.lastIndexOf(','), 1);
+      var validUsers = usersInvalidJSON.join('');
+      return JSON.parse(validUsers);
+    }
+  }, {
+    key: "addMention",
+    value: function addMention() {
+      var usersTemplate = this.users.map(function (user) {
+        return " <option value=\"".concat(user.id, "\">").concat(user.username, "</option>");
+      });
+      var template = "\n    <li>\n      <button class=\"remove-mentioned-user\">X</button>\n      <select name=\"tweet[mentioned_user_ids][]\">\n        ".concat(usersTemplate, "\n      </select>\n    </li>");
+      this.mentionedUsersContainer.append(template);
+    }
+  }, {
+    key: "removeMention",
+    value: function removeMention(e) {
+      e.currentTarget.parentElement.remove();
+    }
+  }]);
 
-    this.countCharsLeft();
-  }
-
-  handleSuccess() {
-    this.clearInput();
-  }
-
-  countCharsLeft() {
-    const charsLeft = MAX_TWEET_CHARS - this.$textArea.val().length;
-    $('.chars-left').text(charsLeft);
-  }
-
-  setUsers() {
-    const rawUsers = this.$el.find('.mentioned-users');
-    const usersInvalidJSON = rawUsers.get(0).dataset.users.split('');
-    usersInvalidJSON.splice(usersInvalidJSON.lastIndexOf(','), 1);
-    const validUsers = usersInvalidJSON.join('');
-    return JSON.parse(validUsers);
-  }
-
-  addMention() {
-    const usersTemplate = this.users.map(
-      (user) => ` <option value="${user.id}">${user.username}</option>`
-    );
-
-    const template = `
-    <li>
-      <button class="remove-mentioned-user">X</button>
-      <select name="tweet[mentioned_user_ids][]">
-        ${usersTemplate}
-      </select>
-    </li>`;
-
-    this.mentionedUsersContainer.append(template);
-  }
-
-  removeMention(e) {
-    e.currentTarget.parentElement.remove();
-  }
-}
+  return TweetCompose;
+}();
 
 module.exports = TweetCompose;
-
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -413,29 +455,28 @@ module.exports = TweetCompose;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {const FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
-const UsersSearch = __webpack_require__(/*! ./users_search */ "./frontend/users_search.js");
-const TweetCompose = __webpack_require__(/*! ./tweet_compose */ "./frontend/tweet_compose.js");
-const InfiniteTweets = __webpack_require__(/*! ./infinite_tweets */ "./frontend/infinite_tweets.js");
+/* WEBPACK VAR INJECTION */(function($) {var FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
 
-$(() => {
-  $('button.follow-toggle').each((_, el) => {
-    new FollowToggle($(el));
+var UsersSearch = __webpack_require__(/*! ./users_search */ "./frontend/users_search.js");
+
+var TweetCompose = __webpack_require__(/*! ./tweet_compose */ "./frontend/tweet_compose.js");
+
+var InfiniteTweets = __webpack_require__(/*! ./infinite_tweets */ "./frontend/infinite_tweets.js");
+
+$(function () {
+  $('button.follow-toggle').each(function (_, el) {
+    new FollowToggle(el);
   });
-
-  $('nav.users-search').each((_, el) => {
+  $('nav.users-search').each(function (_, el) {
     new UsersSearch($(el));
   });
-
-  $('.tweet-compose').each((_, el) => {
+  $('.tweet-compose').each(function (_, el) {
     new TweetCompose($(el));
   });
-
-  $('.infinite-tweets').each((_, el) => {
+  $('.infinite-tweets').each(function (_, el) {
     new InfiniteTweets($(el));
   });
 });
-
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -447,51 +488,70 @@ $(() => {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {const APIUtil = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
-const FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-class UsersSearch {
-  constructor(el) {
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var APIUtil = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+
+var FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
+
+var UsersSearch = /*#__PURE__*/function () {
+  function UsersSearch(el) {
+    var _this = this;
+
+    _classCallCheck(this, UsersSearch);
+
     this.$el = el;
+    this.currentUserId = $('[data-current-user-id]').data('currentUserId');
     this.$usersList = el.find('ul.users');
     this.$input = el.find('input');
     this.onInput = APIUtil.debounce(this.onInput, 500);
-    this.$input.on('input', (e) => this.onInput(e));
+    this.$input.on('input', function (e) {
+      return _this.onInput(e);
+    });
   }
 
-  onInput(e) {
-    const value = e.currentTarget.value;
-    const $XHR = APIUtil.searchUsers(value);
-    this.$usersList.empty();
+  _createClass(UsersSearch, [{
+    key: "onInput",
+    value: function onInput(e) {
+      var _this2 = this;
 
-    const successCb = (resp) => {
-      resp.forEach((user) => {
-        const userItem = $(`
-          <li><a href="/users/${user.id}">${user.username}</a></li>
-          <button type="button" class="follow-toggle" 
-            data-user-id="${user.id}" 
-            data-initial-follow-state="${user.followed}"></button>
-        `);
+      var value = e.currentTarget.value;
+      var $XHR = APIUtil.searchUsers(value);
+      this.$usersList.empty();
 
-        this.$usersList.append(userItem);
+      var successCb = function successCb(resp) {
+        resp.forEach(function (user) {
+          _this2.currentUserId;
+          user.id;
+          var userItem = "\n          <li><a href=\"/users/".concat(user.id, "\">").concat(user.username, "</a><br/>\n          ").concat(_this2.currentUserId !== user.id ? "\n            <button type=\"button\" class=\"follow-toggle\" \n              data-user-id=\"".concat(user.id, "\" \n              data-initial-follow-state=\"").concat(user.followed, "\"></button>") : '', "</li>");
 
-        const followToggleBtnOptions = {
-          userId: user.id,
-          initialFollowState: user.followed,
-        };
-        new FollowToggle(
-          this.$el.find('.follow-toggle'),
-          followToggleBtnOptions
-        );
+          _this2.$usersList.append(userItem);
+
+          var followToggleBtnOptions = {
+            userId: user.id,
+            initialFollowState: user.followed
+          };
+
+          _this2.$el.find('.follow-toggle').each(function (_, button) {
+            new FollowToggle(button, followToggleBtnOptions);
+          });
+        });
+      };
+
+      $XHR.done(successCb).fail(function (err) {
+        return console.log(err);
       });
-    };
+    }
+  }]);
 
-    $XHR.done(successCb).fail((err) => console.log(err));
-  }
-}
+  return UsersSearch;
+}();
 
 module.exports = UsersSearch;
-
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

@@ -4,6 +4,7 @@ const FollowToggle = require('./follow_toggle');
 class UsersSearch {
   constructor(el) {
     this.$el = el;
+    this.currentUserId = $('[data-current-user-id]').data('currentUserId');
     this.$usersList = el.find('ul.users');
     this.$input = el.find('input');
     this.onInput = APIUtil.debounce(this.onInput, 500);
@@ -17,12 +18,18 @@ class UsersSearch {
 
     const successCb = (resp) => {
       resp.forEach((user) => {
-        const userItem = $(`
-          <li><a href="/users/${user.id}">${user.username}</a></li>
-          <button type="button" class="follow-toggle" 
-            data-user-id="${user.id}" 
-            data-initial-follow-state="${user.followed}"></button>
-        `);
+        this.currentUserId;
+        user.id;
+        const userItem = `
+          <li><a href="/users/${user.id}">${user.username}</a><br/>
+          ${
+            this.currentUserId !== user.id
+              ? `
+            <button type="button" class="follow-toggle" 
+              data-user-id="${user.id}" 
+              data-initial-follow-state="${user.followed}"></button>`
+              : ''
+          }</li>`;
 
         this.$usersList.append(userItem);
 
@@ -30,10 +37,10 @@ class UsersSearch {
           userId: user.id,
           initialFollowState: user.followed,
         };
-        new FollowToggle(
-          this.$el.find('.follow-toggle'),
-          followToggleBtnOptions
-        );
+
+        this.$el.find('.follow-toggle').each((_, button) => {
+          new FollowToggle(button, followToggleBtnOptions);
+        });
       });
     };
 

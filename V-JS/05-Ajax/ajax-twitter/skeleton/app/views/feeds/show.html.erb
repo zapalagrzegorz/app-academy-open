@@ -1,7 +1,7 @@
 <h1>Welcome <%= current_user.username %>!</h1>
 
 <b>Your Feed!</b>
-<%= render 'tweets/form' %>
+<%= render 'tweets/form', tweets_feed: '#feed' %>
 
 <div class="infinite-tweets">
   <ul id="feed">
