@@ -1,7 +1,17 @@
 # frozen_string_literal: true
 
 class TweetsController < ApplicationController
-  before_action :require_logged_in!
+  # before_action :require_logged_in!
+
+  def index
+    # prevent n+1 query
+    @tweets = Tweet.includes(:user).includes(:mentions).last(10)
+
+    # respond_to do |format|
+    # format.html {  redirect_to feed_url }
+    render :index
+    # end
+  end
 
   def create
     # simulate latency
@@ -12,7 +22,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       # ? request?
       respond_to do |format|
-        format.html { render :show }
+        format.html {  redirect_to feed_url }
         format.json { render :show }
       end
     else
