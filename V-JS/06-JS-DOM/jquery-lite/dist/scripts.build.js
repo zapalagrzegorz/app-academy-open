@@ -72,7 +72,36 @@ class DOMNodeCollection {
         this._addChild(element, arr);
       });
     }
-  }
+  } // parent
+  // Return a DOMNodeCollection of the parents of each of the nodes
+
+
+  parent() {
+    const parents = this.arr.reduce((acc, curr) => {
+      if (!acc.includes(curr.parentElement)) {
+        acc.push(curr.parentElement);
+      }
+
+      return acc;
+    }, []);
+    return new DOMNodeCollection(parents);
+  } // find
+  //     Returns a DOMNodeCollection of all the nodes matching the selector passed in as an argument that are descendants of the nodes. This might come in handy.
+
+
+  find(selector) {
+    const foundEls = this.arr.reduce((acc, curr) => {
+      const foundElements = curr.querySelectorAll(selector);
+      const foundElementsArr = Array.from(foundElements);
+      const foundElementsSingle = foundElementsArr.filter(foundElement => {
+        if (!acc.includes(foundElement)) return true;
+      });
+      return acc.concat(foundElementsSingle);
+    }, []);
+    return new DOMNodeCollection(foundEls);
+  } // remove
+  //     This should remove the html of all the nodes in the array from the DOM
+
 
 }
 
@@ -113,9 +142,13 @@ $(function () {
   // const html4 = $1('h1').html('changedAgain');
   // console.log(html4);
   // $1('li').empty();
-  $1('ul li:first-of-type').append($1('p')); // $1('ul li').append($1('p'));
-
-  const children = $1('ul').children(); // $1('ul li:first-of-type').append($1(['p']));
+  // $1('ul li:first-of-type').append($1('p'));
+  // $1('ul li').append($1('p'));
+  // const children = $1('ul').children();
+  // parent;
+  const li = $1('ul');
+  const foundLi = li.find('li');
+  foundLi; // $1('ul li:first-of-type').append($1(['p']));
 });
 
 /***/ }),

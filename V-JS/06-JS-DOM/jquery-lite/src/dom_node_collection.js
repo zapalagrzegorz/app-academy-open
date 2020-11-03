@@ -54,14 +54,33 @@ export class DOMNodeCollection {
       });
     }
   }
+  // parent
+  // Return a DOMNodeCollection of the parents of each of the nodes
+  parent() {
+    const parents = this.arr.reduce((acc, curr) => {
+      if (!acc.includes(curr.parentElement)) {
+        acc.push(curr.parentElement);
+      }
+      return acc;
+    }, []);
 
-  //   parent
-
-  //     Return a DOMNodeCollection of the parents of each of the nodes
+    return new DOMNodeCollection(parents);
+  }
 
   // find
-
   //     Returns a DOMNodeCollection of all the nodes matching the selector passed in as an argument that are descendants of the nodes. This might come in handy.
+  find(selector) {
+    const foundEls = this.arr.reduce((acc, curr) => {
+      const foundElements = curr.querySelectorAll(selector);
+      const foundElementsArr = Array.from(foundElements);
+      const foundElementsSingle = foundElementsArr.filter( (foundElement)=>{
+        if(!acc.includes(foundElement)) return true;
+      });
+
+      return acc.concat(foundElementsSingle);
+    }, []);
+    return new DOMNodeCollection(foundEls);
+  }
 
   // remove
 

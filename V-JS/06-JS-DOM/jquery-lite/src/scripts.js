@@ -23,9 +23,13 @@ $(function () {
 
   // $1('li').empty();
 
-  $1('ul li:first-of-type').append($1('p'));
+  // $1('ul li:first-of-type').append($1('p'));
   // $1('ul li').append($1('p'));
 
-  const children = $1('ul').children();
+  // const children = $1('ul').children();
+  // parent;
+  const li = $1('ul');
+  const foundLi = li.find('li');
+  foundLi;
   // $1('ul li:first-of-type').append($1(['p']));
 });
