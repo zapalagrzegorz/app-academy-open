@@ -28,8 +28,24 @@ $(function () {
 
   // const children = $1('ul').children();
   // parent;
-  const li = $1('ul');
-  const foundLi = li.find('li');
-  foundLi;
+  // const li = $1('li').remove();
+  // const foundLi = li.find('li');
+  // foundLi;
   // $1('ul li:first-of-type').append($1(['p']));
+  // $('li').on('mouseover', () => {
+  //   console.log(this);
+  // });
+
+  // $('li').on('mouseover', () => {
+  //   console.log('check');
+  // });
+  // $1('h1').on('mouseover', () => {
+  //   console.log(this);
+  // });
+
+  // $1('h1').on('mouseover', () => {
+  //   console.log('check');
+  // });
+
+  // $1('h1').off('mouseover');
 });

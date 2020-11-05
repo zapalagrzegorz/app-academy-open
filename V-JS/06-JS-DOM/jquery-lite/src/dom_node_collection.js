@@ -1,3 +1,5 @@
+import { timers } from 'jquery';
+
 export class DOMNodeCollection {
   constructor(arr) {
     this.arr = arr;
@@ -73,8 +75,8 @@ export class DOMNodeCollection {
     const foundEls = this.arr.reduce((acc, curr) => {
       const foundElements = curr.querySelectorAll(selector);
       const foundElementsArr = Array.from(foundElements);
-      const foundElementsSingle = foundElementsArr.filter( (foundElement)=>{
-        if(!acc.includes(foundElement)) return true;
+      const foundElementsSingle = foundElementsArr.filter((foundElement) => {
+        if (!acc.includes(foundElement)) return true;
       });
 
       return acc.concat(foundElementsSingle);
@@ -82,6 +84,31 @@ export class DOMNodeCollection {
     return new DOMNodeCollection(foundEls);
   }
 
+  remove() {
+    this.arr.forEach((element) => {
+      element.remove();
+    });
+  }
+
+  on(method, cb) {
+    this.arr.forEach((element) => {
+      element.addEventListener(method, cb);
+      element.callbacks = element.callbacks || {};
+      element.callbacks[method] = element.callbacks[method] || [];
+      element.callbacks[method].push(cb);
+    });
+  }
+
+  off(method) {
+    this.arr.forEach((element) => {
+      element.callbacks;
+      element.callbacks[method];
+      element.callbacks[method].forEach((callback) => {
+        element.removeEventListener(method, callback);
+      });
+      element.callbacks[method] = [];
+    });
+  }
   // remove
 
   //     This should remove the html of all the nodes in the array from the DOM

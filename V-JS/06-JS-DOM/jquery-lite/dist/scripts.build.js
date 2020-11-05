@@ -8,7 +8,7 @@
 /*! namespace exports */
 /*! export DOMNodeCollection [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -16,6 +16,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DOMNodeCollection": () => /* binding */ DOMNodeCollection
 /* harmony export */ });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
 class DOMNodeCollection {
   constructor(arr) {
     this.arr = arr;
@@ -99,6 +102,32 @@ class DOMNodeCollection {
       return acc.concat(foundElementsSingle);
     }, []);
     return new DOMNodeCollection(foundEls);
+  }
+
+  remove() {
+    this.arr.forEach(element => {
+      element.remove();
+    });
+  }
+
+  on(method, cb) {
+    this.arr.forEach(element => {
+      element.addEventListener(method, cb);
+      element.callbacks = element.callbacks || {};
+      element.callbacks[method] = element.callbacks[method] || [];
+      element.callbacks[method].push(cb);
+    });
+  }
+
+  off(method) {
+    this.arr.forEach(element => {
+      element.callbacks;
+      element.callbacks[method];
+      element.callbacks[method].forEach(callback => {
+        element.removeEventListener(method, callback);
+      });
+      element.callbacks[method] = [];
+    });
   } // remove
   //     This should remove the html of all the nodes in the array from the DOM
 
@@ -132,8 +161,7 @@ window.$1 = function (obj) {
   return new _dom_node_collection__WEBPACK_IMPORTED_MODULE_0__.DOMNodeCollection([...document.querySelectorAll(obj)]);
 };
 
-$(function () {
-  // const html = $('h1').html();
+$(function () {// const html = $('h1').html();
   // console.log(html);
   // const html2 = $1('h1').html();
   // console.log(html2);
@@ -146,9 +174,23 @@ $(function () {
   // $1('ul li').append($1('p'));
   // const children = $1('ul').children();
   // parent;
-  const li = $1('ul');
-  const foundLi = li.find('li');
-  foundLi; // $1('ul li:first-of-type').append($1(['p']));
+  // const li = $1('li').remove();
+  // const foundLi = li.find('li');
+  // foundLi;
+  // $1('ul li:first-of-type').append($1(['p']));
+  // $('li').on('mouseover', () => {
+  //   console.log(this);
+  // });
+  // $('li').on('mouseover', () => {
+  //   console.log('check');
+  // });
+  // $1('h1').on('mouseover', () => {
+  //   console.log(this);
+  // });
+  // $1('h1').on('mouseover', () => {
+  //   console.log('check');
+  // });
+  // $1('h1').off('mouseover');
 });
 
 /***/ }),
@@ -11064,6 +11106,18 @@ return jQuery;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => module['default'] :
+/******/ 				() => module;
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
