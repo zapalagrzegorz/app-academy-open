@@ -1,5 +1,3 @@
-import { timers } from 'jquery';
-
 export class DOMNodeCollection {
   constructor(arr) {
     this.arr = arr;
@@ -109,7 +107,4 @@ export class DOMNodeCollection {
       element.callbacks[method] = [];
     });
   }
-  // remove
-
-  //     This should remove the html of all the nodes in the array from the DOM
 }
