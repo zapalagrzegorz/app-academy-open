@@ -91,6 +91,7 @@ export class DOMNodeCollection {
   on(method, cb) {
     this.arr.forEach((element) => {
       element.addEventListener(method, cb);
+
       element.callbacks = element.callbacks || {};
       element.callbacks[method] = element.callbacks[method] || [];
       element.callbacks[method].push(cb);
@@ -99,8 +100,6 @@ export class DOMNodeCollection {
 
   off(method) {
     this.arr.forEach((element) => {
-      element.callbacks;
-      element.callbacks[method];
       element.callbacks[method].forEach((callback) => {
         element.removeEventListener(method, callback);
       });

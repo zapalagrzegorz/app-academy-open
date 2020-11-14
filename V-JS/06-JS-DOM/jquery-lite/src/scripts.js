@@ -5,6 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.$1 = function (obj) {
+  // rozwiązanie używa eleganckiego switcha
+  // window.$l = (arg) => {
+  //   switch (typeof arg) {
+  //     case 'function':
+  //       return registerDocReadyCallback(arg);
+  //     case 'string':
+  //       return getNodesFromDom(arg);
+  //     case 'object':
+  //       if (arg instanceof HTMLElement) {
+  //         return new DomNodeCollection([arg]);
+  //       }
+  //   }
+  // };
   if (typeof obj === 'function') {
     window.$1.ready = [] || window.$1.ready;
 
