@@ -3,11 +3,12 @@
 import { Router } from './router';
 import { Inbox } from './inbox';
 import { Sent } from './sent';
+import { Compose } from './compose';
 
 const routes = {
   inbox: Inbox,
   sent: Sent,
-  compose: 'compose',
+  compose: Compose,
 };
 
 document.addEventListener('DOMContentLoaded', () => {

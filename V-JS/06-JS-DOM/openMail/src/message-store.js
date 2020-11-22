@@ -21,6 +21,15 @@ const messages = {
   ],
 };
 
+class Message {
+  constructor(from, to, subject, body) {
+    this.from = from || '';
+    this.to = to || '';
+    this.subject = subject || '';
+    this.body = body || '';
+  }
+}
+
 export const MessageStore = {
   // a function that returns the array at messages.inbox
   getInboxMessages() {
@@ -31,6 +40,11 @@ export const MessageStore = {
     return messages.sent;
   },
 
+  messageDraft: new Message(),
+
+  getMessageDraft() {
+    return this.messageDraft;
+  },
   updateDraftField(field, value) {
     this.messageDraft[field] = value;
   },
@@ -38,15 +52,4 @@ export const MessageStore = {
     messages.sent.push(this.messageDraft);
     this.messageDraft = new Message();
   },
-
-  messageDraft: new Message(),
 };
-
-class Message {
-  constructor(from, to, subject, body) {
-    this.from = from;
-    this.to = to;
-    this.subject = subject;
-    this.body = body;
-  }
-}
