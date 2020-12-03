@@ -15,4 +15,9 @@ history/**
 /node_modules/**
 **/node_modules
 **/prototypal_syntax_solution
+**/dist/**
 /dist
+# dist
+# V-JS/06-JS-DOM/jquery-lite/dist
+V-JS/06-JS-DOM/jquery-lite/dist
+V-JS/06-JS-DOM/jquery.351.js
