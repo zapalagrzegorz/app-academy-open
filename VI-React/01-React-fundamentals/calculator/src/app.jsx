@@ -1,46 +1,63 @@
 import React from 'react';
-
-export class App extends React.Component {
+import OperationBtn from './operation-btn';
+export class Calculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstValue: 0,
-      secondValue: 0,
+      firstValue: '',
+      secondValue: '',
       result: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleOperation = this.handleOperation.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
 
   handleChange(e) {
+    const value = e.target.value;
+    if (value != '') {
+      this.setState({
+        [e.target.name]: parseFloat(value),
+      });
+    } else {
+      this.setState({
+        [e.target.name]: value,
+      });
+    }
+  }
+
+  handleClear(e) {
+    e.preventDefault();
     this.setState({
-      [e.target.name]: parseFloat(e.target.value),
+      firstValue: '',
+      secondValue: '',
     });
   }
 
   handleOperation(e) {
-    // alert('A name was submitted: ' + this.state.value);
+    // alert('A name was submitted: ' + value);
     e.preventDefault();
     const operation = e.target.dataset.type;
+    const { firstValue, secondValue } = this.state;
     switch (operation) {
       case 'addition':
         this.setState({
-          result: this.state.firstValue + this.state.secondValue,
+          result: firstValue + secondValue,
         });
         break;
       case 'substract':
         this.setState({
-          result: this.state.firstValue - this.state.secondValue,
+          result: firstValue - secondValue,
         });
         break;
       case 'multiply':
         this.setState({
-          result: this.state.firstValue * this.state.secondValue,
+          result: firstValue * secondValue,
         });
         break;
       case 'divide':
         this.setState({
-          result: this.state.firstValue / this.state.secondValue,
+          result: firstValue / secondValue,
         });
         break;
       default:
@@ -49,56 +66,50 @@ export class App extends React.Component {
   }
 
   render() {
+    const { result, firstValue, secondValue } = this.state;
     return (
       <div>
-        <div className="result">{this.state.result}</div>
+        <div className="result">{result}</div>
         <div className="inputs">
           <input
             type="number"
             id="first-value"
             name="firstValue"
-            value={this.state.firstValue}
+            value={firstValue}
             onChange={this.handleChange}
           />
           <input
             type="number"
             id="second-value"
             name="secondValue"
-            value={this.state.secondValue}
+            value={secondValue}
             onChange={this.handleChange}
           />
 
-          <input type="reset" value="Clear" />
+          <input type="reset" value="Clear" onClick={this.handleClear} />
         </div>
         <div className="btns">
-          <button
-            type="button"
-            data-type="addition"
-            onClick={this.handleOperation}
+          <OperationBtn
+            btnType="addition"
+            handleOperation={this.handleOperation}
           >
             +
-          </button>
-          <button
-            type="button"
-            data-type="substract"
-            onClick={this.handleOperation}
+          </OperationBtn>
+          <OperationBtn
+            btnType="substract"
+            handleOperation={this.handleOperation}
           >
             -
-          </button>
-          <button
-            type="button"
-            data-type="multiply"
-            onClick={this.handleOperation}
+          </OperationBtn>
+          <OperationBtn
+            btnType="multiply"
+            handleOperation={this.handleOperation}
           >
             *
-          </button>
-          <button
-            type="button"
-            data-type="divide"
-            onClick={this.handleOperation}
-          >
+          </OperationBtn>
+          <OperationBtn btnType="divide" handleOperation={this.handleOperation}>
             /
-          </button>
+          </OperationBtn>
         </div>
       </div>
     );
