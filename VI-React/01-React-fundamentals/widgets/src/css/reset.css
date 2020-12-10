@@ -19,6 +19,8 @@ figcaption,
 footer,
 header,
 nav,
+button,
+main,
 p {
   margin: 0;
   padding: 0;
@@ -31,6 +33,10 @@ p {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 body {
