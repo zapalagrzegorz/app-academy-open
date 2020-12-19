@@ -55,7 +55,7 @@ export class Game extends React.Component {
     return (
       <div>
         {this.state.endGame ? endGameBox : ''}
-        <Board board={this.state.board} updateGame={this.updateGame} />;
+        <Board board={this.state.board} updateGame={this.updateGame} />
       </div>
     );
   }
