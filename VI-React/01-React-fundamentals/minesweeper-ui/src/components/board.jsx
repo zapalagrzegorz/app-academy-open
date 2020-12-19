@@ -7,22 +7,34 @@ export class Board extends React.Component {
     super(props);
 
     this.state = { inputText: '' };
-  }
-  render() {
-    /* Inside of this, use Array#map on the grid of this.props.board to return a <div> component for each row. Remember that the function passed to map is given two arguments, the object and the index, both of which we'll need here. */
 
-    function buildRow(row, index) {
+    this.buildRows = this.buildRows.bind(this);
+    this.renderTiles = this.renderTiles.bind(this);
+  }
+
+  buildRows() {
+    const grid = this.props.board.grid;
+    return grid.map((row, rowIndex) => {
       return (
-        <div key={index} className="flex-container">
-          {row.map((tile, tileIndex) => (
-            <div key={(index, tileIndex)}>
-              <Tile tile={tile} />
-            </div>
-          ))}
+        <div className="flex-container" key={rowIndex}>
+          {this.renderTiles(row, rowIndex)}
         </div>
       );
-    }
+    });
+  }
 
-    return <div>{this.props.board.grid.map(buildRow)}</div>;
+  renderTiles(row, rowIndex) {
+    return row.map((tile, column) => (
+      <Tile
+        key={(rowIndex, column)}
+        tile={tile}
+        updateGame={this.props.updateGame}
+      />
+    ));
+  }
+
+  render() {
+    const board = this.props.board;
+    return <div>{this.buildRows()}</div>;
   }
 }
