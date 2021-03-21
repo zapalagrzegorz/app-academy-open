@@ -2,7 +2,7 @@ const path = require('path');
 // const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/js/todo_redux.jsx',
+  entry: './frontend/todo_redux.jsx',
 
   module: {
     rules: [

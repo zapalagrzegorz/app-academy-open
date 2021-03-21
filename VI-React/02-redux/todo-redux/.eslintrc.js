@@ -14,5 +14,6 @@ module.exports = {
   plugins: ['react'],
   rules: {
     indent: 0,
+    'linebreak-style': 0,
   },
 };
