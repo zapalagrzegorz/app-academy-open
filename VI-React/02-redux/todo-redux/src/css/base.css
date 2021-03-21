@@ -1,0 +1,63 @@
+/* poprawka dla widoku mobilnego iframe'a */
+iframe {
+  max-width: 100%;
+}
+
+/* każdy link musi mieć tekst - jeżeli linkiem jest wyłącznie ikona, wówczas zachować tekst tylko dla SR */
+
+.sr-only,
+.aria {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* alty img'owe domyślnie wychodzą za linię */
+img {
+  word-break: break-word;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.svg-fa {
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  outline-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+.none {
+  display: none;
+}
+
+:focus {
+  outline-style: dashed;
+  outline-width: 1px;
+  outline-offset: 2px;
+}
+
+.disabled-link {
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+.hidden {
+  visibility: hidden;
+}
+
+/* suppress focus ring on form controls for mouse users */
+[data-whatintent='mouse'] *:focus {
+  outline: none;
+}
