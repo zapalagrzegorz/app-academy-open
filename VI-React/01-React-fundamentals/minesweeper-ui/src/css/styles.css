@@ -1,0 +1,77 @@
+body {
+  margin: 0 auto;
+  max-width: 900px;
+}
+.tile {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: lightgray;
+  border: 2px outset currentColor;
+  /* border-top-color: #ffffffba;
+  border-left-color: #ffffffba; */
+}
+
+.tile.explored {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: lightgray;
+  border-style: inset;
+  /* border-top-color: #ffffffba;
+  border-left-color: #ffffffba; */
+}
+
+.blue {
+  color: blue;
+}
+
+.lightBlue {
+  color: rgb(118, 62, 223);
+}
+
+.violet {
+  color: rgb(141, 75, 141);
+}
+
+.orange {
+  color: rgb(122, 92, 35);
+}
+
+.modal-screen {
+  z-index: 998;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  z-index: 999;
+  position: absolute;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 3rem;
+}
+
+.modal-inner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 0.2rem 0.9rem;
+  border: 1px solid rgba(0, 0, 139, 0.438);
+  border-radius: 4px;
+}
