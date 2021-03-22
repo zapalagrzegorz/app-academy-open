@@ -15,5 +15,6 @@ module.exports = {
   rules: {
     indent: 0,
     'linebreak-style': 0,
+    'default-case': 1
   },
 };
