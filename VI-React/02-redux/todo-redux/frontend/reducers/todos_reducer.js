@@ -33,18 +33,25 @@ import {
   RECEIVE_TODO,
   DELETE_TODO,
 } from '../actions/todo_actions';
+
+// import { mapArrToStateReducerCb } from './root_reducer';
+
 export const todos_reducer = (state = initialState, action) => {
+  Object.freeze(state);
+  const nextState = {};
   switch (action.type) {
     case RECEIVE_TODOS:
-      return action.todos.reduce(mapTodosToState, {});
+      // return action.todos.reduce(mapArrToStateReducerCb(action.todos[0]), {});
+      action.todos.forEach((todo) => {
+        nextState[todo.id] = todo;
+      });
+      return nextState;
     case RECEIVE_TODO: {
-      const todo = { [action.todo.id]: { ...action.todo } };
+      const todo = { [action.todo.id]: action.todo };
       return { ...state, ...todo };
     }
     case DELETE_TODO: {
-      // const { 1: todoToDelete } = state;
-      // const todoDeleted = state[action.id];
-      const deleteItem = state[action.id];
+      // const deleteItem = state[action.id];
       const { [action.id]: _, ...restState } = state;
       return restState;
     }
@@ -52,13 +59,3 @@ export const todos_reducer = (state = initialState, action) => {
       return state;
   }
 };
-
-function mapTodosToState(acc, curr) {
-  acc[curr.id] = {
-    id: curr.id,
-    title: curr.title,
-    body: curr.body,
-    done: curr.done,
-  };
-  return acc;
-}
