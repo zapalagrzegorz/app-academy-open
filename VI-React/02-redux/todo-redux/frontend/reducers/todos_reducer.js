@@ -51,7 +51,8 @@ export const todos_reducer = (state = initialState, action) => {
       return { ...state, ...todo };
     }
     case DELETE_TODO: {
-      // const deleteItem = state[action.id];
+      // nextState = Object.assign({}, state);
+      // delete nextState[action.todo.id];
       const { [action.id]: _, ...restState } = state;
       return restState;
     }

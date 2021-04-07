@@ -29,17 +29,17 @@ const newStep = { id: 3, title: 'buy lolipop', done: false, todo_id: 4 };
 
 window.store = configureStore();
 
-console.log(window.store.getState());
-console.log(window.store.dispatch(receiveTodos(newState)));
-console.log(window.store.getState());
-console.log(window.store.dispatch(deleteTodo(4)));
-console.log(window.store.getState());
-console.log(window.store.dispatch(steps.receiveSteps(newSteps)));
-console.log(window.store.getState());
-console.log(window.store.dispatch(steps.receiveStep(newStep)));
-console.log(window.store.getState());
-console.log(window.store.dispatch(steps.deleteStep(3)));
-console.log(window.store.getState());
+window.store.getState();
+window.store.dispatch(receiveTodos(newState));
+window.store.getState();
+window.store.dispatch(deleteTodo(4));
+window.store.getState();
+window.store.dispatch(steps.receiveSteps(newSteps));
+window.store.getState();
+window.store.dispatch(steps.receiveStep(newStep));
+window.store.getState();
+window.store.dispatch(steps.deleteStep(3));
+window.store.getState();
 
 document.addEventListener('DOMContentLoaded', function () {
   ReactDOM.render(<h1>Todos App</h1>, document.getElementById('content'));

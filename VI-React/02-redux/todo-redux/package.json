@@ -26,9 +26,11 @@
     "webpack-stream": "^6.1.0"
   },
   "dependencies": {
-    "redux": "^4.0.5",
+    "@types/redux-logger": "^3.0.8",
     "react": "^16.14.0",
     "react-dom": "^17.0.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
     "what-input": "^5.2.10"
   }
 }
