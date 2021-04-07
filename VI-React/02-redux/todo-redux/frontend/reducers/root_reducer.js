@@ -7,6 +7,8 @@ export const rootReducer = combineReducers({
   steps: steps_reducer,
 });
 
+// do zaorania - wystarczy postawic pusty obiekt
+// a potem po - each'ować po tablicy przypisując stan[obiekt.id] = obiekt
 /**
  * Funkcja dekorująca callback dla funkcji reducer.
  * W oparciu o wzorcowy obiekt mapuje tablicę obiektów w obiekt
