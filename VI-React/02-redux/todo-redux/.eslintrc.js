@@ -8,13 +8,13 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
+    ecmaVersion: 2021,
     sourceType: 'module',
   },
   plugins: ['react'],
   rules: {
     indent: 0,
     'linebreak-style': 0,
-    'default-case': 1
+    'default-case': 1,
   },
 };

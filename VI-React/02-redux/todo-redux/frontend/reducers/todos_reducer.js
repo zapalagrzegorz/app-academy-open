@@ -34,7 +34,6 @@ import {
   DELETE_TODO,
 } from '../actions/todo_actions';
 
-// import { mapArrToStateReducerCb } from './root_reducer';
 
 export const todos_reducer = (state = initialState, action) => {
   Object.freeze(state);
