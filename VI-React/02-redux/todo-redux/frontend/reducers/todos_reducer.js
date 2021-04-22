@@ -39,12 +39,15 @@ export const todos_reducer = (state = initialState, action) => {
   Object.freeze(state);
   const nextState = {};
   switch (action.type) {
+    // index
     case RECEIVE_TODOS:
       // return action.todos.reduce(mapArrToStateReducerCb(action.todos[0]), {});
       action.todos.forEach((todo) => {
         nextState[todo.id] = todo;
       });
       return nextState;
+    
+      // new/update
     case RECEIVE_TODO: {
       const todo = { [action.todo.id]: action.todo };
       return { ...state, ...todo };

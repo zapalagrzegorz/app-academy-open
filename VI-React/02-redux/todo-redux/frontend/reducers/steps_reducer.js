@@ -1,32 +1,38 @@
 const initialState = {
   1: {
+    id: 1,
     todo_id: 1,
     title: 'buy liquid',
-    body: 'order from allegro',
     done: false,
   },
   2: {
+    id: 2,
     todo_id: 1,
     title: 'wash dog',
-    body: 'with shampoo',
     done: true,
+  },
+  3: {
+    id: 3,
+    todo_id: 2,
+    title: 'example',
+    done: false,
   },
 };
 
-const newState = [
-  {
-    id: 3,
-    title: 'wash myself',
-    body: 'with soap',
-    done: false,
-  },
-  {
-    id: 3,
-    title: 'wash lolipop',
-    body: 'with shampoo',
-    done: true,
-  },
-];
+// const newState = [
+//   {
+//     id: 3,
+//     title: 'wash myself',
+//     body: 'with soap',
+//     done: false,
+//   },
+//   {
+//     id: 3,
+//     title: 'wash lolipop',
+//     body: 'with shampoo',
+//     done: true,
+//   },
+// ];
 
 import {
   RECEIVE_STEPS,
