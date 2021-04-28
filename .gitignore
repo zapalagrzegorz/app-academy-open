@@ -12,4 +12,5 @@ history/**
 *.zip
 **/tmp
 **/node_modules/**
-dist/**
+**/dist/**
+.key
