@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::TodosController < ApplicationController
   def index
     # query = request.query_parameters[:username]
@@ -24,20 +26,19 @@ class Api::TodosController < ApplicationController
   end
 
   def update
-     todo = Todo.find_by(id: params[:id])
+    todo = Todo.find_by(id: params[:id])
     # todo.update
 
     if todo
-      todo.update(user_params)
+      todo.update(todo_params)
       render json: todo
     else
       render json: todo.errors.full_messages, status: :unprocessable_entity
     end
-  
   end
 
   def destroy
-     todo = Todo.find_by(id: params[:id])
+    todo = Todo.find_by(id: params[:id])
 
     if todo
       todo.destroy
@@ -45,5 +46,9 @@ class Api::TodosController < ApplicationController
     else
       render plain: '', status: :not_found
     end
+  end
+
+  def todo_params
+    params.require(:todo).permit(:title, :body, :done)
   end
 end
