@@ -21,3 +21,5 @@ history/**
 # V-JS/06-JS-DOM/jquery-lite/dist
 V-JS/06-JS-DOM/jquery-lite/dist
 V-JS/06-JS-DOM/jquery.351.js
+
+**/config/master.key
