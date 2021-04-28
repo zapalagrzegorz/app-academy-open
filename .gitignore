@@ -14,3 +14,4 @@ history/**
 **/node_modules/**
 **/dist/**
 .key
+VI-React/02-redux/to-do-app/config/master.key
