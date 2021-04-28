@@ -1,0 +1,58 @@
+<style>
+  td {
+    padding: 5px 15px;
+  }
+</style>
+<div class="grid-container">
+
+  <div class="cats-show__container">
+    <h1 class="text-center text-uppercase "><%= @band.name  %></h1>
+    <div class="align-top flex-container">
+      <img src="http://placekitten.com/200/200" alt="">
+      <div class="flex-child-grow  <%= "flex-container align-middle-center" if @band.albums.count == 0 %>" style="margin-left: 1rem">
+        <% if @band.albums.count > 0 %>
+          <h2>Albums</h2>
+          <ul>
+
+            <% @band.albums.each do |album| %>
+              <li>
+                <p class="flex-container align-justify">
+                  <%= link_to album_url(album) do %>
+                    <%= album.title %>
+                  <% end%>
+
+                  <%= link_to "Edit", edit_album_url(album), class: ["button", "warn", "margin-0"] %>
+                </p>
+
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>Haven't got any albums, yet!</p>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="text-center">
+      <%= link_to new_band_album_path(@band), class: "yellow h4 button" do %>
+        Add album <span class="bolder h5">+</span>
+      <% end %>
+    </div>
+    <div class="align-right flex-container">
+      <%= link_to "Edit", edit_band_path(@band), class: ["button", "margin-0"] %>
+      <%= button_to "Delete", band_path(@band), method: :delete, form_class: "padding-left-1", class: ["button", "secondary", "margin-0", "margin-left"]  %>
+      <% if false %>
+        <% if current_user&.id == @band.user_id %>
+          <p style="padding: 5px 17px;">
+          </p>
+
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <p> Show cat page</p>
+<% end %>

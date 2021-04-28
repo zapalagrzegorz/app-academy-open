@@ -1,0 +1,66 @@
+<div class="grid-container">
+
+  <div>
+    <h1><%= @post.title %></h1>
+
+    <% if @post.content %>
+
+      <p><strong>content</strong></p>
+      <p><%= @post.content %></p>
+      <p><small><%= @post.created_at %></small></p>
+      <p>Author: <%= @post.author.email %></p>
+    <% end %>
+
+    <br>
+    <%# sub posts %>
+
+    <% if @post.subs.any? %>
+      <p>This post belongs to following <strong>Subs</strong></p>
+      <ul>
+        <% @post.subs.each do |sub| %>
+          <li>
+            <%= link_to sub.title, sub_url(sub), class: [""] %>
+          </li>
+        <% end %>
+      </ul>
+
+    <% end %>
+
+    <br>
+
+    <% if current_user.id == @post.author_id %>
+      <p>As an author you can  <%= link_to 'edit', edit_post_path, class: ["button"] %> and 
+
+        <%= link_to 'delete', post_path, class: ["button"], method: :delete  %>
+
+        this post
+      </p>
+    <% end %>
+
+    <% if @post.comments_by_parent_id[@post.id].any? %>
+      <section>
+        <h2>Comments</h2>
+        <ul>
+
+          <% @comments_by_parent_id[nil].each do |comment| %>
+            <li>
+              <%= render 'comment', comment: comment, comments_by_parent_id: @comments_by_parent_id  %>
+            </li>
+          <% end %>
+        </ul>
+
+      </section>
+    <% end %>
+
+    <br>
+    <p>
+      <strong><%= link_to "Add new comment!", new_post_comment_url(@post) %></strong></p>
+
+    <br>
+    <%= link_to "make new post", '/' , class: ["button"] %>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <p> Show post page</p>
+<% end %>

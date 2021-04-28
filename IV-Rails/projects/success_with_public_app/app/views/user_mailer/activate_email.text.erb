@@ -1,0 +1,9 @@
+Welcome to Success with public
+===================================================
+
+Hello,  <%= @user.email %>
+
+Thank for registration with Success with public. To complete the process please use link 
+<%= activate_users_url(activation_token: @user.activation_token) %>
+
+Thanks for joining and have a great day!

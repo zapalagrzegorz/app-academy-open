@@ -11,7 +11,13 @@ history/**
 **/history/**
 *.zip
 **/tmp
-**/node_modules/**
+/node_modules
+/node_modules/**
+**/node_modules
+**/prototypal_syntax_solution
 **/dist/**
-.key
-VI-React/02-redux/to-do-app/config/master.key
+/dist
+# dist
+# V-JS/06-JS-DOM/jquery-lite/dist
+V-JS/06-JS-DOM/jquery-lite/dist
+V-JS/06-JS-DOM/jquery.351.js

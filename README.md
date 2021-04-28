@@ -3,6 +3,8 @@ Tracks progress of [App Academy Open course](https://open.appacademy.io/)
 
 ## Selected course projects
 
+## out of date
+
 ### Rails
 - [Art Share API - first webservice](https://github.com/zapalagrzegorz/app-academy-open/tree/master/IV-Rails/projects/art-share-api)
 

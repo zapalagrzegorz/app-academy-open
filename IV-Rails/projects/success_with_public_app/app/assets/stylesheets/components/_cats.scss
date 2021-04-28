@@ -1,0 +1,70 @@
+// @import "../base/vars";
+// @import "../base/colors";
+// @import "../base/buttons";
+// Place all the styles related to the cats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cats {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 0;
+    background-color: $light-blue;
+    margin-bottom: 3rem;
+  }
+
+  &__header {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    @extend .dark-blue-bg !optional;
+  }
+
+  &-show__container {
+    background-color: $light-blue;
+    padding: 2.5rem;
+    max-width: 750px;
+    margin: 3rem auto;
+  }
+}
+
+.cat {
+  &__container {
+    margin: 1rem 0;
+    padding: 1.1rem;
+
+    background-color: #000066;
+
+    img {
+      display: block;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 0;
+      padding-top: 0.9rem;
+    }
+  }
+
+  &-new__header {
+    padding-top: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+table thead th {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.button_to {
+  display: inline-block;
+}

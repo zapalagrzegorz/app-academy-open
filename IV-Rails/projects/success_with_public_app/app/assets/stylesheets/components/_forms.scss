@@ -1,0 +1,57 @@
+input[type="text"],
+input[type="date"],
+input[type="password"] {
+  border-bottom: 2px solid yellow;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
+  &:checked {
+    border: 6px solid yellow;
+  }
+  & + label {
+    position: relative;
+    top: -0.9rem;
+    margin-right: 2rem;
+  }
+}
+
+.form {
+  &__header {
+    padding-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  &__container {
+    @extend .light-blue-bg;
+    margin-bottom: 3rem;
+  }
+  &__submit {
+    margin-top: 2.5rem;
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+body {
+  textarea {
+    border: 1px solid yellow;
+  }
+}
+
+table {
+  .button {
+    margin-bottom: 0;
+  }
+}

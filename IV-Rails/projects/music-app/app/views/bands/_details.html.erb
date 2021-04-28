@@ -1,0 +1,37 @@
+<table >
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+
+  <!--
+          <% [:age, :birth_date, :color, :sex].each do |attr_name| %>
+            <tr>
+              <td><%= attr_name %></td>
+              <td><%= @band.send(attr_name) %></td>
+            </tr>
+          <% end %>
+          -->
+  <tr>
+    <td>Birth date</td>
+    <td><%= @band.birth_date %></td>
+  </tr>
+
+  <tr>
+    <td>Color</td>
+    <td><%= @band.color  %></td>
+  </tr>
+
+  <tr>
+    <td>Sex</td>
+    <td><%= @band.sex  %></td>
+  </tr>
+
+  <tr>
+    <td>Description</td>
+    <td><%= @band.description %></td>
+  </tr>
+
+</table>

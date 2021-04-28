@@ -1,0 +1,53 @@
+<%# Make sure to provide links back to the album's band and make edit/delete buttons visible from the album's show page %>
+<% sorted_tracks = @album.tracks.sort_by(&:ord) %>
+
+<div class="grid-container">
+
+  <div class="cats-show__container">
+    <h1 class="text-center text-uppercase ">Album: <%= @album.title  %></h1>
+
+    <div class="align-top flex-container margin-bottom-large ">
+      <img src="http://placekitten.com/200/200" alt="">
+      <div class="padding-left-normal" >
+
+        <p class="h3">Band:  <%= link_to band_path(@album.band) do %>
+            <%= @album.band.name %>
+          <% end %></p>
+        <p class="h4">Year : <%= @album.year  %></p>
+        <p >Type : <%= @album.studio ? "Studio" : "Live"  %></p>
+
+        <% unless @album.tracks.count.zero?  %>
+          <ol class="no-bullet">
+            <% sorted_tracks.each do |track| %>
+              <li>
+                <%= link_to track_url(track) do %>
+                  <%= track.ord %> <%= track.title %>
+                <% end%>
+              </li>
+            <% end %>
+          </ol>
+        <% else %>
+          <p>No recorded tracks!. Add one.</p>
+        <% end %>
+
+        <%= link_to "Add track", new_track_url(@album) %>
+
+      </div>
+    </div>
+
+    <div class="flex-child-grow flex-container align-center">
+
+      <p style="padding: 0px 17px;" class="margin-0">
+        <%= link_to "Edit", edit_album_url(@album), class: ["button", "warn", "margin-0"] %>
+      </p>
+      <p style="padding: 0px 17px;" class="margin-0">
+        <%= button_to "Delete", album_url(@album), method: :delete, class: ["button", "secondary", "margin-0"]  %>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <p> Show cat page</p>
+<% end %>

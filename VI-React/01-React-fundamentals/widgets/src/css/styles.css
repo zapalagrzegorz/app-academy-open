@@ -27,7 +27,7 @@
 /** TABS **/
 
 .tabs {
-  max-width: 48%;
+  max-width: 50%;
 }
 .tabs ul li {
   flex: 1 1 auto;
@@ -62,60 +62,4 @@
   background-color: black;
   color: white;
   border-bottom: 1px solid black;
-}
-
-.weather {
-  border: 2px solid black;
-  background-color: lightgreen;
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  padding: 2rem;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.autocomplete {
-  max-width: 48%;
-
-  margin-left: 2%;
-  border: 1px solid black;
-  background-color: violet;
-  padding: 1rem;
-}
-
-.autocomplete li {
-  cursor: pointer;
-  color: lemonchiffon;
-  font-size: 1.2;
-  font-weight: bold;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.autocomplete ul {
-  margin-left: 1.5rem;
-  list-style-type: square;
-}
-
-/* AutoComplete */
-
-.auto-enter {
-  opacity: 0.01;
-  transform: translateY(500%);
-}
-
-.auto-enter.auto-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 500ms, transform 500ms;
-}
-
-.auto-leave {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.auto-leave.auto-leave-active {
-  opacity: 0.01;
-  transform: translateY(500%);
-  transition: opacity 500ms, transform 500ms;
 }
