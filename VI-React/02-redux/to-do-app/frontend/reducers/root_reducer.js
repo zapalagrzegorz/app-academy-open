@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import { steps_reducer } from './steps_reducer';
 import { todos_reducer } from './todos_reducer';
+import { errors_reducer } from './errors_reducer';
 
 export const rootReducer = combineReducers({
   todos: todos_reducer,
   steps: steps_reducer,
+  errors: errors_reducer,
 });
 
 // do zaorania - wystarczy postawic pusty obiekt

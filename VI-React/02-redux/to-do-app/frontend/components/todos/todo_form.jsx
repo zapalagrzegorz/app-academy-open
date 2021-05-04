@@ -2,7 +2,7 @@ import * as util from '../../util/util';
 import React from 'react';
 // import receiveTodo
 
-export function TodoForm({ receiveTodo }) {
+export function TodoForm({ createTodo }) {
   const {
     value: title,
     setValue: setTitle,
@@ -25,8 +25,13 @@ export function TodoForm({ receiveTodo }) {
       title,
       body,
     };
-    receiveTodo(todo);
+    createTodo(todo).success(() => {
+      // run only on success of promise of createTodo
+      resetTitle();
+      resetBody();
+    });
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div>

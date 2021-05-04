@@ -3,9 +3,17 @@ import StepListContainer from '../steps/step_list_container';
 
 export default function TodoDetailView(props) {
   const { body, id } = props.item;
-  const { deleteTodo } = props;
+  const { destroyTodo } = props;
+
+  // receiveSteps nie jest używany?
+  // stepList otrzymuje listę stepów... - jak gdzie?
+  // StepListContainer korzystając z props'a todo wyciąga ze stanu
+  // steps'y, których id_todo pasuje do id propsa, i w ten sposób
+  // wrapuje StepList w slice state'u
+
   const handleDelete = () => {
-    deleteTodo(id);
+    destroyTodo(props.item);
+    // props.item
   };
 
   return (

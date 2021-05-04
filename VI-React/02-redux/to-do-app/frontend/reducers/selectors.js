@@ -11,3 +11,4 @@ export const stepsByTodoId = ({ steps }, todo_id) => {
 
 export const allTodos = (state) => Object.values(state.todos);
 export const allSteps = (state) => Object.values(state.steps);
+export const allErrors = (state) => state.errors;

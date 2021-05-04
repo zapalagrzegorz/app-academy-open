@@ -34,7 +34,6 @@ import {
   DELETE_TODO,
 } from '../actions/todo_actions';
 
-
 export const todos_reducer = (state = initialState, action) => {
   Object.freeze(state);
   const nextState = {};
@@ -46,8 +45,8 @@ export const todos_reducer = (state = initialState, action) => {
         nextState[todo.id] = todo;
       });
       return nextState;
-    
-      // new/update
+
+    // new/update
     case RECEIVE_TODO: {
       const todo = { [action.todo.id]: action.todo };
       return { ...state, ...todo };

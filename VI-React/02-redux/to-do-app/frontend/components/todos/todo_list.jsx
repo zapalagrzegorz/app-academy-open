@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TodoListItem from './todo_list_item';
 import { TodoForm } from './todo_form';
 
-export default function TodoList({ todos, receiveTodo, deleteTodo }) {
+export default function TodoList({
+  todos,
+  errors,
+  createTodo,
+  deleteTodo,
+  getTodos,
+  updateTodo,
+}) {
+  useEffect(() => {
+    getTodos();
+  }, []);
+
   const todosItems = todos.map((item) => (
     <TodoListItem
       key={item.id}
       item={item}
       deleteTodo={deleteTodo}
-      receiveTodo={receiveTodo}
+      updateTodo={updateTodo}
     />
+  ));
+
+  const errorsItems = errors.map((error, index) => (
+    <li key={index}>{error}</li>
   ));
 
   return (
     <div>
-      <TodoForm receiveTodo={receiveTodo}  />
+      {errors.length > 0 && (
+        <>
+          <h3>There were errors:</h3>
+          <ul>{errorsItems}</ul>
+        </>
+      )}
+      <TodoForm createTodo={createTodo} />
       <h3>Todo List goes here!</h3>
       <ul>{todosItems}</ul>
     </div>

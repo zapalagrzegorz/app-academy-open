@@ -5,14 +5,15 @@ export default function TodoListItem(props) {
   const [detail, setDetail] = useState(false);
 
   const { title, body, done, id } = props.item;
-  const { deleteTodo, receiveTodo } = props;
-  const handleDelete = () => {
-    deleteTodo(id);
-  };
+  const { deleteTodo, updateTodo } = props;
+
+  // const handleDelete = () => {
+  //   deleteTodo(id);
+  // };
 
   const handleDone = () => {
     const isDone = !done;
-    receiveTodo({ title, body, done: isDone, id });
+    updateTodo({ title, body, done: isDone, id });
   };
 
   return (

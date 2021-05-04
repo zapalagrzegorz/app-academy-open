@@ -21,19 +21,17 @@ class Api::TodosController < ApplicationController
     if todo.save
       render json: todo, status: :created
     else
-      render json: todo.errors.full_messages, status: :unprocessable_entity
+      render json: todo.errors.full_messages, status: 422
     end
   end
 
   def update
     todo = Todo.find_by(id: params[:id])
-    # todo.update
-
     if todo
       todo.update(todo_params)
       render json: todo
     else
-      render json: todo.errors.full_messages, status: :unprocessable_entity
+      render json: ['No entity found'], status: :unprocessable_entity
     end
   end
 
@@ -44,11 +42,11 @@ class Api::TodosController < ApplicationController
       todo.destroy
       render json: todo
     else
-      render plain: '', status: :not_found
+      render json: ['No entity found'], status: :not_found
     end
   end
 
   def todo_params
-    params.require(:todo).permit(:title, :body, :done)
+    params.require(:todo).permit(:title, :body, :done, :id)
   end
 end

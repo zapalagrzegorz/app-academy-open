@@ -1,44 +1,34 @@
-export const getTodos = $.ajax({
-  method: 'GET',
-  url: '/api/todos',
-});
-// window.getTodos = getTodos;
+export const getTodos = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/todos',
+  });
+};
 
-// $.ajax({
-//   method: 'POST',
-//   url: '/api/todos',
-//   data: {
-//     // :title, :body, :done
-//   },
-// }).then(
-//   (todos) => console.log(todos),
-//   (error) => console.log(error)
-// );
+export const createTodo = (todo) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/todos',
+    data: {
+      todo: { ...todo },
+    },
+  });
+};
 
-// $.ajax({
-//   method: 'POST',
-//   url: '/api/todos',
-//   data: {
-//     todo: {
-//       title: 'a new todo',
-//       body: 'expanded body',
-//       done: false,
-//     },
-//   },
-// }).then(
-//   (todos) => console.log(todos),
-//   (error) => console.log(error)
-// );
+export const updateTodo = (todo) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/todos/${todo.id}`,
+    data: {
+      todo: { ...todo },
+      //
+    },
+  });
+};
 
-// $.ajax({
-//   method: 'PATCH',
-//   url: '/api/todos/22',
-//   data: {
-//     todo: {
-//       title: 'an updated new todo',
-//     },
-//   },
-// }).then(
-//   (todos) => console.log(todos),
-//   (error) => console.log(error)
-// );
+export const destroyTodo = (todo) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/todos/${todo.id}`,
+  });
+};
