@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       # resources :photos
 
       resources :todos, only: %i[index show create update destroy]
+
+      # nie ma new - formularz dodawania oraz edit -formularz edycji
+      resources :steps, only: %i[index show create update destroy]
       # , defaults: { format: :json }
     end
     # get 'todos/show'

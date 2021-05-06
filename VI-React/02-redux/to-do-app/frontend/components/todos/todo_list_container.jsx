@@ -9,6 +9,7 @@ import {
   updateTodo,
   fetchTodos,
 } from '../../actions/todo_actions';
+import { fetchSteps } from '../../actions/steps_actions';
 
 const mapStateToProps = (state) => ({
   todos: allTodos(state),
@@ -20,6 +21,7 @@ const mapDispatchToProps = (dispatch) => ({
   createTodo: (todo) => dispatch(createTodo(todo)),
   updateTodo: (todo) => dispatch(updateTodo(todo)),
   deleteTodo: (id) => dispatch(deleteTodo(id)),
+  fetchSteps: () => dispatch(fetchSteps()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

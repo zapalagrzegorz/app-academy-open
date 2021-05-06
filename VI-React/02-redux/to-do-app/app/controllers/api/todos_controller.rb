@@ -10,7 +10,7 @@ class Api::TodosController < ApplicationController
     todo = Todo.find_by(id: params[:id])
 
     if todo
-      render json: todo
+      render json: todo, status: :ok
     else
       render plain: 'Not found', status: :not_found
     end
@@ -28,7 +28,8 @@ class Api::TodosController < ApplicationController
   def update
     todo = Todo.find_by(id: params[:id])
     if todo
-      todo.update(todo_params)
+      # tylko method! aktualizuje pozycje updated_at
+      todo.update!(todo_params)
       render json: todo
     else
       render json: ['No entity found'], status: :unprocessable_entity

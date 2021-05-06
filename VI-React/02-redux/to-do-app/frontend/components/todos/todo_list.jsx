@@ -9,9 +9,11 @@ export default function TodoList({
   deleteTodo,
   getTodos,
   updateTodo,
+  fetchSteps,
 }) {
   useEffect(() => {
     getTodos();
+    fetchSteps();
   }, []);
 
   const todosItems = todos.map((item) => (

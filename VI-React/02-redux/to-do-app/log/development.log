@@ -16421,3 +16421,2026 @@ FOREIGN KEY ("todo_id")
   [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
   [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 4], ["title", "b"], ["created_at", "2021-05-05 14:34:10.265947"], ["updated_at", "2021-05-05 14:34:10.265947"]]
   [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (2.0ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "recur"], ["body", "Ullam inventore optio. Ut voluptatem et. Blanditiis odit aperiam."], ["created_at", "2021-05-05 14:52:47.099489"], ["updated_at", "2021-05-05 14:52:47.099489"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "idealize"], ["body", "Eos et cupiditate. Possimus qui illum. Quos voluptatem amet."], ["created_at", "2021-05-05 14:52:56.281425"], ["updated_at", "2021-05-05 14:52:56.281425"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (223.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (1.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 38], ["title", "Harum ut velit. Nesciunt quo soluta. Animi aliquam in."], ["created_at", "2021-05-05 14:52:56.529318"], ["updated_at", "2021-05-05 14:52:56.529318"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 38], ["title", "Quaerat iusto deserunt. Placeat sit incidunt. Deleniti amet quae."], ["created_at", "2021-05-05 14:52:56.541070"], ["updated_at", "2021-05-05 14:52:56.541070"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "arrest"], ["body", "Et voluptatum cupiditate. Ut aut dicta. Pariatur harum nostrum."], ["created_at", "2021-05-05 14:52:56.550774"], ["updated_at", "2021-05-05 14:52:56.550774"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 39], ["title", "Qui quia temporibus. Odit ut aut. Rerum a eaque."], ["created_at", "2021-05-05 14:52:56.562625"], ["updated_at", "2021-05-05 14:52:56.562625"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 39], ["title", "Nihil et est. Reprehenderit non esse. Dolores repudiandae et."], ["created_at", "2021-05-05 14:52:56.573274"], ["updated_at", "2021-05-05 14:52:56.573274"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "endorse"], ["body", "Est commodi autem. Ab velit quia. Et quia ratione."], ["created_at", "2021-05-05 14:52:56.582595"], ["updated_at", "2021-05-05 14:52:56.582595"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 40], ["title", "Recusandae possimus quia. Et voluptatibus qui. Ut dolores sint."], ["created_at", "2021-05-05 14:52:56.593079"], ["updated_at", "2021-05-05 14:52:56.593079"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 40], ["title", "Itaque soluta aspernatur. In at eveniet. Eos hic porro."], ["created_at", "2021-05-05 14:52:56.603797"], ["updated_at", "2021-05-05 14:52:56.603797"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "greet"], ["body", "Ipsa exercitationem ullam. Rem dolorem laboriosam. Nobis ut vero."], ["created_at", "2021-05-05 14:52:56.612971"], ["updated_at", "2021-05-05 14:52:56.612971"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 41], ["title", "Quas totam quae. Eveniet rerum tempora. Aut pariatur quasi."], ["created_at", "2021-05-05 14:52:56.623526"], ["updated_at", "2021-05-05 14:52:56.623526"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 41], ["title", "Vero tempore est. Iste molestiae quis. Nihil eaque eum."], ["created_at", "2021-05-05 14:52:56.633690"], ["updated_at", "2021-05-05 14:52:56.633690"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "implant"], ["body", "Inventore id quod. Harum dicta quia. Repellendus debitis natus."], ["created_at", "2021-05-05 14:52:56.642507"], ["updated_at", "2021-05-05 14:52:56.642507"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 42], ["title", "Alias debitis expedita. Quis facilis doloremque. Eaque quia repudiandae."], ["created_at", "2021-05-05 14:52:56.654662"], ["updated_at", "2021-05-05 14:52:56.654662"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 42], ["title", "Quo nesciunt adipisci. Commodi cumque debitis. Quae quas et."], ["created_at", "2021-05-05 14:52:56.666684"], ["updated_at", "2021-05-05 14:52:56.666684"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "admire"], ["body", "Eaque ut eum. Suscipit nisi cumque. Libero et laborum."], ["created_at", "2021-05-05 14:52:56.677585"], ["updated_at", "2021-05-05 14:52:56.677585"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 43], ["title", "Sunt magni doloribus. Animi perspiciatis dolorem. Earum exercitationem numquam."], ["created_at", "2021-05-05 14:52:56.689455"], ["updated_at", "2021-05-05 14:52:56.689455"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 43], ["title", "Distinctio sapiente nisi. Animi provident assumenda. Porro neque ut."], ["created_at", "2021-05-05 14:52:56.700671"], ["updated_at", "2021-05-05 14:52:56.700671"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "heave"], ["body", "Velit adipisci ipsam. Sit officia adipisci. Nulla vel autem."], ["created_at", "2021-05-05 14:52:56.710872"], ["updated_at", "2021-05-05 14:52:56.710872"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 44], ["title", "Sunt inventore voluptatum. Qui minima at. Aut harum in."], ["created_at", "2021-05-05 14:52:56.722575"], ["updated_at", "2021-05-05 14:52:56.722575"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 44], ["title", "Eligendi facere distinctio. Tempora reprehenderit ratione. Accusamus quia numquam."], ["created_at", "2021-05-05 14:52:56.733626"], ["updated_at", "2021-05-05 14:52:56.733626"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "arise"], ["body", "Nobis distinctio voluptatem. Sed voluptate non. Sed beatae officia."], ["created_at", "2021-05-05 14:52:56.743134"], ["updated_at", "2021-05-05 14:52:56.743134"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 45], ["title", "Numquam deserunt omnis. Expedita neque quaerat. Expedita suscipit eum."], ["created_at", "2021-05-05 14:52:56.753591"], ["updated_at", "2021-05-05 14:52:56.753591"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 45], ["title", "Expedita sapiente culpa. Aut et quos. Qui natus quae."], ["created_at", "2021-05-05 14:52:56.763701"], ["updated_at", "2021-05-05 14:52:56.763701"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "stir"], ["body", "Ut similique laborum. Est quo earum. Quos autem iste."], ["created_at", "2021-05-05 14:52:56.773581"], ["updated_at", "2021-05-05 14:52:56.773581"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 46], ["title", "Saepe voluptatem architecto. Qui aut et. Nemo aut incidunt."], ["created_at", "2021-05-05 14:52:56.785927"], ["updated_at", "2021-05-05 14:52:56.785927"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 46], ["title", "Ullam nesciunt qui. Dolorum omnis sed. Officia molestiae blanditiis."], ["created_at", "2021-05-05 14:52:56.797176"], ["updated_at", "2021-05-05 14:52:56.797176"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "animate"], ["body", "Et officiis est. Quam est sit. Ut ratione aut."], ["created_at", "2021-05-05 14:52:56.806935"], ["updated_at", "2021-05-05 14:52:56.806935"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 47], ["title", "Magni voluptas inventore. Temporibus asperiores aliquam. Odit assumenda est."], ["created_at", "2021-05-05 14:52:56.818817"], ["updated_at", "2021-05-05 14:52:56.818817"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 47], ["title", "Sed et eveniet. Qui architecto praesentium. Et qui rerum."], ["created_at", "2021-05-05 14:52:56.831129"], ["updated_at", "2021-05-05 14:52:56.831129"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" ORDER BY "steps"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStep Load (0.2ms)[0m  [1m[34mSELECT "steps".* FROM "steps" WHERE "steps"."todo_id" = $1[0m  [["todo_id", 4]]
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mStep Load (0.3ms)[0m  [1m[34mSELECT "steps".* FROM "steps" WHERE "steps"."todo_id" = $1[0m  [["todo_id", 5]]
+  [1m[36mStep Load (0.2ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" ORDER BY "steps"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mStep Load (0.3ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (199.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (99.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "to-do-app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (98.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "to-do-app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1347.8ms)[0m  [1m[35mCREATE DATABASE "to-do-app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1303.8ms)[0m  [1m[35mCREATE DATABASE "to-do-app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "steps" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE TABLE "steps" ("id" bigserial primary key, "todo_id" bigint, "title" character varying NOT NULL, "done" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE  INDEX  "index_steps_on_todo_id" ON "steps"  ("todo_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "steps" ADD CONSTRAINT "fk_rails_fb75c3b269"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+[0m
+  ↳ db/schema.rb:35
+  [1m[35m (32.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210505134800)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210428142114),
+(20210428070531);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-05 14:55:29.894506"], ["updated_at", "2021-05-05 14:55:29.894506"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "steps" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (33.4ms)[0m  [1m[35mCREATE TABLE "steps" ("id" bigserial primary key, "todo_id" bigint, "title" character varying NOT NULL, "done" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE  INDEX  "index_steps_on_todo_id" ON "steps"  ("todo_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (35.0ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (6.9ms)[0m  [1m[35mALTER TABLE "steps" ADD CONSTRAINT "fk_rails_fb75c3b269"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+[0m
+  ↳ db/schema.rb:35
+  [1m[35m (27.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210505134800)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210428142114),
+(20210428070531);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (35.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-05 14:55:30.103165"], ["updated_at", "2021-05-05 14:55:30.103165"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-05-05 14:55:30.113811"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "urge"], ["body", "Sequi harum velit. Non numquam animi. Officiis assumenda culpa."], ["created_at", "2021-05-05 14:55:30.259850"], ["updated_at", "2021-05-05 14:55:30.259850"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 1], ["title", "Qui dicta vitae. Ut dolorum ut. Voluptate omnis rerum."], ["created_at", "2021-05-05 14:55:30.286069"], ["updated_at", "2021-05-05 14:55:30.286069"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 1], ["title", "Incidunt quaerat quasi. Praesentium assumenda perspiciatis. Omnis est quae."], ["created_at", "2021-05-05 14:55:30.298951"], ["updated_at", "2021-05-05 14:55:30.298951"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "spread"], ["body", "Minima dicta qui. Est doloribus veniam. Quo ut et."], ["created_at", "2021-05-05 14:55:30.309126"], ["updated_at", "2021-05-05 14:55:30.309126"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 2], ["title", "Delectus commodi consequuntur. Nam quod veritatis. Distinctio et et."], ["created_at", "2021-05-05 14:55:30.321535"], ["updated_at", "2021-05-05 14:55:30.321535"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 2], ["title", "Nihil doloribus aliquid. Et voluptatibus maxime. Qui accusantium iusto."], ["created_at", "2021-05-05 14:55:30.333210"], ["updated_at", "2021-05-05 14:55:30.333210"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "output"], ["body", "Sequi enim dignissimos. Rerum earum esse. Rerum rerum non."], ["created_at", "2021-05-05 14:55:30.343670"], ["updated_at", "2021-05-05 14:55:30.343670"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 3], ["title", "Voluptatem eveniet excepturi. Dolorem tenetur porro. Doloremque facilis repudiandae."], ["created_at", "2021-05-05 14:55:30.355372"], ["updated_at", "2021-05-05 14:55:30.355372"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.7ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 3], ["title", "Voluptas id dolore. Repellendus aut error. Nostrum odit enim."], ["created_at", "2021-05-05 14:55:30.367482"], ["updated_at", "2021-05-05 14:55:30.367482"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "cower"], ["body", "Ipsum et consequatur. Vel enim vitae. Est odit amet."], ["created_at", "2021-05-05 14:55:30.378045"], ["updated_at", "2021-05-05 14:55:30.378045"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 4], ["title", "Libero praesentium est. Asperiores et qui. Doloremque ex nostrum."], ["created_at", "2021-05-05 14:55:30.392538"], ["updated_at", "2021-05-05 14:55:30.392538"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 4], ["title", "Est nihil est. Laudantium et ducimus. Quo impedit repellendus."], ["created_at", "2021-05-05 14:55:30.405720"], ["updated_at", "2021-05-05 14:55:30.405720"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "push"], ["body", "Voluptate dolorem cumque. Dicta necessitatibus qui. Aut exercitationem doloribus."], ["created_at", "2021-05-05 14:55:30.417446"], ["updated_at", "2021-05-05 14:55:30.417446"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 5], ["title", "In aperiam porro. Voluptates magni molestiae. Qui eos nemo."], ["created_at", "2021-05-05 14:55:30.431634"], ["updated_at", "2021-05-05 14:55:30.431634"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 5], ["title", "Est fugiat qui. Aspernatur delectus velit. Consequatur et qui."], ["created_at", "2021-05-05 14:55:30.444442"], ["updated_at", "2021-05-05 14:55:30.444442"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "smile"], ["body", "Vel saepe libero. Et similique reprehenderit. Non temporibus voluptas."], ["created_at", "2021-05-05 14:55:30.455964"], ["updated_at", "2021-05-05 14:55:30.455964"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 6], ["title", "Fugit quos itaque. Voluptatem rerum nesciunt. Ab iste est."], ["created_at", "2021-05-05 14:55:30.470332"], ["updated_at", "2021-05-05 14:55:30.470332"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 6], ["title", "Quia quod ut. Tenetur deserunt et. Inventore autem est."], ["created_at", "2021-05-05 14:55:30.483404"], ["updated_at", "2021-05-05 14:55:30.483404"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "impair"], ["body", "Deleniti ut cumque. Modi omnis quas. Et voluptas aperiam."], ["created_at", "2021-05-05 14:55:30.493658"], ["updated_at", "2021-05-05 14:55:30.493658"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 7], ["title", "Quia excepturi aliquam. Tenetur saepe consectetur. Reprehenderit explicabo cum."], ["created_at", "2021-05-05 14:55:30.505359"], ["updated_at", "2021-05-05 14:55:30.505359"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 7], ["title", "Voluptate totam error. Et quis aliquid. Exercitationem sequi dolorum."], ["created_at", "2021-05-05 14:55:30.515916"], ["updated_at", "2021-05-05 14:55:30.515916"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "slip"], ["body", "Et et error. Est impedit quidem. Voluptatem quia velit."], ["created_at", "2021-05-05 14:55:30.525028"], ["updated_at", "2021-05-05 14:55:30.525028"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 8], ["title", "Dolores architecto adipisci. Molestias atque aperiam. Nam nemo nihil."], ["created_at", "2021-05-05 14:55:30.534837"], ["updated_at", "2021-05-05 14:55:30.534837"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 8], ["title", "Nam laborum aspernatur. Ut et id. Expedita velit amet."], ["created_at", "2021-05-05 14:55:30.545509"], ["updated_at", "2021-05-05 14:55:30.545509"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "wring"], ["body", "Est minima illo. Totam sit sunt. Veniam rerum dolorem."], ["created_at", "2021-05-05 14:55:30.554590"], ["updated_at", "2021-05-05 14:55:30.554590"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 9], ["title", "Amet voluptatum dolorem. Inventore aut dolores. Id adipisci quae."], ["created_at", "2021-05-05 14:55:30.564633"], ["updated_at", "2021-05-05 14:55:30.564633"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 9], ["title", "Et consequatur necessitatibus. Quo assumenda et. Nemo cumque expedita."], ["created_at", "2021-05-05 14:55:30.583935"], ["updated_at", "2021-05-05 14:55:30.583935"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "spend"], ["body", "Libero ad qui. Fuga rerum velit. Incidunt aperiam et."], ["created_at", "2021-05-05 14:55:30.595107"], ["updated_at", "2021-05-05 14:55:30.595107"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 10], ["title", "Soluta fugiat qui. Consequatur dignissimos nihil. Voluptates aliquam vero."], ["created_at", "2021-05-05 14:55:30.607538"], ["updated_at", "2021-05-05 14:55:30.607538"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 10], ["title", "Dignissimos iusto ipsa. Vitae alias incidunt. Dicta omnis fugit."], ["created_at", "2021-05-05 14:55:30.619583"], ["updated_at", "2021-05-05 14:55:30.619583"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "mix"], ["body", "Dolor corrupti eveniet. Eum odit voluptatem. Eos a earum."], ["created_at", "2021-05-05 14:55:36.275503"], ["updated_at", "2021-05-05 14:55:36.275503"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 11], ["title", "Illum asperiores provident. Sit neque voluptatem. Aut cumque quasi."], ["created_at", "2021-05-05 14:55:36.307419"], ["updated_at", "2021-05-05 14:55:36.307419"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 11], ["title", "Nesciunt molestiae a. Quia saepe est. Aut alias consequuntur."], ["created_at", "2021-05-05 14:55:36.318115"], ["updated_at", "2021-05-05 14:55:36.318115"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "bleed"], ["body", "Qui sint distinctio. Provident sed qui. Nemo occaecati beatae."], ["created_at", "2021-05-05 14:55:36.326613"], ["updated_at", "2021-05-05 14:55:36.326613"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 12], ["title", "Repellendus distinctio est. Nihil quod omnis. Repellendus ipsum culpa."], ["created_at", "2021-05-05 14:55:36.337338"], ["updated_at", "2021-05-05 14:55:36.337338"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 12], ["title", "Perspiciatis odit maxime. Accusantium adipisci pariatur. Quos dicta quis."], ["created_at", "2021-05-05 14:55:36.347751"], ["updated_at", "2021-05-05 14:55:36.347751"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "breed"], ["body", "Est quia voluptatum. Quos officia accusantium. A voluptate sed."], ["created_at", "2021-05-05 14:55:36.358462"], ["updated_at", "2021-05-05 14:55:36.358462"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 13], ["title", "Et laboriosam veniam. Deleniti esse id. Mollitia autem est."], ["created_at", "2021-05-05 14:55:36.370476"], ["updated_at", "2021-05-05 14:55:36.370476"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 13], ["title", "Exercitationem placeat dolores. Qui minus quis. Maxime quia blanditiis."], ["created_at", "2021-05-05 14:55:36.381934"], ["updated_at", "2021-05-05 14:55:36.381934"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "scar"], ["body", "Ratione quia voluptas. Aut quidem aliquam. Magnam nemo error."], ["created_at", "2021-05-05 14:55:36.391874"], ["updated_at", "2021-05-05 14:55:36.391874"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 14], ["title", "Expedita vel quis. Qui quas praesentium. Eligendi deserunt placeat."], ["created_at", "2021-05-05 14:55:36.403710"], ["updated_at", "2021-05-05 14:55:36.403710"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 14], ["title", "Enim at et. Tenetur fuga voluptatum. Beatae accusamus consequuntur."], ["created_at", "2021-05-05 14:55:36.417065"], ["updated_at", "2021-05-05 14:55:36.417065"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "win"], ["body", "Quo tenetur maxime. Sit dolorem harum. In non perferendis."], ["created_at", "2021-05-05 14:55:36.429056"], ["updated_at", "2021-05-05 14:55:36.429056"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 15], ["title", "Eos aut non. Ut molestias laborum. Est cumque placeat."], ["created_at", "2021-05-05 14:55:36.443126"], ["updated_at", "2021-05-05 14:55:36.443126"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 15], ["title", "Totam sapiente aut. Aut rerum minus. Perspiciatis delectus qui."], ["created_at", "2021-05-05 14:55:36.456085"], ["updated_at", "2021-05-05 14:55:36.456085"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "scarp"], ["body", "Quis expedita qui. Quis dolor error. Nobis qui voluptatem."], ["created_at", "2021-05-05 14:55:36.467268"], ["updated_at", "2021-05-05 14:55:36.467268"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 16], ["title", "Voluptatem et dolorem. Maxime sunt quibusdam. Ut quisquam dolorem."], ["created_at", "2021-05-05 14:55:36.480266"], ["updated_at", "2021-05-05 14:55:36.480266"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 16], ["title", "Perspiciatis omnis esse. Voluptate quos alias. Aut sit atque."], ["created_at", "2021-05-05 14:55:36.492943"], ["updated_at", "2021-05-05 14:55:36.492943"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "laugh"], ["body", "Accusamus qui dolor. Ratione veniam blanditiis. Molestiae possimus vel."], ["created_at", "2021-05-05 14:55:36.503446"], ["updated_at", "2021-05-05 14:55:36.503446"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 17], ["title", "Nobis deserunt voluptatum. Natus quia quia. Aut earum laboriosam."], ["created_at", "2021-05-05 14:55:36.513704"], ["updated_at", "2021-05-05 14:55:36.513704"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 17], ["title", "Mollitia aut eaque. Consectetur nesciunt voluptatibus. Laudantium iste iure."], ["created_at", "2021-05-05 14:55:36.524654"], ["updated_at", "2021-05-05 14:55:36.524654"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "hatch"], ["body", "Animi non ea. Excepturi odit neque. Est alias repellendus."], ["created_at", "2021-05-05 14:55:36.533990"], ["updated_at", "2021-05-05 14:55:36.533990"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 18], ["title", "Aut velit eum. Provident sint aut. Quia alias quo."], ["created_at", "2021-05-05 14:55:36.545779"], ["updated_at", "2021-05-05 14:55:36.545779"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 18], ["title", "Iure odio minus. Debitis magni libero. Dignissimos earum qui."], ["created_at", "2021-05-05 14:55:36.557398"], ["updated_at", "2021-05-05 14:55:36.557398"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "illustrate"], ["body", "Saepe pariatur facilis. Labore quam dolore. Doloribus molestias enim."], ["created_at", "2021-05-05 14:55:36.567557"], ["updated_at", "2021-05-05 14:55:36.567557"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 19], ["title", "Minima inventore eveniet. Repellendus aliquid nesciunt. Nostrum eum voluptas."], ["created_at", "2021-05-05 14:55:36.579860"], ["updated_at", "2021-05-05 14:55:36.579860"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 19], ["title", "Cupiditate debitis laborum. Iure omnis voluptate. Voluptas aut molestiae."], ["created_at", "2021-05-05 14:55:36.591471"], ["updated_at", "2021-05-05 14:55:36.591471"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.7ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "immure"], ["body", "Aut laboriosam veritatis. Voluptas molestiae repudiandae. Voluptatem magni nesciunt."], ["created_at", "2021-05-05 14:55:36.603302"], ["updated_at", "2021-05-05 14:55:36.603302"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 20], ["title", "Omnis quas sed. Quas voluptatibus asperiores. Placeat omnis aut."], ["created_at", "2021-05-05 14:55:36.617194"], ["updated_at", "2021-05-05 14:55:36.617194"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 20], ["title", "Voluptatem tenetur id. Vero in unde. Nisi sit ipsa."], ["created_at", "2021-05-05 14:55:36.629320"], ["updated_at", "2021-05-05 14:55:36.629320"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT "steps".* FROM "steps" WHERE "steps"."todo_id" = $1[0m  [["todo_id", 1]]
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT "steps".* FROM "steps" WHERE "steps"."todo_id" = $1[0m  [["todo_id", 2]]
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mStep Load (0.2ms)[0m  [1m[34mSELECT "steps".* FROM "steps" WHERE "steps"."todo_id" = $1[0m  [["todo_id", 3]]
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  [1m[36mStep Load (0.3ms)[0m  [1m[34mSELECT "steps".* FROM "steps" WHERE "steps"."todo_id" = $1[0m  [["todo_id", 4]]
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[36mStep Load (0.3ms)[0m  [1m[34mSELECT "steps".* FROM "steps" WHERE "steps"."todo_id" = $1[0m  [["todo_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (116.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "to-do-app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (114.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "to-do-app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (2426.3ms)[0m  [1m[35mCREATE DATABASE "to-do-app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1444.9ms)[0m  [1m[35mCREATE DATABASE "to-do-app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "steps" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (32.8ms)[0m  [1m[35mCREATE TABLE "steps" ("id" bigserial primary key, "todo_id" bigint, "title" character varying NOT NULL, "done" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE  INDEX  "index_steps_on_todo_id" ON "steps"  ("todo_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (7.0ms)[0m  [1m[35mALTER TABLE "steps" ADD CONSTRAINT "fk_rails_fb75c3b269"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+[0m
+  ↳ db/schema.rb:35
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210505134800)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210428142114),
+(20210428070531);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (33.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-06 08:07:04.741549"], ["updated_at", "2021-05-06 08:07:04.741549"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "steps" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "steps" ("id" bigserial primary key, "todo_id" bigint, "title" character varying NOT NULL, "done" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE  INDEX  "index_steps_on_todo_id" ON "steps"  ("todo_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (48.5ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "steps" ADD CONSTRAINT "fk_rails_fb75c3b269"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+[0m
+  ↳ db/schema.rb:35
+  [1m[35m (27.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210505134800)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210428142114),
+(20210428070531);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (41.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-06 08:07:04.973516"], ["updated_at", "2021-05-06 08:07:04.973516"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-05-06 08:07:04.983642"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "satisfy"], ["body", "Aspernatur tempore quam. Dolores nihil enim. Et magni odit."], ["created_at", "2021-05-06 08:07:05.134128"], ["updated_at", "2021-05-06 08:07:05.134128"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.9ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 1], ["title", "Veritatis sunt sint. Non aut vitae. At fuga repellendus."], ["created_at", "2021-05-06 08:07:05.162262"], ["updated_at", "2021-05-06 08:07:05.162262"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 1], ["title", "Sed corporis molestiae. Maiores labore animi. Ea provident repudiandae."], ["created_at", "2021-05-06 08:07:05.171237"], ["updated_at", "2021-05-06 08:07:05.171237"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "melt"], ["body", "Et maiores ea. Eos molestiae modi. Corporis voluptate sequi."], ["created_at", "2021-05-06 08:07:05.179549"], ["updated_at", "2021-05-06 08:07:05.179549"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 2], ["title", "Voluptate debitis beatae. Ducimus et assumenda. Voluptates est voluptate."], ["created_at", "2021-05-06 08:07:05.189433"], ["updated_at", "2021-05-06 08:07:05.189433"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 2], ["title", "Molestias ratione vitae. Fuga similique id. A tempore sunt."], ["created_at", "2021-05-06 08:07:05.198770"], ["updated_at", "2021-05-06 08:07:05.198770"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "consort"], ["body", "Aut quia distinctio. Est non et. Sit sed quia."], ["created_at", "2021-05-06 08:07:05.207995"], ["updated_at", "2021-05-06 08:07:05.207995"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 3], ["title", "Molestiae tempore voluptate. Et sunt voluptas. Rerum pariatur ullam."], ["created_at", "2021-05-06 08:07:05.218676"], ["updated_at", "2021-05-06 08:07:05.218676"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.7ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 3], ["title", "Voluptatibus eaque velit. Esse qui delectus. Et quos explicabo."], ["created_at", "2021-05-06 08:07:05.231687"], ["updated_at", "2021-05-06 08:07:05.231687"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "wish"], ["body", "Eaque voluptas ipsum. Aliquam ab fuga. Id nobis modi."], ["created_at", "2021-05-06 08:07:05.243075"], ["updated_at", "2021-05-06 08:07:05.243075"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 4], ["title", "Iusto id fugit. Voluptatibus est omnis. Quidem cumque fugit."], ["created_at", "2021-05-06 08:07:05.254020"], ["updated_at", "2021-05-06 08:07:05.254020"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 4], ["title", "Sunt omnis quibusdam. Fugit omnis et. Dolor cum a."], ["created_at", "2021-05-06 08:07:05.265182"], ["updated_at", "2021-05-06 08:07:05.265182"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "hide"], ["body", "Consequuntur est iste. Soluta dolor sit. Alias recusandae quibusdam."], ["created_at", "2021-05-06 08:07:05.276479"], ["updated_at", "2021-05-06 08:07:05.276479"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 5], ["title", "Eligendi ad eos. Aliquid quasi atque. Est corporis consectetur."], ["created_at", "2021-05-06 08:07:05.288395"], ["updated_at", "2021-05-06 08:07:05.288395"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 5], ["title", "Quasi quis tempore. Eius dolor quos. Ut cum consequatur."], ["created_at", "2021-05-06 08:07:05.299219"], ["updated_at", "2021-05-06 08:07:05.299219"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "survive"], ["body", "Occaecati modi ut. Quod et ad. Animi ea consequuntur."], ["created_at", "2021-05-06 08:07:05.309576"], ["updated_at", "2021-05-06 08:07:05.309576"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 6], ["title", "Beatae inventore aspernatur. Sed repellat cumque. Quod illum enim."], ["created_at", "2021-05-06 08:07:05.319993"], ["updated_at", "2021-05-06 08:07:05.319993"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 6], ["title", "Qui repellendus et. Similique maiores neque. Voluptas eligendi quasi."], ["created_at", "2021-05-06 08:07:05.329688"], ["updated_at", "2021-05-06 08:07:05.329688"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "welcome"], ["body", "Est consectetur esse. Quaerat id dignissimos. Modi voluptas quia."], ["created_at", "2021-05-06 08:07:05.339159"], ["updated_at", "2021-05-06 08:07:05.339159"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 7], ["title", "Culpa placeat dignissimos. Est expedita autem. Et sunt ex."], ["created_at", "2021-05-06 08:07:05.350144"], ["updated_at", "2021-05-06 08:07:05.350144"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 7], ["title", "Laborum facilis eos. Doloremque eaque aut. Quam incidunt dignissimos."], ["created_at", "2021-05-06 08:07:05.359859"], ["updated_at", "2021-05-06 08:07:05.359859"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "disturb"], ["body", "Aperiam et modi. Mollitia officia inventore. Et facere vero."], ["created_at", "2021-05-06 08:07:05.369942"], ["updated_at", "2021-05-06 08:07:05.369942"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 8], ["title", "Aut a itaque. Facere animi maxime. Dolore assumenda quia."], ["created_at", "2021-05-06 08:07:05.379836"], ["updated_at", "2021-05-06 08:07:05.379836"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 8], ["title", "Dignissimos dolorem inventore. Nulla voluptate omnis. Ad fugit commodi."], ["created_at", "2021-05-06 08:07:05.388571"], ["updated_at", "2021-05-06 08:07:05.388571"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "please"], ["body", "Ut voluptates provident. Et placeat aut. Nulla nostrum nihil."], ["created_at", "2021-05-06 08:07:05.399505"], ["updated_at", "2021-05-06 08:07:05.399505"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 9], ["title", "Porro vel vero. Sunt illum necessitatibus. Laboriosam possimus et."], ["created_at", "2021-05-06 08:07:05.410325"], ["updated_at", "2021-05-06 08:07:05.410325"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 9], ["title", "Sequi voluptas quia. Et dignissimos illo. Rerum voluptas amet."], ["created_at", "2021-05-06 08:07:05.421660"], ["updated_at", "2021-05-06 08:07:05.421660"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "sate"], ["body", "Omnis debitis sit. Numquam blanditiis beatae. Et odit tempora."], ["created_at", "2021-05-06 08:07:05.433878"], ["updated_at", "2021-05-06 08:07:05.433878"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 10], ["title", "Neque qui saepe. Ut expedita reprehenderit. Deserunt reiciendis voluptatibus."], ["created_at", "2021-05-06 08:07:05.454085"], ["updated_at", "2021-05-06 08:07:05.454085"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 10], ["title", "Rerum totam non. Expedita quae pariatur. Et consectetur aut."], ["created_at", "2021-05-06 08:07:05.464623"], ["updated_at", "2021-05-06 08:07:05.464623"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "pout"], ["body", "Necessitatibus qui perspiciatis. Aspernatur est deleniti. Fugiat quos mollitia."], ["created_at", "2021-05-06 08:07:56.702251"], ["updated_at", "2021-05-06 08:07:56.702251"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (223.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 11], ["title", "Voluptate blanditiis quis. Minus aut voluptate. Doloribus hic sed."], ["created_at", "2021-05-06 08:07:56.945126"], ["updated_at", "2021-05-06 08:07:56.945126"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 11], ["title", "Qui quia illo. Vero nisi eius. Et iusto praesentium."], ["created_at", "2021-05-06 08:07:56.954816"], ["updated_at", "2021-05-06 08:07:56.954816"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "belong"], ["body", "Cupiditate debitis magni. Ducimus modi omnis. In sed ipsa."], ["created_at", "2021-05-06 08:07:56.965582"], ["updated_at", "2021-05-06 08:07:56.965582"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 12], ["title", "Animi illo et. Sint ut accusamus. Est aut incidunt."], ["created_at", "2021-05-06 08:07:56.976321"], ["updated_at", "2021-05-06 08:07:56.976321"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 12], ["title", "Est earum et. Praesentium ratione temporibus. Rerum ipsum dolor."], ["created_at", "2021-05-06 08:07:56.985979"], ["updated_at", "2021-05-06 08:07:56.985979"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "sadden"], ["body", "Atque enim sequi. Atque cum mollitia. Doloribus voluptas deleniti."], ["created_at", "2021-05-06 08:07:57.006506"], ["updated_at", "2021-05-06 08:07:57.006506"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 13], ["title", "Incidunt quos provident. Ducimus ad quasi. Laboriosam voluptatem ipsa."], ["created_at", "2021-05-06 08:07:57.014887"], ["updated_at", "2021-05-06 08:07:57.014887"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 13], ["title", "Qui laborum voluptatibus. Et voluptatem facere. Dolorem adipisci quia."], ["created_at", "2021-05-06 08:07:57.023772"], ["updated_at", "2021-05-06 08:07:57.023772"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "endanger"], ["body", "Perferendis iure voluptatem. Earum atque molestiae. Tempora corrupti ut."], ["created_at", "2021-05-06 08:07:57.032347"], ["updated_at", "2021-05-06 08:07:57.032347"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 14], ["title", "Illo libero aut. Sunt vero numquam. Velit voluptatem modi."], ["created_at", "2021-05-06 08:07:57.041436"], ["updated_at", "2021-05-06 08:07:57.041436"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 14], ["title", "Sit vel enim. Ea eos ratione. Architecto sequi ipsam."], ["created_at", "2021-05-06 08:07:57.050380"], ["updated_at", "2021-05-06 08:07:57.050380"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "add"], ["body", "Ad quo quae. Facere quos nisi. Nobis cum cumque."], ["created_at", "2021-05-06 08:07:57.058861"], ["updated_at", "2021-05-06 08:07:57.058861"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 15], ["title", "Nulla ut quis. Quo consequuntur tenetur. Pariatur sint laudantium."], ["created_at", "2021-05-06 08:07:57.069421"], ["updated_at", "2021-05-06 08:07:57.069421"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 15], ["title", "Delectus at rerum. Ut dignissimos facilis. Odit et qui."], ["created_at", "2021-05-06 08:07:57.080610"], ["updated_at", "2021-05-06 08:07:57.080610"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "fancy"], ["body", "Error rerum aut. Perspiciatis pariatur ipsam. Quo quia eligendi."], ["created_at", "2021-05-06 08:07:57.091496"], ["updated_at", "2021-05-06 08:07:57.091496"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 16], ["title", "Et esse et. Deleniti quisquam magni. Iure eum vero."], ["created_at", "2021-05-06 08:07:57.103134"], ["updated_at", "2021-05-06 08:07:57.103134"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 16], ["title", "Ex illo recusandae. Dolores velit eos. Nam quia architecto."], ["created_at", "2021-05-06 08:07:57.112771"], ["updated_at", "2021-05-06 08:07:57.112771"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "saunter"], ["body", "Vero numquam quam. Qui quisquam sint. Aut perferendis dignissimos."], ["created_at", "2021-05-06 08:07:57.121877"], ["updated_at", "2021-05-06 08:07:57.121877"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 17], ["title", "Modi recusandae optio. Dolor error minus. Magni quo praesentium."], ["created_at", "2021-05-06 08:07:57.131993"], ["updated_at", "2021-05-06 08:07:57.131993"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 17], ["title", "Et voluptate aspernatur. Minus suscipit qui. Ipsa facilis necessitatibus."], ["created_at", "2021-05-06 08:07:57.142035"], ["updated_at", "2021-05-06 08:07:57.142035"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "prove"], ["body", "Assumenda inventore eaque. Velit occaecati quia. Dolorem similique illo."], ["created_at", "2021-05-06 08:07:57.151272"], ["updated_at", "2021-05-06 08:07:57.151272"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 18], ["title", "Beatae iusto et. Aut sint magni. Id provident natus."], ["created_at", "2021-05-06 08:07:57.160543"], ["updated_at", "2021-05-06 08:07:57.160543"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 18], ["title", "Molestiae voluptatem doloremque. Repudiandae voluptatem reiciendis. Quisquam suscipit sed."], ["created_at", "2021-05-06 08:07:57.170193"], ["updated_at", "2021-05-06 08:07:57.170193"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "befall"], ["body", "Libero molestiae in. Aut quia sint. Et consequatur cupiditate."], ["created_at", "2021-05-06 08:07:57.180314"], ["updated_at", "2021-05-06 08:07:57.180314"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 19], ["title", "Saepe omnis iusto. Rerum et in. Dolore est fuga."], ["created_at", "2021-05-06 08:07:57.190213"], ["updated_at", "2021-05-06 08:07:57.190213"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.6ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 19], ["title", "Hic beatae ratione. Quos et asperiores. Accusamus minima officia."], ["created_at", "2021-05-06 08:07:57.201339"], ["updated_at", "2021-05-06 08:07:57.201339"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "blush"], ["body", "Qui similique et. Eligendi est reiciendis. Voluptatibus ea sit."], ["created_at", "2021-05-06 08:07:57.211812"], ["updated_at", "2021-05-06 08:07:57.211812"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 20], ["title", "Perferendis aut voluptas. In quidem veritatis. Quo enim doloremque."], ["created_at", "2021-05-06 08:07:57.222403"], ["updated_at", "2021-05-06 08:07:57.222403"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 20], ["title", "Et laborum sunt. Sint qui mollitia. Corporis non iusto."], ["created_at", "2021-05-06 08:07:57.234784"], ["updated_at", "2021-05-06 08:07:57.234784"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStep Load (0.3ms)[0m  [1m[34mSELECT "steps".* FROM "steps" WHERE "steps"."todo_id" = $1[0m  [["todo_id", 1]]
+Started GET "/" for ::1 at 2021-05-06 10:33:49 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1536ms (Views: 1533.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 10:33:51 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 36ms (Views: 21.0ms | ActiveRecord: 8.0ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2021-05-06 10:56:24 +0200
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"title"=>"name", "body"=>"body", "id"=>"1"}, "id"=>"1"}
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:31
+  [1m[36mTodo Update (0.6ms)[0m  [1m[33mUPDATE "todos" SET "title" = $1, "body" = $2, "updated_at" = $3 WHERE "todos"."id" = $4[0m  [["title", "name"], ["body", "body"], ["updated_at", "2021-05-06 08:56:25.006904"], ["id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:31
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:31
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 14.1ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2021-05-06 10:57:02 +0200
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"title"=>"name", "body"=>"body", "id"=>"1"}, "id"=>"1"}
+  [1m[36mTodo Load (3.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:31
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/todos/1?todo%5Btitle%5D=name&todo%5Bbody%5D=body&todo%5Bid%5D=1" for ::1 at 2021-05-06 11:00:36 +0200
+Processing by Api::TodosController#show as JSON
+  Parameters: {"todo"=>{"title"=>"name", "body"=>"body", "id"=>"1"}, "id"=>"1"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/todos/1?todo%5Btitle%5D=name&todo%5Bbody%5D=body2&todo%5Bid%5D=1" for ::1 at 2021-05-06 11:07:56 +0200
+Processing by Api::TodosController#show as JSON
+  Parameters: {"todo"=>{"title"=>"name", "body"=>"body2", "id"=>"1"}, "id"=>"1"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/todos/1?todo%5Btitle%5D=name&todo%5Bbody%5D=body2&todo%5Bid%5D=1" for ::1 at 2021-05-06 11:08:11 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by Api::TodosController#show as JSON
+  Parameters: {"todo"=>{"title"=>"name", "body"=>"body2", "id"=>"1"}, "id"=>"1"}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 3.7ms)
+
+
+Started PATCH "/api/todos/1" for ::1 at 2021-05-06 11:08:40 +0200
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"title"=>"name", "body"=>"body2", "id"=>"1"}, "id"=>"1"}
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:31
+  [1m[36mTodo Update (0.5ms)[0m  [1m[33mUPDATE "todos" SET "body" = $1, "updated_at" = $2 WHERE "todos"."id" = $3[0m  [["body", "body2"], ["updated_at", "2021-05-06 09:08:40.999746"], ["id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:31
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:31
+Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 10.7ms)
+
+
+Started PATCH "/api/todos/1000" for ::1 at 2021-05-06 11:42:17 +0200
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"title"=>"name", "body"=>"body2", "id"=>"1000"}, "id"=>"1000"}
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1000], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:29
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/api/todos/1000" for ::1 at 2021-05-06 11:43:09 +0200
+Processing by Api::TodosController#update as JSON
+  Parameters: {"todo"=>{"title"=>"name", "body"=>"body2", "id"=>"1000"}, "id"=>"1000"}
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1000], ["LIMIT", 1]]
+  ↳ app/controllers/api/todos_controller.rb:29
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 11:45:24 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1386ms (Views: 1385.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 11:45:26 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 11:45:57 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 11:45:57 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 11:58:21 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 334ms (Views: 332.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 11:58:21 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 34ms (Views: 20.3ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 11:58:29 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 11:58:30 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 11:59:37 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 11:59:38 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:01:01 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 352ms (Views: 350.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:01:02 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:01:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/steps"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/todos" for ::1 at 2021-05-06 12:01:41 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:01:41 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/steps"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-05-06 12:01:44 +0200
+Processing by StaticPagesController#root as */*
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 80ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:18:02 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:18:03 +0200
+Processing by Api::TodosController#index as JSON
+Started GET "/api/steps" for ::1 at 2021-05-06 12:18:03 +0200
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (1.2ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 51ms (Views: 19.0ms | ActiveRecord: 23.4ms)
+
+
+Completed 200 OK in 49ms (Views: 17.1ms | ActiveRecord: 23.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:19:11 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:19:11 +0200
+Processing by Api::TodosController#index as JSON
+Started GET "/api/steps" for ::1 at 2021-05-06 12:19:11 +0200
+  [1m[36mTodo Load (2.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+Completed 200 OK in 36ms (Views: 21.0ms | ActiveRecord: 10.3ms)
+
+
+  [1m[36mStep Load (0.6ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 36ms (Views: 26.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:19:31 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:19:32 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:19:32 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (1.1ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:20:03 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:20:04 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 28ms (Views: 21.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:20:04 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 60ms (Views: 50.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:21:22 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1071ms (Views: 1069.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:21:23 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-06 12:21:24 +0200
+Completed 200 OK in 47ms (Views: 34.7ms | ActiveRecord: 6.2ms)
+
+
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.7ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 41ms (Views: 25.3ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:25:41 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 381ms (Views: 379.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:25:42 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:25:42 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/steps/undefined" for ::1 at 2021-05-06 12:25:55 +0200
+Processing by Api::StepsController#destroy as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mStep Load (1.6ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:46
+Completed 404 Not Found in 15ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/api/steps/undefined" for ::1 at 2021-05-06 12:27:14 +0200
+Processing by Api::StepsController#destroy as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mStep Load (1.3ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:46
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/api/steps/undefined" for ::1 at 2021-05-06 12:29:32 +0200
+Processing by Api::StepsController#destroy as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mStep Load (0.8ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:46
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:30:02 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:31:46 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 352ms (Views: 351.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:31:47 +0200
+Started GET "/api/todos" for ::1 at 2021-05-06 12:31:47 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.7ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.7ms)
+
+
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:31:56 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:32:12 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:32:12 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (2.5ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/api/steps/undefined" for ::1 at 2021-05-06 12:33:42 +0200
+Processing by Api::StepsController#destroy as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:46
+Completed 404 Not Found in 5ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:35:07 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 335ms (Views: 334.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:35:08 +0200
+Started GET "/api/steps" for ::1 at 2021-05-06 12:35:08 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (1.0ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 1.0ms)
+
+
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:35:27 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:36:58 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 330ms (Views: 329.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:36:59 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (3.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:36:59 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (2.0ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:41:08 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 381ms (Views: 380.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:41:09 +0200
+Started GET "/api/steps" for ::1 at 2021-05-06 12:41:09 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (2.2ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/api/steps/1" for ::1 at 2021-05-06 12:41:22 +0200
+Processing by Api::StepsController#destroy as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:46
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/steps_controller.rb:49
+  [1m[36mStep Destroy (0.7ms)[0m  [1m[31mDELETE FROM "steps" WHERE "steps"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/steps_controller.rb:49
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/steps_controller.rb:49
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/api/steps/2" for ::1 at 2021-05-06 12:41:33 +0200
+Processing by Api::StepsController#destroy as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mStep Load (1.6ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:46
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/steps_controller.rb:49
+  [1m[36mStep Destroy (5.6ms)[0m  [1m[31mDELETE FROM "steps" WHERE "steps"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/steps_controller.rb:49
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/steps_controller.rb:49
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:41:40 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:41:41 +0200
+Processing by Api::TodosController#index as JSON
+Started GET "/api/steps" for ::1 at 2021-05-06 12:41:41 +0200
+  [1m[36mTodo Load (3.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 3.4ms)
+
+
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.7ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:41:53 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:41:54 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:41:54 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:42:56 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 365ms (Views: 364.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:42:57 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:42:57 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.6ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:43:48 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 380ms (Views: 378.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:43:49 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:43:49 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.6ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:47:14 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 347ms (Views: 346.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:47:15 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/steps" for ::1 at 2021-05-06 12:47:15 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.5ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/steps" for ::1 at 2021-05-06 12:47:28 +0200
+Processing by Api::StepsController#create as JSON
+  Parameters: {"step"=>{"todo_id"=>"1", "id"=>"1620298048260", "done"=>"false", "title"=>"first step"}}
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/steps_controller.rb:27
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:27
+  [1m[36mStep Create (0.7ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 1], ["title", "first step"], ["created_at", "2021-05-06 10:47:28.300866"], ["updated_at", "2021-05-06 10:47:28.300866"]]
+  ↳ app/controllers/api/steps_controller.rb:27
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/steps_controller.rb:27
+Completed 201 Created in 25ms (Views: 0.7ms | ActiveRecord: 4.5ms)
+
+
+Started PATCH "/api/steps/41" for ::1 at 2021-05-06 12:47:53 +0200
+Processing by Api::StepsController#update as JSON
+  Parameters: {"step"=>{"title"=>"first step", "done"=>"true", "id"=>"41", "todo_id"=>"1"}, "id"=>"41"}
+  [1m[36mStep Load (2.1ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:35
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/steps_controller.rb:37
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:37
+  [1m[36mStep Update (0.7ms)[0m  [1m[33mUPDATE "steps" SET "done" = $1, "updated_at" = $2 WHERE "steps"."id" = $3[0m  [["done", true], ["updated_at", "2021-05-06 10:47:53.447575"], ["id", 41]]
+  ↳ app/controllers/api/steps_controller.rb:37
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/steps_controller.rb:37
+Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/" for ::1 at 2021-05-06 12:48:01 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-06 12:48:01 +0200
+Started GET "/api/steps" for ::1 at 2021-05-06 12:48:01 +0200
+Processing by Api::TodosController#index as JSON
+Processing by Api::StepsController#index as JSON
+  [1m[36mTodo Load (2.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 2.5ms)
+
+
+  [1m[36mStep Load (6.9ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 6.9ms)
+
+
+Started PATCH "/api/steps/41" for ::1 at 2021-05-06 12:48:05 +0200
+Processing by Api::StepsController#update as JSON
+  Parameters: {"step"=>{"title"=>"first step", "done"=>"false", "id"=>"41", "todo_id"=>"1"}, "id"=>"41"}
+  [1m[36mStep Load (0.6ms)[0m  [1m[34mSELECT  "steps".* FROM "steps" WHERE "steps"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:35
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/steps_controller.rb:37
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/steps_controller.rb:37
+  [1m[36mStep Update (0.7ms)[0m  [1m[33mUPDATE "steps" SET "done" = $1, "updated_at" = $2 WHERE "steps"."id" = $3[0m  [["done", false], ["updated_at", "2021-05-06 10:48:05.752962"], ["id", 41]]
+  ↳ app/controllers/api/steps_controller.rb:37
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/steps_controller.rb:37
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 8.4ms)
+
+

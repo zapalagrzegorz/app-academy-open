@@ -2,7 +2,7 @@ import * as util from '../../util/util';
 import React from 'react';
 // import receiveStep
 
-export function StepForm({ receiveStep, todo_id }) {
+export function StepForm({ createStep, todo_id }) {
   const { value: title, bind: bindTitle, reset: resetTitle } = util.useInput(
     ''
   );
@@ -15,7 +15,7 @@ export function StepForm({ receiveStep, todo_id }) {
       done: false,
       title,
     };
-    receiveStep(step);
+    createStep(step);
     resetTitle();
   };
   return (

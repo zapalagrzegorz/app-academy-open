@@ -9,5 +9,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  Todo.create(title: Faker::Verb.base, body: Faker::Lorem.paragraph)
+  todo = Todo.create(title: Faker::Verb.base, body: Faker::Lorem.paragraph)
+  2.times do
+    todo.steps.create(title: Faker::Lorem.paragraph)
+  end
 end

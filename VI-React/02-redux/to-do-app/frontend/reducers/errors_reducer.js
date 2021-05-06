@@ -7,11 +7,9 @@ export const errors_reducer = (state = [], action) => {
   const nextState = [];
   switch (action.type) {
     case RECEIVE_ERRORS:
-      action.errors &&
-        action.errors.length &&
-        action.errors.forEach((error) => {
-          nextState.push(error);
-        });
+      action?.errors.forEach((error) => {
+        nextState.push(error);
+      });
       return nextState;
 
     // new/update

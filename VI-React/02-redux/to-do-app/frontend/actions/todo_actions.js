@@ -25,7 +25,7 @@ export const deleteTodo = (id) => ({
  * returns function that takes dispatch
  *
  * Wraps synchrous actions with asynchrous
- * @returns Promise
+ * @returns function(dispatch)
  */
 export const fetchTodos = () => (dispatch) => {
   return todoAPIUtil

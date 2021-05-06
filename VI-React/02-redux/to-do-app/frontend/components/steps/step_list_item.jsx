@@ -1,16 +1,16 @@
 import React from 'react';
 
 export default function StepListItem(props) {
-  const { title, done, id } = props.item;
-  const { deleteStep, receiveStep, todo_id } = props;
-  
+  const { title, done, id, todo_id } = props.step;
+  const { destroyStep, updateStep } = props;
+
   const handleDelete = () => {
-    deleteStep(id);
+    destroyStep(props.step);
   };
 
   const handleDone = () => {
     const isDone = !done;
-    receiveStep({ title, done: isDone, id, todo_id });
+    updateStep({ title, done: isDone, id, todo_id });
     // gdyby było więcej propertiesów to można by tworzyć obiekt przez scalenie
     // const toggledStep = Object.assign({}, this.props.step, {
     //   done: !this.props.step.done,
@@ -22,7 +22,7 @@ export default function StepListItem(props) {
       <h2>{title}</h2>
       <p>
         <button type="button" onClick={handleDone}>
-          {done ? 'undone' : 'done'} step 
+          {done ? 'undone' : 'done'} step
         </button>
       </p>
       <div>
