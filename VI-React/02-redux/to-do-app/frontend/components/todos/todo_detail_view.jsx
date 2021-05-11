@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import StepListContainer from '../steps/step_list_container';
 
 export default function TodoDetailView(props) {
-  const { body, id } = props.item;
+  const { body, id, tags } = props.item;
   const { destroyTodo } = props;
 
   // receiveSteps nie jest używany?
@@ -16,8 +16,21 @@ export default function TodoDetailView(props) {
     // props.item
   };
 
+  const tagList = tags.map(({ name: tagName }, index) => (
+    <li key={index}>{tagName}</li>
+  ));
+
   return (
     <>
+      {tagList.length > 0 ? (
+        <>
+          <p>Tags:</p>
+          <ul>{tagList}</ul>
+        </>
+      ) : (
+        ''
+      )}
+
       <p>Body of todo: {body}</p>
       {/* steps */}
       <StepListContainer todo={props.item} />

@@ -18444,3 +18444,2131 @@ Unpermitted parameter: :id
 Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 8.4ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1673800091446909650)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTags (20210511051627)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (39.0ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210511051627_create_tags.rb:5
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE  INDEX  "index_tags_on_name" ON "tags"  ("name")[0m
+  ↳ db/migrate/20210511051627_create_tags.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210511051627"]]
+  ↳ bin/rails:9
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTaggings (20210511053559)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "todo_id" bigint, "tag_id" bigint, CONSTRAINT "fk_rails_dc9f127928"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+, CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+)[0m
+  ↳ db/migrate/20210511053559_create_taggings.rb:3
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_todo_id" ON "taggings"  ("todo_id")[0m
+  ↳ db/migrate/20210511053559_create_taggings.rb:3
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  ↳ db/migrate/20210511053559_create_taggings.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210511053559"]]
+  ↳ bin/rails:9
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1673800091446909650)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTodo Load (1.6ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Create (0.7ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "testTag"], ["created_at", "2021-05-11 06:21:06.990292"], ["updated_at", "2021-05-11 06:21:06.990292"]]
+  [1m[36mTagging Create (0.9ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 06:21:07.004952"], ["updated_at", "2021-05-11 06:21:07.004952"], ["todo_id", 1], ["tag_id", 1]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" INNER JOIN "taggings" ON "todos"."id" = "taggings"."todo_id" WHERE "taggings"."tag_id" = $1[0m  [["tag_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1673800091446909650)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTaggings (20210511053559)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE "taggings"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210511053559"]]
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1673800091446909650)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1673800091446909650)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTags (20210511051627)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "tags"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210511051627"]]
+  ↳ bin/rails:9
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1673800091446909650)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1673800091446909650)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTags (20210511051627)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210511051627_create_tags.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210511051627"]]
+  ↳ bin/rails:9
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTaggings (20210511053559)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "todo_id" bigint, "tag_id" bigint, CONSTRAINT "fk_rails_dc9f127928"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+, CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+)[0m
+  ↳ db/migrate/20210511053559_create_taggings.rb:3
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_todo_id" ON "taggings"  ("todo_id")[0m
+  ↳ db/migrate/20210511053559_create_taggings.rb:3
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  ↳ db/migrate/20210511053559_create_taggings.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210511053559"]]
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1673800091446909650)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-05-11 09:47:15 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1162ms (Views: 1159.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 09:47:16 +0200
+Processing by Api::TodosController#index as JSON
+Started GET "/api/steps" for ::1 at 2021-05-11 09:47:16 +0200
+  [1m[36mTodo Load (9.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (5.5ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 51ms (Views: 21.3ms | ActiveRecord: 24.5ms)
+
+
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 188ms (Views: 125.4ms | ActiveRecord: 50.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 09:47:26 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 09:47:27 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 09:47:27 +0200
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mStep Load (3.7ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 3.7ms)
+
+
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 101ms (Views: 88.2ms | ActiveRecord: 12.5ms)
+
+
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.9ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "health"], ["body", "growth unit"], ["created_at", "2021-05-11 07:47:45.915375"], ["updated_at", "2021-05-11 07:47:45.915375"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (3.0ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 21], ["title", "Authentic brunch deep v seitan chambray yolo xoxo poutine."], ["created_at", "2021-05-11 07:47:45.940102"], ["updated_at", "2021-05-11 07:47:45.940102"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "listicle"], ["body", "tee it up"], ["created_at", "2021-05-11 07:49:10.312691"], ["updated_at", "2021-05-11 07:49:10.312691"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.7ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 22], ["title", "Tofu pork belly beard kitsch venmo dreamcatcher tousled skateboard tilde."], ["created_at", "2021-05-11 07:49:10.340250"], ["updated_at", "2021-05-11 07:49:10.340250"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (97.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "to-do-app_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (112.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "to-do-app_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1338.5ms)[0m  [1m[35mCREATE DATABASE "to-do-app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1362.4ms)[0m  [1m[35mCREATE DATABASE "to-do-app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "steps" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "steps" ("id" bigserial primary key, "todo_id" bigint, "title" character varying NOT NULL, "done" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE  INDEX  "index_steps_on_todo_id" ON "steps"  ("todo_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "todo_id" bigint, "tag_id" bigint)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_todo_id" ON "taggings"  ("todo_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE[0m
+  ↳ db/schema.rb:36
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (8.0ms)[0m  [1m[35mALTER TABLE "steps" ADD CONSTRAINT "fk_rails_fb75c3b269"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+[0m
+  ↳ db/schema.rb:50
+  [1m[35m (7.6ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+[0m
+  ↳ db/schema.rb:51
+  [1m[35m (7.8ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_dc9f127928"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+[0m
+  ↳ db/schema.rb:52
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210511053559)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210428142114),
+(20210428070531),
+(20210511051627),
+(20210505134800);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (33.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-11 07:49:41.234343"], ["updated_at", "2021-05-11 07:49:41.234343"]]
+  ↳ db/schema.rb:13
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "steps" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (33.1ms)[0m  [1m[35mCREATE TABLE "steps" ("id" bigserial primary key, "todo_id" bigint, "title" character varying NOT NULL, "done" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE  INDEX  "index_steps_on_todo_id" ON "steps"  ("todo_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings" CASCADE[0m
+  ↳ db/schema.rb:27
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "todo_id" bigint, "tag_id" bigint)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_todo_id" ON "taggings"  ("todo_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE[0m
+  ↳ db/schema.rb:36
+  [1m[35m (30.0ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  ↳ db/schema.rb:42
+  [1m[35m (27.5ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (8.4ms)[0m  [1m[35mALTER TABLE "steps" ADD CONSTRAINT "fk_rails_fb75c3b269"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+[0m
+  ↳ db/schema.rb:50
+  [1m[35m (8.3ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+[0m
+  ↳ db/schema.rb:51
+  [1m[35m (8.1ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_dc9f127928"
+FOREIGN KEY ("todo_id")
+  REFERENCES "todos" ("id")
+[0m
+  ↳ db/schema.rb:52
+  [1m[35m (32.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210511053559)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210428142114),
+(20210428070531),
+(20210511051627),
+(20210505134800);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (29.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-11 07:49:41.563617"], ["updated_at", "2021-05-11 07:49:41.563617"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-05-11 07:49:41.573721"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.7ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "pitchfork"], ["body", "two-way street"], ["created_at", "2021-05-11 07:49:41.740352"], ["updated_at", "2021-05-11 07:49:41.740352"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.7ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 1], ["title", "Loko knausgaard sriracha mumblecore."], ["created_at", "2021-05-11 07:49:41.770149"], ["updated_at", "2021-05-11 07:49:41.770149"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "intermediate"], ["created_at", "2021-05-11 07:49:41.795819"], ["updated_at", "2021-05-11 07:49:41.795819"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.7ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:41.803535"], ["updated_at", "2021-05-11 07:49:41.803535"], ["todo_id", 1], ["tag_id", 1]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 1], ["title", "Knausgaard before they sold out artisan everyday forage raw denim butcher flexitarian."], ["created_at", "2021-05-11 07:49:41.814875"], ["updated_at", "2021-05-11 07:49:41.814875"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "solution"], ["created_at", "2021-05-11 07:49:41.826113"], ["updated_at", "2021-05-11 07:49:41.826113"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:41.830232"], ["updated_at", "2021-05-11 07:49:41.830232"], ["todo_id", 1], ["tag_id", 2]]
+  ↳ db/seeds.rb:15
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "literally"], ["body", "buying cycle"], ["created_at", "2021-05-11 07:49:41.840274"], ["updated_at", "2021-05-11 07:49:41.840274"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 2], ["title", "90's mumblecore cray roof raw denim salvia brunch hammock hashtag."], ["created_at", "2021-05-11 07:49:41.851685"], ["updated_at", "2021-05-11 07:49:41.851685"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "encoding"], ["created_at", "2021-05-11 07:49:41.862276"], ["updated_at", "2021-05-11 07:49:41.862276"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:41.865002"], ["updated_at", "2021-05-11 07:49:41.865002"], ["todo_id", 2], ["tag_id", 3]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 2], ["title", "Vice lomo goth kickstarter put a bird on it."], ["created_at", "2021-05-11 07:49:41.872974"], ["updated_at", "2021-05-11 07:49:41.872974"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "executive"], ["created_at", "2021-05-11 07:49:41.881562"], ["updated_at", "2021-05-11 07:49:41.881562"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:41.883721"], ["updated_at", "2021-05-11 07:49:41.883721"], ["todo_id", 2], ["tag_id", 4]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "marfa"], ["body", "impact map"], ["created_at", "2021-05-11 07:49:41.892079"], ["updated_at", "2021-05-11 07:49:41.892079"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 3], ["title", "Artisan pop-up tumblr occupy pitchfork umami vegan muggle magic normcore."], ["created_at", "2021-05-11 07:49:41.901208"], ["updated_at", "2021-05-11 07:49:41.901208"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "support"], ["created_at", "2021-05-11 07:49:41.910410"], ["updated_at", "2021-05-11 07:49:41.910410"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.9ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:41.913785"], ["updated_at", "2021-05-11 07:49:41.913785"], ["todo_id", 3], ["tag_id", 5]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 3], ["title", "Cronut cray lo-fi pabst viral portland farm-to-table."], ["created_at", "2021-05-11 07:49:41.922944"], ["updated_at", "2021-05-11 07:49:41.922944"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "real-time"], ["created_at", "2021-05-11 07:49:41.931046"], ["updated_at", "2021-05-11 07:49:41.931046"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:41.933272"], ["updated_at", "2021-05-11 07:49:41.933272"], ["todo_id", 3], ["tag_id", 6]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "venmo"], ["body", "gamification"], ["created_at", "2021-05-11 07:49:41.941566"], ["updated_at", "2021-05-11 07:49:41.941566"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 4], ["title", "Normcore cleanse taxidermy swag asymmetrical roof."], ["created_at", "2021-05-11 07:49:41.952886"], ["updated_at", "2021-05-11 07:49:41.952886"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Reduced"], ["created_at", "2021-05-11 07:49:41.962693"], ["updated_at", "2021-05-11 07:49:41.962693"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.3ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:41.964371"], ["updated_at", "2021-05-11 07:49:41.964371"], ["todo_id", 4], ["tag_id", 7]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 4], ["title", "Roof quinoa iphone drinking."], ["created_at", "2021-05-11 07:49:41.974079"], ["updated_at", "2021-05-11 07:49:41.974079"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Diverse"], ["created_at", "2021-05-11 07:49:41.993942"], ["updated_at", "2021-05-11 07:49:41.993942"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.3ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:41.995596"], ["updated_at", "2021-05-11 07:49:41.995596"], ["todo_id", 4], ["tag_id", 8]]
+  ↳ db/seeds.rb:15
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Godard"], ["body", "streamline"], ["created_at", "2021-05-11 07:49:42.005089"], ["updated_at", "2021-05-11 07:49:42.005089"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 5], ["title", "Blue bottle tacos ramps tousled cred fingerstache kogi sriracha."], ["created_at", "2021-05-11 07:49:42.015478"], ["updated_at", "2021-05-11 07:49:42.015478"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "national"], ["created_at", "2021-05-11 07:49:42.023904"], ["updated_at", "2021-05-11 07:49:42.023904"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.025930"], ["updated_at", "2021-05-11 07:49:42.025930"], ["todo_id", 5], ["tag_id", 9]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 5], ["title", "Yr twee intelligentsia helvetica readymade gluten-free quinoa."], ["created_at", "2021-05-11 07:49:42.034095"], ["updated_at", "2021-05-11 07:49:42.034095"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "static"], ["created_at", "2021-05-11 07:49:42.043057"], ["updated_at", "2021-05-11 07:49:42.043057"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.046847"], ["updated_at", "2021-05-11 07:49:42.046847"], ["todo_id", 5], ["tag_id", 10]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "flexitarian"], ["body", "get value out of the conversation"], ["created_at", "2021-05-11 07:49:42.055292"], ["updated_at", "2021-05-11 07:49:42.055292"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 6], ["title", "Diy brooklyn sustainable keffiyeh venmo umami selvage cold-pressed."], ["created_at", "2021-05-11 07:49:42.064796"], ["updated_at", "2021-05-11 07:49:42.064796"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Inverse"], ["created_at", "2021-05-11 07:49:42.075372"], ["updated_at", "2021-05-11 07:49:42.075372"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.6ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.079140"], ["updated_at", "2021-05-11 07:49:42.079140"], ["todo_id", 6], ["tag_id", 11]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 6], ["title", "Schlitz bushwick loko viral beard sriracha chambray disrupt celiac."], ["created_at", "2021-05-11 07:49:42.087633"], ["updated_at", "2021-05-11 07:49:42.087633"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Team-oriented"], ["created_at", "2021-05-11 07:49:42.097100"], ["updated_at", "2021-05-11 07:49:42.097100"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.100691"], ["updated_at", "2021-05-11 07:49:42.100691"], ["todo_id", 6], ["tag_id", 12]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "disrupt"], ["body", "learnings"], ["created_at", "2021-05-11 07:49:42.111565"], ["updated_at", "2021-05-11 07:49:42.111565"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 7], ["title", "Dreamcatcher biodiesel kale chips helvetica retro actually twee."], ["created_at", "2021-05-11 07:49:42.123468"], ["updated_at", "2021-05-11 07:49:42.123468"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Graphic Interface"], ["created_at", "2021-05-11 07:49:42.135820"], ["updated_at", "2021-05-11 07:49:42.135820"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.3ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.138505"], ["updated_at", "2021-05-11 07:49:42.138505"], ["todo_id", 7], ["tag_id", 13]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 7], ["title", "Knausgaard flexitarian yr crucifix jean shorts keytar health mumblecore."], ["created_at", "2021-05-11 07:49:42.148355"], ["updated_at", "2021-05-11 07:49:42.148355"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "demand-driven"], ["created_at", "2021-05-11 07:49:42.157932"], ["updated_at", "2021-05-11 07:49:42.157932"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.6ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.161733"], ["updated_at", "2021-05-11 07:49:42.161733"], ["todo_id", 7], ["tag_id", 14]]
+  ↳ db/seeds.rb:15
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "semiotics"], ["body", "learnings"], ["created_at", "2021-05-11 07:49:42.171636"], ["updated_at", "2021-05-11 07:49:42.171636"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 8], ["title", "Post-ironic literally pabst food truck intelligentsia narwhal semiotics authentic synth."], ["created_at", "2021-05-11 07:49:42.181062"], ["updated_at", "2021-05-11 07:49:42.181062"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Reduced"], ["created_at", "2021-05-11 07:49:42.191138"], ["updated_at", "2021-05-11 07:49:42.191138"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.193314"], ["updated_at", "2021-05-11 07:49:42.193314"], ["todo_id", 8], ["tag_id", 15]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 8], ["title", "Kickstarter cleanse before they sold out food truck."], ["created_at", "2021-05-11 07:49:42.201993"], ["updated_at", "2021-05-11 07:49:42.201993"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Team-oriented"], ["created_at", "2021-05-11 07:49:42.211365"], ["updated_at", "2021-05-11 07:49:42.211365"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.213800"], ["updated_at", "2021-05-11 07:49:42.213800"], ["todo_id", 8], ["tag_id", 16]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "chia"], ["body", "learnings"], ["created_at", "2021-05-11 07:49:42.222735"], ["updated_at", "2021-05-11 07:49:42.222735"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 9], ["title", "Echo messenger bag muggle magic mustache."], ["created_at", "2021-05-11 07:49:42.232547"], ["updated_at", "2021-05-11 07:49:42.232547"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "User-friendly"], ["created_at", "2021-05-11 07:49:42.242316"], ["updated_at", "2021-05-11 07:49:42.242316"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.244933"], ["updated_at", "2021-05-11 07:49:42.244933"], ["todo_id", 9], ["tag_id", 17]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 9], ["title", "Swag farm-to-table salvia fanny pack roof ugh mixtape godard gastropub."], ["created_at", "2021-05-11 07:49:42.253071"], ["updated_at", "2021-05-11 07:49:42.253071"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Customer-focused"], ["created_at", "2021-05-11 07:49:42.262677"], ["updated_at", "2021-05-11 07:49:42.262677"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.264940"], ["updated_at", "2021-05-11 07:49:42.264940"], ["todo_id", 9], ["tag_id", 18]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "cray"], ["body", "gamification"], ["created_at", "2021-05-11 07:49:42.273013"], ["updated_at", "2021-05-11 07:49:42.273013"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 10], ["title", "Pabst actually kickstarter vinyl mumblecore."], ["created_at", "2021-05-11 07:49:42.284008"], ["updated_at", "2021-05-11 07:49:42.284008"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "demand-driven"], ["created_at", "2021-05-11 07:49:42.295067"], ["updated_at", "2021-05-11 07:49:42.295067"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.298191"], ["updated_at", "2021-05-11 07:49:42.298191"], ["todo_id", 10], ["tag_id", 19]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 10], ["title", "Yr tilde wolf chia yolo kickstarter jean shorts try-hard."], ["created_at", "2021-05-11 07:49:42.308780"], ["updated_at", "2021-05-11 07:49:42.308780"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "strategy"], ["created_at", "2021-05-11 07:49:42.319319"], ["updated_at", "2021-05-11 07:49:42.319319"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.3ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:42.321186"], ["updated_at", "2021-05-11 07:49:42.321186"], ["todo_id", 10], ["tag_id", 20]]
+  ↳ db/seeds.rb:15
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "YOLO"], ["body", "swim lane"], ["created_at", "2021-05-11 07:49:52.037921"], ["updated_at", "2021-05-11 07:49:52.037921"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 11], ["title", "Letterpress lomo occupy brunch next level retro helvetica pickled cold-pressed."], ["created_at", "2021-05-11 07:49:52.067791"], ["updated_at", "2021-05-11 07:49:52.067791"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Decentralized"], ["created_at", "2021-05-11 07:49:52.102817"], ["updated_at", "2021-05-11 07:49:52.102817"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.6ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.111729"], ["updated_at", "2021-05-11 07:49:52.111729"], ["todo_id", 11], ["tag_id", 21]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 11], ["title", "Marfa church-key umami neutra vinyl artisan."], ["created_at", "2021-05-11 07:49:52.119950"], ["updated_at", "2021-05-11 07:49:52.119950"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Reactive"], ["created_at", "2021-05-11 07:49:52.128640"], ["updated_at", "2021-05-11 07:49:52.128640"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.131533"], ["updated_at", "2021-05-11 07:49:52.131533"], ["todo_id", 11], ["tag_id", 22]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "drinking"], ["body", "branding"], ["created_at", "2021-05-11 07:49:52.139674"], ["updated_at", "2021-05-11 07:49:52.139674"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 12], ["title", "Biodiesel ugh xoxo diy wayfarers."], ["created_at", "2021-05-11 07:49:52.148875"], ["updated_at", "2021-05-11 07:49:52.148875"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "hierarchy"], ["created_at", "2021-05-11 07:49:52.158493"], ["updated_at", "2021-05-11 07:49:52.158493"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.6ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.161936"], ["updated_at", "2021-05-11 07:49:52.161936"], ["todo_id", 12], ["tag_id", 23]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 12], ["title", "Shoreditch vice etsy loko organic banh mi artisan."], ["created_at", "2021-05-11 07:49:52.170961"], ["updated_at", "2021-05-11 07:49:52.170961"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "adapter"], ["created_at", "2021-05-11 07:49:52.182208"], ["updated_at", "2021-05-11 07:49:52.182208"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.185628"], ["updated_at", "2021-05-11 07:49:52.185628"], ["todo_id", 12], ["tag_id", 24]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "venmo"], ["body", "customer journey"], ["created_at", "2021-05-11 07:49:52.195770"], ["updated_at", "2021-05-11 07:49:52.195770"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 13], ["title", "Quinoa five dollar toast iphone 3 wolf moon craft beer ennui vinegar marfa."], ["created_at", "2021-05-11 07:49:52.206493"], ["updated_at", "2021-05-11 07:49:52.206493"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "capacity"], ["created_at", "2021-05-11 07:49:52.217601"], ["updated_at", "2021-05-11 07:49:52.217601"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.219844"], ["updated_at", "2021-05-11 07:49:52.219844"], ["todo_id", 13], ["tag_id", 25]]
+  ↳ db/seeds.rb:15
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 13], ["title", "Kinfolk goth keytar pop-up."], ["created_at", "2021-05-11 07:49:52.229969"], ["updated_at", "2021-05-11 07:49:52.229969"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Monitored"], ["created_at", "2021-05-11 07:49:52.240295"], ["updated_at", "2021-05-11 07:49:52.240295"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.242931"], ["updated_at", "2021-05-11 07:49:52.242931"], ["todo_id", 13], ["tag_id", 26]]
+  ↳ db/seeds.rb:15
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "twee"], ["body", "thought leadership"], ["created_at", "2021-05-11 07:49:52.252444"], ["updated_at", "2021-05-11 07:49:52.252444"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 14], ["title", "Diy butcher flexitarian tattooed listicle cronut."], ["created_at", "2021-05-11 07:49:52.263095"], ["updated_at", "2021-05-11 07:49:52.263095"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "standardization"], ["created_at", "2021-05-11 07:49:52.272817"], ["updated_at", "2021-05-11 07:49:52.272817"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.3ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.274479"], ["updated_at", "2021-05-11 07:49:52.274479"], ["todo_id", 14], ["tag_id", 27]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 14], ["title", "Taxidermy tilde whatever yuccie readymade shoreditch."], ["created_at", "2021-05-11 07:49:52.282761"], ["updated_at", "2021-05-11 07:49:52.282761"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cloned"], ["created_at", "2021-05-11 07:49:52.291986"], ["updated_at", "2021-05-11 07:49:52.291986"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.294987"], ["updated_at", "2021-05-11 07:49:52.294987"], ["todo_id", 14], ["tag_id", 28]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "gluten-free"], ["body", "put a pin in it"], ["created_at", "2021-05-11 07:49:52.304161"], ["updated_at", "2021-05-11 07:49:52.304161"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 15], ["title", "Cleanse artisan hashtag polaroid meditation roof fingerstache."], ["created_at", "2021-05-11 07:49:52.313498"], ["updated_at", "2021-05-11 07:49:52.313498"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "support"], ["created_at", "2021-05-11 07:49:52.323303"], ["updated_at", "2021-05-11 07:49:52.323303"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (1.6ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.326398"], ["updated_at", "2021-05-11 07:49:52.326398"], ["todo_id", 15], ["tag_id", 29]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 15], ["title", "Celiac authentic waistcoat paleo single-origin coffee neutra vinyl."], ["created_at", "2021-05-11 07:49:52.336108"], ["updated_at", "2021-05-11 07:49:52.336108"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "intranet"], ["created_at", "2021-05-11 07:49:52.344381"], ["updated_at", "2021-05-11 07:49:52.344381"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.346975"], ["updated_at", "2021-05-11 07:49:52.346975"], ["todo_id", 15], ["tag_id", 30]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "franzen"], ["body", "deep dive"], ["created_at", "2021-05-11 07:49:52.354666"], ["updated_at", "2021-05-11 07:49:52.354666"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 16], ["title", "Meggings mumblecore retro tilde mixtape gastropub seitan."], ["created_at", "2021-05-11 07:49:52.366011"], ["updated_at", "2021-05-11 07:49:52.366011"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Phased"], ["created_at", "2021-05-11 07:49:52.377181"], ["updated_at", "2021-05-11 07:49:52.377181"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.380286"], ["updated_at", "2021-05-11 07:49:52.380286"], ["todo_id", 16], ["tag_id", 31]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 16], ["title", "Pitchfork roof blog quinoa flexitarian migas mustache hella."], ["created_at", "2021-05-11 07:49:52.390517"], ["updated_at", "2021-05-11 07:49:52.390517"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Grass-roots"], ["created_at", "2021-05-11 07:49:52.400564"], ["updated_at", "2021-05-11 07:49:52.400564"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.402649"], ["updated_at", "2021-05-11 07:49:52.402649"], ["todo_id", 16], ["tag_id", 32]]
+  ↳ db/seeds.rb:15
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "heirloom"], ["body", "market share"], ["created_at", "2021-05-11 07:49:52.417360"], ["updated_at", "2021-05-11 07:49:52.417360"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 17], ["title", "Irony lo-fi mixtape pug cardigan semiotics kickstarter."], ["created_at", "2021-05-11 07:49:52.428023"], ["updated_at", "2021-05-11 07:49:52.428023"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Switchable"], ["created_at", "2021-05-11 07:49:52.437511"], ["updated_at", "2021-05-11 07:49:52.437511"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.439820"], ["updated_at", "2021-05-11 07:49:52.439820"], ["todo_id", 17], ["tag_id", 33]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 17], ["title", "Everyday organic 3 wolf moon you probably haven't heard of them hammock vinyl wayfarers."], ["created_at", "2021-05-11 07:49:52.448821"], ["updated_at", "2021-05-11 07:49:52.448821"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "synergy"], ["created_at", "2021-05-11 07:49:52.457518"], ["updated_at", "2021-05-11 07:49:52.457518"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.460458"], ["updated_at", "2021-05-11 07:49:52.460458"], ["todo_id", 17], ["tag_id", 34]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "drinking"], ["body", "best practice"], ["created_at", "2021-05-11 07:49:52.468789"], ["updated_at", "2021-05-11 07:49:52.468789"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 18], ["title", "Locavore pabst neutra loko poutine occupy sriracha fixie."], ["created_at", "2021-05-11 07:49:52.477650"], ["updated_at", "2021-05-11 07:49:52.477650"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "exuding"], ["created_at", "2021-05-11 07:49:52.486663"], ["updated_at", "2021-05-11 07:49:52.486663"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.489033"], ["updated_at", "2021-05-11 07:49:52.489033"], ["todo_id", 18], ["tag_id", 35]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.3ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 18], ["title", "Helvetica loko ugh before they sold out."], ["created_at", "2021-05-11 07:49:52.498404"], ["updated_at", "2021-05-11 07:49:52.498404"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pricing structure"], ["created_at", "2021-05-11 07:49:52.506827"], ["updated_at", "2021-05-11 07:49:52.506827"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.3ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.509228"], ["updated_at", "2021-05-11 07:49:52.509228"], ["todo_id", 18], ["tag_id", 36]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "austin"], ["body", "penetrate the market"], ["created_at", "2021-05-11 07:49:52.518652"], ["updated_at", "2021-05-11 07:49:52.518652"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 19], ["title", "Before they sold out migas raw denim beard diy seitan."], ["created_at", "2021-05-11 07:49:52.528992"], ["updated_at", "2021-05-11 07:49:52.528992"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "budgetary management"], ["created_at", "2021-05-11 07:49:52.539434"], ["updated_at", "2021-05-11 07:49:52.539434"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.541072"], ["updated_at", "2021-05-11 07:49:52.541072"], ["todo_id", 19], ["tag_id", 37]]
+  ↳ db/seeds.rb:15
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 19], ["title", "Godard keffiyeh humblebrag aesthetic try-hard sriracha."], ["created_at", "2021-05-11 07:49:52.551045"], ["updated_at", "2021-05-11 07:49:52.551045"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mandatory"], ["created_at", "2021-05-11 07:49:52.561440"], ["updated_at", "2021-05-11 07:49:52.561440"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.564699"], ["updated_at", "2021-05-11 07:49:52.564699"], ["todo_id", 19], ["tag_id", 38]]
+  ↳ db/seeds.rb:15
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "vegan"], ["body", "expansion play"], ["created_at", "2021-05-11 07:49:52.573849"], ["updated_at", "2021-05-11 07:49:52.573849"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.5ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 20], ["title", "Flexitarian yuccie banh mi austin ramps."], ["created_at", "2021-05-11 07:49:52.583800"], ["updated_at", "2021-05-11 07:49:52.583800"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "content-based"], ["created_at", "2021-05-11 07:49:52.594171"], ["updated_at", "2021-05-11 07:49:52.594171"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.596434"], ["updated_at", "2021-05-11 07:49:52.596434"], ["todo_id", 20], ["tag_id", 39]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("todo_id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["todo_id", 20], ["title", "Lo-fi keffiyeh master pour-over."], ["created_at", "2021-05-11 07:49:52.604815"], ["updated_at", "2021-05-11 07:49:52.604815"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "initiative"], ["created_at", "2021-05-11 07:49:52.613141"], ["updated_at", "2021-05-11 07:49:52.613141"]]
+  ↳ db/seeds.rb:15
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 07:49:52.615302"], ["updated_at", "2021-05-11 07:49:52.615302"], ["todo_id", 20], ["tag_id", 40]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+Started GET "/" for ::1 at 2021-05-11 09:50:19 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/gz/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 880ms (Views: 878.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 09:50:20 +0200
+Processing by Api::TodosController#index as JSON
+Started GET "/api/steps" for ::1 at 2021-05-11 09:50:21 +0200
+  [1m[36mTodo Load (9.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (22.5ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 64ms (Views: 20.9ms | ActiveRecord: 34.8ms)
+
+
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 223ms (Views: 148.5ms | ActiveRecord: 57.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:17:33 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 376ms (Views: 375.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:17:56 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 390ms (Views: 388.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:17:57 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:17:57 +0200
+  [1m[36mTag Load (4.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+Processing by Api::StepsController#index as JSON
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mStep Load (1.7ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mTag Load (15.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 112ms (Views: 74.7ms | ActiveRecord: 36.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:20:52 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 431ms (Views: 430.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:20:53 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:20:53 +0200
+  [1m[36mTag Load (3.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mStep Load (0.6ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mTag Load (11.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (4.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 81ms (Views: 52.9ms | ActiveRecord: 28.1ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-11 10:21:16 +0200
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"1620721276632", "done"=>"false", "title"=>"some title", "body"=>"some body", "tag_names"=>["abc", "cba"]}}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "abc"], ["LIMIT", 1]]
+  ↳ app/models/todo.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/todo.rb:16
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "abc"], ["created_at", "2021-05-11 08:21:16.890070"], ["updated_at", "2021-05-11 08:21:16.890070"]]
+  ↳ app/models/todo.rb:16
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/todo.rb:16
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "cba"], ["LIMIT", 1]]
+  ↳ app/models/todo.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/todo.rb:16
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cba"], ["created_at", "2021-05-11 08:21:16.906427"], ["updated_at", "2021-05-11 08:21:16.906427"]]
+  ↳ app/models/todo.rb:16
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/todo.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1620721276632], ["title", "some title"], ["body", "some body"], ["created_at", "2021-05-11 08:21:16.927823"], ["updated_at", "2021-05-11 08:21:16.927823"]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTagging Create (0.8ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 08:21:16.930208"], ["updated_at", "2021-05-11 08:21:16.930208"], ["todo_id", 1620721276632], ["tag_id", 41]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTagging Create (0.5ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 08:21:16.932655"], ["updated_at", "2021-05-11 08:21:16.932655"], ["todo_id", 1620721276632], ["tag_id", 42]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 201 Created in 53ms (Views: 0.7ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:23:39 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 337ms (Views: 336.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:23:40 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:23:40 +0200
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+Processing by Api::StepsController#index as JSON
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mStep Load (1.7ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mTag Load (18.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (5.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 103ms (Views: 64.3ms | ActiveRecord: 38.2ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-11 10:25:29 +0200
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"1620721425912", "done"=>"false", "title"=>"12", "body"=>"2", "tag_names"=>["2"]}}
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "2"], ["LIMIT", 1]]
+  ↳ app/models/todo.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/todo.rb:16
+  [1m[36mTag Create (0.8ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2021-05-11 08:25:29.774762"], ["updated_at", "2021-05-11 08:25:29.774762"]]
+  ↳ app/models/todo.rb:16
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/todo.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1620721425912], ["title", "12"], ["body", "2"], ["created_at", "2021-05-11 08:25:29.787470"], ["updated_at", "2021-05-11 08:25:29.787470"]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTagging Create (0.6ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 08:25:29.790698"], ["updated_at", "2021-05-11 08:25:29.790698"], ["todo_id", 1620721425912], ["tag_id", 43]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 201 Created in 32ms (Views: 0.9ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:25:54 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:25:54 +0200
+Started GET "/api/steps" for ::1 at 2021-05-11 10:25:54 +0200
+Processing by Api::TodosController#index as JSON
+Processing by Api::StepsController#index as JSON
+  [1m[36mTodo Load (1.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mStep Load (7.6ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 25ms (Views: 17.3ms | ActiveRecord: 7.6ms)
+
+
+  [1m[36mTag Load (15.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 113ms (Views: 70.2ms | ActiveRecord: 42.8ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-11 10:26:01 +0200
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"1620721558306", "done"=>"false", "title"=>"1", "body"=>"1"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1620721558306], ["title", "1"], ["body", "1"], ["created_at", "2021-05-11 08:26:01.948290"], ["updated_at", "2021-05-11 08:26:01.948290"]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:22
+Completed 201 Created in 14ms (Views: 2.0ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:28:16 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 325ms (Views: 323.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:28:17 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:28:17 +0200
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (1.5ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mTag Load (22.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (4.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 95ms (Views: 58.9ms | ActiveRecord: 35.5ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-11 10:29:16 +0200
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"1620721703311", "done"=>"false", "title"=>"1", "body"=>"2"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1620721703311], ["title", "1"], ["body", "2"], ["created_at", "2021-05-11 08:29:16.180044"], ["updated_at", "2021-05-11 08:29:16.180044"]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721703311]]
+  ↳ app/controllers/api/todos_controller.rb:22
+Completed 201 Created in 15ms (Views: 2.5ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-11 10:30:30 +0200
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"id"=>"1620721827632", "done"=>"false", "title"=>"titl", "body"=>"bod", "tag_names"=>["new-tag"]}}
+  [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "new-tag"], ["LIMIT", 1]]
+  ↳ app/models/todo.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/todo.rb:16
+  [1m[36mTag Create (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "new-tag"], ["created_at", "2021-05-11 08:30:31.003449"], ["updated_at", "2021-05-11 08:30:31.003449"]]
+  ↳ app/models/todo.rb:16
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/todo.rb:16
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 1620721827632], ["title", "titl"], ["body", "bod"], ["created_at", "2021-05-11 08:30:31.018252"], ["updated_at", "2021-05-11 08:30:31.018252"]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[36mTagging Create (0.7ms)[0m  [1m[32mINSERT INTO "taggings" ("created_at", "updated_at", "todo_id", "tag_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-05-11 08:30:31.020122"], ["updated_at", "2021-05-11 08:30:31.020122"], ["todo_id", 1620721827632], ["tag_id", 44]]
+  ↳ app/controllers/api/todos_controller.rb:21
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:21
+Completed 201 Created in 37ms (Views: 0.8ms | ActiveRecord: 21.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:50:24 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 415ms (Views: 413.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:50:25 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (2.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:50:25 +0200
+  [1m[36mTag Load (4.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (2.5ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 2.5ms)
+
+
+  [1m[36mTag Load (18.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (5.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (6.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721703311]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721827632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 149ms (Views: 93.6ms | ActiveRecord: 55.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:51:17 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 352ms (Views: 351.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:51:17 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:51:18 +0200
+  [1m[36mTag Load (1.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mStep Load (2.6ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/steps_controller.rb:12
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721703311]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721827632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 140ms (Views: 106.1ms | ActiveRecord: 33.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:51:30 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 339ms (Views: 338.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:51:31 +0200
+Started GET "/api/steps" for ::1 at 2021-05-11 10:51:31 +0200
+Processing by Api::TodosController#index as JSON
+Processing by Api::StepsController#index as JSON
+  [1m[36mTodo Load (1.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mStep Load (2.1ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mTag Load (14.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (6.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (4.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (4.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721703311]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721827632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 119ms (Views: 57.0ms | ActiveRecord: 61.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:54:57 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 340ms (Views: 339.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:54:58 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (5.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+Started GET "/api/steps" for ::1 at 2021-05-11 10:54:58 +0200
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mTag Load (2.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mStep Load (4.0ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 4.0ms)
+
+
+  [1m[36mTag Load (17.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721703311]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721827632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 126ms (Views: 80.6ms | ActiveRecord: 44.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:55:17 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:55:18 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:55:18 +0200
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (1.9ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mTag Load (13.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (5.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (4.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (2.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721703311]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721827632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 103ms (Views: 57.3ms | ActiveRecord: 45.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:56:46 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 364ms (Views: 363.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:56:47 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:56:47 +0200
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mStep Load (0.4ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mTag Load (8.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721703311]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721827632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 78ms (Views: 54.9ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-11 10:58:33 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 324ms (Views: 323.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-11 10:58:34 +0200
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 2]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 3]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 4]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Started GET "/api/steps" for ::1 at 2021-05-11 10:58:34 +0200
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 5]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 6]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Processing by Api::StepsController#index as JSON
+  [1m[36mTag Load (2.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 7]]
+  [1m[36mStep Load (0.7ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ app/controllers/api/todos_controller.rb:6
+  ↳ app/controllers/api/steps_controller.rb:12
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mTag Load (10.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 8]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 9]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 10]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 11]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (3.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 12]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 13]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 14]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 15]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 16]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 17]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 18]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 19]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 20]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721276632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721425912]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721558306]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721703311]]
+  ↳ app/controllers/api/todos_controller.rb:6
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."todo_id" = $1[0m  [["todo_id", 1620721827632]]
+  ↳ app/controllers/api/todos_controller.rb:6
+Completed 200 OK in 89ms (Views: 57.1ms | ActiveRecord: 31.4ms)
+
+
