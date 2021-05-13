@@ -1,0 +1,16 @@
+<%# flash jest przeniesiony do layout application %>
+
+<% if model.errors.any? %>
+  <aside class="grid-container">
+
+    <div class="callout alert">
+      <h2 class="black">We're sorry. There's been problem with <%= model.class %></h2>
+
+      <ul>
+        <% model.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </aside>
+<% end %>

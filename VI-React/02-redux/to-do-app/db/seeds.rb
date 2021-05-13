@@ -15,3 +15,5 @@
     todo.tags.create(name: Faker::Company.buzzword)
   end
 end
+
+User.create!(email: 'test@gmail.com', password: '123456')
