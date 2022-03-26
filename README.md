@@ -5,7 +5,7 @@ Tracks progress of [App Academy Open course](https://open.appacademy.io/)
 
 ### React
 - [Minesweeper UI](https://zapalagrzegorz.github.io/minesweeper-ui-react/)
-- Widgets(https://zapalagrzegorz.github.io/react-widgets/)
+- [Widgets](https://zapalagrzegorz.github.io/react-widgets/)
 - [Redux lite](https://zapalagrzegorz.github.io/redux-lite/)
 
 ### Rails
